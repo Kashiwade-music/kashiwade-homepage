@@ -1,0 +1,29 @@
+.navBar {
+  position: sticky;
+  top: 0px;
+  padding: 9px 0px;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: solid 1px #ddd;
+}
+
+.navTop {
+  font-family: "Source Sans Pro", sans-serif;
+  vertical-align: middle;
+  font-size: 1.5em;
+}
+.navContentBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.navContent {
+  width: 3em;
+  text-align: center;
+  margin: 0px 9px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+}
