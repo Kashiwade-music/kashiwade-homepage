@@ -5,7 +5,7 @@ import NavBar from "../components/navBar";
 import { StaticImage } from "gatsby-plugin-image";
 // Step 2: Define your component
 const IndexPage = () => {
-  return <NavBar currentPage="index" />;
+  return <NavBar currentPage="profile" />;
 };
 // Step 3: Export your component
 export default IndexPage;
