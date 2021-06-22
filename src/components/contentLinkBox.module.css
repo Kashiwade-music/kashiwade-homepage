@@ -16,7 +16,7 @@
 
 .title {
   margin: 3px 5px;
-  font-size: 20px;
+  font-size: 17px;
 
   font-family: "Noto Sans JP", sans-serif;
 }
@@ -38,16 +38,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100px;
+  max-width: 150px;
   height: 20px;
   border-radius: 5px;
   padding: 0 1em;
-  background-color: #fff;
+  background-color: #aaa;
   border: 1px solid #aaa;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #333;
+  color: #fff;
   font-size: 12px;
   text-decoration: none;
   -webkit-transition: 0.2s;
@@ -68,6 +68,6 @@
   margin: 3px 5px;
   font-size: 15px;
   font-weight: 100;
-  color: rgb(82, 82, 82);
+  color: rgb(105, 104, 104);
   font-family: "Noto Sans JP", sans-serif;
 }
