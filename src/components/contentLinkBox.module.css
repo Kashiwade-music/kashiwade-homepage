@@ -1,0 +1,73 @@
+.linkTextDecoration {
+  color: black;
+  text-decoration: none;
+}
+
+.box {
+  min-width: 200px;
+  opacity: 1;
+  transition: all 0.3s;
+  border: solid 1px #ddd;
+  position: relative;
+}
+.box:hover {
+  opacity: 0.8;
+}
+
+.title {
+  margin: 3px 5px;
+  font-size: 20px;
+
+  font-family: "Noto Sans JP", sans-serif;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+.tagUl {
+  margin: 5px;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100px;
+  height: 20px;
+  border-radius: 5px;
+  padding: 0 1em;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #333;
+  font-size: 12px;
+  text-decoration: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+.tag:hover {
+  background-color: #2196f3;
+  border: 1px solid #2196f3;
+  color: #fff;
+}
+.tag:before {
+  content: "#";
+  padding-right: 2px;
+}
+
+.description {
+  margin: 3px 5px;
+  font-size: 15px;
+  font-weight: 100;
+  color: rgb(82, 82, 82);
+  font-family: "Noto Sans JP", sans-serif;
+}
