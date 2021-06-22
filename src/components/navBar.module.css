@@ -1,8 +1,8 @@
 .navBar {
   position: sticky;
   top: 0px;
-
-  color: white;
+  z-index: 50;
+  background-color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-bottom: solid 1px #ddd;
@@ -65,7 +65,15 @@
 .navUlContent {
   padding-bottom: 0.7em;
 }
-
+.navTopSmartphone {
+  font-family: "Kanit";
+  vertical-align: middle;
+  font-weight: 300;
+  margin-left: 0.7em;
+  color: black;
+  text-decoration: none;
+  padding: 7px 0px;
+}
 .navHumbergButton {
   display: block;
   margin: 0 0 0 auto;
@@ -73,7 +81,7 @@
   appearance: none;
   border: 0;
   border-radius: 5px;
-  background: #4676d7;
+  background: #fff;
   color: #fff;
   padding: 8px 16px;
   font-size: 1rem;
@@ -82,7 +90,7 @@
 .navHumbergButton svg {
   display: inline-block;
   vertical-align: middle;
-  fill: #fff;
+  fill: #000;
   height: 100%;
   margin-right: 0.25rem;
 }

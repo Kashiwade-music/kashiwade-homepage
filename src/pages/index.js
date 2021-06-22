@@ -2,10 +2,16 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import NavBar from "../components/navBar";
+import Header from "../components/header";
 import { StaticImage } from "gatsby-plugin-image";
+
 // Step 2: Define your component
 const IndexPage = () => {
-  return <NavBar currentPage="index" />;
+  return (
+    <div>
+      <NavBar currentPage="index" />
+    </div>
+  );
 };
 // Step 3: Export your component
 export default IndexPage;

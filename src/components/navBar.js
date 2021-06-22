@@ -6,6 +6,7 @@ import "react-modern-drawer/dist/index.css";
 import {
   navBar,
   navTop,
+  navTopSmartphone,
   navContentBox,
   navContent,
   navContentActive,
@@ -33,7 +34,7 @@ const NavBar = ({ currentPage }) => {
   return (
     <nav className={navBar}>
       <MediaQuery query="(max-width: 600px)">
-        <Link to="/" className={navTop}>
+        <Link to="/" className={navTopSmartphone}>
           Kashiwade music
         </Link>
 
@@ -49,7 +50,12 @@ const NavBar = ({ currentPage }) => {
             <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
           </svg>
         </button>
-        <Drawer open={isOpen} onClose={toggleDrawer} direction="right">
+        <Drawer
+          open={isOpen}
+          onClose={toggleDrawer}
+          direction="right"
+          size={300}
+        >
           <ul className={navUlSmartphone}>
             <li className={navUlContent}>
               <Link to="/profile" className={profileClass}>

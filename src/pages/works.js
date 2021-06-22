@@ -2,10 +2,20 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import NavBar from "../components/navBar";
+import Header from "../components/header";
 import { StaticImage } from "gatsby-plugin-image";
 // Step 2: Define your component
 const IndexPage = () => {
-  return <NavBar currentPage="works" />;
+  return (
+    <div>
+      <NavBar currentPage="works" />
+      <Header pageTitle="Works">
+        制作した作品の一覧です。
+        <br />
+        大部分がYouTubeやSoundcloudに上がっています。
+      </Header>
+    </div>
+  );
 };
 // Step 3: Export your component
 export default IndexPage;
