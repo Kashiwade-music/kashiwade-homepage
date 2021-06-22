@@ -10,6 +10,7 @@ const IndexPage = () => {
   return (
     <div>
       <NavBar currentPage="index" />
+      <Footer />
     </div>
   );
 };

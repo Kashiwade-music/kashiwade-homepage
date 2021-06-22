@@ -10,6 +10,7 @@ const IndexPage = () => {
     <div>
       <NavBar currentPage="links" />
       <Header pageTitle="Links">SNS等のリンク集です。</Header>
+      <Footer />
     </div>
   );
 };

@@ -5,7 +5,28 @@
   overflow: hidden;
   border-bottom: solid 1px #ddd;
 }
+.headerSmartphone {
+  height: 150px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border-bottom: solid 1px #ddd;
+}
 .header:before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  transform: rotate(-9deg);
+  background-image: url("../images/header-background-loop.svg");
+  background-size: 500px 500px;
+  background-repeat: repeat;
+  opacity: 0.15;
+}
+.headerSmartphone:before {
   content: "";
   position: absolute;
   width: 200%;
@@ -44,6 +65,7 @@
     "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
   top: 50%;
   left: 50%;
+  width: 100%;
   transform: translateY(-50%) translateX(-50%);
 }
 .headerTitleBottomLine {

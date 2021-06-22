@@ -1,9 +1,11 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import MediaQuery from "react-responsive";
 import "react-modern-drawer/dist/index.css";
 import { StaticImage } from "gatsby-plugin-image";
 import {
   header,
+  headerSmartphone,
   headerTitle,
   headerTitleBottomLine,
   headerDescriptionColumn,
@@ -25,30 +27,57 @@ const Header = ({ pageTitle, children }) => {
   if (children != null) {
     return (
       <header>
-        <div className={header}>
-          <h1>
-            <div className={headerTitle}>{pageTitle}</div>
-          </h1>
-          <div className={headerTitleBottomLine}>
-            <img src={headerTitleBottomLineSVG} />
+        <MediaQuery query="(max-width: 600px)">
+          <div className={headerSmartphone}>
+            <h1>
+              <div className={headerTitle}>{pageTitle}</div>
+            </h1>
+            <div className={headerTitleBottomLine}>
+              <img src={headerTitleBottomLineSVG} />
+            </div>
           </div>
-        </div>
-        <div className={headerDescriptionColumn}>
-          <div className={headerDescription}>{children}</div>
-        </div>
+          <div className={headerDescriptionColumn}>
+            <div className={headerDescription}>{children}</div>
+          </div>
+        </MediaQuery>
+        <MediaQuery query="(min-width: 600px)">
+          <div className={header}>
+            <h1>
+              <div className={headerTitle}>{pageTitle}</div>
+            </h1>
+            <div className={headerTitleBottomLine}>
+              <img src={headerTitleBottomLineSVG} />
+            </div>
+          </div>
+          <div className={headerDescriptionColumn}>
+            <div className={headerDescription}>{children}</div>
+          </div>
+        </MediaQuery>
       </header>
     );
   } else {
     return (
       <header>
-        <div className={header}>
-          <h1>
-            <div className={headerTitle}>{pageTitle}</div>
-          </h1>
-          <div className={headerTitleBottomLine}>
-            <img src={headerTitleBottomLineSVG} />
+        <MediaQuery query="(max-width: 600px)">
+          <div className={headerSmartphone}>
+            <h1>
+              <div className={headerTitle}>{pageTitle}</div>
+            </h1>
+            <div className={headerTitleBottomLine}>
+              <img src={headerTitleBottomLineSVG} />
+            </div>
           </div>
-        </div>
+        </MediaQuery>
+        <MediaQuery query="(min-width: 600px)">
+          <div className={header}>
+            <h1>
+              <div className={headerTitle}>{pageTitle}</div>
+            </h1>
+            <div className={headerTitleBottomLine}>
+              <img src={headerTitleBottomLineSVG} />
+            </div>
+          </div>
+        </MediaQuery>
       </header>
     );
   }

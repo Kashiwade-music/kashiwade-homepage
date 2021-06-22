@@ -10,6 +10,7 @@ const IndexPage = () => {
     <div>
       <NavBar currentPage="profile" />
       <Header pageTitle="Profile" />
+      <Footer />
     </div>
   );
 };
