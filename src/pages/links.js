@@ -5,12 +5,12 @@ import NavBar from "../components/navBar";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { StaticImage } from "gatsby-plugin-image";
-
 // Step 2: Define your component
 const IndexPage = () => {
   return (
     <div>
-      <NavBar currentPage="index" />
+      <NavBar currentPage="links" />
+      <Header pageTitle="Links">SNS等のリンク集です。</Header>
       <Footer />
     </div>
   );
