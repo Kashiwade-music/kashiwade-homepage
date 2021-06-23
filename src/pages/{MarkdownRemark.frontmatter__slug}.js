@@ -6,7 +6,7 @@ import { graphql } from "gatsby";
 import NavBar from "../components/navBar";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import ContentArea from "../components/contentAria";
+import ContentArea from "../components/contentArea";
 import WorkPostContent from "../components/workPostContent";
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.

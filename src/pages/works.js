@@ -1,13 +1,13 @@
 // Step 1: Import React
 import * as React from "react";
-import Layout from "../components/layout";
+
 import NavBar from "../components/navBar";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import ContentArea from "../components/contentAria";
+import ContentArea from "../components/contentArea";
 import ContentLinkBoxArea from "../components/contentLinkBoxArea";
-import { StaticImage } from "gatsby-plugin-image";
-import { Link, graphql } from "gatsby";
+
+import { graphql } from "gatsby";
 // Step 2: Define your component
 const IndexPage = ({ data }) => {
   const filteredEdges = data.allMarkdownRemark.edges.filter((edge) =>
