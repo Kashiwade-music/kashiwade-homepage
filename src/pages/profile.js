@@ -14,9 +14,71 @@ import {
   details,
   itemName,
   itemSpec,
+  ulContent,
 } from "../styles/profile.module.css";
+import { Slide } from "react-slideshow-image";
 // Step 2: Define your component
 const IndexPage = () => {
+  const prof = {
+    firstPosition: [
+      {
+        name: "Description",
+        spec: (
+          <span>
+            主にオーケストラ(サウンドトラック・Epic)の曲を作っている人です。
+            <br />
+            壮大さを売りとしてコツコツ曲を作っています。
+          </span>
+        ),
+      },
+      {
+        name: "Hobby",
+        spec: (
+          <span>
+            耳コピ・ピアノ
+            <br />
+            原神・ウマ娘
+          </span>
+        ),
+      },
+      {
+        name: "About Icon",
+        spec: (
+          <span>
+            アイコンは
+            <a href="https://twitter.com/_sironora_">sironoraさん</a>
+            に描いて頂いたものです！すんごいかわいい。
+            <br />
+            ロゴっぽい方は昔自分で作ったものです。リニューアルしたいな～。
+          </span>
+        ),
+      },
+    ],
+    secondPosition: [
+      {
+        name: "Favorite Plugins",
+        spec: (
+          <span>
+            <ul className={ulContent}>
+              <li>EASTWEST Hollywood Orchestra Diamond</li>
+              <li>Heavyocity Gravity</li>
+              <li>Liquidsonics Cinematic Rooms Professional</li>
+              <li>Cableguys ShaperBox 2</li>
+            </ul>
+          </span>
+        ),
+      },
+      {
+        name: "This Web page",
+        spec: (
+          <span>
+            ReactベースのStatic Site
+            Generator、GatsbyJSを使って無地から作ってみました。ドキュメントがしっかりしてるので作りやすかったです。
+          </span>
+        ),
+      },
+    ],
+  };
   return (
     <div>
       <NavBar currentPage="profile" />
@@ -26,53 +88,45 @@ const IndexPage = () => {
         <div>
           <MediaQuery query="(min-width: 1050px)">
             <div className={profileContainer}>
-              <StaticImage
-                src="../images/kashiwade_sironora_normal_trim8-9.png"
-                height={400}
-                quality={100}
-                layout="fullWidth"
-              />
+              <Slide easing="ease">
+                <div className="each-slide">
+                  <StaticImage
+                    src="../images/kashiwade_sironora_normal_trim8-9.png"
+                    height={400}
+                    quality={100}
+                    layout="fullWidth"
+                  />
+                </div>
+                <div className="each-slide">
+                  <StaticImage
+                    src="../images/kashiwade_logo.png"
+                    quality={100}
+                    height={400}
+                    layout="fullWidth"
+                  />
+                </div>
+              </Slide>
+
               <div className={detailsContainer}>
                 <div className={details}>
-                  <div className={itemName}>Description</div>
-                  <div className={itemSpec}>
-                    主にオーケストラ(サウンドトラック・Epic)の曲を作っている人です。
-                    <br />
-                    壮大さを売りとしてコツコツ曲を作っています。
-                  </div>
+                  <div className={itemName}>{prof.firstPosition[0].name}</div>
+                  <div className={itemSpec}>{prof.firstPosition[0].spec}</div>
                 </div>
                 <div className={details}>
-                  <div className={itemName}>Hobby</div>
-                  <div className={itemSpec}>
-                    耳コピ・ピアノ
-                    <br />
-                    原神・ウマ娘
-                  </div>
+                  <div className={itemName}>{prof.firstPosition[1].name}</div>
+                  <div className={itemSpec}>{prof.firstPosition[1].spec}</div>
                 </div>
                 <div className={details}>
-                  <div className={itemName}>About Icon</div>
-                  <div className={itemSpec}>
-                    アイコンは
-                    <a href="https://twitter.com/_sironora_">sironoraさん</a>
-                    に描いて頂いたものです！すんごいかわいい。
-                  </div>
+                  <div className={itemName}>{prof.firstPosition[2].name}</div>
+                  <div className={itemSpec}>{prof.firstPosition[2].spec}</div>
                 </div>
                 <div className={details}>
-                  <div className={itemName}>Favorite Plugins</div>
-                  <div className={itemSpec}>
-                    EASTWEST Hollywood Orchestra Diamond、
-                    <br />
-                    Heavyocity Gravity、
-                    <br />
-                    Liquidsonics Cinematic Rooms Professional
-                  </div>
+                  <div className={itemName}>{prof.secondPosition[0].name}</div>
+                  <div className={itemSpec}>{prof.secondPosition[0].spec}</div>
                 </div>
                 <div className={details}>
-                  <div className={itemName}>This Web page</div>
-                  <div className={itemSpec}>
-                    ReactベースのStatic Site
-                    Generator、GatsbyJSを使って無地から作ってみました。ドキュメントがしっかりしてるので作りやすかったです。
-                  </div>
+                  <div className={itemName}>{prof.secondPosition[1].name}</div>
+                  <div className={itemSpec}>{prof.secondPosition[1].spec}</div>
                 </div>
               </div>
             </div>
@@ -87,39 +141,19 @@ const IndexPage = () => {
               />
 
               <div className={details}>
-                <div className={itemName}>Description</div>
-                <div className={itemSpec}>
-                  主にオーケストラ(サウンドトラック・Epic)の曲を作っている人です。
-                  <br />
-                  壮大さを売りとしてコツコツ曲を作っています。
-                </div>
-                <div className={itemName}>Hobby</div>
-                <div className={itemSpec}>
-                  耳コピ・ピアノ
-                  <br />
-                  原神・ウマ娘
-                </div>
-                <div className={itemName}>About Icon</div>
-                <div className={itemSpec}>
-                  アイコンは
-                  <a href="https://twitter.com/_sironora_">sironoraさん</a>
-                  に描いて頂いたものです！すんごいかわいい。
-                </div>
+                <div className={itemName}>{prof.firstPosition[0].name}</div>
+                <div className={itemSpec}>{prof.firstPosition[0].spec}</div>
+                <div className={itemName}>{prof.firstPosition[1].name}</div>
+                <div className={itemSpec}>{prof.firstPosition[1].spec}</div>
+                <div className={itemName}>{prof.firstPosition[2].name}</div>
+                <div className={itemSpec}>{prof.firstPosition[2].spec}</div>
               </div>
             </div>
-            <div className={itemName}>Favorite Plugins</div>
-            <div className={itemSpec}>
-              EASTWEST Hollywood Orchestra Diamond、
-              <br />
-              Heavyocity Gravity、
-              <br />
-              Liquidsonics Cinematic Rooms Professional
-            </div>
-            <div className={itemName}>This Web page</div>
-            <div className={itemSpec}>
-              ReactベースのStatic Site
-              Generator、GatsbyJSを無地から作ってみました。ドキュメントがしっかりしてるので作りやすかったです。
-            </div>
+            <div className={itemName}>{prof.secondPosition[0].name}</div>
+            <div className={itemSpec}>{prof.secondPosition[0].spec}</div>
+
+            <div className={itemName}>{prof.secondPosition[1].name}</div>
+            <div className={itemSpec}>{prof.secondPosition[1].spec}</div>
           </MediaQuery>
         </div>
       </ContentArea>
