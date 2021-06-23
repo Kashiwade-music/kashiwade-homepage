@@ -9,6 +9,7 @@
   transition: all 0.3s;
   border: solid 1px #ddd;
   position: relative;
+  margin-bottom: 0em;
 }
 .box:hover {
   opacity: 0.8;
