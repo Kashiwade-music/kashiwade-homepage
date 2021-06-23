@@ -3,14 +3,12 @@
   position: relative;
   z-index: 0;
   overflow: hidden;
-  border-bottom: solid 1px #ddd;
 }
 .headerSmartphone {
   height: 150px;
   position: relative;
   z-index: 0;
   overflow: hidden;
-  border-bottom: solid 1px #ddd;
 }
 .header:before {
   content: "";
@@ -56,6 +54,7 @@
   height: 70px;
   position: relative;
   z-index: 0;
+  border-top: solid 1px #ddd;
   border-bottom: solid 1px #ddd;
 }
 .headerDescription {
