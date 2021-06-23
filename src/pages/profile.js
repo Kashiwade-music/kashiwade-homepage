@@ -30,6 +30,7 @@ const IndexPage = () => {
                 src="../images/kashiwade_sironora_normal_trim8-9.png"
                 height={400}
                 quality={100}
+                layout="fullWidth"
               />
               <div className={detailsContainer}>
                 <div className={details}>
@@ -39,8 +40,16 @@ const IndexPage = () => {
                     <br />
                     壮大さを売りとしてコツコツ曲を作っています。
                   </div>
-                  <div className={itemName}>Specialty</div>
-                  <div className={itemSpec}>耳コピ・ピアノ</div>
+                </div>
+                <div className={details}>
+                  <div className={itemName}>Hobby</div>
+                  <div className={itemSpec}>
+                    耳コピ・ピアノ
+                    <br />
+                    原神・ウマ娘
+                  </div>
+                </div>
+                <div className={details}>
                   <div className={itemName}>About Icon</div>
                   <div className={itemSpec}>
                     アイコンは
@@ -49,8 +58,21 @@ const IndexPage = () => {
                   </div>
                 </div>
                 <div className={details}>
-                  <div className={itemName}>Description</div>
-                  <div className={itemSpec}>hogehoge</div>
+                  <div className={itemName}>Favorite Plugins</div>
+                  <div className={itemSpec}>
+                    EASTWEST Hollywood Orchestra Diamond、
+                    <br />
+                    Heavyocity Gravity、
+                    <br />
+                    Liquidsonics Cinematic Rooms Professional
+                  </div>
+                </div>
+                <div className={details}>
+                  <div className={itemName}>This Web page</div>
+                  <div className={itemSpec}>
+                    ReactベースのStatic Site
+                    Generator、GatsbyJSを使って無地から作ってみました。ドキュメントがしっかりしてるので作りやすかったです。
+                  </div>
                 </div>
               </div>
             </div>
@@ -61,6 +83,7 @@ const IndexPage = () => {
                 src="../images/kashiwade_sironora_normal_trim8-9.png"
                 height={400}
                 quality={100}
+                layout="fullWidth"
               />
 
               <div className={details}>
@@ -70,17 +93,32 @@ const IndexPage = () => {
                   <br />
                   壮大さを売りとしてコツコツ曲を作っています。
                 </div>
-                <div className={itemName}>Specialty</div>
-                <div className={itemSpec}>耳コピ・ピアノ</div>
+                <div className={itemName}>Hobby</div>
+                <div className={itemSpec}>
+                  耳コピ・ピアノ
+                  <br />
+                  原神・ウマ娘
+                </div>
                 <div className={itemName}>About Icon</div>
                 <div className={itemSpec}>
                   アイコンは
                   <a href="https://twitter.com/_sironora_">sironoraさん</a>
                   に描いて頂いたものです！すんごいかわいい。
                 </div>
-                <div className={itemName}>Description</div>
-                <div className={itemSpec}>hogehoge</div>
               </div>
+            </div>
+            <div className={itemName}>Favorite Plugins</div>
+            <div className={itemSpec}>
+              EASTWEST Hollywood Orchestra Diamond、
+              <br />
+              Heavyocity Gravity、
+              <br />
+              Liquidsonics Cinematic Rooms Professional
+            </div>
+            <div className={itemName}>This Web page</div>
+            <div className={itemSpec}>
+              ReactベースのStatic Site
+              Generator、GatsbyJSを無地から作ってみました。ドキュメントがしっかりしてるので作りやすかったです。
             </div>
           </MediaQuery>
         </div>
