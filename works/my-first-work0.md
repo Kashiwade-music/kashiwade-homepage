@@ -1,6 +1,6 @@
 ---
-slug: "/works/my-first-postt"
-date: "2021-06-23"
+slug: "/works/my-first-posttt"
+date: "2021-06-30"
 title: "曲ができました！！！！"
 description: "新しく曲ができました"
 description-long: "hogehoaosduhfoaushfowuhefoawuhoduhf！！やるわ～"

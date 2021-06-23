@@ -41,13 +41,13 @@
   max-width: 150px;
   height: 20px;
   border-radius: 5px;
-  padding: 0 1em;
-  background-color: #aaa;
+  padding: 0 0.5em;
+  background-color: #fff;
   border: 1px solid #aaa;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #fff;
+  color: rgb(107, 107, 107);
   font-size: 12px;
   text-decoration: none;
   -webkit-transition: 0.2s;
@@ -55,9 +55,9 @@
   box-sizing: border-box;
 }
 .tag:hover {
-  background-color: #2196f3;
-  border: 1px solid #2196f3;
-  color: #fff;
+  background-color: rgb(147, 147, 147);
+  border: 1px solid rgb(147, 147, 147);
+  color: rgb(44, 43, 43);
 }
 .tag:before {
   content: "#";

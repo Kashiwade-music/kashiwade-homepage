@@ -1,9 +1,9 @@
 ---
-slug: "/works/my-first-postt"
-date: "2021-06-23"
+slug: "/blog/my-first-post"
+date: "2021-06-22"
 title: "曲ができました！！！！"
 description: "新しく曲ができました"
-description-long: "hogehoaosduhfoaushfowuhefoawuhoduhf！！やるわ～"
+description-long: "hogehoaosduhfoaushfowuhefoawuhoduhf！！hogehoaosduhfoaushfowuhefoawuhoduhf！！やるわ～"
 tag: "Original"
 type: "song"
 booth: ""
