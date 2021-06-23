@@ -17,7 +17,11 @@ export default function Template({
     return (
       <div>
         <NavBar currentPage="works" />
-        <Header pageTitle="Works" />
+        <Header pageTitle="Works">
+          制作した作品です。
+          <br />
+          {frontmatter.description}
+        </Header>
 
         <ContentArea>
           <WorkPostContent markdownRemark={markdownRemark} />

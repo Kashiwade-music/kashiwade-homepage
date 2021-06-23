@@ -1,5 +1,11 @@
 .contentAreaCSS {
   height: auto;
-  margin: 2rem auto;
+  margin: auto;
+  padding: 2em;
   max-width: 1200px;
+  background-color: #fff;
+}
+.outer {
+  margin: auto;
+  background-color: rgb(236, 236, 236);
 }
