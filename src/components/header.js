@@ -1,8 +1,6 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import MediaQuery from "react-responsive";
 import "react-modern-drawer/dist/index.css";
-import { StaticImage } from "gatsby-plugin-image";
 import {
   header,
   headerSmartphone,

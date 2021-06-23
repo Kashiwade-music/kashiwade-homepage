@@ -1,0 +1,114 @@
+.header {
+  height: 750px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+.headerSmartphone {
+  height: 500px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+.header:before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  transform: rotate(-9deg);
+  background-image: url("../images/header-background-loop.svg");
+  background-size: 500px 500px;
+  background-repeat: repeat;
+  opacity: 0.15;
+  animation: bgiLoop 40000s linear infinite;
+}
+@keyframes bgiLoop {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 500px 1578437px;
+  }
+}
+.headerSmartphone:before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  transform: rotate(-9deg);
+  background-image: url("../images/header-background-loop.svg");
+  background-size: 500px 500px;
+  background-repeat: repeat;
+  opacity: 0.15;
+}
+.campus {
+  height: auto;
+  margin: auto;
+  max-width: 1600px;
+  position: relative;
+  backface-visibility: hidden;
+}
+.headerImage1 {
+  right: 0%;
+  z-index: 2;
+  position: absolute;
+
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.headerImage1IMG {
+  visibility: visible;
+}
+.headerImage1:hover .headerImage1IMG {
+  visibility: hidden;
+}
+.headerImage2 {
+  right: 0%;
+  z-index: 1;
+  position: absolute;
+}
+.headerTitle {
+  font-size: 55px;
+  font-family: "Kanit";
+  font-weight: 200;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+}
+.headerDescriptionColumn {
+  height: 70px;
+  position: relative;
+  z-index: 0;
+  border-top: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+}
+.headerDescription {
+  text-align: center;
+  position: absolute;
+  font-family: "Noto Sans JP", sans-serif;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.headerTitleBottomLine {
+  width: 350px;
+  text-align: center;
+  position: absolute;
+  z-index: 0;
+  top: 57%;
+  left: 50.5%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+}
