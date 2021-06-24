@@ -213,7 +213,15 @@
   position: absolute;
   backface-visibility: hidden;
   overflow: hidden;
-  animation: imgLoop 1s linear;
+  animation: imgLoop 1s linear, delay 2s step-end 0s normal forwards;
+}
+@keyframes delay {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
 }
 .headerImage2IMG {
   visibility: hidden;

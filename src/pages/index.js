@@ -11,9 +11,8 @@ const IndexPage = () => {
   return (
     <div>
       <NavBar currentPage="index" />
-      <TopHeader>
-        <h1>曲をつくっています</h1>
-      </TopHeader>
+      <TopHeader />
+
       <ContentArea>hoge</ContentArea>
       <Footer />
     </div>
