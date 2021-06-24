@@ -4,7 +4,6 @@ import NavBar from "../components/navBar";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import ContentArea from "../components/contentArea";
-import { StaticImage } from "gatsby-plugin-image";
 import {
   linkTextDecoration,
   boxArea,

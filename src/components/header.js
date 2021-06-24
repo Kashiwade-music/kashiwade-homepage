@@ -1,5 +1,5 @@
 import * as React from "react";
-import MediaQuery from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 import "react-modern-drawer/dist/index.css";
 import {
   header,
@@ -22,60 +22,70 @@ const Header = ({ pageTitle, children }) => {
   } else if (pageTitle === "Links") {
     headerTitleBottomLineSVG = headerTitleBottomLineSVG3;
   }
+  const isDesktopOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
+  //if window size is bigger than 600px, isDesktopOrMobile has "false"
   if (children != null) {
     return (
       <header>
-        <MediaQuery query="(max-width: 600px)">
-          <div className={headerSmartphone}>
-            <h1>
-              <div className={headerTitle}>{pageTitle}</div>
-            </h1>
-            <div className={headerTitleBottomLine}>
-              <img src={headerTitleBottomLineSVG} />
+        {isDesktopOrMobile && (
+          <div>
+            <div className={headerSmartphone}>
+              <h1>
+                <div className={headerTitle}>{pageTitle}</div>
+              </h1>
+              <div className={headerTitleBottomLine}>
+                <img src={headerTitleBottomLineSVG} />
+              </div>
+            </div>
+            <div className={headerDescriptionColumn}>
+              <div className={headerDescription}>{children}</div>
             </div>
           </div>
-          <div className={headerDescriptionColumn}>
-            <div className={headerDescription}>{children}</div>
-          </div>
-        </MediaQuery>
-        <MediaQuery query="(min-width: 600px)">
-          <div className={header}>
-            <h1>
-              <div className={headerTitle}>{pageTitle}</div>
-            </h1>
-            <div className={headerTitleBottomLine}>
-              <img src={headerTitleBottomLineSVG} />
+        )}
+        {!isDesktopOrMobile && (
+          <div>
+            <div className={header}>
+              <h1>
+                <div className={headerTitle}>{pageTitle}</div>
+              </h1>
+              <div className={headerTitleBottomLine}>
+                <img src={headerTitleBottomLineSVG} />
+              </div>
+            </div>
+            <div className={headerDescriptionColumn}>
+              <div className={headerDescription}>{children}</div>
             </div>
           </div>
-          <div className={headerDescriptionColumn}>
-            <div className={headerDescription}>{children}</div>
-          </div>
-        </MediaQuery>
+        )}
       </header>
     );
   } else {
     return (
       <header>
-        <MediaQuery query="(max-width: 600px)">
-          <div className={headerSmartphone}>
-            <h1>
-              <div className={headerTitle}>{pageTitle}</div>
-            </h1>
-            <div className={headerTitleBottomLine}>
-              <img src={headerTitleBottomLineSVG} />
+        {isDesktopOrMobile && (
+          <div>
+            <div className={headerSmartphone}>
+              <h1>
+                <div className={headerTitle}>{pageTitle}</div>
+              </h1>
+              <div className={headerTitleBottomLine}>
+                <img src={headerTitleBottomLineSVG} />
+              </div>
             </div>
           </div>
-        </MediaQuery>
-        <MediaQuery query="(min-width: 600px)">
-          <div className={header}>
-            <h1>
-              <div className={headerTitle}>{pageTitle}</div>
-            </h1>
-            <div className={headerTitleBottomLine}>
-              <img src={headerTitleBottomLineSVG} />
+        )}
+        {!isDesktopOrMobile && (
+          <div>
+            <div className={header}>
+              <h1>
+                <div className={headerTitle}>{pageTitle}</div>
+              </h1>
+              <div className={headerTitleBottomLine}>
+                <img src={headerTitleBottomLineSVG} />
+              </div>
             </div>
           </div>
-        </MediaQuery>
+        )}
       </header>
     );
   }

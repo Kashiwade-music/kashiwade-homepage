@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 import {
   footer,
   snsSoundcloud,
@@ -12,7 +10,6 @@ import {
   faSoundcloud,
   faTwitter,
   faYoutube,
-  faBandcamp,
 } from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
   return (
