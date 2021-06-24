@@ -9,6 +9,8 @@ import {
   headerImage1,
   headerImage1IMG,
   headerImage2,
+  headerImage2IMG,
+  topMessageBox,
   campus,
   headerTitleBottomLine,
   headerDescriptionColumn,
@@ -27,15 +29,20 @@ const TopHeader = () => {
               <StaticImage
                 src="../images/kashiwade_sironora_normal_closeMouth_alphaChannel_trimmed.png"
                 layout="fixed"
-                className={headerImage1IMG}
+                placeholder="none"
+                quality={100}
               />
             </div>
             <div className={headerImage2}>
               <StaticImage
                 src="../images/kashiwade_sironora_smile_closeMouth_alphaChannel_trimmed.png"
                 layout="fixed"
+                className={headerImage2IMG}
+                placeholder="none"
+                quality={100}
               />
             </div>
+            <div className={topMessageBox}>Kashiwade.works</div>
           </div>
           <div className={headerTitleBottomLine}>
             <img src={headerTitleBottomLineSVG} />
