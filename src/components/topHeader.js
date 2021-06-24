@@ -11,6 +11,11 @@ import {
   headerImage2,
   headerImage2IMG,
   topMessageBox,
+  passingBox,
+  passingBar1,
+  passingBar2,
+  passingBar3,
+  passingTxt,
   campus,
   headerTitleBottomLine,
   headerDescriptionColumn,
@@ -22,7 +27,7 @@ const TopHeader = () => {
 
   return (
     <header>
-      <MediaQuery query="(min-width: 600px)">
+      <MediaQuery query="(min-width: 850px)">
         <div className={header}>
           <div className={campus}>
             <div className={headerImage1}>
@@ -42,7 +47,53 @@ const TopHeader = () => {
                 quality={100}
               />
             </div>
-            <div className={topMessageBox}>Kashiwade.works</div>
+            <div className={topMessageBox}>
+              <div className={passingBar1}>
+                <div className={passingBar2}>
+                  <div className={passingBar3}>
+                    <div className={passingTxt}>Kashiwade.work</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={headerTitleBottomLine}>
+            <img src={headerTitleBottomLineSVG} />
+          </div>
+        </div>
+        <div className={headerDescriptionColumn}>
+          <div className={headerDescription}>hoge</div>
+        </div>
+      </MediaQuery>
+      <MediaQuery query="(max-width: 850px)">
+        <div className={header}>
+          <div className={campus}>
+            <div className={headerImage1}>
+              <StaticImage
+                src="../images/kashiwade_sironora_normal_closeMouth_alphaChannel_trimmed.png"
+                layout="fixed"
+                placeholder="none"
+                quality={100}
+              />
+            </div>
+            <div className={headerImage2}>
+              <StaticImage
+                src="../images/kashiwade_sironora_smile_closeMouth_alphaChannel_trimmed.png"
+                layout="fixed"
+                className={headerImage2IMG}
+                placeholder="none"
+                quality={100}
+              />
+            </div>
+            <div className={topMessageBox}>
+              <div className={passingBar1}>
+                <div className={passingBar2}>
+                  <div className={passingBar3}>
+                    <div className={passingTxt}>Kashiwade.work</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className={headerTitleBottomLine}>
             <img src={headerTitleBottomLineSVG} />
