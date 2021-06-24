@@ -64,7 +64,9 @@ const TopHeader = () => {
             </div>
           </div>
           <div className={headerDescriptionColumn}>
-            <div className={headerDescription}>hoge</div>
+            <div className={headerDescription}>
+              <br />
+            </div>
           </div>
         </div>
       )}
@@ -104,7 +106,9 @@ const TopHeader = () => {
             </div>
           </div>
           <div className={headerDescriptionColumn}>
-            <div className={headerDescription}>hoge</div>
+            <div className={headerDescription}>
+              <br />
+            </div>
           </div>
         </div>
       )}

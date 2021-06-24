@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { useMediaQuery } from "react-responsive";
 import Drawer from "react-modern-drawer";
-import "react-modern-drawer/dist/index.css";
+
 import {
   navBar,
   navTop,
