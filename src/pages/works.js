@@ -18,11 +18,11 @@ const IndexPage = ({ data }) => {
       <HeadMeta
         pageUrl={"/works"}
         pageTitle={"Works"}
-        pageDescription={"制作した作品の一覧です。"}
+        pageDescription={"ここ数年で制作した作品の一覧です。"}
       />
       <NavBar currentPage="works" />
       <Header pageTitle="Works">
-        制作した作品の一覧です。
+        ここ数年で制作した作品の一覧です。
         <br />
         大部分がYouTubeやSoundcloudに上がっています。
       </Header>
