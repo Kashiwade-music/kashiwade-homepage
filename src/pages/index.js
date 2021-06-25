@@ -1,11 +1,11 @@
 // Step 1: Import React
 import * as React from "react";
+import HeadMeta from "../components/headMeta";
 import NavBar from "../components/navBar";
 import TopHeader from "../components/topHeader";
 import Footer from "../components/footer";
 import ContentArea from "../components/contentArea";
 import ContentLinkBoxArea from "../components/contentLinkBoxArea";
-import { StaticImage } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
 import {
   header,
@@ -22,7 +22,8 @@ const IndexPage = ({ data }) => {
     /\/works\//i.test(edge.node.frontmatter.slug)
   );
   return (
-    <div>
+    <>
+      <HeadMeta />
       <NavBar currentPage="index" />
       <TopHeader />
 
@@ -41,7 +42,7 @@ const IndexPage = ({ data }) => {
         </div>
       </ContentArea>
       <Footer />
-    </div>
+    </>
   );
 };
 // Step 3: Export your component

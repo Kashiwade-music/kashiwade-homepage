@@ -36,7 +36,7 @@ const NavBar = ({ currentPage }) => {
     <nav className={navBar}>
       <MediaQuery query="(max-width: 600px)">
         <Link to="/" className={navTopSmartphone}>
-          Kashiwade music
+          Kashiwade.work
         </Link>
 
         <button onClick={toggleDrawer} className={navHumbergButton}>
@@ -78,7 +78,7 @@ const NavBar = ({ currentPage }) => {
       </MediaQuery>
       <MediaQuery query="(min-width: 601px)">
         <Link to="/" className={navTop}>
-          Kashiwade music
+          Kashiwade.work
         </Link>
 
         <div className={navContentBox}>

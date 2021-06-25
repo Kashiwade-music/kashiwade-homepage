@@ -1,6 +1,6 @@
 // Step 1: Import React
 import * as React from "react";
-
+import HeadMeta from "../components/headMeta";
 import NavBar from "../components/navBar";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -14,7 +14,12 @@ const IndexPage = ({ data }) => {
     /\/works\//i.test(edge.node.frontmatter.slug)
   );
   return (
-    <div>
+    <>
+      <HeadMeta
+        pageUrl={"/works"}
+        pageTitle={"Works"}
+        pageDescription={"制作した作品の一覧です。"}
+      />
       <NavBar currentPage="works" />
       <Header pageTitle="Works">
         制作した作品の一覧です。
@@ -25,7 +30,7 @@ const IndexPage = ({ data }) => {
         <ContentLinkBoxArea edges={filteredEdges} />
       </ContentArea>
       <Footer />
-    </div>
+    </>
   );
 };
 // Step 3: Export your component
