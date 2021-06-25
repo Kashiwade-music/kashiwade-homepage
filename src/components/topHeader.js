@@ -3,18 +3,15 @@ import { useMediaQuery } from "react-responsive";
 import MediaQuery from "react-responsive";
 import { StaticImage } from "gatsby-plugin-image";
 import {
+  headWrap,
   header,
-  headerSmartphone,
-  headerTitle,
   headerImage1,
   headerImage1Smartphone,
-  headerImage1IMG,
   headerImage2,
   headerImage2IMG,
   topMessageBox,
   topMessageBoxMini,
   topMessageBoxSmartphone,
-  passingBox,
   passingBar1,
   passingBar2,
   passingBar3,
@@ -30,7 +27,7 @@ const TopHeader = () => {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
   //if window size is bigger than 600px, isDesktopOrMobile has "false"
   return (
-    <header>
+    <header className={headWrap}>
       <MediaQuery maxWidth={600}>
         <div className={header}>
           <div className={campus}>
@@ -38,7 +35,7 @@ const TopHeader = () => {
               <StaticImage
                 src="../images/kashiwade_sironora_normal_closeMouth_alphaChannel_sp.png"
                 layout="fixed"
-                placeholder="none"
+                placeholder="blurred"
                 quality={100}
                 alt=""
               />
@@ -71,7 +68,7 @@ const TopHeader = () => {
               <StaticImage
                 src="../images/kashiwade_sironora_normal_closeMouth_alphaChannel_trimmed.png"
                 layout="fixed"
-                placeholder="none"
+                placeholder="blurred"
                 quality={100}
                 alt=""
               />
@@ -81,7 +78,7 @@ const TopHeader = () => {
                 src="../images/kashiwade_sironora_smile_closeMouth_alphaChannel_trimmed.png"
                 layout="fixed"
                 className={headerImage2IMG}
-                placeholder="none"
+                placeholder="blurred"
                 quality={100}
                 alt=""
               />
@@ -113,7 +110,7 @@ const TopHeader = () => {
               <StaticImage
                 src="../images/kashiwade_sironora_normal_closeMouth_alphaChannel_trimmed.png"
                 layout="fixed"
-                placeholder="none"
+                placeholder="blurred"
                 quality={100}
                 alt=""
               />
@@ -123,7 +120,7 @@ const TopHeader = () => {
                 src="../images/kashiwade_sironora_smile_closeMouth_alphaChannel_trimmed.png"
                 layout="fixed"
                 className={headerImage2IMG}
-                placeholder="none"
+                placeholder="blurred"
                 quality={100}
                 alt=""
               />
