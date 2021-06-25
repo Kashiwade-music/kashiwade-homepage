@@ -16,7 +16,7 @@ const HeadMeta = ({ pageUrl, pageTitle, pageDescription, pageHero }) => {
       }
     }
   `);
-  console.log(data);
+
   const siteMetadata = data.site.siteMetadata;
   return (
     <Helmet
