@@ -1,5 +1,6 @@
 // Step 1: Import React
 import * as React from "react";
+import HeadMeta from "../components/headMeta";
 import NavBar from "../components/navBar";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -80,7 +81,12 @@ const IndexPage = () => {
     ],
   };
   return (
-    <div>
+    <>
+      <HeadMeta
+        pageUrl={"/profile"}
+        pageTitle={"Profile"}
+        pageDescription={"自己紹介です。"}
+      />
       <NavBar currentPage="profile" />
       <Header pageTitle="Profile">自己紹介です。</Header>
       <ContentArea>
@@ -174,7 +180,7 @@ const IndexPage = () => {
         </div>
       </ContentArea>
       <Footer />
-    </div>
+    </>
   );
 };
 // Step 3: Export your component

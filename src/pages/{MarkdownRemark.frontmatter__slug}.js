@@ -3,6 +3,7 @@
 //blogディレクトリへの対応は容易
 import React from "react";
 import { graphql } from "gatsby";
+import HeadMeta from "../components/headMeta";
 import NavBar from "../components/navBar";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -16,6 +17,14 @@ export default function Template({
   if (/\/works\//i.test(frontmatter.slug)) {
     return (
       <div>
+        <HeadMeta
+          pageUrl={frontmatter.slug}
+          pageTitle={frontmatter.title}
+          pageDescription={frontmatter.description_long}
+          pageHero={
+            frontmatter.hero.childImageSharp.gatsbyImageData.images.fallback.src
+          }
+        />
         <NavBar currentPage="works" />
         <Header pageTitle="Works">
           制作した作品です。

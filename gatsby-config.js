@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "kashiwade-homepage",
+    title: "Kashiwade.work",
     siteUrl: `https://kashiwade.work`,
+    description: `カシワデ / Kashiwadeのホームページです。音楽制作をしています。`,
   },
   plugins: [
     "gatsby-plugin-gatsby-cloud",
@@ -9,6 +10,7 @@ module.exports = {
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
