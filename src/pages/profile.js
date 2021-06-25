@@ -95,6 +95,7 @@ const IndexPage = () => {
                     height={400}
                     quality={100}
                     layout="fullWidth"
+                    alt=""
                   />
                 </div>
                 <div className="each-slide">
@@ -103,6 +104,7 @@ const IndexPage = () => {
                     quality={100}
                     height={400}
                     layout="fullWidth"
+                    alt=""
                   />
                 </div>
               </Slide>
@@ -140,6 +142,7 @@ const IndexPage = () => {
                     height={400}
                     quality={100}
                     layout="fullWidth"
+                    alt=""
                   />
                 </div>
                 <div className="each-slide">
@@ -148,6 +151,7 @@ const IndexPage = () => {
                     quality={100}
                     height={400}
                     layout="fullWidth"
+                    alt=""
                   />
                 </div>
               </Slide>

@@ -40,6 +40,7 @@ const TopHeader = () => {
                 layout="fixed"
                 placeholder="none"
                 quality={100}
+                alt=""
               />
             </div>
             <div></div>
@@ -72,6 +73,7 @@ const TopHeader = () => {
                 layout="fixed"
                 placeholder="none"
                 quality={100}
+                alt=""
               />
             </div>
             <div className={headerImage2}>
@@ -81,6 +83,7 @@ const TopHeader = () => {
                 className={headerImage2IMG}
                 placeholder="none"
                 quality={100}
+                alt=""
               />
             </div>
             <div className={topMessageBoxMini}>
@@ -112,6 +115,7 @@ const TopHeader = () => {
                 layout="fixed"
                 placeholder="none"
                 quality={100}
+                alt=""
               />
             </div>
             <div className={headerImage2}>
@@ -121,6 +125,7 @@ const TopHeader = () => {
                 className={headerImage2IMG}
                 placeholder="none"
                 quality={100}
+                alt=""
               />
             </div>
             <div className={topMessageBox}>
