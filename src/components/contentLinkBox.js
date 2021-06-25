@@ -15,7 +15,7 @@ const contentLinkBox = ({ node }) => {
   return (
     <Link to={node.frontmatter.slug} className={linkTextDecoration}>
       <div className={box}>
-        <GatsbyImage image={image} aspectRatio={1} />
+        <GatsbyImage image={image} aspectRatio={1} alt="" />
         <div className={title}>{node.frontmatter.title}</div>
         <div className={tags}>
           <ul className={tagUl}>

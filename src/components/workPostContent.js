@@ -20,7 +20,7 @@ const WorkPostContent = ({ markdownRemark }) => {
     return (
       <div>
         <div className={workPostContainer}>
-          <GatsbyImage image={image} aspectRatio={1} />
+          <GatsbyImage image={image} aspectRatio={1} alt="" />
           <div className={details}>
             <div className={itemName}>Title</div>
             <h1 className={itemSpec}>{frontmatter.title}</h1>
@@ -42,7 +42,7 @@ const WorkPostContent = ({ markdownRemark }) => {
         {isDesktopOrMobile && (
           <div>
             <div className={workPostContainer}>
-              <GatsbyImage image={image} aspectRatio={1} />
+              <GatsbyImage image={image} aspectRatio={1} alt="" />
               <div className={details}>
                 <div className={itemNameMini}>Title</div>
                 <h1 className={itemSpecMini}>{frontmatter.title}</h1>
@@ -69,7 +69,7 @@ const WorkPostContent = ({ markdownRemark }) => {
         {!isDesktopOrMobile && (
           <div>
             <div className={workPostContainer}>
-              <GatsbyImage image={image} aspectRatio={1} />
+              <GatsbyImage image={image} aspectRatio={1} alt="" />
               <div className={details}>
                 <div className={itemName}>Title</div>
                 <h1 className={itemSpec}>{frontmatter.title}</h1>

@@ -1,5 +1,5 @@
 ---
-slug: "/works/my-first-postttt"
+slug: "/works/my-first-posttttt"
 date: "2021-07-21"
 title: "曲ができました！！！！"
 description: "新しく曲ができました"

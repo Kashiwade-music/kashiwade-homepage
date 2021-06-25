@@ -5,7 +5,7 @@ const contentLinkBoxArea = ({ edges }) => {
   return (
     <div className={contentLinkBoxAreaCSS}>
       {edges.map((node) => (
-        <ContentLinkBox node={node.node} />
+        <ContentLinkBox node={node.node} key={node.node.frontmatter.slug} />
       ))}
     </div>
   );
