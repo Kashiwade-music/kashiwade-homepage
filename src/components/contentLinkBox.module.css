@@ -7,7 +7,7 @@
   min-width: 200px;
   opacity: 1;
   transition: all 0.3s;
-  border: solid 1px #ddd;
+
   position: relative;
   margin-bottom: 2em;
 }
@@ -16,7 +16,7 @@
 }
 
 .title {
-  margin: 3px 5px;
+  margin: 3px 0px;
   font-size: 17px;
 
   font-family: "Noto Sans JP", sans-serif;
@@ -66,7 +66,7 @@
 }
 
 .description {
-  margin: 3px 5px;
+  margin: 3px 0px;
   font-size: 15px;
   font-weight: 100;
   color: rgb(105, 104, 104);

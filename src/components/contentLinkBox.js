@@ -17,13 +17,7 @@ const contentLinkBox = ({ node }) => {
       <div className={box}>
         <GatsbyImage image={image} aspectRatio={1} alt="" />
         <div className={title}>{node.frontmatter.title}</div>
-        <div className={tags}>
-          <ul className={tagUl}>
-            <li>
-              <span className={tag}>{node.frontmatter.tag}</span>
-            </li>
-          </ul>
-        </div>
+
         <div className={description}>{node.frontmatter.description}</div>
       </div>
     </Link>
@@ -31,3 +25,12 @@ const contentLinkBox = ({ node }) => {
 };
 
 export default contentLinkBox;
+/* タグの表示
+<div className={tags}>
+          <ul className={tagUl}>
+            <li>
+              <span className={tag}>{node.frontmatter.tag}</span>
+            </li>
+          </ul>
+        </div>
+        */
