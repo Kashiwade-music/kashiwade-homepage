@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useMediaQuery } from "react-responsive";
-import "react-modern-drawer/dist/index.css";
 import {
   header,
   headerSmartphone,

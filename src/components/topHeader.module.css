@@ -96,7 +96,43 @@
   transform: translateY(-50%);
   opacity: 1;
 }
+.topMessageBoxMini {
+  font-size: 55px;
+  font-family: "Kanit";
+  font-weight: 200;
+  left: 0%;
+  z-index: 4;
+  text-align: left;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  animation: topMessageBoxSmartphoneBG 0.6s linear 1s 1 normal forwards;
+}
+.topMessageBoxSmartphone {
+  font-size: 55px;
+  font-family: "Kanit";
+  font-weight: 200;
+  background-color: rgba(255, 255, 255, 0);
+  left: 50%;
+  z-index: 4;
+  text-align: left;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  animation: topMessageBoxSmartphoneBG 0.6s linear 1s 1 normal forwards;
+}
+@keyframes topMessageBoxSmartphoneBG {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+  }
 
+  100% {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
 .passingBar1 .passingBar2 .passingBar3 {
   position: relative;
   display: inline-block;
@@ -169,8 +205,7 @@
 }
 .passingTxt {
   opacity: 0;
-  padding-left: 30px;
-
+  padding: 0 30px;
   transform: translate3d(0, 0, 0);
 
   animation: passingTxt 0s ease 0.5s 1 normal forwards;
@@ -185,7 +220,7 @@
   }
 }
 
-/**/
+/*アイコン*/
 .headerImage1 {
   right: -10%;
   z-index: 1;
@@ -195,7 +230,17 @@
   opacity: 0;
   animation: imgLoop 1s linear 0.5s normal forwards;
 }
+.headerImage1Smartphone {
+  z-index: 1;
 
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  backface-visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+  animation: imgLoop 1s linear 0.5s normal forwards;
+}
 @keyframes imgLoop {
   0% {
     opacity: 0;
@@ -215,6 +260,7 @@
   overflow: hidden;
   animation: imgLoop 1s linear, delay 2s step-end 0s normal forwards;
 }
+
 @keyframes delay {
   0% {
     visibility: hidden;
