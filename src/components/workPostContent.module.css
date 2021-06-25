@@ -1,7 +1,7 @@
 .workPostContainer {
   display: grid;
   gap: 3% 3%;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: auto;
   margin-bottom: 3em;
 }
@@ -27,17 +27,17 @@
 .itemNameMini {
   font-family: "Kanit";
   font-weight: 200;
-  font-size: 14px;
+  font-size: 16px;
   color: rgb(112, 112, 112);
   padding: 0 0 0 17px;
-  border-left: 6px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-left: 6px solid #878ac4;
+  border-bottom: 1px solid #878ac4;
 }
 
 .itemSpecMini {
   font-family: "Kanit", "Noto Sans JP", sans-serif;
   font-weight: 200;
-  font-size: 17px;
+  font-size: 16px;
   padding: 0 0 0 23px;
   margin: 7px 0;
   word-wrap: break-word;

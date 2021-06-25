@@ -3,7 +3,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useMediaQuery } from "react-responsive";
 import {
   workPostContainer,
-  details,
   itemName,
   itemSpec,
   itemNameMini,
@@ -21,7 +20,7 @@ const WorkPostContent = ({ markdownRemark }) => {
       <div>
         <div className={workPostContainer}>
           <GatsbyImage image={image} aspectRatio={1} alt="" />
-          <div className={details}>
+          <div>
             <div className={itemName}>Title</div>
             <h1 className={itemSpec}>{frontmatter.title}</h1>
             <div className={itemName}>Release Date</div>
@@ -43,7 +42,7 @@ const WorkPostContent = ({ markdownRemark }) => {
           <div>
             <div className={workPostContainer}>
               <GatsbyImage image={image} aspectRatio={1} alt="" />
-              <div className={details}>
+              <div>
                 <div className={itemNameMini}>Title</div>
                 <h1 className={itemSpecMini}>{frontmatter.title}</h1>
                 <div className={itemNameMini}>Release Date</div>
@@ -70,7 +69,7 @@ const WorkPostContent = ({ markdownRemark }) => {
           <div>
             <div className={workPostContainer}>
               <GatsbyImage image={image} aspectRatio={1} alt="" />
-              <div className={details}>
+              <div>
                 <div className={itemName}>Title</div>
                 <h1 className={itemSpec}>{frontmatter.title}</h1>
                 <div className={itemName}>Release Date</div>

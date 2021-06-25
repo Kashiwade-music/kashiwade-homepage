@@ -12,7 +12,6 @@ import {
   profileContainer,
   profileContainerMini,
   detailsContainer,
-  details,
   itemName,
   itemSpec,
   ulContent,
@@ -116,23 +115,23 @@ const IndexPage = () => {
               </Slide>
 
               <div className={detailsContainer}>
-                <div className={details}>
+                <div>
                   <div className={itemName}>{prof.firstPosition[0].name}</div>
                   <div className={itemSpec}>{prof.firstPosition[0].spec}</div>
                 </div>
-                <div className={details}>
+                <div>
                   <div className={itemName}>{prof.firstPosition[1].name}</div>
                   <div className={itemSpec}>{prof.firstPosition[1].spec}</div>
                 </div>
-                <div className={details}>
+                <div>
                   <div className={itemName}>{prof.firstPosition[2].name}</div>
                   <div className={itemSpec}>{prof.firstPosition[2].spec}</div>
                 </div>
-                <div className={details}>
+                <div>
                   <div className={itemName}>{prof.secondPosition[0].name}</div>
                   <div className={itemSpec}>{prof.secondPosition[0].spec}</div>
                 </div>
-                <div className={details}>
+                <div>
                   <div className={itemName}>{prof.secondPosition[1].name}</div>
                   <div className={itemSpec}>{prof.secondPosition[1].spec}</div>
                 </div>
@@ -162,7 +161,7 @@ const IndexPage = () => {
                 </div>
               </Slide>
 
-              <div className={details}>
+              <div>
                 <div className={itemName}>{prof.firstPosition[0].name}</div>
                 <div className={itemSpec}>{prof.firstPosition[0].spec}</div>
                 <div className={itemName}>{prof.firstPosition[1].name}</div>
