@@ -131,14 +131,26 @@ const IndexPage = () => {
               </div>
             </div>
           </MediaQuery>
-          <MediaQuery query="(max-width: 1050px)">
+          <MediaQuery query="(max-width: 1051px)">
             <div className={profileContainerMini}>
-              <StaticImage
-                src="../images/kashiwade_sironora_normal_trim8-9.png"
-                height={400}
-                quality={100}
-                layout="fullWidth"
-              />
+              <Slide easing="ease">
+                <div className="each-slide">
+                  <StaticImage
+                    src="../images/kashiwade_sironora_normal_trim8-9.png"
+                    height={400}
+                    quality={100}
+                    layout="fullWidth"
+                  />
+                </div>
+                <div className="each-slide">
+                  <StaticImage
+                    src="../images/kashiwade_logo.png"
+                    quality={100}
+                    height={400}
+                    layout="fullWidth"
+                  />
+                </div>
+              </Slide>
 
               <div className={details}>
                 <div className={itemName}>{prof.firstPosition[0].name}</div>
