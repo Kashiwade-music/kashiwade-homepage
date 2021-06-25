@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => {
         <div className={header}>
           <div className={headerTitle}>Latest Works</div>
           <div className={headerTitleBottomLine}>
-            <img src={headerTitleBottomLineSVG} />
+            <img src={headerTitleBottomLineSVG} width={350} height={61.39} />
           </div>{" "}
         </div>
         <ContentLinkBoxArea edges={filteredEdges} centering={true} />

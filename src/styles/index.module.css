@@ -20,6 +20,7 @@
   transform: translateY(-50%) translateX(-50%);
 }
 .headerTitleBottomLine {
+  height: auto;
   width: 350px;
   text-align: center;
   position: absolute;

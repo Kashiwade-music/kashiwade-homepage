@@ -51,9 +51,6 @@ const TopHeader = () => {
               </div>
             </div>
           </div>
-          <div className={headerTitleBottomLine}>
-            <img src={headerTitleBottomLineSVG} />
-          </div>
         </div>
         <div className={headerDescriptionColumn}>
           <div className={headerDescription}>
@@ -93,9 +90,6 @@ const TopHeader = () => {
               </div>
             </div>
           </div>
-          <div className={headerTitleBottomLine}>
-            <img src={headerTitleBottomLineSVG} />
-          </div>
         </div>
         <div className={headerDescriptionColumn}>
           <div className={headerDescription}>
@@ -134,9 +128,6 @@ const TopHeader = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className={headerTitleBottomLine}>
-            <img src={headerTitleBottomLineSVG} />
           </div>
         </div>
         <div className={headerDescriptionColumn}>
