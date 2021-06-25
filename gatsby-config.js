@@ -1,12 +1,14 @@
 module.exports = {
   siteMetadata: {
     title: "kashiwade-homepage",
+    siteUrl: `https://kashiwade.work`,
   },
   plugins: [
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
