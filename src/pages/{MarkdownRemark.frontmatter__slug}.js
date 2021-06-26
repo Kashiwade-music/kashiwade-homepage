@@ -16,7 +16,7 @@ export default function Template({
   const { frontmatter, html } = markdownRemark;
   if (/\/works\//i.test(frontmatter.slug)) {
     return (
-      <div>
+      <>
         <HeadMeta
           pageUrl={frontmatter.slug}
           pageTitle={frontmatter.title}
@@ -36,13 +36,13 @@ export default function Template({
           <WorkPostContent markdownRemark={markdownRemark} />
         </ContentArea>
         <Footer />
-      </div>
+      </>
     );
   } else {
-    <div>
+    <>
       <NavBar currentPage="works" />
       <Footer />
-    </div>;
+    </>;
   }
 }
 export const pageQuery = graphql`

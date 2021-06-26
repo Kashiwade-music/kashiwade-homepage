@@ -1,10 +1,10 @@
 import * as React from "react";
-import { useMediaQuery } from "react-responsive";
 import MediaQuery from "react-responsive";
 import { StaticImage } from "gatsby-plugin-image";
 import {
   headWrap,
   header,
+  headerSmartphone,
   headerImage1,
   headerImage1Smartphone,
   headerImage2,
@@ -17,27 +17,24 @@ import {
   passingBar3,
   passingTxt,
   campus,
-  headerTitleBottomLine,
   headerDescriptionColumn,
   headerDescription,
 } from "./topHeader.module.css";
 
 const TopHeader = () => {
-  let headerTitleBottomLineSVG;
-  const isDesktopOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
-  //if window size is bigger than 600px, isDesktopOrMobile has "false"
   return (
     <header className={headWrap}>
       <MediaQuery maxWidth={600}>
-        <div className={header}>
+        <div className={headerSmartphone}>
           <div className={campus}>
             <div className={headerImage1Smartphone}>
               <StaticImage
                 src="../images/kashiwade_sironora_normal_closeMouth_alphaChannel_sp.png"
                 layout="fixed"
-                placeholder="blurred"
+                placeholder="none"
                 quality={100}
                 alt=""
+                width={550}
               />
             </div>
             <div></div>
@@ -53,9 +50,7 @@ const TopHeader = () => {
           </div>
         </div>
         <div className={headerDescriptionColumn}>
-          <div className={headerDescription}>
-            <br />
-          </div>
+          <div className={headerDescription}>ようこそ！</div>
         </div>
       </MediaQuery>
       <MediaQuery minWidth={601} maxWidth={850}>
@@ -65,7 +60,7 @@ const TopHeader = () => {
               <StaticImage
                 src="../images/kashiwade_sironora_normal_closeMouth_alphaChannel_trimmed.png"
                 layout="fixed"
-                placeholder="blurred"
+                placeholder="none"
                 quality={100}
                 alt=""
               />
@@ -75,7 +70,7 @@ const TopHeader = () => {
                 src="../images/kashiwade_sironora_smile_closeMouth_alphaChannel_trimmed.png"
                 layout="fixed"
                 className={headerImage2IMG}
-                placeholder="blurred"
+                placeholder="none"
                 quality={100}
                 alt=""
               />
@@ -92,9 +87,7 @@ const TopHeader = () => {
           </div>
         </div>
         <div className={headerDescriptionColumn}>
-          <div className={headerDescription}>
-            <br />
-          </div>
+          <div className={headerDescription}>ようこそ！</div>
         </div>
       </MediaQuery>
       <MediaQuery minWidth={851}>
@@ -104,7 +97,7 @@ const TopHeader = () => {
               <StaticImage
                 src="../images/kashiwade_sironora_normal_closeMouth_alphaChannel_trimmed.png"
                 layout="fixed"
-                placeholder="blurred"
+                placeholder="none"
                 quality={100}
                 alt=""
               />
@@ -114,7 +107,7 @@ const TopHeader = () => {
                 src="../images/kashiwade_sironora_smile_closeMouth_alphaChannel_trimmed.png"
                 layout="fixed"
                 className={headerImage2IMG}
-                placeholder="blurred"
+                placeholder="none"
                 quality={100}
                 alt=""
               />
@@ -131,9 +124,7 @@ const TopHeader = () => {
           </div>
         </div>
         <div className={headerDescriptionColumn}>
-          <div className={headerDescription}>
-            <br />
-          </div>
+          <div className={headerDescription}>ようこそ！</div>
         </div>
       </MediaQuery>
     </header>
