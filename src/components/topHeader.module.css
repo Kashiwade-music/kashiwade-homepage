@@ -27,7 +27,8 @@
   background-size: 500px 500px;
   background-repeat: repeat;
   opacity: 0;
-  animation: bgiLoop 40000s linear 1.8s infinite,
+  will-change: background-position;
+  animation: bgiLoop 12.5s linear 1.8s infinite,
     bgiFade 1.5s linear 1.7s 1 normal forwards;
 }
 @keyframes bgiFade {
@@ -43,7 +44,7 @@
     background-position: 0 0;
   }
   100% {
-    background-position: 500px 1578437px;
+    background-position: 0px 500px;
   }
 }
 .header:after {
@@ -78,7 +79,9 @@
   background-size: 500px 500px;
   background-repeat: repeat;
   opacity: 0;
-  animation: bgiFade 1.5s linear 1.7s 1 normal forwards;
+  will-change: background-position;
+  animation: bgiLoop 12.5s linear 1.8s infinite,
+    bgiFade 1.5s linear 1.7s 1 normal forwards;
 }
 .headerSmartphone:after {
   content: "";
