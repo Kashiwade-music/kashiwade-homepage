@@ -1,5 +1,6 @@
 .headWrap {
-  height: 822px;
+  min-height: 562px;
+  /*for PC height: 822px;*/
 }
 .header {
   height: 750px;
@@ -114,7 +115,7 @@
   animation: topMessageBoxSmartphoneBG 0.6s linear 1s 1 normal forwards;
 }
 .topMessageBoxSmartphone {
-  font-size: 55px;
+  font-size: 40px;
   font-family: "Kanit";
   font-weight: 200;
   background-color: rgba(255, 255, 255, 0);
@@ -139,7 +140,6 @@
 .passingBar1 .passingBar2 .passingBar3 {
   position: relative;
   display: inline-block;
-  transform: translate3d(0, 0, 0);
 }
 .passingBar1:before {
   content: "";
@@ -209,8 +209,6 @@
 .passingTxt {
   opacity: 0;
   padding: 0 30px;
-  transform: translate3d(0, 0, 0);
-
   animation: passingTxt 0s ease 0.5s 1 normal forwards;
 }
 

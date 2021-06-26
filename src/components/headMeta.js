@@ -34,7 +34,9 @@ const HeadMeta = ({ pageUrl, pageTitle, pageDescription, pageHero }) => {
         { name: "twitter:card", content: "summary_large_image" },
         {
           name: "twitter:title",
-          content: pageTitle,
+          content: pageTitle
+            ? `${pageTitle} | ${siteMetadata.title}`
+            : `${siteMetadata.title}`,
         },
         {
           name: "twitter:description",
@@ -59,7 +61,12 @@ const HeadMeta = ({ pageUrl, pageTitle, pageDescription, pageHero }) => {
           property: "og:description",
           content: pageDescription || siteMetadata.description,
         },
-        { property: "og:url", content: `${siteMetadata.siteUrl}${pageUrl}` },
+        {
+          property: "og:url",
+          content: pageUrl
+            ? `${siteMetadata.siteUrl}${pageUrl}`
+            : `${siteMetadata.siteUrl}`,
+        },
         {
           property: "og:image",
           content: pageHero

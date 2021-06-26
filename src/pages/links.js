@@ -1,5 +1,6 @@
 // Step 1: Import React
 import * as React from "react";
+import MediaQuery from "react-responsive";
 import HeadMeta from "../components/headMeta";
 import NavBar from "../components/navBar";
 import Header from "../components/header";
@@ -8,9 +9,12 @@ import ContentArea from "../components/contentArea";
 import {
   linkTextDecoration,
   boxArea,
+  boxAreaSmartphone,
   snsLinkBox,
   snsName,
+  snsNameSmartphone,
   snsDescription,
+  snsDescriptionSmartphone,
   snsIcon,
   snsIconAreaSoundcloud,
   snsIconAreaTwitter,
@@ -68,25 +72,48 @@ const IndexPage = () => {
       <NavBar currentPage="links" />
       <Header pageTitle="Links">SNS等のリンク集です。</Header>
       <ContentArea>
-        <div className={boxArea}>
-          {snss.map((sns) => (
-            <SnsLinkBox sns={sns} />
-          ))}
-          <a
-            href={"https://kashiwade.fanbox.cc"}
-            className={linkTextDecoration}
-          >
-            <div className={snsLinkBox}>
-              <div className={snsIconAreaPixiv}>
-                <img src={pixivLogo} className={snsIcon} height={40} />
+        <MediaQuery maxWidth={470}>
+          <div className={boxAreaSmartphone}>
+            {snss.map((sns) => (
+              <SnsLinkBox sns={sns} />
+            ))}
+            <a
+              href={"https://kashiwade.fanbox.cc"}
+              className={linkTextDecoration}
+            >
+              <div className={snsLinkBox}>
+                <div className={snsIconAreaPixiv}>
+                  <img src={pixivLogo} className={snsIcon} height={40} />
+                </div>
+                <div className={snsNameSmartphone}>pixivFANBOX</div>
+                <div className={snsDescriptionSmartphone}>
+                  支援サイトです。ちょくちょく記事を書いています。
+                </div>
               </div>
-              <div className={snsName}>pixivFANBOX</div>
-              <div className={snsDescription}>
-                支援サイトです。ちょくちょく記事を書いています。
+            </a>
+          </div>
+        </MediaQuery>
+        <MediaQuery minWidth={471}>
+          <div className={boxArea}>
+            {snss.map((sns) => (
+              <SnsLinkBox sns={sns} />
+            ))}
+            <a
+              href={"https://kashiwade.fanbox.cc"}
+              className={linkTextDecoration}
+            >
+              <div className={snsLinkBox}>
+                <div className={snsIconAreaPixiv}>
+                  <img src={pixivLogo} className={snsIcon} height={40} />
+                </div>
+                <div className={snsName}>pixivFANBOX</div>
+                <div className={snsDescription}>
+                  支援サイトです。ちょくちょく記事を書いています。
+                </div>
               </div>
-            </div>
-          </a>
-        </div>
+            </a>
+          </div>
+        </MediaQuery>
       </ContentArea>
       <Footer />
     </>
@@ -106,8 +133,14 @@ const SnsLinkBox = ({ sns }) => {
             size="6x"
           />
         </div>
-        <div className={snsName}>{sns.name}</div>
-        <div className={snsDescription}>{sns.description}</div>
+        <MediaQuery maxWidth={470}>
+          <div className={snsNameSmartphone}>{sns.name}</div>
+          <div className={snsDescriptionSmartphone}>{sns.description}</div>
+        </MediaQuery>
+        <MediaQuery minWidth={471}>
+          <div className={snsName}>{sns.name}</div>
+          <div className={snsDescription}>{sns.description}</div>
+        </MediaQuery>
       </div>
     </a>
   );

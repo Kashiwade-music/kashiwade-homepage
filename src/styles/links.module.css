@@ -9,6 +9,13 @@
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-auto-rows: max-content;
 }
+.boxAreaSmartphone {
+  margin: 0;
+  display: grid;
+  gap: 0 2%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: max-content;
+}
 .snsLinkBox {
   min-width: 200px;
   height: 125px;
@@ -34,11 +41,30 @@
   font-weight: 200;
   align-items: center;
 }
+.snsNameSmartphone {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-family: "Kanit";
+  font-size: 20px;
+  font-weight: 200;
+  align-items: center;
+}
 .snsDescription {
   display: flex;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 200;
   align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+.snsDescriptionSmartphone {
+  display: flex;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 200;
+  align-items: center;
+  font-size: 14px;
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 15px;
