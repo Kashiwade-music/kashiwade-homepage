@@ -77,7 +77,9 @@
   background-image: url("../images/header-background-loop.svg");
   background-size: 500px 500px;
   background-repeat: repeat;
-  opacity: 0.15;
+  opacity: 0;
+  animation: bgiLoop 40000s linear infinite,
+    bgiFade 1.5s linear 1.7s 1 normal forwards;
 }
 .headerSmartphone:after {
   content: "";
