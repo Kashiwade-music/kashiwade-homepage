@@ -1,4 +1,11 @@
 # Kashiwade-homepage
+## dev build
+docker(VSCode拡張のRemote-Container)使って
+
+```
+gatsby develop
+```
+でおｋ。
 
 ## ページ構造
 - index.js
