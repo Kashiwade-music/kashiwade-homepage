@@ -5,9 +5,9 @@ import {
   linkTextDecoration,
   box,
   title,
-  tags,
-  tagUl,
-  tag,
+  //tags,
+  //tagUl,
+  //tag,
   description,
 } from "./contentLinkBox.module.css";
 const contentLinkBox = ({ node }) => {
