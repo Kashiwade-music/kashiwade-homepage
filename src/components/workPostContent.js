@@ -15,7 +15,7 @@ const WorkPostContent = ({ markdownRemark }) => {
   const image = getImage(frontmatter.hero);
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width: 1100px)" });
   //if window size is bigger than 600px, isDesktopOrMobile has "false"
-  if (frontmatter.type == "song") {
+  if (frontmatter.type === "song") {
     return (
       <div>
         <div className={workPostContainer}>
