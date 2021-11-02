@@ -20,6 +20,8 @@ import {
   snsIconAreaTwitter,
   snsIconAreaYoutube,
   snsIconAreaBandcamp,
+  snsIconAreaEmail,
+  snsIconAreaPixivBooth,
   snsIconAreaPixiv,
 } from "../styles/links.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,102 +31,57 @@ import {
   faYoutube,
   faBandcamp,
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import pixivLogo from "../images/pixivLogo.svg";
-// Step 2: Define your component
-const IndexPage = () => {
-  const snss = [
-    {
-      name: "Soundcloud",
-      description: "自分の作った曲が置いてあります。YouTubeよりは新しめ。",
-      link: "https://soundcloud.com/kashiwade",
-      iconClassName: snsIconAreaSoundcloud,
-      fontAwesomeIcon: faSoundcloud,
-    },
-    {
-      name: "Youtube",
-      description: "自分の作った曲が昔のもの含めて置いてあります。",
-      link: "https://www.youtube.com/c/Kashiwade",
-      iconClassName: snsIconAreaYoutube,
-      fontAwesomeIcon: faYoutube,
-    },
-    {
-      name: "Bandcamp",
-      description: "工事中です。Under construction.",
-      link: "https://kashiwade.bandcamp.com",
-      iconClassName: snsIconAreaBandcamp,
-      fontAwesomeIcon: faBandcamp,
-    },
-    {
-      name: "Twitter",
-      description: "雑多なことをつぶやいてます。",
-      link: "https://twitter.com/Kashiwade_music",
-      iconClassName: snsIconAreaTwitter,
-      fontAwesomeIcon: faTwitter,
-    },
-  ];
-  return (
-    <>
-      <HeadMeta
-        pageUrl={"/links"}
-        pageTitle={"Links"}
-        pageDescription={"SNS等のリンク集です。"}
-      />
-      <NavBar currentPage="links" />
-      <Header pageTitle="Links">SNS等のリンク集です。</Header>
-      <ContentArea>
-        <MediaQuery maxWidth={470}>
-          <div className={boxAreaSmartphone}>
-            {snss.map((sns) => (
-              <SnsLinkBox sns={sns} />
-            ))}
-            <a
-              href={"https://kashiwade.fanbox.cc"}
-              className={linkTextDecoration}
-            >
-              <div className={snsLinkBox}>
-                <div className={snsIconAreaPixiv}>
-                  <img src={pixivLogo} className={snsIcon} height={40} />
-                </div>
-                <div className={snsNameSmartphone}>pixivFANBOX</div>
-                <div className={snsDescriptionSmartphone}>
-                  支援サイトです。ちょくちょく記事を書いています。
-                </div>
-              </div>
-            </a>
-          </div>
-        </MediaQuery>
-        <MediaQuery minWidth={471}>
-          <div className={boxArea}>
-            {snss.map((sns) => (
-              <SnsLinkBox sns={sns} />
-            ))}
-            <a
-              href={"https://kashiwade.fanbox.cc"}
-              className={linkTextDecoration}
-            >
-              <div className={snsLinkBox}>
-                <div className={snsIconAreaPixiv}>
-                  <img src={pixivLogo} className={snsIcon} height={40} />
-                </div>
-                <div className={snsName}>pixivFANBOX</div>
-                <div className={snsDescription}>
-                  支援サイトです。ちょくちょく記事を書いています。
-                </div>
-              </div>
-            </a>
-          </div>
-        </MediaQuery>
-      </ContentArea>
-      <Footer />
-    </>
-  );
-};
-// Step 3: Export your component
-export default IndexPage;
+import pixivBoothLogo from "../images/pixivBoothLogo.svg"
 
+const snsMusic = [
+  {
+    name: "Soundcloud",
+    description: "自分の作った曲が置いてあります。",
+    link: "https://soundcloud.com/kashiwade",
+    iconClassName: snsIconAreaSoundcloud,
+    fontAwesomeIcon: faSoundcloud,
+  },
+  {
+    name: "Youtube",
+    description: "自分の作った曲が昔のものも含めて置いてあります。",
+    link: "https://www.youtube.com/c/Kashiwade",
+    iconClassName: snsIconAreaYoutube,
+    fontAwesomeIcon: faYoutube,
+  },
+]
+const snsStore = [
+  {
+    name: "Bandcamp",
+    description: "工事中です。Under construction.",
+    link: "https://kashiwade.bandcamp.com",
+    iconClassName: snsIconAreaBandcamp,
+    fontAwesomeIcon: faBandcamp,
+  },
+]
+const snsText = [
+  {
+    name: "Twitter",
+    description: "雑多なことをつぶやいてます。",
+    link: "https://twitter.com/Kashiwade_music",
+    iconClassName: snsIconAreaTwitter,
+    fontAwesomeIcon: faTwitter,
+  },
+]
+
+const snsContact = [
+  {
+    name: "Email",
+    description: "お仕事の依頼や相談等はこちら。",
+    link: "mailto:kashiwade@outlook.com",
+    iconClassName: snsIconAreaEmail,
+    fontAwesomeIcon: faEnvelope,
+  }
+]
 const SnsLinkBox = ({ sns }) => {
   return (
-    <a href={sns.link} className={linkTextDecoration}>
+    <a href={sns.link} className={linkTextDecoration} target={"_blank"} rel={"noreferrer"}>
       <div className={snsLinkBox}>
         <div className={sns.iconClassName}>
           <FontAwesomeIcon
@@ -145,3 +102,89 @@ const SnsLinkBox = ({ sns }) => {
     </a>
   );
 };
+const returnSNSBoxes = (isSmartPhone = false) => {
+  return (
+    <>
+      {snsMusic.map((sns) => {
+        return <SnsLinkBox sns={sns} />
+      })}
+
+      {snsStore.map((sns) => {
+        return <SnsLinkBox sns={sns} />
+      })}
+      <a
+        href={"https://kashiwade.booth.pm"}
+        className={linkTextDecoration}
+        target={"_blank"}
+        rel={"noreferrer"}
+      >
+        <div className={snsLinkBox}>
+          <div className={snsIconAreaPixivBooth}>
+            <img src={pixivBoothLogo} className={snsIcon} height={40} />
+          </div>
+          <div className={isSmartPhone ? snsNameSmartphone : snsName}>pixivBOOTH</div>
+          <div className={isSmartPhone ? snsDescriptionSmartphone : snsDescription}>
+            アルバムのデジタル版を販売しています。
+          </div>
+        </div>
+      </a>
+
+      {snsText.map((sns) => {
+        return <SnsLinkBox sns={sns} />
+      })}
+      <a
+        href={"https://kashiwade.fanbox.cc"}
+        className={linkTextDecoration}
+        target={"_blank"}
+        rel={"noreferrer"}
+      >
+        <div className={snsLinkBox}>
+          <div className={snsIconAreaPixiv}>
+            <img src={pixivLogo} className={snsIcon} height={40} />
+          </div>
+          <div className={isSmartPhone ? snsNameSmartphone : snsName}>pixivFANBOX</div>
+          <div className={isSmartPhone ? snsDescriptionSmartphone : snsDescription}>
+            支援サイトです。ちょくちょく記事を書いています。
+          </div>
+        </div>
+      </a>
+
+      {snsContact.map((sns) => {
+        return <SnsLinkBox sns={sns} />
+      })}
+
+    </>
+  )
+}
+
+// Step 2: Define your component
+const IndexPage = () => {
+  return (
+    <>
+      <HeadMeta
+        pageUrl={"/links"}
+        pageTitle={"Links"}
+        pageDescription={"SNS等のリンク集です。"}
+      />
+      <NavBar currentPage="links" />
+      <Header pageTitle="Links">SNS等のリンク集です。</Header>
+      <ContentArea>
+        <MediaQuery maxWidth={470}>
+          <div className={boxAreaSmartphone}>
+            {returnSNSBoxes(true)}
+          </div>
+        </MediaQuery>
+        <MediaQuery minWidth={471}>
+          <div className={boxArea}>
+            {returnSNSBoxes()}
+          </div>
+        </MediaQuery>
+      </ContentArea>
+      <Footer />
+    </>
+  );
+};
+// Step 3: Export your component
+export default IndexPage;
+
+

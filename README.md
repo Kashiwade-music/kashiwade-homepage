@@ -61,3 +61,49 @@ hero: ./20210309-hello-new-world.png
 - booth : 頒布場所
 - price : 価格
 - hero : ジャケット
+
+SoundcloudのiframeとYouTubeのiframeの間には空行を1行入れること。
+
+ボタン素材は以下
+```html
+<div class="container">
+    
+
+<a href="https://aquilegia.kashiwade.work" class="spec-buy-button" target="_blank">Special Web Page</a><a href="https://kashiwade.booth.pm/items/3399161" class="spec-buy-button" target="_blank">BOOTH</a>
+</div>
+
+<style>
+.container{
+    text-align:center;
+}
+.spec-buy-button{
+    display: inline-block;
+    text-align: center;
+    padding: .6em 1.2em;
+    cursor: pointer;
+    line-height: 1.5;
+    font-size: 90%;
+    border-radius: .25em;
+    overflow: hidden;
+    color: #878ac4;
+    background-color: transparent;
+    text-decoration: none;
+    border: 1px solid #878ac4;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    padding: .7em;
+    font-size: 110%;
+    box-sizing: border-box;
+    border-width: 2px;
+    width: 100%;
+    max-width: 200px;
+    margin: .2em ;
+}
+.spec-buy-button:hover{
+    background-color: #878ac4;
+    color: #fff;
+    text-decoration: none;
+    border-color: transparent;
+}
+</style>
+```
