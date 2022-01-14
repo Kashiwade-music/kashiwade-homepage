@@ -7,6 +7,31 @@ gatsby develop
 ```
 でおｋ。
 
+## アプデ方法
+### アプデ可能なパッケージの確認
+```
+npm outdated
+```
+- Current：現在インストールされているバージョン
+- Wanted：存在するバージョンのうち、 package.json に記載された semver 条件を満たす最新のバージョン
+- Latest：そのパッケージの最新バージョン
+
+### npm-check-updatesを使ってアップデートする
+`npm update`をやってもpackage.jsonはアップデートしてくれないのでこれを使うと便利
+コンテナにインストール済み
+
+```
+ncu
+```
+- インストールするもの(package.json)を更新する物を表示してくれる。
+  - Red = major upgrade (and all major version zero)
+  - Cyan = minor upgrade
+  - Green = patch upgrade
+
+メジャーアップデートは行わず、minorとpatchアップデートだけ行って欲しい時は
+`ncu -u --target minor`にする。
+
+
 ## ページ構造
 - index.js
 - profile.js

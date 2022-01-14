@@ -11,10 +11,83 @@ price: "1000円(会場価格)"
 hero: ./20211031-aquilegia.jpg
 ---
 <div class="container">
-    
 
-<a href="https://aquilegia.kashiwade.work" class="spec-buy-button" target="_blank">Special Web Page</a><a href="https://kashiwade.booth.pm/items/3399161" class="spec-buy-button" target="_blank">BOOTH</a>
+<a href="https://aquilegia.kashiwade.work" class="spec-buy-button" target="_blank">Special Web Page</a><a href="https://kashiwade.booth.pm/items/3399161" class="spec-buy-button" target="_blank">BOOTH</a><a href="https://kashiwade.bandcamp.com/album/aquilegia" class="spec-buy-button" target="_blank">Bandcamp</a>
+
 </div>
+
+<section class="l-section section-tracklist">
+<div class="l-container">
+<h2 class="albam-header"><span>Track List</span></h2>
+<div class="section-content">
+<ol class="tracklist">
+    <li class="track-container">
+      <div class="track-number">01</div>
+      <div class="track-content">
+        <span class="track-title">Overture of the Great Adventure</span>
+        <span class="track-meta"></span>
+      </div>
+    </li>
+
+
+  <li class="track-container">
+    <div class="track-number">02</div>
+    <div class="track-content">
+      <span class="track-title">Brilliant Blue Sky</span>
+      <span class="track-meta"></span>
+    </div>
+  </li>
+
+
+  <li class="track-container">
+    <div class="track-number">03</div>
+    <div class="track-content">
+      <span class="track-title">Welcome to the Royal Capital</span>
+      <span class="track-meta"></span>
+    </div>
+  </li>
+
+
+  <li class="track-container">
+    <div class="track-number">04</div>
+    <div class="track-content">
+      <span class="track-title">Thief of the Cobblestone Street</span>
+      <span class="track-meta"></span>
+    </div>
+  </li>
+
+
+  <li class="track-container">
+    <div class="track-number">05</div>
+    <div class="track-content">
+      <span class="track-title">Mysterious Powers</span>
+      <span class="track-meta"></span>
+    </div>
+  </li>
+
+
+  <li class="track-container">
+    <div class="track-number">06</div>
+    <div class="track-content">
+      <span class="track-title">Everlasting Tranquillity</span>
+      <span class="track-meta"></span>
+    </div>
+  </li>
+
+
+  <li class="track-container">
+    <div class="track-number">07</div>
+    <div class="track-content">
+      <span class="track-title">Aquilegia</span>
+      <span class="track-meta"></span>
+    </div>
+  </li>
+</ol>
+</div>
+</div>
+</section>
+
+<h2 class="albam-header"><span>XFD</span></h2>
 
 <style>
 .container{
@@ -42,12 +115,97 @@ hero: ./20211031-aquilegia.jpg
     width: 100%;
     max-width: 200px;
     margin: .2em ;
+    font-weight: 200;
 }
 .spec-buy-button:hover{
     background-color: #878ac4;
     color: #fff;
     text-decoration: none;
     border-color: transparent;
+}
+
+.l-section {
+  margin: 1em auto;
+}
+
+.l-container {
+  width: 100%;
+}
+
+.albam-header{
+  position: relative;
+  text-align: center;
+  font-weight: 200;
+  margin-left: auto;
+  margin-right: auto;
+  font-size:30px;
+}
+.albam-header:before {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 100%;
+  height: 1px;
+  content: '';
+  background: #878ac4;
+}
+
+.albam-header span {
+  position: relative;
+  padding: 0 0.5em;
+  background: #fff;
+}
+
+.section-tracklist .section-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.tracklist {
+  display: table;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+.tracklist li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.tracklist li .track-title {
+  display: block;
+}
+.track-number {
+  color: #878ac4;
+  margin-right: 0.5em;
+  font-weight: 200;
+  font-size: 17.6px;
+  font-size: 1.1rem;
+  width: 22px;
+}
+@media (min-width: 768px) {
+  .track-number {
+    font-size: 1.3rem;
+  }
+}
+.track-title {
+  font-size: 17.6px;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+@media (min-width: 768px) {
+  .track-title {
+    font-size: 1.3rem;
+  }
+}
+.track-meta {
+  color: #999;
 }
 </style>
 

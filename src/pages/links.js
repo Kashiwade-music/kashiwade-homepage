@@ -54,7 +54,7 @@ const snsMusic = [
 const snsStore = [
   {
     name: "Bandcamp",
-    description: "工事中です。Under construction.",
+    description: "アルバムのデジタル版を販売しています。",
     link: "https://kashiwade.bandcamp.com",
     iconClassName: snsIconAreaBandcamp,
     fontAwesomeIcon: faBandcamp,
