@@ -17,7 +17,7 @@ const Meta: React.FC<Props> = ({
   pageDescription = "",
   pageHero = "",
 }) => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<GatsbyTypes.metaDataQueryQuery>(graphql`
     query metaDataQuery {
       site {
         siteMetadata {
