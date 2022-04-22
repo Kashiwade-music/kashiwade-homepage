@@ -1,9 +1,12 @@
 import * as React from "react";
 import { useMediaQuery } from "react-responsive";
 import * as vanilla from "./header.css";
-import headerTitleBottomLineSVG1 from "../../images/header-title-bottom-line";
-import headerTitleBottomLineSVG2 from "../../images/header-title-bottom-line2";
-import headerTitleBottomLineSVG3 from "../../images/header-title-bottom-line3";
+const headerTitleBottomLineSVG1 = require("../../images/header-title-bottom-line.svg");
+const headerTitleBottomLineSVG2 = require("../../images/header-title-bottom-line2.svg");
+const headerTitleBottomLineSVG3 = require("../../images/header-title-bottom-line3.svg");
+//import headerTitleBottomLineSVG1 from "../../images/header-title-bottom-line";
+//import headerTitleBottomLineSVG2 from "../../images/header-title-bottom-line2";
+//import headerTitleBottomLineSVG3 from "../../images/header-title-bottom-line3";
 
 type Props = {
   pageTitle: string;

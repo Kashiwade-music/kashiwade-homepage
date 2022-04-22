@@ -2,12 +2,13 @@ import * as React from "react";
 import Meta from "./layout/meta";
 import Navbar from "./layout/navbar";
 import Header from "./layout/header";
+import IndexHeader from "./layout/indexHeader";
 import ContentArea from "./layout/contentArea";
 import Footer from "./layout/footer";
 
 type Props = {
   currentPage: string;
-  pageTitle: string;
+  pageTitle?: string;
   isIndex?: boolean;
   pageUrl?: string;
   pageDescription?: string;
@@ -17,7 +18,7 @@ type Props = {
 
 const Layout: React.FC<Props> = ({
   currentPage,
-  pageTitle,
+  pageTitle = "",
   isIndex = false,
   pageUrl = "",
   pageDescription = "",
@@ -29,7 +30,7 @@ const Layout: React.FC<Props> = ({
       <>
         <Meta />
         <Navbar currentPage={currentPage} />
-        <Header pageTitle={pageTitle} />
+        <IndexHeader />
         <ContentArea>{children}</ContentArea>
         <Footer />
       </>

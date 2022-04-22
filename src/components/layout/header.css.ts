@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+const HeaderBackgroundLoop = require("../../images/header-background-loop.svg");
 
 export const Header = style({
   height: "350px",
@@ -15,7 +16,7 @@ export const Header = style({
       left: "-50%",
       zIndex: -1,
       transform: "rotate(-9deg)",
-      backgroundImage: 'url("../../images/header-background-loop.svg")',
+      backgroundImage: `url(${HeaderBackgroundLoop})`,
       backgroundSize: "500px 500px",
       backgroundRepeat: "repeat",
       opacity: 0.15,
@@ -38,7 +39,7 @@ export const HeaderSmartphone = style({
       left: "-50%",
       zIndex: -1,
       transform: "rotate(-9deg)",
-      backgroundImage: 'url("../../images/header-background-loop.svg")',
+      backgroundImage: `url(${HeaderBackgroundLoop})`,
       backgroundSize: "500px 500px",
       backgroundRepeat: "repeat",
       opacity: 0.15,
