@@ -1,5 +1,5 @@
 import { keyframes, style } from "@vanilla-extract/css";
-const HeaderBackgroundLoop = require("../../images/header-background-loop.svg");
+import HeaderBackgroundLoop from "../../images/header-background-loop.svg";
 
 export const HeadWrap = style({
   minHeight: "562px",
