@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as vanilla from "../styles/index.css";
 import Layout from "../components/layout";
-//import ContentLinkBoxes from "../components/contentsLinkBoxes";
+import ContentLinkBoxes from "../components/contentsLinkBoxes";
 import { graphql, Link, PageProps } from "gatsby";
 import headerTitleBottomLineSVG from "../images/header-title-bottom-line2.svg";
 
@@ -23,6 +23,10 @@ const IndexPage: React.FC<PageProps<GatsbyTypes.IndexPageQuery>> = ({
           <img src={headerTitleBottomLineSVG} width={350} height={61.39} />
         </div>{" "}
       </div>
+      {
+        // @ts-ignore
+        <ContentLinkBoxes data={data} />
+      }
       <div className={vanilla.MoreLinkBox}>
         <Link to="/works" className={vanilla.MoreLink}>
           more
