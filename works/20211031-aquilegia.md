@@ -10,11 +10,21 @@ booth: "2021秋M3 第一展示場D-01 かしわで音楽工房"
 price: "1000円(会場価格)"
 hero: ./20211031-aquilegia.jpg
 ---
+
 <div class="container">
-
-<a href="https://aquilegia.kashiwade.work" class="spec-buy-button" target="_blank">Special Web Page</a><a href="https://kashiwade.booth.pm/items/3399161" class="spec-buy-button" target="_blank">BOOTH</a><a href="https://kashiwade.bandcamp.com/album/aquilegia" class="spec-buy-button" target="_blank">Bandcamp</a>
-
+  <a href="https://aquilegia.kashiwade.work" class="spec-web-button" target="_blank">Special Web Page</a><br>
 </div>
+
+<h2 class="albam-header"><span>Download</span></h2>
+<div class="container">
+  <a href="https://kashiwade.booth.pm/items/3399161" class="spec-buy-button" target="_blank">BOOTH</a><a href="https://kashiwade.bandcamp.com/album/aquilegia" class="spec-buy-button" target="_blank">Bandcamp</a>
+</div>
+
+<h2 class="albam-header"><span>Streaming</span></h2>
+<div class="container">
+  <a href="https://open.spotify.com/album/26eT4WJ7Emk4Bx319EdWlo?si=0Vf-q2WfSfuVCR_LIIDm5A" class="spec-buy-button" target="_blank">Spotify</a><a href="https://music.apple.com/jp/album/aquilegia/1610304910?l=en" class="spec-buy-button" target="_blank">Apple Music</a><a href="https://music.youtube.com/playlist?list=OLAK5uy_ma76wv3oOj9AbGajykrV0pXhb1bWRl2ZY&feature=share" class="spec-buy-button" target="_blank">YouTube Music</a>
+</div>
+
 
 <section class="l-section section-tracklist">
 <div class="l-container">
@@ -93,6 +103,38 @@ hero: ./20211031-aquilegia.jpg
 .container{
     text-align:center;
 }
+
+.spec-web-button{
+    display: inline-block;
+    text-align: center;
+    padding: .6em 1.2em;
+    cursor: pointer;
+    line-height: 1.5;
+    font-size: 90%;
+    border-radius: .25em;
+    overflow: hidden;
+    color: #878ac4;
+    background-color: transparent;
+    text-decoration: none;
+    border: 1px solid #878ac4;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    padding: .7em;
+    font-size: 110%;
+    box-sizing: border-box;
+    border-width: 2px;
+    width: 100%;
+    max-width: 500px;
+    margin: .2em ;
+    font-weight: 200;
+}
+.spec-web-button:hover{
+    background-color: #878ac4;
+    color: #fff;
+    text-decoration: none;
+    border-color: transparent;
+}
+
 .spec-buy-button{
     display: inline-block;
     text-align: center;

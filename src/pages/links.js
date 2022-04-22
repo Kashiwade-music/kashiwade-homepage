@@ -23,6 +23,8 @@ import {
   snsIconAreaEmail,
   snsIconAreaPixivBooth,
   snsIconAreaPixiv,
+  snsIconAreaSpotify,
+  snsIconAreaApple,
 } from "../styles/links.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -30,6 +32,8 @@ import {
   faTwitter,
   faYoutube,
   faBandcamp,
+  faSpotify,
+  faApple,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import pixivLogo from "../images/pixivLogo.svg";
@@ -58,6 +62,20 @@ const snsStore = [
     link: "https://kashiwade.bandcamp.com",
     iconClassName: snsIconAreaBandcamp,
     fontAwesomeIcon: faBandcamp,
+  },
+  {
+    name: "Spotify",
+    description: "アルバムのストリーミング配信をしています。",
+    link: "https://open.spotify.com/artist/1VUQDZmcLPRaphdHFdarnk",
+    iconClassName: snsIconAreaSpotify,
+    fontAwesomeIcon: faSpotify,
+  },
+  {
+    name: "Apple Music",
+    description: "アルバムのストリーミング配信をしています。",
+    link: "https://music.apple.com/jp/artist/kashiwade/1610304911?l=en",
+    iconClassName: snsIconAreaApple,
+    fontAwesomeIcon: faApple,
   },
 ]
 const snsText = [
@@ -109,9 +127,6 @@ const returnSNSBoxes = (isSmartPhone = false) => {
         return <SnsLinkBox sns={sns} />
       })}
 
-      {snsStore.map((sns) => {
-        return <SnsLinkBox sns={sns} />
-      })}
       <a
         href={"https://kashiwade.booth.pm"}
         className={linkTextDecoration}
@@ -128,6 +143,10 @@ const returnSNSBoxes = (isSmartPhone = false) => {
           </div>
         </div>
       </a>
+      {snsStore.map((sns) => {
+        return <SnsLinkBox sns={sns} />
+      })}
+
 
       {snsText.map((sns) => {
         return <SnsLinkBox sns={sns} />
