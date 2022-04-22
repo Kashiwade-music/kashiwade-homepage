@@ -2,11 +2,19 @@ import * as React from "react";
 import * as vanilla from "../styles/index.css";
 import Layout from "../components/layout";
 //import ContentLinkBoxes from "../components/contentsLinkBoxes";
-import { graphql, Link } from "gatsby";
+import { graphql, Link, PageProps } from "gatsby";
 import headerTitleBottomLineSVG from "../images/header-title-bottom-line2.svg";
 
 // markup
-const IndexPage = () => {
+const IndexPage: React.FC<PageProps<GatsbyTypes.IndexPageQuery>> = ({
+  data,
+}) => {
+  const filteredEdges = data.allMarkdownRemark.edges.filter((edge) => {
+    const str =
+      edge.node.frontmatter?.slug != null ? edge.node.frontmatter.slug : "";
+    return /\/works\//i.test(str);
+  });
+
   return (
     <Layout isIndex={true} currentPage="index">
       <div className={vanilla.Header}>
