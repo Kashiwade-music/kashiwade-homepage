@@ -25,6 +25,9 @@
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@vanilla-extract/babel-plugin": "^1.1.5",
+    "@vanilla-extract/css": "^1.7.0",
+    "@vanilla-extract/webpack-plugin": "^2.1.8",
     "gatsby": "^4.12.1",
     "gatsby-plugin-google-analytics": "^4.12.1",
     "gatsby-plugin-image": "^2.12.1",
@@ -32,11 +35,13 @@
     "gatsby-plugin-react-helmet": "^5.12.1",
     "gatsby-plugin-sharp": "^4.12.1",
     "gatsby-plugin-sitemap": "^5.12.1",
+    "gatsby-plugin-vanilla-extract": "^2.0.1",
     "gatsby-source-filesystem": "^4.12.1",
     "gatsby-transformer-sharp": "^4.12.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-responsive": "^8.2.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
