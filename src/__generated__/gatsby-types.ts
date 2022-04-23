@@ -3899,10 +3899,10 @@ type MarkdownRemarkSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+type pageWorkspaceskashiwadeHomepagesrcpagesworksTsx3184339621QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type IndexPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
+type pageWorkspaceskashiwadeHomepagesrcpagesworksTsx3184339621Query = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
           Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'slug' | 'title' | 'tag' | 'price' | 'type' | 'description_long' | 'booth'>
           & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
         )> } }> } };
@@ -3911,6 +3911,14 @@ type metaDataQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type metaDataQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description' | 'siteUrl' | 'title'>> }> };
+
+type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type IndexPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
+          Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'slug' | 'title' | 'tag' | 'price' | 'type' | 'description_long' | 'booth'>
+          & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
+        )> } }> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
