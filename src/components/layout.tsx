@@ -45,7 +45,7 @@ const Layout: React.FC<Props> = ({
           pageHero={pageHero}
         />
         <Navbar currentPage={currentPage} />
-        <Header pageTitle={pageTitle} />
+        <Header pageTitle={pageTitle}>{pageDescription}</Header>
         <ContentArea>{children}</ContentArea>
         <Footer />
       </>

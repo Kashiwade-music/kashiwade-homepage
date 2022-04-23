@@ -5,7 +5,6 @@ import ContentLinkBoxes from "../components/contentsLinkBoxes";
 import { graphql, Link, PageProps } from "gatsby";
 import headerTitleBottomLineSVG from "../images/header-title-bottom-line2.svg";
 
-// markup
 const IndexPage: React.FC<PageProps<GatsbyTypes.IndexPageQuery>> = ({
   data,
 }) => {
