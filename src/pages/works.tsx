@@ -25,7 +25,7 @@ const WorksPage: React.FC<PageProps<GatsbyTypes.IndexPageQuery>> = ({
 export default WorksPage;
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+    allMarkdownRemark(sort: { fields: frontmatter___slug, order: DESC }) {
       edges {
         node {
           frontmatter {
@@ -36,7 +36,20 @@ export const query = graphql`
             tag
             hero {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(aspectRatio: 1)
+                internal {
+                  content
+                  description
+                  ignoreType
+                  mediaType
+                }
+                parent {
+                  id
+                }
+                id
+                children {
+                  id
+                }
               }
             }
             price

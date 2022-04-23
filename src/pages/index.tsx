@@ -33,7 +33,7 @@ export default IndexPage;
 export const query = graphql`
   query IndexPage {
     allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: { fields: frontmatter___slug, order: DESC }
       limit: 4
     ) {
       edges {
@@ -46,7 +46,20 @@ export const query = graphql`
             tag
             hero {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(aspectRatio: 1)
+                internal {
+                  content
+                  description
+                  ignoreType
+                  mediaType
+                }
+                parent {
+                  id
+                }
+                id
+                children {
+                  id
+                }
               }
             }
             price

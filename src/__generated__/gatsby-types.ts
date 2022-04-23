@@ -710,6 +710,7 @@ type MarkdownRemark = Node & {
   readonly timeToRead: Maybe<Scalars['Int']>;
   readonly tableOfContents: Maybe<Scalars['String']>;
   readonly wordCount: Maybe<MarkdownWordCount>;
+  readonly gatsbyPath: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
   readonly internal: Internal;
@@ -739,6 +740,11 @@ type MarkdownRemark_tableOfContentsArgs = {
   pathToSlugField?: Maybe<Scalars['String']>;
   maxDepth: Maybe<Scalars['Int']>;
   heading: Maybe<Scalars['String']>;
+};
+
+
+type MarkdownRemark_gatsbyPathArgs = {
+  filePath: Maybe<Scalars['String']>;
 };
 
 type MarkdownRemarkFrontmatter = {
@@ -1061,6 +1067,7 @@ type Query_markdownRemarkArgs = {
   timeToRead: Maybe<IntQueryOperatorInput>;
   tableOfContents: Maybe<StringQueryOperatorInput>;
   wordCount: Maybe<MarkdownWordCountFilterInput>;
+  gatsbyPath: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
@@ -1230,6 +1237,7 @@ type MarkdownRemarkFilterInput = {
   readonly timeToRead: Maybe<IntQueryOperatorInput>;
   readonly tableOfContents: Maybe<StringQueryOperatorInput>;
   readonly wordCount: Maybe<MarkdownWordCountFilterInput>;
+  readonly gatsbyPath: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
@@ -1604,6 +1612,7 @@ type FileFieldsEnum =
   | 'childrenMarkdownRemark.wordCount.paragraphs'
   | 'childrenMarkdownRemark.wordCount.sentences'
   | 'childrenMarkdownRemark.wordCount.words'
+  | 'childrenMarkdownRemark.gatsbyPath'
   | 'childrenMarkdownRemark.parent.id'
   | 'childrenMarkdownRemark.parent.parent.id'
   | 'childrenMarkdownRemark.parent.parent.children'
@@ -1704,6 +1713,7 @@ type FileFieldsEnum =
   | 'childMarkdownRemark.wordCount.paragraphs'
   | 'childMarkdownRemark.wordCount.sentences'
   | 'childMarkdownRemark.wordCount.words'
+  | 'childMarkdownRemark.gatsbyPath'
   | 'childMarkdownRemark.parent.id'
   | 'childMarkdownRemark.parent.parent.id'
   | 'childMarkdownRemark.parent.parent.children'
@@ -3726,6 +3736,7 @@ type MarkdownRemarkFieldsEnum =
   | 'frontmatter.hero.childrenMarkdownRemark.headings'
   | 'frontmatter.hero.childrenMarkdownRemark.timeToRead'
   | 'frontmatter.hero.childrenMarkdownRemark.tableOfContents'
+  | 'frontmatter.hero.childrenMarkdownRemark.gatsbyPath'
   | 'frontmatter.hero.childrenMarkdownRemark.children'
   | 'frontmatter.hero.childMarkdownRemark.id'
   | 'frontmatter.hero.childMarkdownRemark.excerpt'
@@ -3737,6 +3748,7 @@ type MarkdownRemarkFieldsEnum =
   | 'frontmatter.hero.childMarkdownRemark.headings'
   | 'frontmatter.hero.childMarkdownRemark.timeToRead'
   | 'frontmatter.hero.childMarkdownRemark.tableOfContents'
+  | 'frontmatter.hero.childMarkdownRemark.gatsbyPath'
   | 'frontmatter.hero.childMarkdownRemark.children'
   | 'frontmatter.hero.id'
   | 'frontmatter.hero.parent.id'
@@ -3767,6 +3779,7 @@ type MarkdownRemarkFieldsEnum =
   | 'wordCount.paragraphs'
   | 'wordCount.sentences'
   | 'wordCount.words'
+  | 'gatsbyPath'
   | 'parent.id'
   | 'parent.parent.id'
   | 'parent.parent.parent.id'
@@ -3899,12 +3912,28 @@ type MarkdownRemarkSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type pageWorkspaceskashiwadeHomepagesrcpagesworksTsx3184339621QueryVariables = Exact<{ [key: string]: never; }>;
+type PageQueryQueryVariables = Exact<{
+  id: Maybe<Scalars['String']>;
+}>;
 
 
-type pageWorkspaceskashiwadeHomepagesrcpagesworksTsx3184339621Query = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
+type PageQueryQuery = { readonly markdownRemark: Maybe<(
+    Pick<MarkdownRemark, 'html' | 'id'>
+    & { readonly frontmatter: Maybe<(
+      Pick<MarkdownRemarkFrontmatter, 'date' | 'slug' | 'title' | 'description' | 'tag' | 'price' | 'type' | 'description_long' | 'booth'>
+      & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
+    )> }
+  )>, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly next: Maybe<{ readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'slug' | 'title'>> }>, readonly node: Pick<MarkdownRemark, 'id'>, readonly previous: Maybe<{ readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'slug' | 'title'>> }> }> } };
+
+type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type IndexPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
           Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'slug' | 'title' | 'tag' | 'price' | 'type' | 'description_long' | 'booth'>
-          & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
+          & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<(
+              Pick<ImageSharp, 'gatsbyImageData' | 'id'>
+              & { readonly internal: Pick<Internal, 'content' | 'description' | 'ignoreType' | 'mediaType'>, readonly parent: Maybe<Pick<File, 'id'> | Pick<Directory, 'id'> | Pick<Site, 'id'> | Pick<SiteFunction, 'id'> | Pick<SitePage, 'id'> | Pick<SitePlugin, 'id'> | Pick<SiteBuildMetadata, 'id'> | Pick<Mdx, 'id'> | Pick<ImageSharp, 'id'> | Pick<MarkdownRemark, 'id'>>, readonly children: ReadonlyArray<Pick<File, 'id'> | Pick<Directory, 'id'> | Pick<Site, 'id'> | Pick<SiteFunction, 'id'> | Pick<SitePage, 'id'> | Pick<SitePlugin, 'id'> | Pick<SiteBuildMetadata, 'id'> | Pick<Mdx, 'id'> | Pick<ImageSharp, 'id'> | Pick<MarkdownRemark, 'id'>> }
+            )> }> }
         )> } }> } };
 
 type metaDataQueryQueryVariables = Exact<{ [key: string]: never; }>;
@@ -3912,12 +3941,15 @@ type metaDataQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type metaDataQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description' | 'siteUrl' | 'title'>> }> };
 
-type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+type pageWorkspaceskashiwadeHomepagesrcpagesworksTsx1652613669QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type IndexPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
+type pageWorkspaceskashiwadeHomepagesrcpagesworksTsx1652613669Query = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
           Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'slug' | 'title' | 'tag' | 'price' | 'type' | 'description_long' | 'booth'>
-          & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
+          & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<(
+              Pick<ImageSharp, 'gatsbyImageData' | 'id'>
+              & { readonly internal: Pick<Internal, 'content' | 'description' | 'ignoreType' | 'mediaType'>, readonly parent: Maybe<Pick<File, 'id'> | Pick<Directory, 'id'> | Pick<Site, 'id'> | Pick<SiteFunction, 'id'> | Pick<SitePage, 'id'> | Pick<SitePlugin, 'id'> | Pick<SiteBuildMetadata, 'id'> | Pick<Mdx, 'id'> | Pick<ImageSharp, 'id'> | Pick<MarkdownRemark, 'id'>>, readonly children: ReadonlyArray<Pick<File, 'id'> | Pick<Directory, 'id'> | Pick<Site, 'id'> | Pick<SiteFunction, 'id'> | Pick<SitePage, 'id'> | Pick<SitePlugin, 'id'> | Pick<SiteBuildMetadata, 'id'> | Pick<Mdx, 'id'> | Pick<ImageSharp, 'id'> | Pick<MarkdownRemark, 'id'>> }
+            )> }> }
         )> } }> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
