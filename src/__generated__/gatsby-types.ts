@@ -3917,17 +3917,6 @@ type metaDataQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type metaDataQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description' | 'siteUrl' | 'title'>> }> };
 
-type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type IndexPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
-          Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'slug' | 'title' | 'tag' | 'price' | 'type' | 'description_long' | 'booth'>
-          & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<(
-              Pick<ImageSharp, 'gatsbyImageData' | 'id'>
-              & { readonly internal: Pick<Internal, 'content' | 'description' | 'ignoreType' | 'mediaType'>, readonly parent: Maybe<Pick<File, 'id'> | Pick<Directory, 'id'> | Pick<Site, 'id'> | Pick<SiteFunction, 'id'> | Pick<SitePage, 'id'> | Pick<SitePlugin, 'id'> | Pick<SiteBuildMetadata, 'id'> | Pick<Mdx, 'id'> | Pick<ImageSharp, 'id'> | Pick<MarkdownRemark, 'id'>>, readonly children: ReadonlyArray<Pick<File, 'id'> | Pick<Directory, 'id'> | Pick<Site, 'id'> | Pick<SiteFunction, 'id'> | Pick<SitePage, 'id'> | Pick<SitePlugin, 'id'> | Pick<SiteBuildMetadata, 'id'> | Pick<Mdx, 'id'> | Pick<ImageSharp, 'id'> | Pick<MarkdownRemark, 'id'>> }
-            )> }> }
-        )> } }> } };
-
 type PageQueryQueryVariables = Exact<{
   id: Maybe<Scalars['String']>;
 }>;
@@ -3940,17 +3929,6 @@ type PageQueryQuery = { readonly markdownRemark: Maybe<(
       & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
     )> }
   )>, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly next: Maybe<{ readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'slug' | 'title'>> }>, readonly node: Pick<MarkdownRemark, 'id'>, readonly previous: Maybe<{ readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'slug' | 'title'>> }> }> } };
-
-type pageGPlainTextProjectsbackupViaGitAndOthersProjectskashiwadeHomepagesrcpagesworksTsx1652613669QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type pageGPlainTextProjectsbackupViaGitAndOthersProjectskashiwadeHomepagesrcpagesworksTsx1652613669Query = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
-          Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'slug' | 'title' | 'tag' | 'price' | 'type' | 'description_long' | 'booth'>
-          & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<(
-              Pick<ImageSharp, 'gatsbyImageData' | 'id'>
-              & { readonly internal: Pick<Internal, 'content' | 'description' | 'ignoreType' | 'mediaType'>, readonly parent: Maybe<Pick<File, 'id'> | Pick<Directory, 'id'> | Pick<Site, 'id'> | Pick<SiteFunction, 'id'> | Pick<SitePage, 'id'> | Pick<SitePlugin, 'id'> | Pick<SiteBuildMetadata, 'id'> | Pick<Mdx, 'id'> | Pick<ImageSharp, 'id'> | Pick<MarkdownRemark, 'id'>>, readonly children: ReadonlyArray<Pick<File, 'id'> | Pick<Directory, 'id'> | Pick<Site, 'id'> | Pick<SiteFunction, 'id'> | Pick<SitePage, 'id'> | Pick<SitePlugin, 'id'> | Pick<SiteBuildMetadata, 'id'> | Pick<Mdx, 'id'> | Pick<ImageSharp, 'id'> | Pick<MarkdownRemark, 'id'>> }
-            )> }> }
-        )> } }> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -3977,6 +3955,28 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type pageGPlainTextProjectsbackupViaGitAndOthersProjectskashiwadeHomepagesrcpagesworksTsx1652613669QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type pageGPlainTextProjectsbackupViaGitAndOthersProjectskashiwadeHomepagesrcpagesworksTsx1652613669Query = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
+          Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'slug' | 'title' | 'tag' | 'price' | 'type' | 'description_long' | 'booth'>
+          & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<(
+              Pick<ImageSharp, 'gatsbyImageData' | 'id'>
+              & { readonly internal: Pick<Internal, 'content' | 'description' | 'ignoreType' | 'mediaType'>, readonly parent: Maybe<Pick<File, 'id'> | Pick<Directory, 'id'> | Pick<Site, 'id'> | Pick<SiteFunction, 'id'> | Pick<SitePage, 'id'> | Pick<SitePlugin, 'id'> | Pick<SiteBuildMetadata, 'id'> | Pick<Mdx, 'id'> | Pick<ImageSharp, 'id'> | Pick<MarkdownRemark, 'id'>>, readonly children: ReadonlyArray<Pick<File, 'id'> | Pick<Directory, 'id'> | Pick<Site, 'id'> | Pick<SiteFunction, 'id'> | Pick<SitePage, 'id'> | Pick<SitePlugin, 'id'> | Pick<SiteBuildMetadata, 'id'> | Pick<Mdx, 'id'> | Pick<ImageSharp, 'id'> | Pick<MarkdownRemark, 'id'>> }
+            )> }> }
+        )> } }> } };
+
+type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type IndexPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
+          Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'slug' | 'title' | 'tag' | 'price' | 'type' | 'description_long' | 'booth'>
+          & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<(
+              Pick<ImageSharp, 'gatsbyImageData' | 'id'>
+              & { readonly internal: Pick<Internal, 'content' | 'description' | 'ignoreType' | 'mediaType'>, readonly parent: Maybe<Pick<File, 'id'> | Pick<Directory, 'id'> | Pick<Site, 'id'> | Pick<SiteFunction, 'id'> | Pick<SitePage, 'id'> | Pick<SitePlugin, 'id'> | Pick<SiteBuildMetadata, 'id'> | Pick<Mdx, 'id'> | Pick<ImageSharp, 'id'> | Pick<MarkdownRemark, 'id'>>, readonly children: ReadonlyArray<Pick<File, 'id'> | Pick<Directory, 'id'> | Pick<Site, 'id'> | Pick<SiteFunction, 'id'> | Pick<SitePage, 'id'> | Pick<SitePlugin, 'id'> | Pick<SiteBuildMetadata, 'id'> | Pick<Mdx, 'id'> | Pick<ImageSharp, 'id'> | Pick<MarkdownRemark, 'id'>> }
+            )> }> }
+        )> } }> } };
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
