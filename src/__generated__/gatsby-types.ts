@@ -3912,6 +3912,11 @@ type MarkdownRemarkSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type metaDataQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type metaDataQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description' | 'siteUrl' | 'title'>> }> };
+
 type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3935,11 +3940,6 @@ type PageQueryQuery = { readonly markdownRemark: Maybe<(
       & { readonly hero: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
     )> }
   )>, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly next: Maybe<{ readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'slug' | 'title'>> }>, readonly node: Pick<MarkdownRemark, 'id'>, readonly previous: Maybe<{ readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'slug' | 'title'>> }> }> } };
-
-type metaDataQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type metaDataQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description' | 'siteUrl' | 'title'>> }> };
 
 type pageGPlainTextProjectsbackupViaGitAndOthersProjectskashiwadeHomepagesrcpagesworksTsx1652613669QueryVariables = Exact<{ [key: string]: never; }>;
 
