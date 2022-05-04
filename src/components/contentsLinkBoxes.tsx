@@ -2,7 +2,7 @@ import * as React from "react";
 import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { graphql, Link, PageProps } from "gatsby";
 
-import * as vanilla from "./contentLinkBoxes.css";
+import * as vanilla from "./contentsLinkBoxes.css";
 
 const ContentLinkBoxes: React.FC<PageProps<GatsbyTypes.IndexPageQuery>> = ({
   data,
