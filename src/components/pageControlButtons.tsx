@@ -70,7 +70,6 @@ const PageControlButtons: React.FC<Props> = ({
             </Link>
           )}
           {!(nextLink != "") && <div className={vanilla.NextGrid} />}
-          <div className={vanilla.CentorGrid}></div>
           {previousLink != "" && (
             <Link to={previousLink} className={vanilla.LinkArea}>
               <div className={vanilla.PreviousGrid}>

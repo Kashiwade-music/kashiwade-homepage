@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 
 export const Parent = style({
   display: "grid",
-  gridTemplateColumns: "1fr 1fr 1fr",
+  gridTemplateColumns: "repeat(2, 1fr)",
   gridTemplateRows: "48px",
   gridColumnGap: "0px",
   gridRowGap: "0px",
@@ -58,13 +58,8 @@ export const NextGridSubTitle = style({
   fontSize: "larger",
 });
 
-export const CentorGrid = style({
-  gridArea: "1 / 2 / 2 / 3",
-  borderRight: "none",
-});
-
 export const PreviousGrid = style({
-  gridArea: "1 / 3 / 2 / 4",
+  gridArea: "1 / 2 / 2 / 3",
 
   display: "grid",
   gridTemplateColumns: "1fr 50px",
