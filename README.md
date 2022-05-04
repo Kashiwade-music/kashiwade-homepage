@@ -10,6 +10,8 @@ gatsby develop
 ```
 でおｋ。
 
+**注意** : devcontainerだとなんかhot reloadとか働かない
+
 ## アプデ方法
 ### アプデ可能なパッケージの確認
 ```

@@ -2,54 +2,112 @@ import { style } from "@vanilla-extract/css";
 
 export const Parent = style({
   display: "grid",
-  gridTemplateColumns: "200px 1fr 200px",
-  gridTemplateRows: "repeat(2, 30px)",
+  gridTemplateColumns: "1fr 1fr 1fr",
+  gridTemplateRows: "48px",
   gridColumnGap: "0px",
   gridRowGap: "0px",
-  paddingTop: "30px",
+  paddingTop: "20px",
 });
 
 export const ParentMini = style({
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr 1fr",
-  gridTemplateRows: "repeat(2, 30px)",
-  gridColumnGap: "0px",
-  gridRowGap: "0px",
   paddingTop: "30px",
 });
 
 export const NextGrid = style({
-  gridArea: "1 / 1 / 3 / 2",
-  border: "solid 1px #ddd",
+  gridArea: "1 / 1 / 2 / 2",
   borderRight: "none",
 
   display: "grid",
-  gridTemplateColumns: "100px 1fr",
-  gridTemplateRows: "1fr",
+  gridTemplateColumns: "50px 1fr",
+  gridTemplateRows: "repeat(2, 1fr)",
   gridColumnGap: "0px",
   gridRowGap: "0px",
 });
 
-export const NextGridArrow = style({
-  gridArea: "1 / 1 / 2 / 2",
+export const NextGridIcon = style({
+  gridArea: "1 / 1 / 3 / 2",
+  display: "grid",
+  placeItems: "center",
+  left: "-5px",
+  position: "relative",
+  transition: "all .2s",
+  selectors: {
+    [`${NextGrid}:hover &`]: {
+      left: "-10px",
+    },
+  },
 });
 
-export const NextGridText = style({
+export const NextGridNextText = style({
   gridArea: "1 / 2 / 2 / 3",
+  display: "grid",
+  alignItems: "end",
+  justifyContent: "left",
+  fontFamily: '"Kanit", "Noto Sans JP", sans-serif',
+  fontWeight: 200,
+  fontSize: "larger",
+});
+
+export const NextGridSubTitle = style({
+  gridArea: "2 / 2 / 3 / 3",
+  display: "grid",
+  alignItems: "start",
+  justifyContent: "left",
+  fontFamily: '"Kanit", "Noto Sans JP", sans-serif',
+  fontWeight: 200,
+  fontSize: "larger",
 });
 
 export const CentorGrid = style({
-  gridArea: "1 / 2 / 3 / 3",
-  border: "solid 1px #ddd",
+  gridArea: "1 / 2 / 2 / 3",
   borderRight: "none",
-  placeContent: "center",
-  display: "grid",
-  fontSize: "12px",
-  fontFamily: '"Kanit"',
-  fontWeight: 100,
 });
 
 export const PreviousGrid = style({
-  gridArea: "1 / 3 / 3 / 4",
-  border: "solid 1px #ddd",
+  gridArea: "1 / 3 / 2 / 4",
+
+  display: "grid",
+  gridTemplateColumns: "1fr 50px",
+  gridTemplateRows: "repeat(2, 1fr)",
+  gridColumnGap: "0px",
+  gridRowGap: "0px",
+});
+
+export const PreviousGridIcon = style({
+  gridArea: "1 / 2 / 3 / 3",
+  display: "grid",
+  placeItems: "center",
+  left: "5px",
+  position: "relative",
+  transition: "all .2s",
+  selectors: {
+    [`${PreviousGrid}:hover &`]: {
+      left: "10px",
+    },
+  },
+});
+
+export const PreviousGridPreviousText = style({
+  gridArea: "1 / 1 / 2 / 2",
+  display: "grid",
+  alignItems: "end",
+  justifyContent: "right",
+  fontFamily: '"Kanit", "Noto Sans JP", sans-serif',
+  fontWeight: 200,
+  fontSize: "larger",
+});
+
+export const PreviousGridSubTitle = style({
+  gridArea: "2 / 1 / 3 / 2",
+  display: "grid",
+  alignItems: "start",
+  justifyContent: "right",
+  fontFamily: '"Kanit", "Noto Sans JP", sans-serif',
+  fontWeight: 200,
+  fontSize: "larger",
+});
+
+export const LinkArea = style({
+  textDecoration: "none",
+  color: "#666",
 });
