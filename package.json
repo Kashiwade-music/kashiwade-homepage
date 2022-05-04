@@ -1,8 +1,8 @@
 {
-  "name": "kashiwade-homepage",
+  "name": "kashiwade.work",
   "version": "1.0.0",
   "private": true,
-  "description": "kashiwade-homepage",
+  "description": "kashiwade.work",
   "author": "kashiwade",
   "keywords": [
     "gatsby"
@@ -12,7 +12,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@fontsource/kanit": "^4.5.5",
@@ -22,25 +23,40 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
-    "@mdx-js/mdx": "^2.1.1",
-    "@mdx-js/react": "^2.1.1",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@react-icons/all-files": "^4.1.0",
+    "@vanilla-extract/babel-plugin": "^1.1.5",
+    "@vanilla-extract/css": "^1.7.0",
+    "@vanilla-extract/webpack-plugin": "^2.1.8",
+    "fast-xml-parser": "^4.0.7",
     "gatsby": "^4.12.1",
-    "gatsby-plugin-gatsby-cloud": "^4.12.1",
-    "gatsby-plugin-google-gtag": "^4.12.1",
+    "gatsby-plugin-google-gtag": "^4.13.0",
     "gatsby-plugin-image": "^2.12.1",
     "gatsby-plugin-manifest": "^4.12.1",
+    "gatsby-plugin-mdx": "^3.12.1",
     "gatsby-plugin-react-helmet": "^5.12.1",
     "gatsby-plugin-sharp": "^4.12.1",
     "gatsby-plugin-sitemap": "^5.12.1",
+    "gatsby-plugin-typegen": "^2.2.4",
+    "gatsby-plugin-vanilla-extract": "^2.0.1",
     "gatsby-remark-images": "^6.12.1",
     "gatsby-remark-responsive-iframe": "^5.12.1",
     "gatsby-source-filesystem": "^4.12.1",
     "gatsby-transformer-remark": "^5.12.1",
     "gatsby-transformer-sharp": "^4.12.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-icons": "^4.3.1",
     "react-responsive": "^8.2.0",
     "react-slideshow-image": "^3.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "@types/react": "^17.0.44",
+    "@types/react-dom": "^17.0.15",
+    "@types/react-responsive": "^8.0.5",
+    "typescript": "^4.6.3"
   }
 }
