@@ -31,7 +31,7 @@
     "@vanilla-extract/webpack-plugin": "^2.1.8",
     "fast-xml-parser": "^4.0.7",
     "gatsby": "^4.12.1",
-    "gatsby-plugin-google-analytics": "^4.12.1",
+    "gatsby-plugin-google-gtag": "^4.13.0",
     "gatsby-plugin-image": "^2.12.1",
     "gatsby-plugin-manifest": "^4.12.1",
     "gatsby-plugin-mdx": "^3.12.1",
