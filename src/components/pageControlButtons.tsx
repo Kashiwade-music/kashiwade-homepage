@@ -2,8 +2,6 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { useMediaQuery } from "react-responsive";
 import * as vanilla from "./pageControlButtons.css";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BsChevronRight } from "react-icons/bs";
 import { BsChevronLeft } from "react-icons/bs";
 
