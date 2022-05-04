@@ -129,8 +129,6 @@ const Template: React.FC<PageProps<GatsbyTypes.PageQueryQuery>> = ({
         <WorkPostContent data={data} />
       }
       <PageControlButtons
-        mainPageTitle={"Works"}
-        mainPageLink={"/works"}
         previousLink={pageControlObj?.previous?.frontmatter?.slug}
         previousTitle={pageControlObj?.previous?.frontmatter?.title}
         nextLink={pageControlObj?.next?.frontmatter?.slug}

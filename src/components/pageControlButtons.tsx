@@ -12,8 +12,6 @@ type Props = {
   nextButtonText?: string;
   nextTitle?: string;
   nextLink?: string;
-  mainPageTitle: string;
-  mainPageLink: string;
 };
 
 const PageControlButtons: React.FC<Props> = ({
@@ -23,8 +21,6 @@ const PageControlButtons: React.FC<Props> = ({
   nextButtonText = "Next",
   nextTitle = "",
   nextLink = "",
-  mainPageTitle,
-  mainPageLink,
 }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
   return (
