@@ -8,6 +8,14 @@ export const LinkBoxesAria = style({
   margin: "0",
 });
 
+export const LinkBoxesAriaMobile = style({
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))",
+  gap: "1em 2%",
+  gridAutoRows: "max-content",
+  margin: "0",
+});
+
 export const LinkBox = style({
   border: "1px solid #ddd",
   display: "grid",
@@ -50,10 +58,30 @@ export const SNSName = style({
   justifyContent: "left",
 });
 
+export const SNSNameMobile = style({
+  gridArea: "1 / 1 / 2 / 2",
+  fontFamily: "Kanit",
+  fontWeight: 300,
+  fontSize: "1.3em",
+  alignItems: "center",
+  display: "grid",
+  justifyContent: "left",
+});
+
 export const SNSDescription = style({
   gridArea: "2 / 1 / 3 / 2",
   fontFamily: "Noto Sans JP,sans-serif",
   fontWeight: 200,
+  alignItems: "center",
+  display: "grid",
+  justifyContent: "left",
+});
+
+export const SNSDescriptionMobile = style({
+  gridArea: "2 / 1 / 3 / 2",
+  fontFamily: "Noto Sans JP,sans-serif",
+  fontWeight: 200,
+  fontSize: "0.9em",
   alignItems: "center",
   display: "grid",
   justifyContent: "left",

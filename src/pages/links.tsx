@@ -1,5 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import { useMediaQuery } from "react-responsive";
 import * as vanilla from "../styles/links.css";
 import {
   FaSoundcloud,
@@ -56,7 +57,7 @@ const SNSSpec: Props[] = [
   {
     name: "Bandcamp",
     description: "アルバムのデジタル版を販売しています。",
-    link: "https://www.youtube.com/c/Kashiwade",
+    link: "https://kashiwade.bandcamp.com/",
     backgroundColor: "#629aa9",
     icon: FaBandcamp,
     isReactIcons: true,
@@ -118,7 +119,7 @@ const SNSSpec: Props[] = [
   },
 ];
 
-const SNSLinkBox: React.FC<Props> = (sns) => {
+const SNSLinkBox = (sns: Props, isMobile: boolean) => {
   return (
     <a
       href={sns.link}
@@ -136,7 +137,9 @@ const SNSLinkBox: React.FC<Props> = (sns) => {
           {!sns.isReactIcons && <sns.icon style={{ width: sns.size }} />}
         </div>
         <div className={vanilla.SNSNameDescription}>
-          <div className={vanilla.SNSName}>{sns.name}</div>
+          <div className={isMobile ? vanilla.SNSNameMobile : vanilla.SNSName}>
+            {sns.name}
+          </div>
           <div className={vanilla.SNSDescription}>{sns.description}</div>
         </div>
       </div>
@@ -145,6 +148,7 @@ const SNSLinkBox: React.FC<Props> = (sns) => {
 };
 
 const LinksPage = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
   return (
     <Layout
       pageUrl={"/links"}
@@ -152,8 +156,12 @@ const LinksPage = () => {
       pageDescription={"各種リンクと連絡先などです"}
       currentPage={"links"}
     >
-      <div className={vanilla.LinkBoxesAria}>
-        {SNSSpec.map((data) => SNSLinkBox(data))}
+      <div
+        className={
+          isMobile ? vanilla.LinkBoxesAriaMobile : vanilla.LinkBoxesAria
+        }
+      >
+        {SNSSpec.map((data) => SNSLinkBox(data, isMobile))}
       </div>
     </Layout>
   );

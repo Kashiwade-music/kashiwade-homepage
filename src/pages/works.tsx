@@ -1,8 +1,7 @@
 import * as React from "react";
-import * as vanilla from "../styles/index.css";
 import Layout from "../components/layout";
 import ContentLinkBoxes from "../components/contentsLinkBoxes";
-import { graphql, Link, PageProps } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 
 const WorksPage: React.FC<PageProps<GatsbyTypes.IndexPageQuery>> = ({
   data,
