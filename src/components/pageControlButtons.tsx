@@ -28,66 +28,58 @@ const PageControlButtons: React.FC<Props> = ({
   mainPageTitle,
   mainPageLink,
 }) => {
-  const isDesktopOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
   return (
     <>
-      {isDesktopOrMobile && (
-        <div className={vanilla.ParentMini}>
-          <div className={vanilla.PreviousGrid}>
-            {previousLink != "" && (
-              <Link to={previousLink}>
-                {previousButtonText}
-                <br />
-                {previousTitle}
-              </Link>
-            )}
-          </div>
-          <div className={vanilla.CentorGrid}>
-            <Link to={mainPageLink}>{mainPageTitle}</Link>
-          </div>
-          <div className={vanilla.NextGrid}>
-            {nextLink != "" && (
-              <Link to={nextLink}>
-                {nextButtonText}
-                <br />
-                {nextTitle}
-              </Link>
-            )}
-          </div>
-        </div>
-      )}
-      {!isDesktopOrMobile && (
-        <div className={vanilla.Parent}>
-          {nextLink != "" && (
-            <Link to={nextLink} className={vanilla.LinkArea}>
-              <div className={vanilla.NextGrid}>
-                <div className={vanilla.NextGridIcon}>
-                  <BsChevronLeft size={45} color="#666" />
-                </div>
-                <div className={vanilla.NextGridNextText}>{nextButtonText}</div>
-                <div className={vanilla.NextGridSubTitle}>{nextTitle}</div>
+      <div className={vanilla.Parent}>
+        {nextLink != "" && (
+          <Link to={nextLink} className={vanilla.LinkArea}>
+            <div className={vanilla.NextGrid}>
+              <div className={vanilla.NextGridIcon}>
+                <BsChevronLeft size={45} color="#666" />
               </div>
-            </Link>
-          )}
-          {!(nextLink != "") && <div className={vanilla.NextGrid} />}
-          {previousLink != "" && (
-            <Link to={previousLink} className={vanilla.LinkArea}>
-              <div className={vanilla.PreviousGrid}>
-                <div className={vanilla.PreviousGridIcon}>
-                  <BsChevronRight size={45} color="#666" />
-                </div>
-                <div className={vanilla.PreviousGridPreviousText}>
-                  {previousButtonText}
-                </div>
+              <div
+                className={
+                  isMobile
+                    ? vanilla.NextGridNextTextMobile
+                    : vanilla.NextGridNextText
+                }
+              >
+                {nextButtonText}
+              </div>
+
+              {!isMobile && (
+                <div className={vanilla.NextGridSubTitle}>{nextTitle}</div>
+              )}
+            </div>
+          </Link>
+        )}
+        {!(nextLink != "") && <div className={vanilla.NextGrid} />}
+        {previousLink != "" && (
+          <Link to={previousLink} className={vanilla.LinkArea}>
+            <div className={vanilla.PreviousGrid}>
+              <div className={vanilla.PreviousGridIcon}>
+                <BsChevronRight size={45} color="#666" />
+              </div>
+              <div
+                className={
+                  isMobile
+                    ? vanilla.PreviousGridPreviousTextMobile
+                    : vanilla.PreviousGridPreviousText
+                }
+              >
+                {previousButtonText}
+              </div>
+              {!isMobile && (
                 <div className={vanilla.PreviousGridSubTitle}>
                   {previousTitle}
                 </div>
-              </div>
-            </Link>
-          )}
-          {!(previousLink != "") && <div className={vanilla.PreviousGrid} />}
-        </div>
-      )}
+              )}
+            </div>
+          </Link>
+        )}
+        {!(previousLink != "") && <div className={vanilla.PreviousGrid} />}
+      </div>
     </>
   );
 };

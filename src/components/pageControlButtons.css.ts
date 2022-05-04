@@ -9,16 +9,12 @@ export const Parent = style({
   paddingTop: "20px",
 });
 
-export const ParentMini = style({
-  paddingTop: "30px",
-});
-
 export const NextGrid = style({
   gridArea: "1 / 1 / 2 / 2",
   borderRight: "none",
 
   display: "grid",
-  gridTemplateColumns: "50px 1fr",
+  gridTemplateColumns: "40px 1fr",
   gridTemplateRows: "repeat(2, 1fr)",
   gridColumnGap: "0px",
   gridRowGap: "0px",
@@ -48,6 +44,16 @@ export const NextGridNextText = style({
   fontSize: "larger",
 });
 
+export const NextGridNextTextMobile = style({
+  gridArea: "1 / 2 / 3 / 3",
+  display: "grid",
+  alignItems: "center",
+  justifyContent: "left",
+  fontFamily: '"Kanit", "Noto Sans JP", sans-serif',
+  fontWeight: 200,
+  fontSize: "larger",
+});
+
 export const NextGridSubTitle = style({
   gridArea: "2 / 2 / 3 / 3",
   display: "grid",
@@ -62,7 +68,7 @@ export const PreviousGrid = style({
   gridArea: "1 / 2 / 2 / 3",
 
   display: "grid",
-  gridTemplateColumns: "1fr 50px",
+  gridTemplateColumns: "1fr 40px",
   gridTemplateRows: "repeat(2, 1fr)",
   gridColumnGap: "0px",
   gridRowGap: "0px",
@@ -86,6 +92,16 @@ export const PreviousGridPreviousText = style({
   gridArea: "1 / 1 / 2 / 2",
   display: "grid",
   alignItems: "end",
+  justifyContent: "right",
+  fontFamily: '"Kanit", "Noto Sans JP", sans-serif',
+  fontWeight: 200,
+  fontSize: "larger",
+});
+
+export const PreviousGridPreviousTextMobile = style({
+  gridArea: "1 / 1 / 3 / 2",
+  display: "grid",
+  alignItems: "center",
   justifyContent: "right",
   fontFamily: '"Kanit", "Noto Sans JP", sans-serif',
   fontWeight: 200,
