@@ -1,6 +1,5 @@
 # Kashiwade-homepage
 
-リファクタリングをしていないためかなりコードが汚いです。
 
 ## dev build
 docker(VSCode拡張のRemote-Container)使って
