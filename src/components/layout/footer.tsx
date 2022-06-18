@@ -1,11 +1,14 @@
 import * as React from "react";
 import * as vanilla from "./footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faSoundcloud,
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+library.add(faSoundcloud, faTwitter, faYoutube);
+
 const Footer = () => {
   return (
     <footer className={vanilla.Footer}>
