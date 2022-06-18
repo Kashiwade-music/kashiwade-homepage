@@ -1,39 +1,33 @@
 import * as React from "react";
 import * as vanilla from "./footer.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faSoundcloud,
-  faTwitter,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-library.add(faSoundcloud, faTwitter, faYoutube);
+import { FaSoundcloud } from "@react-icons/all-files/fa/FaSoundcloud";
+import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+import { FaYoutube } from "@react-icons/all-files/fa/FaYouTube";
 
 const Footer = () => {
   return (
     <footer className={vanilla.Footer}>
-      <a href="https://soundcloud.com/kashiwade">
-        <FontAwesomeIcon
-          icon={faSoundcloud}
-          className={vanilla.SnsSoundcloud}
-          size="6x"
-        />
-      </a>
+      <div className={vanilla.IconFlexContainer}>
+        <a
+          href="https://soundcloud.com/kashiwade"
+          className={vanilla.IconFlexChild}
+        >
+          <FaSoundcloud className={vanilla.SnsSoundcloud} size={47} />
+        </a>
 
-      <a href="https://twitter.com/Kashiwade_music">
-        <FontAwesomeIcon
-          icon={faTwitter}
-          className={vanilla.SnsTwitter}
-          size="6x"
-        />
-      </a>
-      <a href="https://www.youtube.com/c/kashiwade">
-        <FontAwesomeIcon
-          icon={faYoutube}
-          className={vanilla.SnsYoutube}
-          size="6x"
-        />
-      </a>
+        <a
+          href="https://twitter.com/Kashiwade_music"
+          className={vanilla.IconFlexChild}
+        >
+          <FaTwitter className={vanilla.SnsTwitter} size={40} />
+        </a>
+        <a
+          href="https://www.youtube.com/c/kashiwade"
+          className={vanilla.IconFlexChild}
+        >
+          <FaYoutube className={vanilla.SnsYoutube} size={45} />
+        </a>
+      </div>
     </footer>
   );
 };
