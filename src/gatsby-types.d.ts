@@ -3601,17 +3601,17 @@ type metaDataQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type metaDataQueryQuery = { readonly site: { readonly siteMetadata: { readonly description: string | null, readonly siteUrl: string | null, readonly title: string | null } | null } | null };
 
+type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type IndexPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: { readonly date: string | null, readonly description: string | null, readonly slug: string | null, readonly title: string | null, readonly tag: string | null, readonly price: string | null, readonly type: string | null, readonly description_long: string | null, readonly booth: string | null, readonly hero: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData, readonly id: string, readonly internal: { readonly content: string | null, readonly description: string | null, readonly ignoreType: boolean | null, readonly mediaType: string | null }, readonly parent: { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | null, readonly children: ReadonlyArray<{ readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string }> } | null } | null } | null } }> } };
+
 type PageQueryQueryVariables = Exact<{
   id: InputMaybe<Scalars['String']>;
 }>;
 
 
 type PageQueryQuery = { readonly markdownRemark: { readonly html: string | null, readonly id: string, readonly frontmatter: { readonly date: string | null, readonly slug: string | null, readonly title: string | null, readonly description: string | null, readonly tag: string | null, readonly price: string | null, readonly type: string | null, readonly description_long: string | null, readonly booth: string | null, readonly hero: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly next: { readonly frontmatter: { readonly slug: string | null, readonly title: string | null } | null } | null, readonly node: { readonly id: string }, readonly previous: { readonly frontmatter: { readonly slug: string | null, readonly title: string | null } | null } | null }> } };
-
-type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type IndexPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: { readonly date: string | null, readonly description: string | null, readonly slug: string | null, readonly title: string | null, readonly tag: string | null, readonly price: string | null, readonly type: string | null, readonly description_long: string | null, readonly booth: string | null, readonly hero: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData, readonly id: string, readonly internal: { readonly content: string | null, readonly description: string | null, readonly ignoreType: boolean | null, readonly mediaType: string | null }, readonly parent: { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | null, readonly children: ReadonlyArray<{ readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string }> } | null } | null } | null } }> } };
 
 type WorksPageQueryVariables = Exact<{ [key: string]: never; }>;
 
