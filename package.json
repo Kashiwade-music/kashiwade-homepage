@@ -41,7 +41,6 @@
     "gatsby-plugin-react-helmet": "^5.16.0",
     "gatsby-plugin-sharp": "^4.16.1",
     "gatsby-plugin-sitemap": "^5.16.0",
-    "gatsby-plugin-typegen": "^2.2.4",
     "gatsby-plugin-vanilla-extract": "^2.0.1",
     "gatsby-remark-images": "^6.16.0",
     "gatsby-remark-responsive-iframe": "^5.16.0",
