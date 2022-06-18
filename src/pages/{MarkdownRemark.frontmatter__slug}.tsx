@@ -9,7 +9,7 @@ import { useMediaQuery } from "react-responsive";
 import PageControlButtons from "../components/pageControlButtons";
 import * as vanilla from "../styles/worksContentPage.css";
 
-const WorkPostContent: React.FC<PageProps<GatsbyTypes.PageQueryQuery>> = ({
+const WorkPostContent: React.FC<PageProps<Queries.PageQueryQuery>> = ({
   data,
 }) => {
   const frontmatter = data.markdownRemark?.frontmatter;
@@ -107,21 +107,21 @@ const WorkPostContent: React.FC<PageProps<GatsbyTypes.PageQueryQuery>> = ({
   }
 };
 
-const Template: React.FC<PageProps<GatsbyTypes.PageQueryQuery>> = ({
-  data,
-}) => {
+const Template: React.FC<PageProps<Queries.PageQueryQuery>> = ({ data }) => {
   const pageControlObj = data.allMarkdownRemark.edges.find(
     (element) => element.node.id == data.markdownRemark?.id
   );
   return (
     <Layout
       currentPage="works"
-      pageUrl={data.markdownRemark?.frontmatter?.slug}
+      pageUrl={data.markdownRemark?.frontmatter?.slug ?? undefined}
       pageTitle={"Works"}
-      pageDescription={data.markdownRemark?.frontmatter?.description}
+      pageDescription={
+        data.markdownRemark?.frontmatter?.description ?? undefined
+      }
       pageHero={
-        data.markdownRemark?.frontmatter?.hero?.childImageSharp?.gatsbyImageData // @ts-ignore
-          .images.fallback.src
+        data.markdownRemark?.frontmatter?.hero?.childImageSharp?.gatsbyImageData
+          ?.images.fallback?.src
       }
     >
       {
@@ -129,10 +129,12 @@ const Template: React.FC<PageProps<GatsbyTypes.PageQueryQuery>> = ({
         <WorkPostContent data={data} />
       }
       <PageControlButtons
-        previousLink={pageControlObj?.previous?.frontmatter?.slug}
-        previousTitle={pageControlObj?.previous?.frontmatter?.title}
-        nextLink={pageControlObj?.next?.frontmatter?.slug}
-        nextTitle={pageControlObj?.next?.frontmatter?.title}
+        previousLink={pageControlObj?.previous?.frontmatter?.slug ?? undefined}
+        previousTitle={
+          pageControlObj?.previous?.frontmatter?.title ?? undefined
+        }
+        nextLink={pageControlObj?.next?.frontmatter?.slug ?? undefined}
+        nextTitle={pageControlObj?.next?.frontmatter?.title ?? undefined}
       />
     </Layout>
   );

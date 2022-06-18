@@ -25,7 +25,7 @@ npm outdated
 コンテナにインストール済み
 
 ```
-ncu
+ncu または npm-check-updates
 ```
 - インストールするもの(package.json)を更新する物を表示してくれる。
   - Red = major upgrade (and all major version zero)

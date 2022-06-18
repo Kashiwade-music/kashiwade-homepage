@@ -1,12 +1,12 @@
 import * as React from "react";
 import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
-import { graphql, Link, PageProps } from "gatsby";
+import { Link } from "gatsby";
 
 import * as vanilla from "./contentsLinkBoxes.css";
 
-const ContentLinkBoxes: React.FC<PageProps<GatsbyTypes.IndexPageQuery>> = ({
-  data,
-}) => {
+const ContentLinkBoxes = (
+  data: Queries.IndexPageQuery | Queries.WorksPageQuery
+) => {
   return (
     <div className={vanilla.ContentLinkBoxAreaCSS}>
       {data.allMarkdownRemark.edges.map((node) => {

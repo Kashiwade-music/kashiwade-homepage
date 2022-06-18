@@ -8,7 +8,7 @@ import Footer from "./layout/footer";
 
 type Props = {
   currentPage: string;
-  pageTitle?: string;
+  pageTitle?: string | null;
   isIndex?: boolean;
   pageUrl?: string;
   pageDescription?: string;

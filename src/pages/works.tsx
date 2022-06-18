@@ -3,9 +3,7 @@ import Layout from "../components/layout";
 import ContentLinkBoxes from "../components/contentsLinkBoxes";
 import { graphql, PageProps } from "gatsby";
 
-const WorksPage: React.FC<PageProps<GatsbyTypes.IndexPageQuery>> = ({
-  data,
-}) => {
+const WorksPage: React.FC<PageProps<Queries.WorksPageQuery>> = ({ data }) => {
   return (
     <Layout
       pageUrl={"/works"}
@@ -13,17 +11,14 @@ const WorksPage: React.FC<PageProps<GatsbyTypes.IndexPageQuery>> = ({
       currentPage={"works"}
       pageDescription={"ここ数年で製作した公開作品の一覧です"}
     >
-      {
-        // @ts-ignore
-        <ContentLinkBoxes data={data} />
-      }
+      {<ContentLinkBoxes {...data} />}
     </Layout>
   );
 };
 
 export default WorksPage;
 export const query = graphql`
-  query {
+  query WorksPage {
     allMarkdownRemark(sort: { fields: frontmatter___slug, order: DESC }) {
       edges {
         node {
