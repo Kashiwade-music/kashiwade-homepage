@@ -165,7 +165,7 @@ export const pageQuery = graphql`
       id
     }
     allMarkdownRemark(
-      sort: { fields: frontmatter___slug, order: ASC }
+      sort: { fields: frontmatter___date, order: ASC }
       filter: { fileAbsolutePath: { glob: "**/resources/works/**" } }
     ) {
       edges {

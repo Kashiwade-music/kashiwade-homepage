@@ -111,7 +111,7 @@ const SNSSpec: Props[] = [
   {
     name: "Email / Contact",
     description: "お仕事の依頼や相談等はこちら。",
-    link: "mailto:kashiwade@outlook.com",
+    link: "./contact",
     backgroundColor: "#0073d1",
     icon: FaEnvelope,
     isReactIcons: true,
@@ -124,7 +124,7 @@ const SNSLinkBox = (sns: Props, isMobile: boolean) => {
     <a
       href={sns.link}
       className=""
-      target={"_blank"}
+      target={sns.link == "./contact" ? "" : "_blank"}
       rel={"noreferrer"}
       style={{ color: "#000", textDecoration: "none" }}
     >

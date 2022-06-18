@@ -20,7 +20,7 @@ export default WorksPage;
 export const query = graphql`
   query WorksPage {
     allMarkdownRemark(
-      sort: { fields: frontmatter___slug, order: DESC }
+      sort: { fields: frontmatter___date, order: DESC }
       filter: { fileAbsolutePath: { glob: "**/resources/works/**" } }
     ) {
       edges {
