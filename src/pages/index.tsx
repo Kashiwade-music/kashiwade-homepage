@@ -30,6 +30,7 @@ export const query = graphql`
     allMarkdownRemark(
       sort: { fields: frontmatter___slug, order: DESC }
       limit: 4
+      filter: { fileAbsolutePath: { glob: "**/resources/works/**" } }
     ) {
       edges {
         node {

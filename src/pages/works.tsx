@@ -19,7 +19,10 @@ const WorksPage: React.FC<PageProps<Queries.WorksPageQuery>> = ({ data }) => {
 export default WorksPage;
 export const query = graphql`
   query WorksPage {
-    allMarkdownRemark(sort: { fields: frontmatter___slug, order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: frontmatter___slug, order: DESC }
+      filter: { fileAbsolutePath: { glob: "**/resources/works/**" } }
+    ) {
       edges {
         node {
           frontmatter {
