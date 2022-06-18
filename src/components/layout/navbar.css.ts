@@ -47,7 +47,8 @@ export const NavContent = style({
 });
 
 export const NavContentActive = style({
-  width: "3em",
+  minWidth: 76.8,
+  maxWidth: 90,
   background: "linear-gradient(transparent 100%, #94e39c 0%)",
   textAlign: "center",
   margin: "0px 9px",
