@@ -2,7 +2,7 @@ import * as React from "react";
 import * as vanilla from "./footer.css";
 import { FaSoundcloud } from "@react-icons/all-files/fa/FaSoundcloud";
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
-import { FaYoutube } from "@react-icons/all-files/fa/FaYouTube";
+import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube";
 
 const Footer = () => {
   return (
