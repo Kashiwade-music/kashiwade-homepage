@@ -1,9 +1,11 @@
 import * as React from "react";
 import * as vanilla from "../styles/contact.css";
 import Layout from "../components/layout";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { FaEnvelope } from "react-icons/fa";
+import { RiSendPlaneFill } from "react-icons/ri";
 import { IconType } from "react-icons";
 import { graphql, PageProps } from "gatsby";
 
@@ -12,6 +14,41 @@ interface TabPanelProps {
   index: number;
   value: number;
 }
+
+const theme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: "#329b51",
+      light: "#94e39c",
+    },
+  },
+  components: {
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          backgroundColor: "#94e39c",
+          height: "3px",
+        },
+      },
+    },
+
+    MuiTab: {
+      defaultProps: {
+        disableRipple: true,
+        disableTouchRipple: true,
+      },
+      styleOverrides: {
+        root: {
+          fontFamily: "Kanit",
+          textTransform: "none",
+          fontSize: "21px",
+          fontWeight: 200,
+        },
+      },
+    },
+  },
+});
 
 const TabPanel = (props: TabPanelProps) => {
   const { children, value, index, ...other } = props;
@@ -35,14 +72,14 @@ interface Props {
 
 const MailLinkBox = (props: Props) => {
   const sns = {
-    name: "Email",
+    name: "Send an Email",
     description: "お気軽にご連絡ください！",
     description_Eng: "Feel free to contact me!",
     link: "mailto:kashiwade@outlook.com",
     backgroundColor: "#0073d1",
-    icon: FaEnvelope,
+    icon: RiSendPlaneFill,
     isReactIcons: true,
-    size: 45,
+    size: 47,
   };
   return (
     <a
@@ -55,8 +92,7 @@ const MailLinkBox = (props: Props) => {
           className={vanilla.SNSIcon}
           style={{ backgroundColor: sns.backgroundColor }}
         >
-          {sns.isReactIcons && <sns.icon size={sns.size} color={"white"} />}
-          {!sns.isReactIcons && <sns.icon style={{ width: sns.size }} />}
+          <sns.icon size={sns.size} color={"white"} />
         </div>
         <div className={vanilla.SNSNameDescription}>
           <div className={vanilla.SNSName}>{sns.name}</div>
@@ -84,10 +120,12 @@ const ContactPage = ({
       pageDescription={"お仕事の依頼・感想等をお待ちしております！"}
       currentPage={"contact"}
     >
-      <Tabs value={value} onChange={handleChange} centered>
-        <Tab label="Japanese" />
-        <Tab label="English" />
-      </Tabs>
+      <ThemeProvider theme={theme}>
+        <Tabs value={value} onChange={handleChange} centered>
+          <Tab label="Japanese" />
+          <Tab label="English" />
+        </Tabs>
+      </ThemeProvider>
       <TabPanel value={value} index={0}>
         <div
           className={vanilla.MdContentsParent}

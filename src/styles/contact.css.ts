@@ -45,6 +45,11 @@ export const SNSNameDescription = style({
   gridTemplateRows: "repeat(2, 1fr)",
   gridColumnGap: "0px",
   gridRowGap: "0px",
+  "@media": {
+    "screen and (max-width: 500px)": {
+      margin: "10px 10px",
+    },
+  },
 });
 
 export const SNSName = style({
@@ -55,6 +60,11 @@ export const SNSName = style({
   alignItems: "center",
   display: "grid",
   justifyContent: "left",
+  "@media": {
+    "screen and (max-width: 500px)": {
+      fontSize: "1.7em",
+    },
+  },
 });
 
 export const SNSDescription = style({
@@ -65,6 +75,11 @@ export const SNSDescription = style({
   alignItems: "center",
   display: "grid",
   justifyContent: "left",
+  "@media": {
+    "screen and (max-width: 500px)": {
+      fontSize: "16px",
+    },
+  },
 });
 
 export const MdContentsParent = style({});

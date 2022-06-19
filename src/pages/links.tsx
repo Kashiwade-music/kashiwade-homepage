@@ -125,7 +125,7 @@ const SNSLinkBox = (sns: Props, isMobile: boolean) => {
       href={sns.link}
       className=""
       target={sns.link == "./contact" ? "" : "_blank"}
-      rel={"noreferrer"}
+      rel={sns.link == "./contact" ? "" : "noreferrer"}
       style={{ color: "#000", textDecoration: "none" }}
     >
       <div className={vanilla.LinkBox}>
