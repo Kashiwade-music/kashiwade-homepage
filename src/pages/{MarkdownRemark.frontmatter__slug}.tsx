@@ -2,7 +2,7 @@
 //worksディレクトリにのみ対応
 //blogディレクトリへの対応は容易
 import React from "react";
-import { graphql, Link, PageProps } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
 import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { useMediaQuery } from "react-responsive";

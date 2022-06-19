@@ -10,7 +10,7 @@ export const LinkBoxesAria = style({
 
 export const LinkBoxesAriaMobile = style({
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))",
+  gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))",
   gap: "1em 2%",
   gridAutoRows: "max-content",
   margin: "0",

@@ -41,6 +41,9 @@ const Meta: React.FC<Props> = ({
           ? `${pageTitle} | ${siteMetadata.title}`
           : `${siteMetadata.title}`
       }
+      htmlAttributes={{
+        lang: "ja",
+      }}
       meta={[
         { name: "viewpoint", content: "width=device-width, initial-scale=1" },
         {

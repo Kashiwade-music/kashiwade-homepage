@@ -26,65 +26,34 @@ const Header: React.FC<Props> = ({ pageTitle, children = null }) => {
   if (children != null) {
     return (
       <header>
-        {isDesktopOrMobile && (
-          <div>
-            <div className={vanilla.HeaderSmartphone}>
-              <h1>
-                <div className={vanilla.HeaderTitle}>{pageTitle}</div>
-              </h1>
-              <div className={vanilla.HeaderTitleBottomLine}>
-                <img src={headerTitleBottomLineSVG} alt="" />
-              </div>
-            </div>
-            <div className={vanilla.HeaderDescriptionColumn}>
-              <div className={vanilla.HeaderDescription}>{children}</div>
+        <div>
+          <div className={vanilla.Header}>
+            <h1>
+              <div className={vanilla.HeaderTitle}>{pageTitle}</div>
+            </h1>
+            <div className={vanilla.HeaderTitleBottomLine}>
+              <img src={headerTitleBottomLineSVG} alt="" />
             </div>
           </div>
-        )}
-        {!isDesktopOrMobile && (
-          <div>
-            <div className={vanilla.Header}>
-              <h1>
-                <div className={vanilla.HeaderTitle}>{pageTitle}</div>
-              </h1>
-              <div className={vanilla.HeaderTitleBottomLine}>
-                <img src={headerTitleBottomLineSVG} alt="" />
-              </div>
-            </div>
-            <div className={vanilla.HeaderDescriptionColumn}>
-              <div className={vanilla.HeaderDescription}>{children}</div>
-            </div>
+          <div className={vanilla.HeaderDescriptionColumn}>
+            <div className={vanilla.HeaderDescription}>{children}</div>
           </div>
-        )}
+        </div>
       </header>
     );
   } else {
     return (
       <header>
-        {isDesktopOrMobile && (
-          <div>
-            <div className={vanilla.HeaderSmartphone}>
-              <h1>
-                <div className={vanilla.HeaderTitle}>{pageTitle}</div>
-              </h1>
-              <div className={vanilla.HeaderTitleBottomLine}>
-                <img src={headerTitleBottomLineSVG} alt="" />
-              </div>
+        <div>
+          <div className={vanilla.Header}>
+            <h1>
+              <div className={vanilla.HeaderTitle}>{pageTitle}</div>
+            </h1>
+            <div className={vanilla.HeaderTitleBottomLine}>
+              <img src={headerTitleBottomLineSVG} alt="" />
             </div>
           </div>
-        )}
-        {!isDesktopOrMobile && (
-          <div>
-            <div className={vanilla.Header}>
-              <h1>
-                <div className={vanilla.HeaderTitle}>{pageTitle}</div>
-              </h1>
-              <div className={vanilla.HeaderTitleBottomLine}>
-                <img src={headerTitleBottomLineSVG} alt="" />
-              </div>
-            </div>
-          </div>
-        )}
+        </div>
       </header>
     );
   }

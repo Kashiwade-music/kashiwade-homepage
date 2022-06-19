@@ -35,7 +35,11 @@ const NavBar = (props: Props) => {
           Kashiwade.work
         </Link>
 
-        <button onClick={toggleDrawer} className={vanilla.NavHumbergButton}>
+        <button
+          onClick={toggleDrawer}
+          className={vanilla.NavHumbergButton}
+          aria-label="Menu"
+        >
           <div className={vanilla.NavHumbergButtonSVG}>
             <svg
               height="32px"

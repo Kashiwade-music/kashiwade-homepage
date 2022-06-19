@@ -19,6 +19,11 @@ export const NavTop = style({
   color: "black",
   textDecoration: "none",
   padding: "7px 0px",
+  "@media": {
+    "screen and (max-width: 670px)": {
+      marginLeft: "9px",
+    },
+  },
 });
 
 export const NavContentBox = style({
@@ -26,6 +31,11 @@ export const NavContentBox = style({
   flexDirection: "row",
   justifyContent: "flex-end",
   marginRight: "1.2em",
+  "@media": {
+    "screen and (max-width: 670px)": {
+      marginRight: "0",
+    },
+  },
 });
 
 export const NavContent = style({

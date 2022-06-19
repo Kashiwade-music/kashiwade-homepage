@@ -116,6 +116,11 @@ export const TopMessageBox = style({
   top: "50%",
   transform: "translateY(-50%)",
   opacity: 1,
+  "@media": {
+    "screen and (max-width: 850px)": {
+      animation: `${topMessageBoxSmartphoneBG} 0.6s linear 1s 1 normal forwards`,
+    },
+  },
 });
 
 export const TopMessageBoxMini = style({

@@ -22,6 +22,11 @@ export const Header = style({
       opacity: 0.15,
     },
   },
+  "@media": {
+    "screen and (max-width: 600px)": {
+      height: "150px",
+    },
+  },
 });
 
 export const HeaderSmartphone = style({

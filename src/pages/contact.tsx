@@ -4,9 +4,7 @@ import Layout from "../components/layout";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { FaEnvelope } from "react-icons/fa";
 import { RiSendPlaneFill } from "react-icons/ri";
-import { IconType } from "react-icons";
 import { graphql, PageProps } from "gatsby";
 
 interface TabPanelProps {

@@ -11,6 +11,7 @@ const Footer = () => {
         <a
           href="https://soundcloud.com/kashiwade"
           className={vanilla.IconFlexChild}
+          aria-label="Soundcloud"
         >
           <FaSoundcloud className={vanilla.SnsSoundcloud} size={47} />
         </a>
@@ -18,12 +19,14 @@ const Footer = () => {
         <a
           href="https://twitter.com/Kashiwade_music"
           className={vanilla.IconFlexChild}
+          aria-label="Twitter"
         >
           <FaTwitter className={vanilla.SnsTwitter} size={40} />
         </a>
         <a
           href="https://www.youtube.com/c/kashiwade"
           className={vanilla.IconFlexChild}
+          aria-label="Youtube"
         >
           <FaYoutube className={vanilla.SnsYoutube} size={45} />
         </a>
