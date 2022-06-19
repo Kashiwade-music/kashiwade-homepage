@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import Layout from "../components/layout";
 import { useMediaQuery } from "react-responsive";
 import * as vanilla from "../styles/links.css";
@@ -111,7 +112,7 @@ const SNSSpec: Props[] = [
   {
     name: "Email / Contact",
     description: "お仕事の依頼や相談等はこちら。",
-    link: "./contact",
+    link: "/contact",
     backgroundColor: "#0073d1",
     icon: FaEnvelope,
     isReactIcons: true,
@@ -120,31 +121,53 @@ const SNSSpec: Props[] = [
 ];
 
 const SNSLinkBox = (sns: Props, isMobile: boolean) => {
-  return (
-    <a
-      href={sns.link}
-      className=""
-      target={sns.link == "./contact" ? "" : "_blank"}
-      rel={sns.link == "./contact" ? "" : "noreferrer"}
-      style={{ color: "#000", textDecoration: "none" }}
-    >
-      <div className={vanilla.LinkBox}>
-        <div
-          className={vanilla.SNSIcon}
-          style={{ backgroundColor: sns.backgroundColor }}
-        >
-          {sns.isReactIcons && <sns.icon size={sns.size} color={"white"} />}
-          {!sns.isReactIcons && <sns.icon style={{ width: sns.size }} />}
-        </div>
-        <div className={vanilla.SNSNameDescription}>
-          <div className={isMobile ? vanilla.SNSNameMobile : vanilla.SNSName}>
-            {sns.name}
+  if (sns.link == "/contact") {
+    return (
+      <Link to="/contact" style={{ textDecoration: "none", color: "black" }}>
+        <div className={vanilla.LinkBox}>
+          <div
+            className={vanilla.SNSIcon}
+            style={{ backgroundColor: sns.backgroundColor }}
+          >
+            {sns.isReactIcons && <sns.icon size={sns.size} color={"white"} />}
+            {!sns.isReactIcons && <sns.icon style={{ width: sns.size }} />}
           </div>
-          <div className={vanilla.SNSDescription}>{sns.description}</div>
+          <div className={vanilla.SNSNameDescription}>
+            <div className={isMobile ? vanilla.SNSNameMobile : vanilla.SNSName}>
+              {sns.name}
+            </div>
+            <div className={vanilla.SNSDescription}>{sns.description}</div>
+          </div>
         </div>
-      </div>
-    </a>
-  );
+      </Link>
+    );
+  } else {
+    return (
+      <a
+        href={sns.link}
+        className=""
+        target="_blank"
+        rel="noreferrer"
+        style={{ color: "#000", textDecoration: "none" }}
+      >
+        <div className={vanilla.LinkBox}>
+          <div
+            className={vanilla.SNSIcon}
+            style={{ backgroundColor: sns.backgroundColor }}
+          >
+            {sns.isReactIcons && <sns.icon size={sns.size} color={"white"} />}
+            {!sns.isReactIcons && <sns.icon style={{ width: sns.size }} />}
+          </div>
+          <div className={vanilla.SNSNameDescription}>
+            <div className={isMobile ? vanilla.SNSNameMobile : vanilla.SNSName}>
+              {sns.name}
+            </div>
+            <div className={vanilla.SNSDescription}>{sns.description}</div>
+          </div>
+        </div>
+      </a>
+    );
+  }
 };
 
 const LinksPage = () => {

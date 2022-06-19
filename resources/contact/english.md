@@ -16,7 +16,7 @@ Please describe the following requirements on message when you contact us.
   - If you do not display the name of my music and composer, I refuse the use of my music.
 
 # Music Production Requests
-I'm looking for requests for music production (composition/arrangement), mixing, mastering, etc. for both commercial and coterie productions.
+I'm looking for requests for music production (composition/arrangement), mixing, mastering, etc. for both commercial and coterie/doujin productions.
 If you have a project that I'm able to help you with, please feel free to contact me by e-mail with the following information.
 
 - Your name
@@ -26,12 +26,12 @@ If you have a project that I'm able to help you with, please feel free to contac
   - Image, reference music, etc.
   - Length of the song (how many minutes), looping or not
   - Delivery format
-  - What aspects of my work's style are you looking for?
+  - What aspects of my music style are you looking for?
 - Terms of rights
 - Delivery date and schedule
 - Budget : As it varies depending on the details of the request, please provide this as a reference first.
 - Scheduled release date of media using my works
-- Availability of public disclosure of achievements : Only requests that can be noticed on Twitter or on our website will be accepted.
+- Availability of public disclosure of achievements : Only requests that can be noticed on Twitter or on my website will be accepted.
 
 <div class="info">
 <b>Info</b>
