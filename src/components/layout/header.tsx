@@ -18,6 +18,8 @@ const Header: React.FC<Props> = ({ pageTitle, children = null }) => {
     headerTitleBottomLineSVG = headerTitleBottomLineSVG2;
   } else if (pageTitle === "Links") {
     headerTitleBottomLineSVG = headerTitleBottomLineSVG3;
+  } else if (pageTitle === "Contact") {
+    headerTitleBottomLineSVG = headerTitleBottomLineSVG2;
   }
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
   //if window size is bigger than 600px, isDesktopOrMobile has "false"

@@ -5,9 +5,7 @@ import ContentLinkBoxes from "../components/contentsLinkBoxes";
 import { graphql, Link, PageProps } from "gatsby";
 import headerTitleBottomLineSVG from "../images/header-title-bottom-line2.svg";
 
-const IndexPage: React.FC<PageProps<GatsbyTypes.IndexPageQuery>> = ({
-  data,
-}) => {
+const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
   return (
     <Layout isIndex={true} currentPage="index">
       <div className={vanilla.Header}>
@@ -16,10 +14,7 @@ const IndexPage: React.FC<PageProps<GatsbyTypes.IndexPageQuery>> = ({
           <img src={headerTitleBottomLineSVG} width={350} height={61.39} />
         </div>{" "}
       </div>
-      {
-        // @ts-ignore
-        <ContentLinkBoxes data={data} />
-      }
+      {<ContentLinkBoxes {...data} />}
       <div className={vanilla.MoreLinkBox}>
         <Link to="/works" className={vanilla.MoreLink}>
           more
@@ -35,6 +30,7 @@ export const query = graphql`
     allMarkdownRemark(
       sort: { fields: frontmatter___slug, order: DESC }
       limit: 4
+      filter: { fileAbsolutePath: { glob: "**/resources/works/**" } }
     ) {
       edges {
         node {

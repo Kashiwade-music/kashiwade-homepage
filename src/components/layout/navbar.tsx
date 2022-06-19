@@ -8,7 +8,8 @@ type Props = {
   currentPage: string;
 };
 const NavBar = (props: Props) => {
-  let [profileClass, worksClass, linksClass] = [
+  let [profileClass, worksClass, linksClass, contactClass] = [
+    vanilla.NavContent,
     vanilla.NavContent,
     vanilla.NavContent,
     vanilla.NavContent,
@@ -23,6 +24,8 @@ const NavBar = (props: Props) => {
     worksClass = vanilla.NavContentActive;
   } else if (props.currentPage === "links") {
     linksClass = vanilla.NavContentActive;
+  } else if (props.currentPage === "contact") {
+    contactClass = vanilla.NavContentActive;
   }
   //userMediaQueryを利用するとcssが当たらなくなるのでこのまま
   return (
@@ -67,6 +70,11 @@ const NavBar = (props: Props) => {
                 Links
               </Link>
             </li>
+            <li className={vanilla.NavUlContent}>
+              <Link to="/contact" className={contactClass}>
+                Contact
+              </Link>
+            </li>
           </ul>
         </Drawer>
       </MediaQuery>
@@ -84,6 +92,9 @@ const NavBar = (props: Props) => {
           </Link>
           <Link to="/links" className={linksClass}>
             Links
+          </Link>
+          <Link to="/contact" className={contactClass}>
+            Contact
           </Link>
         </div>
       </MediaQuery>

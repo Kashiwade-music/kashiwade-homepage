@@ -1,6 +1,5 @@
-import type { GatsbyConfig } from "gatsby";
-
-const config: GatsbyConfig = {
+module.exports = {
+  graphqlTypegen: true,
   siteMetadata: {
     title: "Kashiwade.work",
     siteUrl: `https://kashiwade.work`,
@@ -42,11 +41,9 @@ const config: GatsbyConfig = {
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-vanilla-extract",
-    "gatsby-plugin-typegen",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -71,7 +68,12 @@ const config: GatsbyConfig = {
         path: "./resources/works/",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "contact",
+        path: "./resources/contact/",
+      },
+    },
   ],
 };
-
-export default config;
