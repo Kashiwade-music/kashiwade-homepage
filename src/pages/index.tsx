@@ -11,13 +11,18 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
       <div className={vanilla.Header}>
         <div className={vanilla.HeaderTitle}>Latest Works</div>
         <div className={vanilla.HeaderTitleBottomLine}>
-          <img src={headerTitleBottomLineSVG} width={350} height={61.39} />
+          <img
+            src={headerTitleBottomLineSVG}
+            width={350}
+            height={61.39}
+            alt=""
+          />
         </div>{" "}
       </div>
       {<ContentLinkBoxes {...data} />}
       <div className={vanilla.MoreLinkBox}>
         <Link to="/works" className={vanilla.MoreLink}>
-          more
+          show works
         </Link>
       </div>
     </Layout>

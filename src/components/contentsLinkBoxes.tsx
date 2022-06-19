@@ -17,6 +17,7 @@ const ContentLinkBoxes = (
             <Link
               to={node.node.frontmatter?.slug as string}
               className={vanilla.LinkTextDecoration}
+              title={""}
             >
               <div className={vanilla.Box}>
                 {<GatsbyImage image={image as IGatsbyImageData} alt="" />}
