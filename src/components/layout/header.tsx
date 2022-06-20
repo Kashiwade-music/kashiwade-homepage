@@ -24,32 +24,28 @@ const Header: React.FC<Props> = ({ pageTitle, children = null }) => {
   if (children != null) {
     return (
       <header>
-        <div>
-          <div className={vanilla.Header}>
-            <h1>
-              <div className={vanilla.HeaderTitle}>{pageTitle}</div>
-            </h1>
-            <div className={vanilla.HeaderTitleBottomLine}>
-              <img src={headerTitleBottomLineSVG} alt="" />
-            </div>
+        <div className={vanilla.Header}>
+          <h1>
+            <div className={vanilla.HeaderTitle}>{pageTitle}</div>
+          </h1>
+          <div className={vanilla.HeaderTitleBottomLine}>
+            <img src={headerTitleBottomLineSVG} alt="" />
           </div>
-          <div className={vanilla.HeaderDescriptionColumn}>
-            <div className={vanilla.HeaderDescription}>{children}</div>
-          </div>
+        </div>
+        <div className={vanilla.HeaderDescriptionColumn}>
+          <div className={vanilla.HeaderDescription}>{children}</div>
         </div>
       </header>
     );
   } else {
     return (
       <header>
-        <div>
-          <div className={vanilla.Header}>
-            <h1>
-              <div className={vanilla.HeaderTitle}>{pageTitle}</div>
-            </h1>
-            <div className={vanilla.HeaderTitleBottomLine}>
-              <img src={headerTitleBottomLineSVG} alt="" />
-            </div>
+        <div className={vanilla.Header}>
+          <h1>
+            <div className={vanilla.HeaderTitle}>{pageTitle}</div>
+          </h1>
+          <div className={vanilla.HeaderTitleBottomLine}>
+            <img src={headerTitleBottomLineSVG} alt="" />
           </div>
         </div>
       </header>
