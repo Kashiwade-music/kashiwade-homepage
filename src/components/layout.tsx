@@ -65,7 +65,11 @@ const Layout: React.FC<Props> = ({
               pageDescription={pageDescription}
               pageHero={pageHero}
             />
-            <Navbar currentPage={currentPage} />
+            {isDesktop ? (
+              <Navbar currentPage={currentPage} />
+            ) : (
+              <NavbarSmartPhone currentPage={currentPage} />
+            )}
             <Header pageTitle={pageTitle ?? ""}>{pageDescription}</Header>
             <ContentArea>{children}</ContentArea>
             <Footer />

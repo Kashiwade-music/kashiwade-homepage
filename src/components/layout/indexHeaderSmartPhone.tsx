@@ -4,10 +4,10 @@ import * as vanilla from "./indexHeaderSmartPhone.css";
 
 const IndexHeaderSmartPhone = () => {
   return (
-    <header className={vanilla.HeadWrap}>
-      <div className={vanilla.HeaderSmartphone}>
+    <header>
+      <div className={vanilla.Header}>
         <div className={vanilla.Campus}>
-          <div className={vanilla.HeaderImage1Smartphone}>
+          <div className={vanilla.HeaderImage1}>
             <StaticImage
               src="../../images/kashiwade_sironora_normal_closeMouth_alphaChannel_sp.png"
               layout="fixed"
@@ -17,8 +17,7 @@ const IndexHeaderSmartPhone = () => {
               width={550}
             />
           </div>
-          <div></div>
-          <div className={vanilla.TopMessageBoxSmartphone}>
+          <div className={vanilla.TopMessageBox}>
             <div className={vanilla.PassingBar1}>
               <div className={vanilla.PassingBar2}>
                 <div className={vanilla.PassingBar3}>
