@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useMediaQuery } from "react-responsive";
 import * as vanilla from "./header.css";
 import headerTitleBottomLineSVG1 from "../../images/header-title-bottom-line.svg";
 import headerTitleBottomLineSVG2 from "../../images/header-title-bottom-line2.svg";
@@ -21,8 +20,7 @@ const Header: React.FC<Props> = ({ pageTitle, children = null }) => {
   } else if (pageTitle === "Contact") {
     headerTitleBottomLineSVG = headerTitleBottomLineSVG2;
   }
-  const isDesktopOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
-  //if window size is bigger than 600px, isDesktopOrMobile has "false"
+
   if (children != null) {
     return (
       <header>
