@@ -22,7 +22,7 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
       {<ContentLinkBoxes {...data} />}
       <div className={vanilla.MoreLinkBox}>
         <Link to="/works" className={vanilla.MoreLink}>
-          show works
+          show more works
         </Link>
       </div>
     </Layout>

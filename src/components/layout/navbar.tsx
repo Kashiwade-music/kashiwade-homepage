@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import Drawer from "./drawer";
 import * as vanilla from "./navbar.css";
 
 type Props = {
@@ -22,7 +21,6 @@ const NavBar = (props: Props) => {
   } else if (props.currentPage === "contact") {
     contactClass = vanilla.NavContentActive;
   }
-  //userMediaQueryを利用するとcssが当たらなくなるのでこのまま
   return (
     <nav className={vanilla.NavBar}>
       <div className={vanilla.NavContentArea}>

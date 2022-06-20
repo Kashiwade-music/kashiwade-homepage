@@ -6,6 +6,11 @@ export const ContentLinkBoxAreaCSS = style({
   gap: "0 2%",
   gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
   gridAutoRows: "auto",
+  "@media": {
+    "screen and (max-width: 600px)": {
+      gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
+    },
+  },
 });
 
 export const LinkTextDecoration = style({
@@ -14,7 +19,6 @@ export const LinkTextDecoration = style({
 });
 
 export const Box = style({
-  minWidth: "200px",
   opacity: 1,
   transition: "all 0.3s",
   position: "relative",
@@ -28,6 +32,11 @@ export const Title = style({
   margin: "3px 0px",
   fontSize: "17px",
   fontFamily: '"Noto Sans JP", sans-serif',
+  "@media": {
+    "screen and (max-width: 600px)": {
+      fontSize: "16px",
+    },
+  },
 });
 
 export const Tags = style({
@@ -83,4 +92,9 @@ export const Description = style({
   fontWeight: 100,
   color: "rgb(105, 104, 104)",
   fontFamily: '"Noto Sans JP", sans-serif',
+  "@media": {
+    "screen and (max-width: 600px)": {
+      fontSize: "13px",
+    },
+  },
 });
