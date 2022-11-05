@@ -31,7 +31,7 @@ If you have a project that I'm able to help you with, please feel free to contac
 - Delivery date and schedule
 - Budget : As it varies depending on the details of the request, please provide this as a reference first.
 - Scheduled release date of media using my works
-- Availability of public disclosure of achievements : Only requests that can be noticed on Twitter or on my website will be accepted.
+- Availability of public disclosure of achievements
 
 <div class="info">
 <b>Info</b>
@@ -45,6 +45,6 @@ If you have a project that I'm able to help you with, please feel free to contac
         <li>If you want to have a meeting or retake, please make a formal request via email, not Skeb.</li>
         <li>For more information about Skeb, see <a href="https://medium.com/skeb-jp/guide-154f3a80c3b6" target="_blank" rel="noopener noreferrer">Quick Guide</a> and <a href="https://skeb.jp/client" target="_blank" rel="noopener noreferrer">Client Guidelines</a></li>
     </ul>
-    <li>As of July 2022, I'm looking for requests to begin in November 2022 or later.</li>
+    <li>As of November 2022, I'm looking for requests to begin in April 2023 or later.</li>
   </ul>
 </div>
