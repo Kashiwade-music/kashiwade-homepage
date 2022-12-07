@@ -8,7 +8,8 @@ type Props = {
   currentPage: string;
 };
 const NavBarSmartPhone = (props: Props) => {
-  let [profileClass, worksClass, linksClass, contactClass] = [
+  let [profileClass, worksClass, specialClass, linksClass, contactClass] = [
+    vanilla.NavContent,
     vanilla.NavContent,
     vanilla.NavContent,
     vanilla.NavContent,
@@ -22,6 +23,8 @@ const NavBarSmartPhone = (props: Props) => {
     profileClass = vanilla.NavContentActive;
   } else if (props.currentPage === "works") {
     worksClass = vanilla.NavContentActive;
+  } else if (props.currentPage === "special") {
+    specialClass = vanilla.NavContentActive;
   } else if (props.currentPage === "links") {
     linksClass = vanilla.NavContentActive;
   } else if (props.currentPage === "contact") {
@@ -56,6 +59,11 @@ const NavBarSmartPhone = (props: Props) => {
             <li>
               <Link to="/works" className={worksClass}>
                 Works
+              </Link>
+            </li>
+            <li>
+              <Link to="/special" className={specialClass}>
+                Special
               </Link>
             </li>
             <li>

@@ -6,7 +6,9 @@ type Props = {
   currentPage: string;
 };
 const NavBar = (props: Props) => {
-  let [profileClass, worksClass, linksClass, contactClass] = [
+  // Set the classes of the nav links
+  let [profileClass, worksClass, specialClass, linksClass, contactClass] = [
+    vanilla.NavContent,
     vanilla.NavContent,
     vanilla.NavContent,
     vanilla.NavContent,
@@ -16,6 +18,8 @@ const NavBar = (props: Props) => {
     profileClass = vanilla.NavContentActive;
   } else if (props.currentPage === "works") {
     worksClass = vanilla.NavContentActive;
+  } else if (props.currentPage === "special") {
+    specialClass = vanilla.NavContentActive;
   } else if (props.currentPage === "links") {
     linksClass = vanilla.NavContentActive;
   } else if (props.currentPage === "contact") {
@@ -34,6 +38,9 @@ const NavBar = (props: Props) => {
           </Link>
           <Link to="/works" className={worksClass}>
             Works
+          </Link>
+          <Link to="/special" className={specialClass}>
+            Special
           </Link>
           <Link to="/links" className={linksClass}>
             Links
