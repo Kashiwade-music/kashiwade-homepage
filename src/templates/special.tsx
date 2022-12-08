@@ -11,24 +11,13 @@ const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
   const colors: mytypes.Colors = {
     overlay: {
       background: data.markdownRemark?.frontmatter?.overlay?.background ?? "",
-      main: data.markdownRemark?.frontmatter?.overlay?.main ?? "",
+      lineColor: data.markdownRemark?.frontmatter?.overlay?.lineColor ?? "",
+      logoColor: data.markdownRemark?.frontmatter?.overlay?.logoColor ?? "",
       transition: {
         rect1:
           data.markdownRemark?.frontmatter?.overlay?.transition?.rect1 ?? "",
         rect2:
           data.markdownRemark?.frontmatter?.overlay?.transition?.rect2 ?? "",
-      },
-    },
-    contentArea: {
-      main: {
-        backgroundColor:
-          data.markdownRemark?.frontmatter?.contentArea?.main
-            ?.backgroundColor ?? "",
-      },
-      outer: {
-        backgroundColor:
-          data.markdownRemark?.frontmatter?.contentArea?.outer
-            ?.backgroundColor ?? "",
       },
     },
   };
@@ -56,18 +45,11 @@ export const pageQuery = graphql`
       frontmatter {
         overlay {
           background
-          main
+          logoColor
+          lineColor
           transition {
             rect1
             rect2
-          }
-        }
-        contentArea {
-          main {
-            backgroundColor
-          }
-          outer {
-            backgroundColor
           }
         }
         subtitle

@@ -1,11 +1,10 @@
 import { keyframes, style, createVar } from "@vanilla-extract/css";
 
 export const overlay_background = createVar();
-export const overlay_main = createVar();
+export const overlay_logoColor = createVar();
+export const overlay_lineColor = createVar();
 export const overlay_transition_rect1 = createVar();
 export const overlay_transition_rect2 = createVar();
-export const contentArea_main_backgroundColor = createVar();
-export const contentArea_outer_backgroundColor = createVar();
 
 const BlurTransition = keyframes({
   "0%": { opacity: 1 },
@@ -46,7 +45,7 @@ export const LeftObi = style({
   width: "100px",
   border: "solid",
   borderWidth: "0px 2px 0px 0px",
-  borderColor: overlay_main,
+  borderColor: overlay_lineColor,
   animation: `${ObiAnimation} 0.7s cubic-bezier(0.4, 0.01, 0, 1) 1.8s 1 normal forwards`,
   "@media": {
     "screen and (max-width: 600px)": {
@@ -61,7 +60,7 @@ export const RightObi = style({
   width: "100px",
   border: "solid",
   borderWidth: "0px 0px 0px 2px",
-  borderColor: overlay_main,
+  borderColor: overlay_lineColor,
   animation: `${ObiAnimation} 0.7s cubic-bezier(0.4, 0.01, 0, 1) 1.8s 1 normal forwards`,
   "@media": {
     "screen and (max-width: 600px)": {
@@ -160,7 +159,7 @@ export const SubTitleInner = style({
   fontFamily: '"Kanit"',
   fontSize: "15px",
   fontWeight: 100,
-  color: "white",
+  color: overlay_logoColor,
   verticalAlign: "bottom",
 
   textAlign: "justify",
@@ -238,7 +237,7 @@ export const TopObi = style({
   width: "0%",
   border: "solid",
   borderWidth: "0px 0px 1px 0px",
-  borderColor: overlay_main,
+  borderColor: overlay_lineColor,
   animation: `${ObiAnimation2} 1.6s cubic-bezier(0.4, 0.01, 0, 1) 2.1s 1 normal forwards`,
   "@media": {
     "screen and (max-width: 600px)": {
@@ -253,7 +252,7 @@ export const BottomObi = style({
   width: "0%",
   border: "solid",
   borderWidth: "1px 0px 0px 0px",
-  borderColor: overlay_main,
+  borderColor: overlay_lineColor,
   animation: `${ObiAnimation2} 1.6s cubic-bezier(0.4, 0.01, 0, 1) 2.1s 1 normal forwards`,
   "@media": {
     "screen and (max-width: 600px)": {

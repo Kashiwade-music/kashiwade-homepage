@@ -28,7 +28,7 @@ const Overlay: React.FC<Props> = ({ colors, subtitle }) => {
           <div
             className={vanilla.LeftObi}
             style={assignInlineVars({
-              [vanilla.overlay_main]: colors.overlay.main,
+              [vanilla.overlay_lineColor]: colors.overlay.lineColor,
             })}
           ></div>
         </div>
@@ -36,20 +36,20 @@ const Overlay: React.FC<Props> = ({ colors, subtitle }) => {
           <div className={vanilla.KashiwadeLogo}>
             <div className={vanilla.SVGContainerRight}>
               <KashiwadeLogoRight
-                fill={colors.overlay.main}
+                fill={colors.overlay.logoColor}
                 style={{ height: "100%" }}
               />
             </div>
             <div className={vanilla.SVGContainerLeft}>
               <KashiwadeLogoLeft
-                fill={colors.overlay.main}
+                fill={colors.overlay.logoColor}
                 style={{ height: "100%" }}
               />
             </div>
             <div className={vanilla.SVGContainerText}>
               <div className={vanilla.SVGContainerTextInner}>
                 <KashiwadeLogoText
-                  fill={colors.overlay.main}
+                  fill={colors.overlay.logoColor}
                   style={{ height: "100%" }}
                 />
               </div>
@@ -71,7 +71,7 @@ const Overlay: React.FC<Props> = ({ colors, subtitle }) => {
           <div
             className={vanilla.RightObi}
             style={assignInlineVars({
-              [vanilla.overlay_main]: colors.overlay.main,
+              [vanilla.overlay_lineColor]: colors.overlay.lineColor,
             })}
           ></div>
         </div>
@@ -106,7 +106,7 @@ const Overlay: React.FC<Props> = ({ colors, subtitle }) => {
           <div
             className={vanilla.TopObi}
             style={assignInlineVars({
-              [vanilla.overlay_main]: colors.overlay.main,
+              [vanilla.overlay_lineColor]: colors.overlay.lineColor,
             })}
           ></div>
         </div>
@@ -114,7 +114,7 @@ const Overlay: React.FC<Props> = ({ colors, subtitle }) => {
           <div
             className={vanilla.BottomObi}
             style={assignInlineVars({
-              [vanilla.overlay_main]: colors.overlay.main,
+              [vanilla.overlay_lineColor]: colors.overlay.lineColor,
             })}
           ></div>
         </div>

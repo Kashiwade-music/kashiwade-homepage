@@ -1,18 +1,11 @@
 export interface Colors {
   overlay: {
     background: string;
-    main: string;
+    logoColor: string;
+    lineColor: string;
     transition: {
       rect1: string;
       rect2: string;
-    };
-  };
-  contentArea: {
-    main: {
-      backgroundColor: string;
-    };
-    outer: {
-      backgroundColor: string;
     };
   };
 }
