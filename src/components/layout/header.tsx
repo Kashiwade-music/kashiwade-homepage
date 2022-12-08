@@ -15,6 +15,8 @@ const Header: React.FC<Props> = ({ pageTitle, children = null }) => {
     headerTitleBottomLineSVG = headerTitleBottomLineSVG1;
   } else if (pageTitle === "Works") {
     headerTitleBottomLineSVG = headerTitleBottomLineSVG2;
+  } else if (pageTitle == "Special") {
+    headerTitleBottomLineSVG = headerTitleBottomLineSVG1;
   } else if (pageTitle === "Links") {
     headerTitleBottomLineSVG = headerTitleBottomLineSVG3;
   } else if (pageTitle === "Contact") {
