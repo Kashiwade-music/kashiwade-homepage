@@ -75,5 +75,12 @@ module.exports = {
         path: "./resources/contact/",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "special",
+        path: "./resources/special",
+      },
+    },
   ],
 };
