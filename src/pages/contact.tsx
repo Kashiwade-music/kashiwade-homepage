@@ -149,7 +149,7 @@ export const query = graphql`
   query GetJpnEngContactHTML {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { glob: "**/resources/contact/**" } }
-      sort: { fields: frontmatter___index }
+      sort: { frontmatter: { index: ASC } }
     ) {
       edges {
         node {

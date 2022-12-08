@@ -33,7 +33,7 @@ export default IndexPage;
 export const query = graphql`
   query IndexPage {
     allMarkdownRemark(
-      sort: { fields: frontmatter___slug, order: DESC }
+      sort: { frontmatter: { slug: DESC } }
       limit: 4
       filter: { fileAbsolutePath: { glob: "**/resources/works/**" } }
     ) {
