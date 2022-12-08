@@ -6,8 +6,8 @@ import { graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
 import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { useMediaQuery } from "react-responsive";
-import PageControlButtons from "../components/pageControlButtons";
-import * as vanilla from "../styles/worksContentPage.css";
+import PageControlButtons from "./components/works/pageControlButtons";
+import * as vanilla from "./works.css";
 
 const WorkPostContent: React.FC<PageProps<Queries.PageQueryQuery>> = ({
   data,
@@ -114,6 +114,8 @@ const Template: React.FC<PageProps<Queries.PageQueryQuery>> = ({ data }) => {
   return (
     <Layout
       currentPage="works"
+      // data.markdownRemark?.frontmatter?.slugがnullやundefinedならundefinedを渡す
+      // そうでないなら/worksとdata.markdownRemark?.frontmatter?.slugを文字列として結合して渡す
       pageUrl={data.markdownRemark?.frontmatter?.slug ?? undefined}
       pageTitle={"Works"}
       pageDescription={
@@ -165,7 +167,7 @@ export const pageQuery = graphql`
       id
     }
     allMarkdownRemark(
-      sort: { fields: frontmatter___slug, order: ASC }
+      sort: { frontmatter: { slug: ASC } }
       filter: { fileAbsolutePath: { glob: "**/resources/works/**" } }
     ) {
       edges {
