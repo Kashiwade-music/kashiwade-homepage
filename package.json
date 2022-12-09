@@ -21,6 +21,7 @@
     "@fontsource/kanit": "^4.5.10",
     "@fontsource/noto-sans-jp": "^4.5.12",
     "@fontsource/source-sans-pro": "^4.5.11",
+    "@fontsource/zen-old-mincho": "^4.5.14",
     "@mui/material": "^5.10.17",
     "@react-icons/all-files": "^4.1.0",
     "@vanilla-extract/babel-plugin": "^1.2.0",
@@ -45,6 +46,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.7.1",
     "react-responsive": "^9.0.2",
+    "react-scroll-parallax": "^3.3.2",
     "react-slideshow-image": "^4.0.5"
   },
   "devDependencies": {
