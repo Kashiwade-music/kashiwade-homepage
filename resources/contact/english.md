@@ -2,7 +2,8 @@
 index: 1
 ---
 
-# Comments, Requests, or Requests to use my works
+<h1 class="contact">Comments, Requests, or Requests to use my works</h1>
+
 Please comment on my music by email, [Twitter](https://twitter.com/Kashiwade_music) DM, or post in the comments section of SNS. It makes me really happy, and any comments are welcome! By all means, feel free to post/send them!
 
 I also accept various requests (CD re-release requests, odai-bako, etc.). I may not be able to meet all requests, but please feel free to contact me.
@@ -15,7 +16,8 @@ Please describe the following requirements on message when you contact us.
 - Whether the title of my music and composer name will be written or not
   - If you do not display the name of my music and composer, I refuse the use of my music.
 
-# Music Production Requests
+<h1 class="contact">Music Production Requests</h1>
+
 I'm looking for requests for music production (composition/arrangement), mixing, mastering, etc. for both commercial and coterie/doujin productions.
 If you have a project that I'm able to help you with, please feel free to contact me by e-mail with the following information.
 
@@ -48,3 +50,48 @@ If you have a project that I'm able to help you with, please feel free to contac
     <li>As of November 2022, I'm looking for requests to begin in April 2023 or later.</li>
   </ul>
 </div>
+
+<style>
+h1.contact {
+  display: flex;
+  align-items: center;
+  font-family: "Kanit", "Noto Sans JP", sans-serif;
+  font-weight: 200;
+  font-size: "2em";
+}
+
+h1.contact:before, h1.contact:after{
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background: #878ac4;
+}
+
+h1.contact:before{
+  margin-right: 0.5em;
+}
+
+h1.contact:after{
+  margin-left: 0.5em;
+}
+
+@media screen and (max-width: 700px){
+  h1 {
+    font-size: "1.6em";
+    font-weight: 300;
+  }
+}
+ 
+div.info {
+  padding: 0.8em 1em;
+    color: #4a724e;
+    background: #e4f8e6;
+    border-left: solid 10px #94e39c;
+}
+
+div.info > ul {
+  margin: 0;
+  padding-left: 35px;
+}
+
+</style>

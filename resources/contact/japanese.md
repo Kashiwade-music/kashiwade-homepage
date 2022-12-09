@@ -1,7 +1,8 @@
 ---
 index: 0
 ---
-# 感想や要望、楽曲利用について
+<h1 class="contact">感想や要望、楽曲利用について</h1>
+
 Kashiwadeが過去に制作した楽曲の感想については、メールや[Twitter](https://twitter.com/Kashiwade_music)のDM、各種コメント欄によろしくお願いします。非常に励みになりますので、どんな些細なことでも、あるいは長文でも大歓迎です！是非お気軽に投稿・送信してください！
 
 
@@ -17,7 +18,8 @@ Kashiwadeが過去に制作した楽曲の感想については、メールや[T
   - クレジットを記載できない案件についてはお断りさせて頂きます。
 
 
-# 音楽制作の依頼について
+<h1 class="contact">音楽制作の依頼について</h1>
+
 商業・同人問わず楽曲制作(作曲 / 編曲)・ミキシング・マスタリング等を中心としたご依頼を募集しております。
 お力になれそうな案件がありましたら、下記の内容を含む文書を添えて、メールにてお気軽にご相談ください。
 
@@ -50,3 +52,48 @@ Kashiwadeが過去に制作した楽曲の感想については、メールや[T
     <li>2022年11月現在、2023年4月以降に取り掛かる案件を募集しています</li>
   </ul>
 </div>
+
+<style>
+h1.contact {
+  display: flex;
+  align-items: center;
+  font-family: "Kanit", "Noto Sans JP", sans-serif;
+  font-weight: 200;
+  font-size: "2em";
+}
+
+h1.contact:before, h1.contact:after{
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background: #878ac4;
+}
+
+h1.contact:before{
+  margin-right: 0.5em;
+}
+
+h1.contact:after{
+  margin-left: 0.5em;
+}
+
+@media screen and (max-width: 700px){
+  h1 {
+    font-size: "1.6em";
+    font-weight: 300;
+  }
+}
+ 
+div.info {
+  padding: 0.8em 1em;
+    color: #4a724e;
+    background: #e4f8e6;
+    border-left: solid 10px #94e39c;
+}
+
+div.info > ul {
+  margin: 0;
+  padding-left: 35px;
+}
+
+</style>
