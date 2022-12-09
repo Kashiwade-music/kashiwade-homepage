@@ -56,7 +56,14 @@ const Overlay: React.FC<Props> = ({ colors, subtitle }) => {
             </div>
           </div>
           <div className={vanilla.SubTitle}>
-            <div className={vanilla.SubTitleInner}>{subtitleText}</div>
+            <div
+              className={vanilla.SubTitleInner}
+              style={assignInlineVars({
+                [vanilla.overlay_logoColor]: colors.overlay.logoColor,
+              })}
+            >
+              {subtitleText}
+            </div>
           </div>
         </div>
         <div
