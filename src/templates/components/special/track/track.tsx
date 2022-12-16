@@ -67,14 +67,28 @@ interface TrackProps {
 }
 
 // Function that takes a string and font size and calculates the px width
+// SSR is not supported, so we can't use document.createElement("canvas")
+// to calculate the width of a string
 const calculateWidth = (str: string, fontSize: number) => {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
-  if (context) {
-    context.font = `${fontSize}px Arial`;
-    return context.measureText(str).width;
+  let width = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (
+      // string is alphabetical
+      (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90) || // uppercase
+      (str.charCodeAt(i) >= 97 && str.charCodeAt(i) <= 122) // lowercase
+    ) {
+      width += fontSize * 0.465;
+    } else if (
+      // string is numerical
+      str.charCodeAt(i) >= 48 &&
+      str.charCodeAt(i) <= 57
+    ) {
+      width += fontSize * 0.4;
+    } else {
+      width += fontSize * 0.8;
+    }
   }
-  return 0;
+  return width;
 };
 
 export const Track: React.FC<TrackProps> = ({ data }) => {
@@ -92,8 +106,10 @@ export const Track: React.FC<TrackProps> = ({ data }) => {
   let longestTrackSubinfo = 0;
   data.markdownRemark?.frontmatter?.track?.forEach((track) => {
     let subinfo = track?.subinfo?.toString() as string;
-    if (calculateWidth(subinfo, 15) > longestTrackSubinfo) {
-      longestTrackSubinfo = calculateWidth(subinfo, 15);
+    if (subinfo) {
+      if (calculateWidth(subinfo, 15) > longestTrackSubinfo) {
+        longestTrackSubinfo = calculateWidth(subinfo, 15);
+      }
     }
   });
 
