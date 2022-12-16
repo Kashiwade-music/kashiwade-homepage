@@ -59,7 +59,7 @@ export const query = graphql`
           }
           logo_image {
             childImageSharp {
-              gatsbyImageData(quality: 100)
+              gatsbyImageData(layout: FIXED, height: 150, placeholder: NONE)
             }
           }
           descriptionBackgroundImage {

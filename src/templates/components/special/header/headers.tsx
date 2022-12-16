@@ -41,7 +41,7 @@ export const 天光玲瓏: React.FC<Queries.SpecialPageQuery> = (data) => {
   );
 
   const isBannerWidthOver100vh = useMediaQuery({ query: "(min-width: 100vh)" });
-  const isBannerWidthOver410px = useMediaQuery({ query: "(min-width: 410px)" });
+  const isBannerWidthOver410px = useMediaQuery({ query: "(min-width: 420px)" });
 
   return (
     <div className={vanilla.Parent}>
@@ -80,7 +80,12 @@ export const 天光玲瓏: React.FC<Queries.SpecialPageQuery> = (data) => {
           <GatsbyImage
             image={logoImage}
             alt="logo image"
-            style={{ position: "absolute", height: "45vh", width: "45vh" }}
+            style={{
+              position: "absolute",
+              height: "45vh",
+              width: "45vh",
+              marginLeft: "calc(5vw + 10px)",
+            }}
           />
         </div>
       )}

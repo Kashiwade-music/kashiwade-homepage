@@ -129,12 +129,17 @@ export const query = graphql`
           }
           logo_image {
             childImageSharp {
-              gatsbyImageData(layout: FIXED, height: 150, quality: 100)
+              gatsbyImageData(
+                layout: FIXED
+                height: 150
+                quality: 50
+                placeholder: NONE
+              )
             }
           }
           descriptionBackgroundImage {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, quality: 100)
+              gatsbyImageData(layout: FULL_WIDTH, quality: 50)
             }
           }
           parallax {
