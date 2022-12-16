@@ -5,6 +5,7 @@ export const ParallaxTextColor = createVar();
 export const ParallaxOverlayColor = createVar();
 export const ParallaxOverlayOpacity = createVar();
 export const ParallaxMinHeight = createVar();
+export const ParallaxMinWidth = createVar();
 export const ParallaxImageFilter = createVar();
 
 export const ParallaxParent = style({
@@ -46,5 +47,12 @@ export const ParallaxFront = style({
 export const ParallaxBack = style({
   zIndex: -1,
   minHeight: ParallaxMinHeight,
+  filter: ParallaxImageFilter,
+});
+
+export const ParallaxBackEnableTranslateX = style({
+  zIndex: -1,
+  minHeight: ParallaxMinHeight,
+  minWidth: ParallaxMinWidth,
   filter: ParallaxImageFilter,
 });

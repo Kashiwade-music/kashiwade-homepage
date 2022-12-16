@@ -48,7 +48,7 @@ const Layout: React.FC<Props> = ({
               <NavbarSmartPhone currentPage={currentPage} />
             )}
             {isDesktop ? <IndexHeader /> : <IndexHeaderSmartPhone />}
-            <ContentArea>{children}</ContentArea>
+            <div>{children}</div>
             <Footer />
           </>
         )}

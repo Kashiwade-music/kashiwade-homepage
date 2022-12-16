@@ -7,6 +7,13 @@ import * as mytypes from "./components/special/types";
 import { MyParallax } from "./components/special/parallax/parallax";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Layout } from "./components/special/layout";
+import { News } from "./components/special/news/news";
+import { XFD } from "./components/special/xfd/xfd";
+import { Information } from "./components/special/information/information";
+import { Track } from "./components/special/track/track";
+import { Credit } from "./components/special/credit/credit";
+import { Footer } from "./components/special/footer/footer";
+import Meta from "../components/layout/meta";
 
 // markup
 const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
@@ -29,6 +36,17 @@ const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
     : undefined;
   return (
     <ParallaxProvider>
+      <Meta
+        pageUrl={data.markdownRemark?.frontmatter?.slug as string}
+        pageTitle={data.markdownRemark?.frontmatter?.title as string}
+        pageDescription={data.markdownRemark?.frontmatter?.description_array?.join(
+          ""
+        )}
+        pageHero={
+          data.markdownRemark?.frontmatter?.ogp?.childImageSharp
+            ?.gatsbyImageData.images.fallback?.src as string
+        }
+      />
       <Overlay
         colors={colors}
         subtitle={data.markdownRemark?.frontmatter?.subtitle ?? ""}
@@ -56,11 +74,15 @@ const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
           )}
         </MyParallax>
         <Layout data={data}>
-          <h1 className={vanilla.Headline}>
-            <p>News</p>
-          </h1>
+          <News data={data} />
+          <XFD data={data} />
+          <Information data={data} />
         </Layout>
-        <div style={{ height: "1000px" }}></div>
+        <Track data={data} />
+        <Layout data={data}>
+          <Credit data={data} />
+          <Footer data={data} />
+        </Layout>
       </div>
     </ParallaxProvider>
   );
@@ -74,6 +96,12 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        slug
+        ogp {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
         parallax {
           textColor
           overlayColor
@@ -126,8 +154,61 @@ export const pageQuery = graphql`
         }
         poem
         description_array
-        backgroundColor
         news
+        mainBackgroundImage {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+        theme {
+          accent
+          base
+          baseSub1
+          main
+          mainSub1
+          mainSub2
+        }
+        soundcloud
+        youtube
+        jacketImage {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        infomation {
+          title
+          specification
+          releaseDate
+          price
+          circle
+          booth
+        }
+        shop {
+          download
+          cd
+          streaming
+        }
+        trackBackgroundImage {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+        track {
+          title
+          subinfo
+        }
+        credit {
+          other {
+            name
+            role
+            website
+          }
+          produce {
+            name
+            twitter
+            website
+          }
+        }
       }
     }
   }

@@ -9,12 +9,14 @@ interface Props {
   node: ImageDataLike;
   children: React.ReactNode;
   data: Queries.SpecialPageQuery;
+  enableTranslateX?: boolean;
 }
 export const MyParallax: React.FC<Props> = ({
   height,
   node,
   children,
   data,
+  enableTranslateX = false,
 }) => {
   const image = getImage(node as any);
   return (
@@ -37,22 +39,43 @@ export const MyParallax: React.FC<Props> = ({
       >
         {children}
       </div>
-      <Parallax translateY={["-50%", "0%"]}>
-        <div className={vanilla.ParallaxBack}>
-          {image && (
-            <GatsbyImage
-              image={image}
-              alt="parallax image"
-              className={vanilla.ParallaxBack}
-              style={assignInlineVars({
-                [vanilla.ParallaxMinHeight]: `calc(${height} * 2)`,
-                [vanilla.ParallaxImageFilter]: data.markdownRemark?.frontmatter
-                  ?.parallax?.imageFilter as string,
-              })}
-            />
-          )}
-        </div>
-      </Parallax>
+      {!enableTranslateX && (
+        <Parallax translateY={["-50%", "0%"]}>
+          <div className={vanilla.ParallaxBack}>
+            {image && (
+              <GatsbyImage
+                image={image}
+                alt="parallax image"
+                className={vanilla.ParallaxBack}
+                style={assignInlineVars({
+                  [vanilla.ParallaxMinHeight]: `calc(${height} * 2)`,
+                  [vanilla.ParallaxImageFilter]: data.markdownRemark
+                    ?.frontmatter?.parallax?.imageFilter as string,
+                })}
+              />
+            )}
+          </div>
+        </Parallax>
+      )}
+      {enableTranslateX && (
+        <Parallax translateY={["-50%", "0%"]} translateX={["0%", "-50%"]}>
+          <div className={vanilla.ParallaxBack}>
+            {image && (
+              <GatsbyImage
+                image={image}
+                alt="parallax image"
+                className={vanilla.ParallaxBackEnableTranslateX}
+                style={assignInlineVars({
+                  [vanilla.ParallaxMinHeight]: `calc(${height} * 2)`,
+                  [vanilla.ParallaxMinWidth]: `calc(${height} * 4)`,
+                  [vanilla.ParallaxImageFilter]: data.markdownRemark
+                    ?.frontmatter?.parallax?.imageFilter as string,
+                })}
+              />
+            )}
+          </div>
+        </Parallax>
+      )}
     </div>
   );
 };

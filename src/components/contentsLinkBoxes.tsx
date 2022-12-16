@@ -4,9 +4,7 @@ import { Link } from "gatsby";
 
 import * as vanilla from "./contentsLinkBoxes.css";
 
-const ContentLinkBoxes = (
-  data: Queries.IndexPageQuery | Queries.WorksPageQuery
-) => {
+const ContentLinkBoxes = (data: Queries.WorksPageQuery) => {
   return (
     <div className={vanilla.ContentLinkBoxAreaCSS}>
       {data.allMarkdownRemark.edges.map((node) => {
