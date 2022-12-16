@@ -27,7 +27,7 @@ parallax:
   textColor: "#ffffff"
   overlayColor: "#000000"
   overlayOpacity: 0.5
-  imageFilter: grayscale(100%)
+  imageFilter: grayscale(50%)
 # ---------------
 poem: 世界に刻む、ただひとつの物語。
 description_array: 
@@ -36,12 +36,12 @@ description_array:
 descriptionBackgroundImage: 20211031-aquilegia-description-back.jpg
 # ---------------
 theme:
-  base: "#e1eff9"
+  base: "#EFF3FA"
   baseSub1: "#e1eff9"
-  main: "#1f2d37"
-  mainSub1: "#525a60"
-  mainSub2: "#788187"
-  accent: '#2C5399'
+  main: "#1f2837"
+  mainSub1: "#787d87"
+  mainSub2: "#d5d6d8"
+  accent: '#7ba5d4'
 # ---------------
 news:
   - 2022/12/09
@@ -85,22 +85,22 @@ shop:
     - Others
     - https://big-up.style/8siI1Odhwa
 # ---------------
-trackBackgroundImage: ./20221030-tenkoureirou-header.jpg
+trackBackgroundImage: ./20211031-aquilegia-header.jpg
 track:
-  - title: 天光玲瓏
-    subinfo: Resplendent Sunlight
-  - title: 天地の鼓動
-    subinfo: Rhythm of Vast Earth
-  - title: 旧懐の旋律
-    subinfo: Echoes of Nostalgia
-  - title: 落桜と月
-    subinfo: Falling Sakura and Moonlight
-  - title: 幽世と現世の狭間にて 改
-    subinfo: Between the Realm of Eternity and Transience -Rev-
-  - title: 神刀開眼
-    subinfo: Awakening of Sacred Sword
-  - title: 花舞う都の空
-    subinfo: Sky of Harmonious Miyako
+  - title: Overture of the Great Adventure
+    subinfo: 
+  - title: Brilliant Blue Sky
+    subinfo: 
+  - title: Welcome to the Royal Capital
+    subinfo: 
+  - title: Thief of the Cobblestone Street
+    subinfo:
+  - title: Mysterious Powers
+    subinfo:
+  - title: Everlasting Tranquillity
+    subinfo:
+  - title: Aquilegia
+    subinfo:
 # ---------------
 credit:
   produce:
@@ -109,12 +109,12 @@ credit:
     twitter: https://twitter.com/kashiwade_music
   other:
     - role: Illustration by
-      name: 英エイスト
+      name: onkyi
       website:
         - Pixiv 
-        - https://www.pixiv.net/users/4695872
+        - https://www.pixiv.net/users/8561384
         - Twitter 
-        - https://www.pixiv.net/users/4695872
+        - https://twitter.com/onkyi_ktpc58
 
 # ---------------
 
