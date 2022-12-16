@@ -1292,7 +1292,6 @@ type MarkdownRemark = Node & {
   readonly excerptAst: Maybe<Scalars['JSON']>;
   readonly fileAbsolutePath: Maybe<Scalars['String']>;
   readonly frontmatter: Maybe<MarkdownRemarkFrontmatter>;
-  readonly gatsbyPath: Maybe<Scalars['String']>;
   readonly headings: Maybe<ReadonlyArray<Maybe<MarkdownHeading>>>;
   readonly html: Maybe<Scalars['String']>;
   readonly htmlAst: Maybe<Scalars['JSON']>;
@@ -1316,11 +1315,6 @@ type MarkdownRemark_excerptArgs = {
 type MarkdownRemark_excerptAstArgs = {
   pruneLength?: InputMaybe<Scalars['Int']>;
   truncate?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-type MarkdownRemark_gatsbyPathArgs = {
-  filePath: InputMaybe<Scalars['String']>;
 };
 
 
@@ -1387,7 +1381,6 @@ type MarkdownRemarkFieldSelector = {
   readonly excerptAst: InputMaybe<FieldSelectorEnum>;
   readonly fileAbsolutePath: InputMaybe<FieldSelectorEnum>;
   readonly frontmatter: InputMaybe<MarkdownRemarkFrontmatterFieldSelector>;
-  readonly gatsbyPath: InputMaybe<FieldSelectorEnum>;
   readonly headings: InputMaybe<MarkdownHeadingFieldSelector>;
   readonly html: InputMaybe<FieldSelectorEnum>;
   readonly htmlAst: InputMaybe<FieldSelectorEnum>;
@@ -1406,7 +1399,6 @@ type MarkdownRemarkFilterInput = {
   readonly excerptAst: InputMaybe<JSONQueryOperatorInput>;
   readonly fileAbsolutePath: InputMaybe<StringQueryOperatorInput>;
   readonly frontmatter: InputMaybe<MarkdownRemarkFrontmatterFilterInput>;
-  readonly gatsbyPath: InputMaybe<StringQueryOperatorInput>;
   readonly headings: InputMaybe<MarkdownHeadingFilterListInput>;
   readonly html: InputMaybe<StringQueryOperatorInput>;
   readonly htmlAst: InputMaybe<JSONQueryOperatorInput>;
@@ -1424,17 +1416,42 @@ type MarkdownRemarkFilterListInput = {
 };
 
 type MarkdownRemarkFrontmatter = {
+  readonly additional_header_image: Maybe<File>;
+  readonly additional_header_image_2: Maybe<File>;
   readonly booth: Maybe<Scalars['String']>;
+  readonly credit: Maybe<MarkdownRemarkFrontmatterCredit>;
   readonly date: Maybe<Scalars['Date']>;
   readonly description: Maybe<Scalars['String']>;
+  readonly descriptionBackgroundImage: Maybe<File>;
+  readonly description_array: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly description_long: Maybe<Scalars['String']>;
+  readonly header: Maybe<MarkdownRemarkFrontmatterHeader>;
+  readonly header_image: Maybe<File>;
+  readonly header_image_sp: Maybe<File>;
   readonly hero: Maybe<File>;
   readonly index: Maybe<Scalars['Int']>;
+  readonly infomation: Maybe<MarkdownRemarkFrontmatterInfomation>;
+  readonly jacketImage: Maybe<File>;
+  readonly logo_image: Maybe<File>;
+  readonly mainBackgroundImage: Maybe<File>;
+  readonly minWidth: Maybe<Scalars['String']>;
+  readonly news: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly ogp: Maybe<File>;
+  readonly overlay: Maybe<MarkdownRemarkFrontmatterOverlay>;
+  readonly parallax: Maybe<MarkdownRemarkFrontmatterParallax>;
+  readonly poem: Maybe<Scalars['String']>;
   readonly price: Maybe<Scalars['String']>;
+  readonly shop: Maybe<MarkdownRemarkFrontmatterShop>;
   readonly slug: Maybe<Scalars['String']>;
+  readonly soundcloud: Maybe<Scalars['Int']>;
+  readonly subtitle: Maybe<Scalars['String']>;
   readonly tag: Maybe<Scalars['String']>;
+  readonly theme: Maybe<MarkdownRemarkFrontmatterTheme>;
   readonly title: Maybe<Scalars['String']>;
+  readonly track: Maybe<ReadonlyArray<Maybe<MarkdownRemarkFrontmatterTrack>>>;
+  readonly trackBackgroundImage: Maybe<File>;
   readonly type: Maybe<Scalars['String']>;
+  readonly youtube: Maybe<Scalars['String']>;
 };
 
 
@@ -1445,46 +1462,409 @@ type MarkdownRemarkFrontmatter_dateArgs = {
   locale: InputMaybe<Scalars['String']>;
 };
 
+type MarkdownRemarkFrontmatterCredit = {
+  readonly other: Maybe<ReadonlyArray<Maybe<MarkdownRemarkFrontmatterCreditOther>>>;
+  readonly produce: Maybe<MarkdownRemarkFrontmatterCreditProduce>;
+};
+
+type MarkdownRemarkFrontmatterCreditFieldSelector = {
+  readonly other: InputMaybe<MarkdownRemarkFrontmatterCreditOtherFieldSelector>;
+  readonly produce: InputMaybe<MarkdownRemarkFrontmatterCreditProduceFieldSelector>;
+};
+
+type MarkdownRemarkFrontmatterCreditFilterInput = {
+  readonly other: InputMaybe<MarkdownRemarkFrontmatterCreditOtherFilterListInput>;
+  readonly produce: InputMaybe<MarkdownRemarkFrontmatterCreditProduceFilterInput>;
+};
+
+type MarkdownRemarkFrontmatterCreditOther = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly role: Maybe<Scalars['String']>;
+  readonly website: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+};
+
+type MarkdownRemarkFrontmatterCreditOtherFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly role: InputMaybe<FieldSelectorEnum>;
+  readonly website: InputMaybe<FieldSelectorEnum>;
+};
+
+type MarkdownRemarkFrontmatterCreditOtherFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly role: InputMaybe<StringQueryOperatorInput>;
+  readonly website: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownRemarkFrontmatterCreditOtherFilterListInput = {
+  readonly elemMatch: InputMaybe<MarkdownRemarkFrontmatterCreditOtherFilterInput>;
+};
+
+type MarkdownRemarkFrontmatterCreditOtherSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly role: InputMaybe<SortOrderEnum>;
+  readonly website: InputMaybe<SortOrderEnum>;
+};
+
+type MarkdownRemarkFrontmatterCreditProduce = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly twitter: Maybe<Scalars['String']>;
+  readonly website: Maybe<Scalars['String']>;
+};
+
+type MarkdownRemarkFrontmatterCreditProduceFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly twitter: InputMaybe<FieldSelectorEnum>;
+  readonly website: InputMaybe<FieldSelectorEnum>;
+};
+
+type MarkdownRemarkFrontmatterCreditProduceFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly twitter: InputMaybe<StringQueryOperatorInput>;
+  readonly website: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownRemarkFrontmatterCreditProduceSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly twitter: InputMaybe<SortOrderEnum>;
+  readonly website: InputMaybe<SortOrderEnum>;
+};
+
+type MarkdownRemarkFrontmatterCreditSortInput = {
+  readonly other: InputMaybe<MarkdownRemarkFrontmatterCreditOtherSortInput>;
+  readonly produce: InputMaybe<MarkdownRemarkFrontmatterCreditProduceSortInput>;
+};
+
 type MarkdownRemarkFrontmatterFieldSelector = {
+  readonly additional_header_image: InputMaybe<FileFieldSelector>;
+  readonly additional_header_image_2: InputMaybe<FileFieldSelector>;
   readonly booth: InputMaybe<FieldSelectorEnum>;
+  readonly credit: InputMaybe<MarkdownRemarkFrontmatterCreditFieldSelector>;
   readonly date: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly descriptionBackgroundImage: InputMaybe<FileFieldSelector>;
+  readonly description_array: InputMaybe<FieldSelectorEnum>;
   readonly description_long: InputMaybe<FieldSelectorEnum>;
+  readonly header: InputMaybe<MarkdownRemarkFrontmatterHeaderFieldSelector>;
+  readonly header_image: InputMaybe<FileFieldSelector>;
+  readonly header_image_sp: InputMaybe<FileFieldSelector>;
   readonly hero: InputMaybe<FileFieldSelector>;
   readonly index: InputMaybe<FieldSelectorEnum>;
+  readonly infomation: InputMaybe<MarkdownRemarkFrontmatterInfomationFieldSelector>;
+  readonly jacketImage: InputMaybe<FileFieldSelector>;
+  readonly logo_image: InputMaybe<FileFieldSelector>;
+  readonly mainBackgroundImage: InputMaybe<FileFieldSelector>;
+  readonly minWidth: InputMaybe<FieldSelectorEnum>;
+  readonly news: InputMaybe<FieldSelectorEnum>;
+  readonly ogp: InputMaybe<FileFieldSelector>;
+  readonly overlay: InputMaybe<MarkdownRemarkFrontmatterOverlayFieldSelector>;
+  readonly parallax: InputMaybe<MarkdownRemarkFrontmatterParallaxFieldSelector>;
+  readonly poem: InputMaybe<FieldSelectorEnum>;
   readonly price: InputMaybe<FieldSelectorEnum>;
+  readonly shop: InputMaybe<MarkdownRemarkFrontmatterShopFieldSelector>;
   readonly slug: InputMaybe<FieldSelectorEnum>;
+  readonly soundcloud: InputMaybe<FieldSelectorEnum>;
+  readonly subtitle: InputMaybe<FieldSelectorEnum>;
   readonly tag: InputMaybe<FieldSelectorEnum>;
+  readonly theme: InputMaybe<MarkdownRemarkFrontmatterThemeFieldSelector>;
   readonly title: InputMaybe<FieldSelectorEnum>;
+  readonly track: InputMaybe<MarkdownRemarkFrontmatterTrackFieldSelector>;
+  readonly trackBackgroundImage: InputMaybe<FileFieldSelector>;
   readonly type: InputMaybe<FieldSelectorEnum>;
+  readonly youtube: InputMaybe<FieldSelectorEnum>;
 };
 
 type MarkdownRemarkFrontmatterFilterInput = {
+  readonly additional_header_image: InputMaybe<FileFilterInput>;
+  readonly additional_header_image_2: InputMaybe<FileFilterInput>;
   readonly booth: InputMaybe<StringQueryOperatorInput>;
+  readonly credit: InputMaybe<MarkdownRemarkFrontmatterCreditFilterInput>;
   readonly date: InputMaybe<DateQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly descriptionBackgroundImage: InputMaybe<FileFilterInput>;
+  readonly description_array: InputMaybe<StringQueryOperatorInput>;
   readonly description_long: InputMaybe<StringQueryOperatorInput>;
+  readonly header: InputMaybe<MarkdownRemarkFrontmatterHeaderFilterInput>;
+  readonly header_image: InputMaybe<FileFilterInput>;
+  readonly header_image_sp: InputMaybe<FileFilterInput>;
   readonly hero: InputMaybe<FileFilterInput>;
   readonly index: InputMaybe<IntQueryOperatorInput>;
+  readonly infomation: InputMaybe<MarkdownRemarkFrontmatterInfomationFilterInput>;
+  readonly jacketImage: InputMaybe<FileFilterInput>;
+  readonly logo_image: InputMaybe<FileFilterInput>;
+  readonly mainBackgroundImage: InputMaybe<FileFilterInput>;
+  readonly minWidth: InputMaybe<StringQueryOperatorInput>;
+  readonly news: InputMaybe<StringQueryOperatorInput>;
+  readonly ogp: InputMaybe<FileFilterInput>;
+  readonly overlay: InputMaybe<MarkdownRemarkFrontmatterOverlayFilterInput>;
+  readonly parallax: InputMaybe<MarkdownRemarkFrontmatterParallaxFilterInput>;
+  readonly poem: InputMaybe<StringQueryOperatorInput>;
   readonly price: InputMaybe<StringQueryOperatorInput>;
+  readonly shop: InputMaybe<MarkdownRemarkFrontmatterShopFilterInput>;
   readonly slug: InputMaybe<StringQueryOperatorInput>;
+  readonly soundcloud: InputMaybe<IntQueryOperatorInput>;
+  readonly subtitle: InputMaybe<StringQueryOperatorInput>;
   readonly tag: InputMaybe<StringQueryOperatorInput>;
+  readonly theme: InputMaybe<MarkdownRemarkFrontmatterThemeFilterInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly track: InputMaybe<MarkdownRemarkFrontmatterTrackFilterListInput>;
+  readonly trackBackgroundImage: InputMaybe<FileFilterInput>;
   readonly type: InputMaybe<StringQueryOperatorInput>;
+  readonly youtube: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownRemarkFrontmatterHeader = {
+  readonly scrollBackgroundColor: Maybe<Scalars['String']>;
+  readonly scrollMainColor: Maybe<Scalars['String']>;
+};
+
+type MarkdownRemarkFrontmatterHeaderFieldSelector = {
+  readonly scrollBackgroundColor: InputMaybe<FieldSelectorEnum>;
+  readonly scrollMainColor: InputMaybe<FieldSelectorEnum>;
+};
+
+type MarkdownRemarkFrontmatterHeaderFilterInput = {
+  readonly scrollBackgroundColor: InputMaybe<StringQueryOperatorInput>;
+  readonly scrollMainColor: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownRemarkFrontmatterHeaderSortInput = {
+  readonly scrollBackgroundColor: InputMaybe<SortOrderEnum>;
+  readonly scrollMainColor: InputMaybe<SortOrderEnum>;
+};
+
+type MarkdownRemarkFrontmatterInfomation = {
+  readonly booth: Maybe<Scalars['String']>;
+  readonly circle: Maybe<Scalars['String']>;
+  readonly price: Maybe<Scalars['String']>;
+  readonly releaseDate: Maybe<Scalars['String']>;
+  readonly specification: Maybe<Scalars['String']>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+type MarkdownRemarkFrontmatterInfomationFieldSelector = {
+  readonly booth: InputMaybe<FieldSelectorEnum>;
+  readonly circle: InputMaybe<FieldSelectorEnum>;
+  readonly price: InputMaybe<FieldSelectorEnum>;
+  readonly releaseDate: InputMaybe<FieldSelectorEnum>;
+  readonly specification: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type MarkdownRemarkFrontmatterInfomationFilterInput = {
+  readonly booth: InputMaybe<StringQueryOperatorInput>;
+  readonly circle: InputMaybe<StringQueryOperatorInput>;
+  readonly price: InputMaybe<StringQueryOperatorInput>;
+  readonly releaseDate: InputMaybe<StringQueryOperatorInput>;
+  readonly specification: InputMaybe<StringQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownRemarkFrontmatterInfomationSortInput = {
+  readonly booth: InputMaybe<SortOrderEnum>;
+  readonly circle: InputMaybe<SortOrderEnum>;
+  readonly price: InputMaybe<SortOrderEnum>;
+  readonly releaseDate: InputMaybe<SortOrderEnum>;
+  readonly specification: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
+};
+
+type MarkdownRemarkFrontmatterOverlay = {
+  readonly background: Maybe<Scalars['String']>;
+  readonly lineColor: Maybe<Scalars['String']>;
+  readonly logoColor: Maybe<Scalars['String']>;
+  readonly transition: Maybe<MarkdownRemarkFrontmatterOverlayTransition>;
+};
+
+type MarkdownRemarkFrontmatterOverlayFieldSelector = {
+  readonly background: InputMaybe<FieldSelectorEnum>;
+  readonly lineColor: InputMaybe<FieldSelectorEnum>;
+  readonly logoColor: InputMaybe<FieldSelectorEnum>;
+  readonly transition: InputMaybe<MarkdownRemarkFrontmatterOverlayTransitionFieldSelector>;
+};
+
+type MarkdownRemarkFrontmatterOverlayFilterInput = {
+  readonly background: InputMaybe<StringQueryOperatorInput>;
+  readonly lineColor: InputMaybe<StringQueryOperatorInput>;
+  readonly logoColor: InputMaybe<StringQueryOperatorInput>;
+  readonly transition: InputMaybe<MarkdownRemarkFrontmatterOverlayTransitionFilterInput>;
+};
+
+type MarkdownRemarkFrontmatterOverlaySortInput = {
+  readonly background: InputMaybe<SortOrderEnum>;
+  readonly lineColor: InputMaybe<SortOrderEnum>;
+  readonly logoColor: InputMaybe<SortOrderEnum>;
+  readonly transition: InputMaybe<MarkdownRemarkFrontmatterOverlayTransitionSortInput>;
+};
+
+type MarkdownRemarkFrontmatterOverlayTransition = {
+  readonly rect1: Maybe<Scalars['String']>;
+  readonly rect2: Maybe<Scalars['String']>;
+};
+
+type MarkdownRemarkFrontmatterOverlayTransitionFieldSelector = {
+  readonly rect1: InputMaybe<FieldSelectorEnum>;
+  readonly rect2: InputMaybe<FieldSelectorEnum>;
+};
+
+type MarkdownRemarkFrontmatterOverlayTransitionFilterInput = {
+  readonly rect1: InputMaybe<StringQueryOperatorInput>;
+  readonly rect2: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownRemarkFrontmatterOverlayTransitionSortInput = {
+  readonly rect1: InputMaybe<SortOrderEnum>;
+  readonly rect2: InputMaybe<SortOrderEnum>;
+};
+
+type MarkdownRemarkFrontmatterParallax = {
+  readonly imageFilter: Maybe<Scalars['String']>;
+  readonly overlayColor: Maybe<Scalars['String']>;
+  readonly overlayOpacity: Maybe<Scalars['Float']>;
+  readonly textColor: Maybe<Scalars['String']>;
+};
+
+type MarkdownRemarkFrontmatterParallaxFieldSelector = {
+  readonly imageFilter: InputMaybe<FieldSelectorEnum>;
+  readonly overlayColor: InputMaybe<FieldSelectorEnum>;
+  readonly overlayOpacity: InputMaybe<FieldSelectorEnum>;
+  readonly textColor: InputMaybe<FieldSelectorEnum>;
+};
+
+type MarkdownRemarkFrontmatterParallaxFilterInput = {
+  readonly imageFilter: InputMaybe<StringQueryOperatorInput>;
+  readonly overlayColor: InputMaybe<StringQueryOperatorInput>;
+  readonly overlayOpacity: InputMaybe<FloatQueryOperatorInput>;
+  readonly textColor: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownRemarkFrontmatterParallaxSortInput = {
+  readonly imageFilter: InputMaybe<SortOrderEnum>;
+  readonly overlayColor: InputMaybe<SortOrderEnum>;
+  readonly overlayOpacity: InputMaybe<SortOrderEnum>;
+  readonly textColor: InputMaybe<SortOrderEnum>;
+};
+
+type MarkdownRemarkFrontmatterShop = {
+  readonly cd: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly download: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly streaming: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+};
+
+type MarkdownRemarkFrontmatterShopFieldSelector = {
+  readonly cd: InputMaybe<FieldSelectorEnum>;
+  readonly download: InputMaybe<FieldSelectorEnum>;
+  readonly streaming: InputMaybe<FieldSelectorEnum>;
+};
+
+type MarkdownRemarkFrontmatterShopFilterInput = {
+  readonly cd: InputMaybe<StringQueryOperatorInput>;
+  readonly download: InputMaybe<StringQueryOperatorInput>;
+  readonly streaming: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownRemarkFrontmatterShopSortInput = {
+  readonly cd: InputMaybe<SortOrderEnum>;
+  readonly download: InputMaybe<SortOrderEnum>;
+  readonly streaming: InputMaybe<SortOrderEnum>;
 };
 
 type MarkdownRemarkFrontmatterSortInput = {
+  readonly additional_header_image: InputMaybe<FileSortInput>;
+  readonly additional_header_image_2: InputMaybe<FileSortInput>;
   readonly booth: InputMaybe<SortOrderEnum>;
+  readonly credit: InputMaybe<MarkdownRemarkFrontmatterCreditSortInput>;
   readonly date: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<SortOrderEnum>;
+  readonly descriptionBackgroundImage: InputMaybe<FileSortInput>;
+  readonly description_array: InputMaybe<SortOrderEnum>;
   readonly description_long: InputMaybe<SortOrderEnum>;
+  readonly header: InputMaybe<MarkdownRemarkFrontmatterHeaderSortInput>;
+  readonly header_image: InputMaybe<FileSortInput>;
+  readonly header_image_sp: InputMaybe<FileSortInput>;
   readonly hero: InputMaybe<FileSortInput>;
   readonly index: InputMaybe<SortOrderEnum>;
+  readonly infomation: InputMaybe<MarkdownRemarkFrontmatterInfomationSortInput>;
+  readonly jacketImage: InputMaybe<FileSortInput>;
+  readonly logo_image: InputMaybe<FileSortInput>;
+  readonly mainBackgroundImage: InputMaybe<FileSortInput>;
+  readonly minWidth: InputMaybe<SortOrderEnum>;
+  readonly news: InputMaybe<SortOrderEnum>;
+  readonly ogp: InputMaybe<FileSortInput>;
+  readonly overlay: InputMaybe<MarkdownRemarkFrontmatterOverlaySortInput>;
+  readonly parallax: InputMaybe<MarkdownRemarkFrontmatterParallaxSortInput>;
+  readonly poem: InputMaybe<SortOrderEnum>;
   readonly price: InputMaybe<SortOrderEnum>;
+  readonly shop: InputMaybe<MarkdownRemarkFrontmatterShopSortInput>;
   readonly slug: InputMaybe<SortOrderEnum>;
+  readonly soundcloud: InputMaybe<SortOrderEnum>;
+  readonly subtitle: InputMaybe<SortOrderEnum>;
   readonly tag: InputMaybe<SortOrderEnum>;
+  readonly theme: InputMaybe<MarkdownRemarkFrontmatterThemeSortInput>;
   readonly title: InputMaybe<SortOrderEnum>;
+  readonly track: InputMaybe<MarkdownRemarkFrontmatterTrackSortInput>;
+  readonly trackBackgroundImage: InputMaybe<FileSortInput>;
   readonly type: InputMaybe<SortOrderEnum>;
+  readonly youtube: InputMaybe<SortOrderEnum>;
+};
+
+type MarkdownRemarkFrontmatterTheme = {
+  readonly accent: Maybe<Scalars['String']>;
+  readonly base: Maybe<Scalars['String']>;
+  readonly baseSub1: Maybe<Scalars['String']>;
+  readonly main: Maybe<Scalars['String']>;
+  readonly mainSub1: Maybe<Scalars['String']>;
+  readonly mainSub2: Maybe<Scalars['String']>;
+};
+
+type MarkdownRemarkFrontmatterThemeFieldSelector = {
+  readonly accent: InputMaybe<FieldSelectorEnum>;
+  readonly base: InputMaybe<FieldSelectorEnum>;
+  readonly baseSub1: InputMaybe<FieldSelectorEnum>;
+  readonly main: InputMaybe<FieldSelectorEnum>;
+  readonly mainSub1: InputMaybe<FieldSelectorEnum>;
+  readonly mainSub2: InputMaybe<FieldSelectorEnum>;
+};
+
+type MarkdownRemarkFrontmatterThemeFilterInput = {
+  readonly accent: InputMaybe<StringQueryOperatorInput>;
+  readonly base: InputMaybe<StringQueryOperatorInput>;
+  readonly baseSub1: InputMaybe<StringQueryOperatorInput>;
+  readonly main: InputMaybe<StringQueryOperatorInput>;
+  readonly mainSub1: InputMaybe<StringQueryOperatorInput>;
+  readonly mainSub2: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownRemarkFrontmatterThemeSortInput = {
+  readonly accent: InputMaybe<SortOrderEnum>;
+  readonly base: InputMaybe<SortOrderEnum>;
+  readonly baseSub1: InputMaybe<SortOrderEnum>;
+  readonly main: InputMaybe<SortOrderEnum>;
+  readonly mainSub1: InputMaybe<SortOrderEnum>;
+  readonly mainSub2: InputMaybe<SortOrderEnum>;
+};
+
+type MarkdownRemarkFrontmatterTrack = {
+  readonly subinfo: Maybe<Scalars['String']>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+type MarkdownRemarkFrontmatterTrackFieldSelector = {
+  readonly subinfo: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type MarkdownRemarkFrontmatterTrackFilterInput = {
+  readonly subinfo: InputMaybe<StringQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownRemarkFrontmatterTrackFilterListInput = {
+  readonly elemMatch: InputMaybe<MarkdownRemarkFrontmatterTrackFilterInput>;
+};
+
+type MarkdownRemarkFrontmatterTrackSortInput = {
+  readonly subinfo: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
 };
 
 type MarkdownRemarkGroupConnection = {
@@ -1534,7 +1914,6 @@ type MarkdownRemarkSortInput = {
   readonly excerptAst: InputMaybe<SortOrderEnum>;
   readonly fileAbsolutePath: InputMaybe<SortOrderEnum>;
   readonly frontmatter: InputMaybe<MarkdownRemarkFrontmatterSortInput>;
-  readonly gatsbyPath: InputMaybe<SortOrderEnum>;
   readonly headings: InputMaybe<MarkdownHeadingSortInput>;
   readonly html: InputMaybe<SortOrderEnum>;
   readonly htmlAst: InputMaybe<SortOrderEnum>;
@@ -1649,6 +2028,7 @@ type Query = {
   readonly allSiteFunction: SiteFunctionConnection;
   readonly allSitePage: SitePageConnection;
   readonly allSitePlugin: SitePluginConnection;
+  readonly allStaticImage: StaticImageConnection;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
   readonly imageSharp: Maybe<ImageSharp>;
@@ -1658,6 +2038,7 @@ type Query = {
   readonly siteFunction: Maybe<SiteFunction>;
   readonly sitePage: Maybe<SitePage>;
   readonly sitePlugin: Maybe<SitePlugin>;
+  readonly staticImage: Maybe<StaticImage>;
 };
 
 
@@ -1730,6 +2111,14 @@ type Query_allSitePluginArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<SitePluginSortInput>>>;
+};
+
+
+type Query_allStaticImageArgs = {
+  filter: InputMaybe<StaticImageFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<StaticImageSortInput>>>;
 };
 
 
@@ -1837,7 +2226,6 @@ type Query_markdownRemarkArgs = {
   excerptAst: InputMaybe<JSONQueryOperatorInput>;
   fileAbsolutePath: InputMaybe<StringQueryOperatorInput>;
   frontmatter: InputMaybe<MarkdownRemarkFrontmatterFilterInput>;
-  gatsbyPath: InputMaybe<StringQueryOperatorInput>;
   headings: InputMaybe<MarkdownHeadingFilterListInput>;
   html: InputMaybe<StringQueryOperatorInput>;
   htmlAst: InputMaybe<JSONQueryOperatorInput>;
@@ -1921,6 +2309,46 @@ type Query_sitePluginArgs = {
   resolve: InputMaybe<StringQueryOperatorInput>;
   ssrAPIs: InputMaybe<StringQueryOperatorInput>;
   version: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+type Query_staticImageArgs = {
+  absolutePath: InputMaybe<StringQueryOperatorInput>;
+  accessTime: InputMaybe<DateQueryOperatorInput>;
+  atime: InputMaybe<DateQueryOperatorInput>;
+  atimeMs: InputMaybe<FloatQueryOperatorInput>;
+  base: InputMaybe<StringQueryOperatorInput>;
+  birthTime: InputMaybe<DateQueryOperatorInput>;
+  birthtime: InputMaybe<DateQueryOperatorInput>;
+  birthtimeMs: InputMaybe<FloatQueryOperatorInput>;
+  blksize: InputMaybe<IntQueryOperatorInput>;
+  blocks: InputMaybe<IntQueryOperatorInput>;
+  changeTime: InputMaybe<DateQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  ctime: InputMaybe<DateQueryOperatorInput>;
+  ctimeMs: InputMaybe<FloatQueryOperatorInput>;
+  dev: InputMaybe<IntQueryOperatorInput>;
+  dir: InputMaybe<StringQueryOperatorInput>;
+  ext: InputMaybe<StringQueryOperatorInput>;
+  extension: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  ino: InputMaybe<FloatQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  mode: InputMaybe<IntQueryOperatorInput>;
+  modifiedTime: InputMaybe<DateQueryOperatorInput>;
+  mtime: InputMaybe<DateQueryOperatorInput>;
+  mtimeMs: InputMaybe<FloatQueryOperatorInput>;
+  name: InputMaybe<StringQueryOperatorInput>;
+  nlink: InputMaybe<IntQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  prettySize: InputMaybe<StringQueryOperatorInput>;
+  rdev: InputMaybe<IntQueryOperatorInput>;
+  relativeDirectory: InputMaybe<StringQueryOperatorInput>;
+  relativePath: InputMaybe<StringQueryOperatorInput>;
+  root: InputMaybe<StringQueryOperatorInput>;
+  size: InputMaybe<IntQueryOperatorInput>;
+  sourceInstanceName: InputMaybe<StringQueryOperatorInput>;
+  uid: InputMaybe<IntQueryOperatorInput>;
 };
 
 type Site = Node & {
@@ -2293,21 +2721,25 @@ type SiteFunctionSortInput = {
 };
 
 type SiteGraphqlTypegen = {
+  readonly documentSearchPaths: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly generateOnBuild: Maybe<Scalars['Boolean']>;
   readonly typesOutputPath: Maybe<Scalars['String']>;
 };
 
 type SiteGraphqlTypegenFieldSelector = {
+  readonly documentSearchPaths: InputMaybe<FieldSelectorEnum>;
   readonly generateOnBuild: InputMaybe<FieldSelectorEnum>;
   readonly typesOutputPath: InputMaybe<FieldSelectorEnum>;
 };
 
 type SiteGraphqlTypegenFilterInput = {
+  readonly documentSearchPaths: InputMaybe<StringQueryOperatorInput>;
   readonly generateOnBuild: InputMaybe<BooleanQueryOperatorInput>;
   readonly typesOutputPath: InputMaybe<StringQueryOperatorInput>;
 };
 
 type SiteGraphqlTypegenSortInput = {
+  readonly documentSearchPaths: InputMaybe<SortOrderEnum>;
   readonly generateOnBuild: InputMaybe<SortOrderEnum>;
   readonly typesOutputPath: InputMaybe<SortOrderEnum>;
 };
@@ -2689,6 +3121,312 @@ type SortOrderEnum =
   | 'ASC'
   | 'DESC';
 
+type StaticImage = Node & {
+  readonly absolutePath: Maybe<Scalars['String']>;
+  readonly accessTime: Maybe<Scalars['Date']>;
+  readonly atime: Maybe<Scalars['Date']>;
+  readonly atimeMs: Maybe<Scalars['Float']>;
+  readonly base: Maybe<Scalars['String']>;
+  readonly birthTime: Maybe<Scalars['Date']>;
+  readonly birthtime: Maybe<Scalars['Date']>;
+  readonly birthtimeMs: Maybe<Scalars['Float']>;
+  readonly blksize: Maybe<Scalars['Int']>;
+  readonly blocks: Maybe<Scalars['Int']>;
+  readonly changeTime: Maybe<Scalars['Date']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly ctime: Maybe<Scalars['Date']>;
+  readonly ctimeMs: Maybe<Scalars['Float']>;
+  readonly dev: Maybe<Scalars['Int']>;
+  readonly dir: Maybe<Scalars['String']>;
+  readonly ext: Maybe<Scalars['String']>;
+  readonly extension: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly ino: Maybe<Scalars['Float']>;
+  readonly internal: Internal;
+  readonly mode: Maybe<Scalars['Int']>;
+  readonly modifiedTime: Maybe<Scalars['Date']>;
+  readonly mtime: Maybe<Scalars['Date']>;
+  readonly mtimeMs: Maybe<Scalars['Float']>;
+  readonly name: Maybe<Scalars['String']>;
+  readonly nlink: Maybe<Scalars['Int']>;
+  readonly parent: Maybe<Node>;
+  readonly prettySize: Maybe<Scalars['String']>;
+  readonly rdev: Maybe<Scalars['Int']>;
+  readonly relativeDirectory: Maybe<Scalars['String']>;
+  readonly relativePath: Maybe<Scalars['String']>;
+  readonly root: Maybe<Scalars['String']>;
+  readonly size: Maybe<Scalars['Int']>;
+  readonly sourceInstanceName: Maybe<Scalars['String']>;
+  readonly uid: Maybe<Scalars['Int']>;
+};
+
+
+type StaticImage_accessTimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_atimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_birthTimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_birthtimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_changeTimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_ctimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_modifiedTimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_mtimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type StaticImageConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<StaticImageEdge>;
+  readonly group: ReadonlyArray<StaticImageGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<StaticImage>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type StaticImageConnection_distinctArgs = {
+  field: StaticImageFieldSelector;
+};
+
+
+type StaticImageConnection_groupArgs = {
+  field: StaticImageFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type StaticImageConnection_maxArgs = {
+  field: StaticImageFieldSelector;
+};
+
+
+type StaticImageConnection_minArgs = {
+  field: StaticImageFieldSelector;
+};
+
+
+type StaticImageConnection_sumArgs = {
+  field: StaticImageFieldSelector;
+};
+
+type StaticImageEdge = {
+  readonly next: Maybe<StaticImage>;
+  readonly node: StaticImage;
+  readonly previous: Maybe<StaticImage>;
+};
+
+type StaticImageFieldSelector = {
+  readonly absolutePath: InputMaybe<FieldSelectorEnum>;
+  readonly accessTime: InputMaybe<FieldSelectorEnum>;
+  readonly atime: InputMaybe<FieldSelectorEnum>;
+  readonly atimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly base: InputMaybe<FieldSelectorEnum>;
+  readonly birthTime: InputMaybe<FieldSelectorEnum>;
+  readonly birthtime: InputMaybe<FieldSelectorEnum>;
+  readonly birthtimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly blksize: InputMaybe<FieldSelectorEnum>;
+  readonly blocks: InputMaybe<FieldSelectorEnum>;
+  readonly changeTime: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly ctime: InputMaybe<FieldSelectorEnum>;
+  readonly ctimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly dev: InputMaybe<FieldSelectorEnum>;
+  readonly dir: InputMaybe<FieldSelectorEnum>;
+  readonly ext: InputMaybe<FieldSelectorEnum>;
+  readonly extension: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly ino: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly mode: InputMaybe<FieldSelectorEnum>;
+  readonly modifiedTime: InputMaybe<FieldSelectorEnum>;
+  readonly mtime: InputMaybe<FieldSelectorEnum>;
+  readonly mtimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly nlink: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly prettySize: InputMaybe<FieldSelectorEnum>;
+  readonly rdev: InputMaybe<FieldSelectorEnum>;
+  readonly relativeDirectory: InputMaybe<FieldSelectorEnum>;
+  readonly relativePath: InputMaybe<FieldSelectorEnum>;
+  readonly root: InputMaybe<FieldSelectorEnum>;
+  readonly size: InputMaybe<FieldSelectorEnum>;
+  readonly sourceInstanceName: InputMaybe<FieldSelectorEnum>;
+  readonly uid: InputMaybe<FieldSelectorEnum>;
+};
+
+type StaticImageFilterInput = {
+  readonly absolutePath: InputMaybe<StringQueryOperatorInput>;
+  readonly accessTime: InputMaybe<DateQueryOperatorInput>;
+  readonly atime: InputMaybe<DateQueryOperatorInput>;
+  readonly atimeMs: InputMaybe<FloatQueryOperatorInput>;
+  readonly base: InputMaybe<StringQueryOperatorInput>;
+  readonly birthTime: InputMaybe<DateQueryOperatorInput>;
+  readonly birthtime: InputMaybe<DateQueryOperatorInput>;
+  readonly birthtimeMs: InputMaybe<FloatQueryOperatorInput>;
+  readonly blksize: InputMaybe<IntQueryOperatorInput>;
+  readonly blocks: InputMaybe<IntQueryOperatorInput>;
+  readonly changeTime: InputMaybe<DateQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly ctime: InputMaybe<DateQueryOperatorInput>;
+  readonly ctimeMs: InputMaybe<FloatQueryOperatorInput>;
+  readonly dev: InputMaybe<IntQueryOperatorInput>;
+  readonly dir: InputMaybe<StringQueryOperatorInput>;
+  readonly ext: InputMaybe<StringQueryOperatorInput>;
+  readonly extension: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly ino: InputMaybe<FloatQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly mode: InputMaybe<IntQueryOperatorInput>;
+  readonly modifiedTime: InputMaybe<DateQueryOperatorInput>;
+  readonly mtime: InputMaybe<DateQueryOperatorInput>;
+  readonly mtimeMs: InputMaybe<FloatQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly nlink: InputMaybe<IntQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly prettySize: InputMaybe<StringQueryOperatorInput>;
+  readonly rdev: InputMaybe<IntQueryOperatorInput>;
+  readonly relativeDirectory: InputMaybe<StringQueryOperatorInput>;
+  readonly relativePath: InputMaybe<StringQueryOperatorInput>;
+  readonly root: InputMaybe<StringQueryOperatorInput>;
+  readonly size: InputMaybe<IntQueryOperatorInput>;
+  readonly sourceInstanceName: InputMaybe<StringQueryOperatorInput>;
+  readonly uid: InputMaybe<IntQueryOperatorInput>;
+};
+
+type StaticImageGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<StaticImageEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<StaticImageGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<StaticImage>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type StaticImageGroupConnection_distinctArgs = {
+  field: StaticImageFieldSelector;
+};
+
+
+type StaticImageGroupConnection_groupArgs = {
+  field: StaticImageFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type StaticImageGroupConnection_maxArgs = {
+  field: StaticImageFieldSelector;
+};
+
+
+type StaticImageGroupConnection_minArgs = {
+  field: StaticImageFieldSelector;
+};
+
+
+type StaticImageGroupConnection_sumArgs = {
+  field: StaticImageFieldSelector;
+};
+
+type StaticImageSortInput = {
+  readonly absolutePath: InputMaybe<SortOrderEnum>;
+  readonly accessTime: InputMaybe<SortOrderEnum>;
+  readonly atime: InputMaybe<SortOrderEnum>;
+  readonly atimeMs: InputMaybe<SortOrderEnum>;
+  readonly base: InputMaybe<SortOrderEnum>;
+  readonly birthTime: InputMaybe<SortOrderEnum>;
+  readonly birthtime: InputMaybe<SortOrderEnum>;
+  readonly birthtimeMs: InputMaybe<SortOrderEnum>;
+  readonly blksize: InputMaybe<SortOrderEnum>;
+  readonly blocks: InputMaybe<SortOrderEnum>;
+  readonly changeTime: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly ctime: InputMaybe<SortOrderEnum>;
+  readonly ctimeMs: InputMaybe<SortOrderEnum>;
+  readonly dev: InputMaybe<SortOrderEnum>;
+  readonly dir: InputMaybe<SortOrderEnum>;
+  readonly ext: InputMaybe<SortOrderEnum>;
+  readonly extension: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly ino: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly mode: InputMaybe<SortOrderEnum>;
+  readonly modifiedTime: InputMaybe<SortOrderEnum>;
+  readonly mtime: InputMaybe<SortOrderEnum>;
+  readonly mtimeMs: InputMaybe<SortOrderEnum>;
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly nlink: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly prettySize: InputMaybe<SortOrderEnum>;
+  readonly rdev: InputMaybe<SortOrderEnum>;
+  readonly relativeDirectory: InputMaybe<SortOrderEnum>;
+  readonly relativePath: InputMaybe<SortOrderEnum>;
+  readonly root: InputMaybe<SortOrderEnum>;
+  readonly size: InputMaybe<SortOrderEnum>;
+  readonly sourceInstanceName: InputMaybe<SortOrderEnum>;
+  readonly uid: InputMaybe<SortOrderEnum>;
+};
+
 type StringQueryOperatorInput = {
   readonly eq: InputMaybe<Scalars['String']>;
   readonly glob: InputMaybe<Scalars['String']>;
@@ -2742,10 +3480,10 @@ type GetJpnEngContactHTMLQueryVariables = Exact<{ [key: string]: never; }>;
 
 type GetJpnEngContactHTMLQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly html: string | null, readonly frontmatter: { readonly index: number | null } | null } }> } };
 
-type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+type IndexQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type IndexPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: { readonly date: string | null, readonly description: string | null, readonly slug: string | null, readonly title: string | null, readonly tag: string | null, readonly price: string | null, readonly type: string | null, readonly description_long: string | null, readonly booth: string | null, readonly hero: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData, readonly id: string, readonly internal: { readonly content: string | null, readonly description: string | null, readonly ignoreType: boolean | null, readonly mediaType: string | null }, readonly parent: { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | null, readonly children: ReadonlyArray<{ readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string }> } | null } | null } | null } }> } };
+type IndexQuery = { readonly IndexPageSpecial: { readonly nodes: ReadonlyArray<{ readonly frontmatter: { readonly slug: string | null, readonly description_array: ReadonlyArray<string | null> | null, readonly title: string | null, readonly ogp: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly logo_image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly descriptionBackgroundImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly parallax: { readonly textColor: string | null, readonly overlayColor: string | null, readonly overlayOpacity: number | null, readonly imageFilter: string | null } | null } | null }> }, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: { readonly date: string | null, readonly description: string | null, readonly slug: string | null, readonly title: string | null, readonly tag: string | null, readonly price: string | null, readonly type: string | null, readonly description_long: string | null, readonly booth: string | null, readonly hero: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData, readonly id: string, readonly internal: { readonly content: string | null, readonly description: string | null, readonly ignoreType: boolean | null, readonly mediaType: string | null }, readonly parent: { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | null, readonly children: ReadonlyArray<{ readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string }> } | null } | null } | null } }> } };
 
 type metaDataQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -2759,10 +3497,32 @@ type PageQueryQueryVariables = Exact<{
 
 type PageQueryQuery = { readonly markdownRemark: { readonly html: string | null, readonly id: string, readonly frontmatter: { readonly date: string | null, readonly slug: string | null, readonly title: string | null, readonly description: string | null, readonly tag: string | null, readonly price: string | null, readonly type: string | null, readonly description_long: string | null, readonly booth: string | null, readonly hero: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly next: { readonly frontmatter: { readonly slug: string | null, readonly title: string | null } | null } | null, readonly node: { readonly id: string }, readonly previous: { readonly frontmatter: { readonly slug: string | null, readonly title: string | null } | null } | null }> } };
 
+type SpecialQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SpecialQuery = { readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<{ readonly frontmatter: { readonly slug: string | null, readonly description_array: ReadonlyArray<string | null> | null, readonly title: string | null, readonly ogp: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly logo_image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly descriptionBackgroundImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly parallax: { readonly textColor: string | null, readonly overlayColor: string | null, readonly overlayOpacity: number | null, readonly imageFilter: string | null } | null } | null }> } };
+
+type SpecialPageQueryVariables = Exact<{
+  id: InputMaybe<Scalars['String']>;
+}>;
+
+
+type SpecialPageQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly slug: string | null, readonly subtitle: string | null, readonly poem: string | null, readonly description_array: ReadonlyArray<string | null> | null, readonly news: ReadonlyArray<string | null> | null, readonly soundcloud: number | null, readonly youtube: string | null, readonly ogp: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly parallax: { readonly textColor: string | null, readonly overlayColor: string | null, readonly overlayOpacity: number | null, readonly imageFilter: string | null } | null, readonly overlay: { readonly background: string | null, readonly logoColor: string | null, readonly lineColor: string | null, readonly transition: { readonly rect1: string | null, readonly rect2: string | null } | null } | null, readonly header: { readonly scrollMainColor: string | null, readonly scrollBackgroundColor: string | null } | null, readonly header_image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly header_image_sp: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly logo_image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly additional_header_image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly additional_header_image_2: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly descriptionBackgroundImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly mainBackgroundImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly theme: { readonly accent: string | null, readonly base: string | null, readonly baseSub1: string | null, readonly main: string | null, readonly mainSub1: string | null, readonly mainSub2: string | null } | null, readonly jacketImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly infomation: { readonly title: string | null, readonly specification: string | null, readonly releaseDate: string | null, readonly price: string | null, readonly circle: string | null, readonly booth: string | null } | null, readonly shop: { readonly download: ReadonlyArray<string | null> | null, readonly cd: ReadonlyArray<string | null> | null, readonly streaming: ReadonlyArray<string | null> | null } | null, readonly trackBackgroundImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly track: ReadonlyArray<{ readonly title: string | null, readonly subinfo: string | null } | null> | null, readonly credit: { readonly other: ReadonlyArray<{ readonly name: string | null, readonly role: string | null, readonly website: ReadonlyArray<string | null> | null } | null> | null, readonly produce: { readonly name: string | null, readonly twitter: string | null, readonly website: string | null } | null } | null } | null } | null };
+
 type WorksPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type WorksPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: { readonly date: string | null, readonly description: string | null, readonly slug: string | null, readonly title: string | null, readonly tag: string | null, readonly price: string | null, readonly type: string | null, readonly description_long: string | null, readonly booth: string | null, readonly hero: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData, readonly id: string, readonly internal: { readonly content: string | null, readonly description: string | null, readonly ignoreType: boolean | null, readonly mediaType: string | null }, readonly parent: { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | null, readonly children: ReadonlyArray<{ readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string }> } | null } | null } | null } }> } };
+type WorksPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: { readonly date: string | null, readonly description: string | null, readonly slug: string | null, readonly title: string | null, readonly tag: string | null, readonly price: string | null, readonly type: string | null, readonly description_long: string | null, readonly booth: string | null, readonly hero: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData, readonly id: string, readonly internal: { readonly content: string | null, readonly description: string | null, readonly ignoreType: boolean | null, readonly mediaType: string | null }, readonly parent: { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | null, readonly children: ReadonlyArray<{ readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string } | { readonly id: string }> } | null } | null } | null } }> } };
+
+type LoadWorksPagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type LoadWorksPagesQueryQuery = { readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<{ readonly id: string, readonly frontmatter: { readonly slug: string | null } | null }> } };
+
+type LoadSpecialPagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type LoadSpecialPagesQuery = { readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<{ readonly id: string, readonly frontmatter: { readonly slug: string | null } | null }> } };
 
 
 }
