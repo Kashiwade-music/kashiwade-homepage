@@ -85,7 +85,7 @@ shop:
     - Others
     - https://big-up.style/8siI1Odhwa
 # ---------------
-trackBackgroundImage: ./20211031-aquilegia-header.jpg
+trackBackgroundImage: ./20211031-aquilegia-track-back.jpg
 track:
   - title: Overture of the Great Adventure
     subinfo: 
