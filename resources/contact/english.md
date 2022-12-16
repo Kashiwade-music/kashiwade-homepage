@@ -47,7 +47,7 @@ If you have a project that I'm able to help you with, please feel free to contac
         <li>If you want to have a meeting or retake, please make a formal request via email, not Skeb.</li>
         <li>For more information about Skeb, see <a href="https://medium.com/skeb-jp/guide-154f3a80c3b6" target="_blank" rel="noopener noreferrer">Quick Guide</a> and <a href="https://skeb.jp/client" target="_blank" rel="noopener noreferrer">Client Guidelines</a></li>
     </ul>
-    <li>As of November 2022, I'm looking for requests to begin in April 2023 or later.</li>
+    <li>As of December 2022, I'm looking for requests to begin in April 2023 or later.</li>
   </ul>
 </div>
 
