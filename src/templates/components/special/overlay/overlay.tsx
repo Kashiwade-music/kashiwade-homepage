@@ -13,8 +13,6 @@ type Props = {
 };
 
 const Overlay: React.FC<Props> = ({ colors, subtitle }) => {
-  console.log(colors);
-
   const subtitleText = subtitle.split("").join(" ").replace("   ", "　");
   return (
     <div

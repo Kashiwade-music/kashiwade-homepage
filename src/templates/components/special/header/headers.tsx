@@ -49,21 +49,30 @@ export const 天光玲瓏: React.FC<Queries.SpecialPageQuery> = (data) => {
         <GatsbyImage
           image={headerImage}
           alt="header image"
-          className={vanilla_tenkoureirou.HeaderImage}
+          style={{
+            position: "absolute",
+            height: "100vh",
+          }}
         />
       )}
       {isBannerWidthOver100vh && additionalHeaderImage && (
         <GatsbyImage
           image={additionalHeaderImage}
           alt="additional header image"
-          className={vanilla_tenkoureirou.AdditionalHeaderImage}
+          style={{
+            position: "absolute",
+            height: "100vh",
+          }}
         />
       )}
       {!isBannerWidthOver100vh && headerImageSP && (
         <GatsbyImage
           image={headerImageSP}
           alt="additional header image"
-          className={vanilla_tenkoureirou.AdditionalHeaderImage}
+          style={{
+            position: "absolute",
+            height: "100vh",
+          }}
         />
       )}
       {isBannerWidthOver100vh && isBannerWidthOver410px && logoImage && (
@@ -71,7 +80,7 @@ export const 天光玲瓏: React.FC<Queries.SpecialPageQuery> = (data) => {
           <GatsbyImage
             image={logoImage}
             alt="logo image"
-            className={vanilla_tenkoureirou.LogoImage}
+            style={{ position: "absolute", height: "45vh", width: "45vh" }}
           />
         </div>
       )}
@@ -80,7 +89,11 @@ export const 天光玲瓏: React.FC<Queries.SpecialPageQuery> = (data) => {
           <GatsbyImage
             image={logoImage}
             alt="logo image"
-            className={vanilla_tenkoureirou.LogoImageSP}
+            style={{
+              position: "absolute",
+              height: "40vh",
+              width: "40vh",
+            }}
           />
         </div>
       )}
@@ -89,7 +102,11 @@ export const 天光玲瓏: React.FC<Queries.SpecialPageQuery> = (data) => {
           <GatsbyImage
             image={logoImage}
             alt="logo image"
-            className={vanilla_tenkoureirou.LogoImageSPmini}
+            style={{
+              position: "absolute",
+              height: "100vw",
+              width: "100%",
+            }}
           />
         </div>
       )}
@@ -120,7 +137,7 @@ export const Aquilegia: React.FC<Queries.SpecialPageQuery> = (data) => {
         <GatsbyImage
           image={headerImage}
           alt="header image"
-          className={vanilla_aquilegia.HeaderImage}
+          style={{ position: "absolute", height: "100vh" }}
         />
       )}
       {logoImage && (
@@ -129,6 +146,7 @@ export const Aquilegia: React.FC<Queries.SpecialPageQuery> = (data) => {
             image={logoImage}
             alt="logo image"
             className={vanilla_aquilegia.LogoImage}
+            style={{ position: "absolute" }}
           />
         </div>
       )}
@@ -138,6 +156,7 @@ export const Aquilegia: React.FC<Queries.SpecialPageQuery> = (data) => {
             image={additionalHeaderImage}
             alt="additional header image"
             className={vanilla_aquilegia.AdditionalHeaderImage}
+            style={{ position: "absolute" }}
           />
         </div>
       )}
@@ -147,6 +166,7 @@ export const Aquilegia: React.FC<Queries.SpecialPageQuery> = (data) => {
             image={additionalHeaderImage2}
             alt="additional header image 2"
             className={vanilla_aquilegia.AdditionalHeaderImage}
+            style={{ position: "absolute" }}
           />
         </div>
       )}

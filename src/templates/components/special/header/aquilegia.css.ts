@@ -1,10 +1,5 @@
 import { keyframes, style } from "@vanilla-extract/css";
 
-export const HeaderImage = style({
-  position: "absolute",
-  height: "100vh",
-});
-
 export const LogoImageWrapper = style({
   position: "absolute",
   height: "100vh",
@@ -21,7 +16,6 @@ export const LogoImageWrapper = style({
 });
 
 export const LogoImage = style({
-  position: "absolute",
   width: "50%",
   "@media": {
     "screen and (max-width: 150vh)": {
@@ -37,7 +31,6 @@ export const LogoImage = style({
 });
 
 export const AdditionalHeaderImage = style({
-  position: "absolute",
   height: "40vh",
   width: "40vh",
   "@media": {
