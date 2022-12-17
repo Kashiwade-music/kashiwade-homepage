@@ -6,6 +6,7 @@ import { graphql, Link, PageProps } from "gatsby";
 import headerTitleBottomLineSVG_PickUp from "../images/header-title-bottom-line.svg";
 import headerTitleBottomLineSVG_LatestWorks from "../images/header-title-bottom-line2.svg";
 import { SpecialPageLinkBox } from "../components/specialPageLinkBox";
+import { Meta } from "../components/layout/meta";
 
 interface IndexContentAreaOuterProps {
   children: React.ReactNode;
@@ -109,8 +110,10 @@ const IndexPage = ({ data }: PageProps<Queries.IndexQuery>) => {
     </Layout>
   );
 };
-
 export default IndexPage;
+
+export const Head = () => <Meta />;
+
 export const query = graphql`
   query Index {
     IndexPageSpecial: allMarkdownRemark(

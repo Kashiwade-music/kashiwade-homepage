@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import MediaQuery from "react-responsive";
 import { StaticImage } from "gatsby-plugin-image";
 import { Slide } from "react-slideshow-image";
+import { Meta } from "../components/layout/meta";
 
 const ProfilePage = () => {
   const prof = {
@@ -63,7 +64,6 @@ const ProfilePage = () => {
   };
   return (
     <Layout
-      pageUrl={"/profile"}
       pageTitle={"Profile"}
       pageDescription={"自己紹介です"}
       currentPage={"profile"}
@@ -193,3 +193,11 @@ const ProfilePage = () => {
 };
 
 export default ProfilePage;
+
+export const Head = () => (
+  <Meta
+    pageUrl={"/profile"}
+    pageTitle={"Profile"}
+    pageDescription={"自己紹介です"}
+  />
+);

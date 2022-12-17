@@ -1,7 +1,7 @@
 import * as React from "react";
 import Overlay from "./components/special/overlay/overlay";
 import * as vanilla from "./components/special/index.css";
-import { graphql, PageProps } from "gatsby";
+import { graphql, HeadProps, PageProps } from "gatsby";
 import * as Headers from "./components/special/header/headers";
 import * as mytypes from "./components/special/types";
 import { MyParallax } from "./components/special/parallax/parallax";
@@ -13,7 +13,7 @@ import { Information } from "./components/special/information/information";
 import { Track } from "./components/special/track/track";
 import { Credit } from "./components/special/credit/credit";
 import { Footer } from "./components/special/footer/footer";
-import Meta from "../components/layout/meta";
+import { Meta } from "../components/layout/meta";
 
 // markup
 const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
@@ -36,17 +36,6 @@ const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
     : undefined;
   return (
     <ParallaxProvider>
-      <Meta
-        pageUrl={data.markdownRemark?.frontmatter?.slug as string}
-        pageTitle={data.markdownRemark?.frontmatter?.title as string}
-        pageDescription={data.markdownRemark?.frontmatter?.description_array?.join(
-          ""
-        )}
-        pageHero={
-          data.markdownRemark?.frontmatter?.ogp?.childImageSharp
-            ?.gatsbyImageData.images.fallback?.src as string
-        }
-      />
       <Overlay
         colors={colors}
         subtitle={data.markdownRemark?.frontmatter?.subtitle ?? ""}
@@ -89,6 +78,22 @@ const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
 };
 
 export default IndexPage;
+
+export const Head = (props: HeadProps<Queries.SpecialPageQuery>) => {
+  return (
+    <Meta
+      pageUrl={props.data.markdownRemark?.frontmatter?.slug as string}
+      pageTitle={props.data.markdownRemark?.frontmatter?.title as string}
+      pageDescription={props.data.markdownRemark?.frontmatter?.description_array?.join(
+        ""
+      )}
+      pageHero={
+        props.data.markdownRemark?.frontmatter?.ogp?.childImageSharp
+          ?.gatsbyImageData.images.fallback?.src as string
+      }
+    />
+  );
+};
 
 export const pageQuery = graphql`
   query SpecialPage($id: String) {

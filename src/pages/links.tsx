@@ -16,6 +16,7 @@ import {
 import { IconType } from "react-icons";
 import PixivBoothIcon from "../tools/PixivBoothIcon";
 import PixivIcon from "../tools/PixivIcon";
+import { Meta } from "../components/layout/meta";
 
 type Props = {
   name: string;
@@ -174,7 +175,6 @@ const LinksPage = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
   return (
     <Layout
-      pageUrl={"/links"}
       pageTitle={"Links"}
       pageDescription={"各種リンクと連絡先などです"}
       currentPage={"links"}
@@ -191,3 +191,11 @@ const LinksPage = () => {
 };
 
 export default LinksPage;
+
+export const Head = () => (
+  <Meta
+    pageUrl={"/links"}
+    pageTitle={"Links"}
+    pageDescription={"各種リンクと連絡先などです"}
+  />
+);

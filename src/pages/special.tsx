@@ -6,11 +6,11 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Slide } from "react-slideshow-image";
 import { graphql, Link, PageProps } from "gatsby";
 import { SpecialPageLinkBox } from "../components/specialPageLinkBox";
+import { Meta } from "../components/layout/meta";
 
 const ProfilePage = ({ data }: PageProps<Queries.SpecialQuery>) => {
   return (
     <Layout
-      pageUrl={"/special"}
       pageTitle={"Special"}
       pageDescription={"特設サイト等のまとめです"}
       currentPage={"special"}
@@ -41,6 +41,14 @@ const ProfilePage = ({ data }: PageProps<Queries.SpecialQuery>) => {
 };
 
 export default ProfilePage;
+
+export const Head = () => (
+  <Meta
+    pageUrl={"/special"}
+    pageTitle={"Special"}
+    pageDescription={"特設サイト等のまとめです"}
+  />
+);
 
 export const query = graphql`
   query Special {

@@ -8,6 +8,8 @@ import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { useMediaQuery } from "react-responsive";
 import PageControlButtons from "./components/works/pageControlButtons";
 import * as vanilla from "./works.css";
+import { Meta } from "../components/layout/meta";
+import type { HeadProps } from "gatsby";
 
 const WorkPostContent: React.FC<PageProps<Queries.PageQueryQuery>> = ({
   data,
@@ -116,14 +118,9 @@ const Template: React.FC<PageProps<Queries.PageQueryQuery>> = ({ data }) => {
       currentPage="works"
       // data.markdownRemark?.frontmatter?.slugがnullやundefinedならundefinedを渡す
       // そうでないなら/worksとdata.markdownRemark?.frontmatter?.slugを文字列として結合して渡す
-      pageUrl={data.markdownRemark?.frontmatter?.slug ?? undefined}
       pageTitle={"Works"}
       pageDescription={
         data.markdownRemark?.frontmatter?.description ?? undefined
-      }
-      pageHero={
-        data.markdownRemark?.frontmatter?.hero?.childImageSharp?.gatsbyImageData
-          ?.images.fallback?.src
       }
     >
       {
@@ -143,6 +140,24 @@ const Template: React.FC<PageProps<Queries.PageQueryQuery>> = ({ data }) => {
 };
 
 export default Template;
+
+export const Head = (props: HeadProps<Queries.PageQueryQuery>) => {
+  return (
+    <Meta
+      // data.markdownRemark?.frontmatter?.slugがnullやundefinedならundefinedを渡す
+      // そうでないなら/worksとdata.markdownRemark?.frontmatter?.slugを文字列として結合して渡す
+      pageUrl={props.data.markdownRemark?.frontmatter?.slug ?? undefined}
+      pageTitle={"Works"}
+      pageDescription={
+        props.data.markdownRemark?.frontmatter?.description ?? undefined
+      }
+      pageHero={
+        props.data.markdownRemark?.frontmatter?.hero?.childImageSharp
+          ?.gatsbyImageData?.images.fallback?.src
+      }
+    />
+  );
+};
 
 export const pageQuery = graphql`
   query PageQuery($id: String) {

@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import DefOgpImage from "../../images/ogpImage.png";
 
@@ -11,11 +10,11 @@ type Props = {
   pageHero?: string;
 };
 
-const Meta: React.FC<Props> = ({
-  pageUrl = "",
-  pageTitle = "",
-  pageDescription = "",
-  pageHero = "",
+export const Meta: React.FC<Props> = ({
+  pageUrl = "", // 無いならsiteMetadata.siteUrlを使用
+  pageTitle = "", // 無いならsiteMetadata.titleを使用
+  pageDescription = "", // 無いならsiteMetadata.descriptionを使用
+  pageHero = "", // 無いならDefOgpImageを使用
 }) => {
   const data = useStaticQuery<Queries.metaDataQueryQuery>(graphql`
     query metaDataQuery {
@@ -35,63 +34,56 @@ const Meta: React.FC<Props> = ({
     title: "",
   };
   return (
-    <Helmet
-      title={
-        pageTitle
+    <>
+      <title>
+        {pageTitle
           ? `${pageTitle} | ${siteMetadata.title}`
-          : `${siteMetadata.title}`
-      }
-      htmlAttributes={{
-        lang: "ja",
-      }}
-      meta={[
-        { name: "viewpoint", content: "width=device-width, initial-scale=1" },
-        {
-          name: "description",
-          content: `${pageDescription || siteMetadata.description}`,
-        },
-        { name: "twitter:card", content: "summary_large_image" },
-        {
-          name: "twitter:title",
-          content: pageTitle
+          : `${siteMetadata.title}`}
+      </title>
+      <meta
+        name="description"
+        content={`${pageDescription || siteMetadata.description}`}
+      />
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <meta
+        property="og:title"
+        content={
+          pageTitle
             ? `${pageTitle} | ${siteMetadata.title}`
-            : `${siteMetadata.title}`,
-        },
-        {
-          name: "twitter:description",
-          content: `${pageDescription || siteMetadata.description}`,
-        },
-        {
-          name: "twitter:image",
-          content: pageHero
-            ? `${siteMetadata.siteUrl}${pageHero}`
-            : `${siteMetadata.siteUrl}${DefOgpImage}`,
-        },
-        { name: "twitter:site", content: "@Kashiwade_music" },
-        { property: "og:site_name", content: `${siteMetadata.title}` },
-        {
-          property: "og:type",
-          content: `website`,
-        },
-        { property: "og:title", content: pageTitle },
-        {
-          property: "og:description",
-          content: `${pageDescription || siteMetadata.description}`,
-        },
-        {
-          property: "og:url",
-          content: pageUrl
+            : `${siteMetadata.title}`
+        }
+      />
+      <meta property="og:type" content={`website`} />
+      <meta
+        property="og:url"
+        content={
+          pageUrl
             ? `${siteMetadata.siteUrl}${pageUrl}`
-            : `${siteMetadata.siteUrl}`,
-        },
-        {
-          property: "og:image",
-          content: pageHero
+            : `${siteMetadata.siteUrl}`
+        }
+      />
+      <meta
+        property="og:description"
+        content={`${pageDescription || siteMetadata.description}`}
+      />
+      <meta property="og:site_name" content={`${siteMetadata.title}`} />
+      <meta property="og:locale:alternate" content="ja_JP" />
+      <meta property="og:locale:alternate" content="en_US" />
+      <meta property="og:locale" content="ja_JP" />
+      <meta
+        property="og:image"
+        content={
+          pageHero
             ? `${siteMetadata.siteUrl}${pageHero}`
-            : `${siteMetadata.siteUrl}${DefOgpImage}`,
-        },
-      ]}
-    />
+            : `${siteMetadata.siteUrl}${DefOgpImage}`
+        }
+      />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@Kashiwade_music" />
+      <meta name="twitter:creator" content="@Kashiwade_music" />
+    </>
   );
 };
-export default Meta;

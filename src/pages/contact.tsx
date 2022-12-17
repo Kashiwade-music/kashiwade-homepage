@@ -6,6 +6,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { graphql, PageProps } from "gatsby";
+import { Meta } from "../components/layout/meta";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -112,12 +113,7 @@ const ContactPage = ({
     setValue(newValue);
   };
   return (
-    <Layout
-      pageUrl={"/contact"}
-      pageTitle={"Contact"}
-      pageDescription={"お仕事の依頼・感想等をお待ちしております！"}
-      currentPage={"contact"}
-    >
+    <Layout currentPage={"contact"}>
       <ThemeProvider theme={theme}>
         <Tabs value={value} onChange={handleChange} centered>
           <Tab label="Japanese" />
@@ -145,6 +141,14 @@ const ContactPage = ({
   );
 };
 export default ContactPage;
+export const Header = () => (
+  <Meta
+    pageUrl={"/contact"}
+    pageTitle={"Contact"}
+    pageDescription={"お仕事の依頼・感想等をお待ちしております！"}
+  />
+);
+
 export const query = graphql`
   query GetJpnEngContactHTML {
     allMarkdownRemark(
