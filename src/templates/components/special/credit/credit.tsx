@@ -1,8 +1,8 @@
-import * as React from "react";
-import * as vanilla from "./credit.css";
 import { H1 } from "../h1/h1";
+import * as vanilla from "./credit.css";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import * as React from "react";
 
 interface Props {
   data: Queries.SpecialPageQuery;
@@ -23,7 +23,7 @@ export const Credit: React.FC<Props> = ({ data }) => {
       idx < data.markdownRemark?.frontmatter?.credit?.other?.length;
       idx++
     ) {
-      let websiteArray = data.markdownRemark?.frontmatter?.credit?.other[idx]
+      const websiteArray = data.markdownRemark?.frontmatter?.credit?.other[idx]
         ?.website as Array<string>;
       Others.push({
         role: data.markdownRemark?.frontmatter?.credit?.other[idx]
@@ -121,7 +121,10 @@ export const Credit: React.FC<Props> = ({ data }) => {
       >
         <div className={vanilla.CreditOthersFlexBox}>
           {Others.map((other, idx) => (
-            <div className={vanilla.CreditOtherGridBox}>
+            <div
+              className={vanilla.CreditOtherGridBox}
+              key={other.role + other.name + idx}
+            >
               <div
                 className={vanilla.CreditGridRole}
                 style={assignInlineVars({
@@ -142,7 +145,7 @@ export const Credit: React.FC<Props> = ({ data }) => {
               </div>
               <div className={vanilla.CreditGridAccount}>
                 {other.webSiteNameArray.map((webSiteName, idx) => (
-                  <>
+                  <div key={other.role + other.name + webSiteName + idx}>
                     <a
                       href={other.webSiteUrlArray[idx] as string}
                       target="_blank"
@@ -156,7 +159,7 @@ export const Credit: React.FC<Props> = ({ data }) => {
                       {webSiteName}
                     </a>
                     {idx !== other.webSiteNameArray.length - 1 ? "/" : ""}
-                  </>
+                  </div>
                 ))}
               </div>
             </div>

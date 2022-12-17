@@ -1,5 +1,5 @@
+import HeaderBackgroundLoop from "../../../resources/common/header-background-loop.svg";
 import { style } from "@vanilla-extract/css";
-import HeaderBackgroundLoop from "../../images/header-background-loop.svg";
 
 export const Header = style({
   height: "350px",

@@ -1,19 +1,20 @@
-import * as React from "react";
-import Overlay from "./components/special/overlay/overlay";
-import * as vanilla from "./components/special/index.css";
-import { graphql, HeadProps, PageProps } from "gatsby";
-import * as Headers from "./components/special/header/headers";
-import * as mytypes from "./components/special/types";
-import { MyParallax } from "./components/special/parallax/parallax";
-import { ParallaxProvider } from "react-scroll-parallax";
-import { Layout } from "./components/special/layout";
-import { News } from "./components/special/news/news";
-import { XFD } from "./components/special/xfd/xfd";
-import { Information } from "./components/special/information/information";
-import { Track } from "./components/special/track/track";
+import { Meta } from "../components/layout/meta";
 import { Credit } from "./components/special/credit/credit";
 import { Footer } from "./components/special/footer/footer";
-import { Meta } from "../components/layout/meta";
+import * as Headers from "./components/special/header/headers";
+import * as vanilla from "./components/special/index.css";
+import { Information } from "./components/special/information/information";
+import { Layout } from "./components/special/layout";
+import { News } from "./components/special/news/news";
+import Overlay from "./components/special/overlay/overlay";
+import { MyParallax } from "./components/special/parallax/parallax";
+import { Track } from "./components/special/track/track";
+import * as mytypes from "./components/special/types";
+import { XFD } from "./components/special/xfd/xfd";
+import { graphql, HeadProps, PageProps } from "gatsby";
+import { ImageDataLike } from "gatsby-plugin-image";
+import * as React from "react";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 // markup
 const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
@@ -34,6 +35,9 @@ const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
   const Header = data.markdownRemark?.frontmatter?.title
     ? Headers[data.markdownRemark?.frontmatter?.title as keyof typeof Headers]
     : undefined;
+  React.useEffect(() => {
+    console.log("Special Page Loaded");
+  }, []);
   return (
     <ParallaxProvider>
       <Overlay
@@ -42,10 +46,12 @@ const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
       />
       <div className={vanilla.Contents}>
         {Header ? <Header markdownRemark={data.markdownRemark} /> : <></>}
+
         <MyParallax
           height="20vh"
           node={
-            data.markdownRemark?.frontmatter?.descriptionBackgroundImage as any
+            data.markdownRemark?.frontmatter
+              ?.descriptionBackgroundImage as ImageDataLike
           }
           data={data}
         >
@@ -54,14 +60,17 @@ const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
           </h1>
           {data.markdownRemark?.frontmatter?.description_array ? (
             data.markdownRemark.frontmatter.description_array.map(
-              (description) => (
-                <span className={vanilla.Description}>{description}</span>
+              (description, index) => (
+                <span className={vanilla.Description} key={index}>
+                  {description}
+                </span>
               )
             )
           ) : (
             <></>
           )}
         </MyParallax>
+
         <Layout data={data}>
           <News data={data} />
           <XFD data={data} />
@@ -129,27 +138,27 @@ export const pageQuery = graphql`
         subtitle
         header_image {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(placeholder: NONE, quality: 100)
           }
         }
         header_image_sp {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(placeholder: NONE, quality: 100)
           }
         }
         logo_image {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(placeholder: NONE, quality: 100)
           }
         }
         additional_header_image {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(placeholder: NONE, quality: 100)
           }
         }
         additional_header_image_2 {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(placeholder: NONE, quality: 100)
           }
         }
         descriptionBackgroundImage {

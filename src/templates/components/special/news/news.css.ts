@@ -1,4 +1,4 @@
-import { keyframes, style, createVar } from "@vanilla-extract/css";
+import { style, createVar } from "@vanilla-extract/css";
 
 export const borderColor = createVar();
 export const dateColor = createVar();

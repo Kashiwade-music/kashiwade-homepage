@@ -1,12 +1,15 @@
-import * as React from "react";
-import * as vanilla from "../styles/index.css";
-import Layout from "../components/layout";
+import headerTitleBottomLineSVG_LatestWorks from "../../resources/common/header-title-bottom-line2.svg";
+import headerTitleBottomLineSVG_PickUp from "../../resources/common/header-title-bottom-line.svg";
 import ContentLinkBoxes from "../components/contentsLinkBoxes";
-import { graphql, Link, PageProps } from "gatsby";
-import headerTitleBottomLineSVG_PickUp from "../images/header-title-bottom-line.svg";
-import headerTitleBottomLineSVG_LatestWorks from "../images/header-title-bottom-line2.svg";
-import { SpecialPageLinkBox } from "../components/specialPageLinkBox";
+import Layout from "../components/layout";
 import { Meta } from "../components/layout/meta";
+import { SpecialPageLinkBox } from "../components/specialPageLinkBox/specialPageLinkBox";
+import { SpecialPageLinkBoxSP } from "../components/specialPageLinkBox/specialPageLinkBoxSP";
+import * as vanilla from "../styles/index.css";
+import { graphql, Link, PageProps } from "gatsby";
+import { IGatsbyImageData } from "gatsby-plugin-image";
+import * as React from "react";
+import MediaQuery from "react-responsive";
 
 interface IndexContentAreaOuterProps {
   children: React.ReactNode;
@@ -52,38 +55,55 @@ const IndexPage = ({ data }: PageProps<Queries.IndexQuery>) => {
           </div>
         </IndexContentArea>
         <IndexContentArea>
-          <SpecialPageLinkBox
-            slug={data.IndexPageSpecial.nodes[0].frontmatter?.slug as string}
-            description_array={
-              data.IndexPageSpecial.nodes[0].frontmatter
-                ?.description_array as string[]
-            }
-            logo_image={
-              data.IndexPageSpecial.nodes[0].frontmatter?.logo_image as any
-            }
-            ogp={data.IndexPageSpecial.nodes[0].frontmatter?.ogp as any}
-            descriptionBackgroundImage={
-              data.IndexPageSpecial.nodes[0].frontmatter
-                ?.descriptionBackgroundImage as any
-            }
-            textColor={
-              data.IndexPageSpecial.nodes[0].frontmatter?.parallax
-                ?.textColor as string
-            }
-            overlayColor={
-              data.IndexPageSpecial.nodes[0].frontmatter?.parallax
-                ?.overlayColor as string
-            }
-            overlayOpacity={
-              data.IndexPageSpecial.nodes[0].frontmatter?.parallax
-                ?.overlayOpacity as number
-            }
-            imageFilter={
-              data.IndexPageSpecial.nodes[0].frontmatter?.parallax
-                ?.imageFilter as string
-            }
-            title={data.IndexPageSpecial.nodes[0].frontmatter?.title as string}
-          />
+          <MediaQuery minWidth={501}>
+            <SpecialPageLinkBox
+              slug={data.IndexPageSpecial.nodes[0].frontmatter?.slug as string}
+              description_array={
+                data.IndexPageSpecial.nodes[0].frontmatter
+                  ?.description_array as string[]
+              }
+              logo_image={
+                data.IndexPageSpecial.nodes[0].frontmatter
+                  ?.logo_image as unknown as IGatsbyImageData
+              }
+              descriptionBackgroundImage={
+                data.IndexPageSpecial.nodes[0].frontmatter
+                  ?.descriptionBackgroundImage as unknown as IGatsbyImageData
+              }
+              textColor={
+                data.IndexPageSpecial.nodes[0].frontmatter?.parallax
+                  ?.textColor as string
+              }
+              overlayColor={
+                data.IndexPageSpecial.nodes[0].frontmatter?.parallax
+                  ?.overlayColor as string
+              }
+              overlayOpacity={
+                data.IndexPageSpecial.nodes[0].frontmatter?.parallax
+                  ?.overlayOpacity as number
+              }
+              imageFilter={
+                data.IndexPageSpecial.nodes[0].frontmatter?.parallax
+                  ?.imageFilter as string
+              }
+              title={
+                data.IndexPageSpecial.nodes[0].frontmatter?.title as string
+              }
+            />
+          </MediaQuery>
+          <MediaQuery maxWidth={500}>
+            <SpecialPageLinkBoxSP
+              slug={data.IndexPageSpecial.nodes[0].frontmatter?.slug as string}
+              logo_image={
+                data.IndexPageSpecial.nodes[0].frontmatter
+                  ?.logo_image as unknown as IGatsbyImageData
+              }
+              descriptionBackgroundImage={
+                data.IndexPageSpecial.nodes[0].frontmatter
+                  ?.descriptionBackgroundImage as unknown as IGatsbyImageData
+              }
+            />
+          </MediaQuery>
         </IndexContentArea>
         <IndexContentArea needPadding={false}>
           <div className={vanilla.Header}>
@@ -132,17 +152,12 @@ export const query = graphql`
           }
           logo_image {
             childImageSharp {
-              gatsbyImageData(
-                layout: FIXED
-                height: 150
-                quality: 50
-                placeholder: NONE
-              )
+              gatsbyImageData(layout: FIXED, height: 150, placeholder: NONE)
             }
           }
           descriptionBackgroundImage {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, quality: 50)
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
           parallax {
@@ -170,7 +185,7 @@ export const query = graphql`
             tag
             hero {
               childImageSharp {
-                gatsbyImageData(aspectRatio: 1)
+                gatsbyImageData
                 internal {
                   content
                   description

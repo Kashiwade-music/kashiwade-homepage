@@ -1,8 +1,8 @@
-import * as React from "react";
-import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import * as vanilla from "./parallax.css";
-import { Parallax } from "react-scroll-parallax";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
+import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
+import * as React from "react";
+import { Parallax } from "react-scroll-parallax";
 
 interface Props {
   height: string;
@@ -18,7 +18,7 @@ export const MyParallax: React.FC<Props> = ({
   data,
   enableTranslateX = false,
 }) => {
-  const image = getImage(node as any);
+  const image = getImage(node as unknown as ImageDataLike);
   return (
     <div
       className={vanilla.ParallaxParent}

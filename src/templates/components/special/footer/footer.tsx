@@ -1,10 +1,10 @@
-import * as React from "react";
 import * as vanilla from "./footer.css";
-import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { IoHomeSharp } from "@react-icons/all-files/io5/IoHomeSharp";
-import { SlArrowRight } from "react-icons/sl";
+import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { Link } from "gatsby";
-import { StaticImage, getImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
+import * as React from "react";
+import { SlArrowRight } from "react-icons/sl";
 
 interface Props {
   data: Queries.SpecialPageQuery;
@@ -78,7 +78,7 @@ export const Footer: React.FC<Props> = ({ data }) => {
       <div className={vanilla.LogoWrapper}>
         <Link to={"/"} title={""}>
           <StaticImage
-            src={"../../../../images/kashiwade_logo_2022.png"}
+            src={"../../../../../resources/common/kashiwade_logo_2022.png"}
             alt={""}
             width={200}
           />

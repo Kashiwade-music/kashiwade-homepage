@@ -1,4 +1,4 @@
-import { keyframes, style, createVar } from "@vanilla-extract/css";
+import { style, createVar } from "@vanilla-extract/css";
 
 export const BorderColor = createVar();
 export const SitemapBarParent = style({

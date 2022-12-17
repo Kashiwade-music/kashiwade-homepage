@@ -1,5 +1,5 @@
+import HeaderBackgroundLoop from "../../../resources/common/header-background-loop.svg";
 import { keyframes, style } from "@vanilla-extract/css";
-import HeaderBackgroundLoop from "../../images/header-background-loop.svg";
 
 const bgiFade = keyframes({
   "0%": { opacity: 0 },

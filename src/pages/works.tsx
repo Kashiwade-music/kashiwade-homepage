@@ -42,7 +42,7 @@ export const query = graphql`
             tag
             hero {
               childImageSharp {
-                gatsbyImageData(aspectRatio: 1)
+                gatsbyImageData
                 internal {
                   content
                   description

@@ -1,4 +1,4 @@
-import { keyframes, style, createVar } from "@vanilla-extract/css";
+import { style, createVar } from "@vanilla-extract/css";
 
 export const InfoFieldKeyColor = createVar();
 export const InfoFieldValueColor = createVar();

@@ -1,23 +1,26 @@
 //gatsby-config.jsで指定したディレクトリ以下にある全てのページを作る
 //worksディレクトリにのみ対応
 //blogディレクトリへの対応は容易
-import React from "react";
-import { graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
-import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
-import { useMediaQuery } from "react-responsive";
+import { Meta } from "../components/layout/meta";
 import PageControlButtons from "./components/works/pageControlButtons";
 import * as vanilla from "./works.css";
-import { Meta } from "../components/layout/meta";
+import { graphql, PageProps } from "gatsby";
 import type { HeadProps } from "gatsby";
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import React from "react";
+import { useMediaQuery } from "react-responsive";
 
-const WorkPostContent: React.FC<PageProps<Queries.PageQueryQuery>> = ({
-  data,
-}) => {
+interface WorkPostContentProps {
+  data: Queries.PageQueryQuery;
+}
+
+const WorkPostContent: React.FC<WorkPostContentProps> = ({ data }) => {
   const frontmatter = data.markdownRemark?.frontmatter;
   const html = data.markdownRemark?.html;
-  // @ts-ignore
-  const image = getImage(data.markdownRemark?.frontmatter?.hero);
+  const image = getImage(
+    data.markdownRemark?.frontmatter?.hero as unknown as IGatsbyImageData
+  );
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width: 1100px)" });
   //if window size is bigger than 600px, isDesktopOrMobile has "false"
   if (frontmatter?.type === "song") {
@@ -123,10 +126,7 @@ const Template: React.FC<PageProps<Queries.PageQueryQuery>> = ({ data }) => {
         data.markdownRemark?.frontmatter?.description ?? undefined
       }
     >
-      {
-        // @ts-ignore
-        <WorkPostContent data={data} />
-      }
+      {<WorkPostContent data={data} />}
       <PageControlButtons
         previousLink={pageControlObj?.previous?.frontmatter?.slug ?? undefined}
         previousTitle={

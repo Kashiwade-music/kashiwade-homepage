@@ -1,6 +1,6 @@
-import * as React from "react";
-import { Link } from "gatsby";
 import * as vanilla from "./navbar.css";
+import { Link } from "gatsby";
+import * as React from "react";
 
 type Props = {
   currentPage: string;

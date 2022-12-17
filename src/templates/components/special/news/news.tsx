@@ -1,8 +1,8 @@
-import * as React from "react";
+import { H1 } from "../h1/h1";
 import * as vanilla from "./news.css";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { H1 } from "../h1/h1";
 import { motion } from "framer-motion";
+import * as React from "react";
 
 interface NewsFieldProps {
   index: number;
@@ -12,7 +12,7 @@ interface NewsFieldProps {
 const NewsField: React.FC<NewsFieldProps> = ({ index, news, data }) => {
   if (index == 0) {
     return (
-      <div className={vanilla.NewsFieldParentFirst}>
+      <div className={vanilla.NewsFieldParentFirst} key={index}>
         <div
           className={vanilla.DateField}
           style={assignInlineVars({
@@ -41,6 +41,7 @@ const NewsField: React.FC<NewsFieldProps> = ({ index, news, data }) => {
           [vanilla.borderColor]: data.markdownRemark?.frontmatter?.theme
             ?.mainSub2 as string,
         })}
+        key={index}
       >
         <div
           className={vanilla.DateField}
@@ -74,19 +75,9 @@ export const News: React.FC<Props> = ({ data }) => {
   const newsField = [];
   for (let i = 0; i < news.length; i += 2) {
     newsField.push(
-      <NewsField data={data} index={i} news={[news[i], news[i + 1]]} />
+      <NewsField data={data} index={i} news={[news[i], news[i + 1]]} key={i} />
     );
   }
-  // return (
-  //   <motion.div
-  //     initial={{ opacity: 0 }}
-  //     whileInView={{ opacity: 1 }}
-  //     viewport={{ once: true, amount: 0.6 }}
-  //   >
-  //     <H1 data={data}>News</H1>
-  //     <div className={vanilla.News}>{newsField}</div>
-  //   </motion.div>
-  // );
   return (
     <motion.div
       initial={{ opacity: 0 }}

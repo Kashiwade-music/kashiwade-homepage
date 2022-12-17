@@ -1,6 +1,6 @@
-import * as React from "react";
-import { StaticImage } from "gatsby-plugin-image";
 import * as vanilla from "./indexHeaderSmartPhone.css";
+import { StaticImage } from "gatsby-plugin-image";
+import * as React from "react";
 
 const IndexHeaderSmartPhone = () => {
   return (
@@ -9,7 +9,7 @@ const IndexHeaderSmartPhone = () => {
         <div className={vanilla.Campus}>
           <div className={vanilla.HeaderImage1}>
             <StaticImage
-              src="../../images/kashiwade_sironora_normal_closeMouth_alphaChannel_sp.png"
+              src="../../../resources/common/kashiwade_sironora_normal_closeMouth_alphaChannel_sp.png"
               layout="fixed"
               placeholder="none"
               quality={100}

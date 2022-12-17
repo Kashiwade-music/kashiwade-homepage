@@ -1,4 +1,4 @@
-import { keyframes, style, createVar } from "@vanilla-extract/css";
+import { style, createVar } from "@vanilla-extract/css";
 
 export const SpecialPageLinkBoxParent = style({
   width: "100%",

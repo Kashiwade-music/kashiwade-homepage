@@ -1,7 +1,12 @@
-import * as React from "react";
 import * as vanilla from "./layout.css";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import {
+  GatsbyImage,
+  getImage,
+  IGatsbyImageData,
+  ImageDataLike,
+} from "gatsby-plugin-image";
+import * as React from "react";
 
 interface Props {
   children: React.ReactNode;
@@ -18,7 +23,8 @@ export const Layout: React.FC<Props> = ({
     ? localBackground
     : (data.markdownRemark?.frontmatter?.theme?.base as string);
   const backgroundImage = getImage(
-    data.markdownRemark?.frontmatter?.mainBackgroundImage as any
+    data.markdownRemark?.frontmatter
+      ?.mainBackgroundImage as unknown as ImageDataLike
   );
   return (
     <div
@@ -29,7 +35,7 @@ export const Layout: React.FC<Props> = ({
     >
       <div className={vanilla.BackgroundLayerPositioner}>
         <GatsbyImage
-          image={backgroundImage as any}
+          image={backgroundImage as IGatsbyImageData}
           alt="background"
           className={vanilla.BackgroundLayer}
         />

@@ -1,5 +1,5 @@
-import { style } from "@vanilla-extract/css";
 import GlobalStyleConsts from "../../styles/GlobalStyleConsts";
+import { style } from "@vanilla-extract/css";
 
 export const NavBar = style({
   height: "50px",

@@ -1,11 +1,10 @@
-import * as React from "react";
+import * as mytypes from "../types";
+import KashiwadeLogoLeft from "./KashiwadeLogoLeft";
+import KashiwadeLogoRight from "./KashiwadeLogoRight";
+import KashiwadeLogoText from "./KashiwadeLogoText";
 import * as vanilla from "./overlay.css";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
-import KashiwadeLogoRight from "./KashiwadeLogoRight";
-import KashiwadeLogoLeft from "./KashiwadeLogoLeft";
-import KashiwadeLogoText from "./KashiwadeLogoText";
-import * as mytypes from "../types";
-import { style } from "@mui/system";
+import * as React from "react";
 
 type Props = {
   colors: mytypes.Colors;
@@ -14,6 +13,9 @@ type Props = {
 
 const Overlay: React.FC<Props> = ({ colors, subtitle }) => {
   const subtitleText = subtitle.split("").join(" ").replace("   ", "　");
+  React.useEffect(() => {
+    console.log("Overlay Loaded");
+  }, []);
   return (
     <div
       className={vanilla.Campus}

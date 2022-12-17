@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module "react-slideshow-image" {
   export class Zoom extends React.Component<ZoomProps & any, any> {
     goBack(): void;

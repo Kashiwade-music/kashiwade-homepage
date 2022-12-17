@@ -1,10 +1,11 @@
-import * as React from "react";
-import * as vanilla from "./track.css";
-import { MyParallax } from "../parallax/parallax";
-import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { useMediaQuery } from "react-responsive";
 import { H1 } from "../h1/h1";
-import { motion, AnimatePresence } from "framer-motion";
+import { MyParallax } from "../parallax/parallax";
+import * as vanilla from "./track.css";
+import { assignInlineVars } from "@vanilla-extract/dynamic";
+import { motion } from "framer-motion";
+import { ImageDataLike } from "gatsby-plugin-image";
+import * as React from "react";
+import { useMediaQuery } from "react-responsive";
 
 interface TrackItemProps {
   index: number;
@@ -97,7 +98,7 @@ export const Track: React.FC<TrackProps> = ({ data }) => {
   // find longest track title
   let longestTrackTitle = 0;
   data.markdownRemark?.frontmatter?.track?.forEach((track) => {
-    let title = track?.title?.toString() as string;
+    const title = track?.title?.toString() as string;
     if (calculateWidth(title, 26) > longestTrackTitle) {
       longestTrackTitle = calculateWidth(title, 26);
     }
@@ -105,7 +106,7 @@ export const Track: React.FC<TrackProps> = ({ data }) => {
 
   let longestTrackSubinfo = 0;
   data.markdownRemark?.frontmatter?.track?.forEach((track) => {
-    let subinfo = track?.subinfo?.toString() as string;
+    const subinfo = track?.subinfo?.toString() as string;
     if (subinfo) {
       if (calculateWidth(subinfo, 15) > longestTrackSubinfo) {
         longestTrackSubinfo = calculateWidth(subinfo, 15);
@@ -126,7 +127,10 @@ export const Track: React.FC<TrackProps> = ({ data }) => {
             ? `${75 + 65 * trackNumber + 30}px`
             : `${75 + 75 * trackNumber + 30}px`
         }
-        node={data.markdownRemark?.frontmatter?.trackBackgroundImage as any}
+        node={
+          data.markdownRemark?.frontmatter
+            ?.trackBackgroundImage as ImageDataLike
+        }
         data={data}
       >
         <div className={vanilla.InnerWrapper}>
@@ -153,6 +157,10 @@ export const Track: React.FC<TrackProps> = ({ data }) => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.6 }}
                 transition={{ duration: 0.3 }}
+                key={
+                  ((track?.title?.toString() as string) +
+                    track?.subinfo?.toString()) as string
+                }
               >
                 <TrackItem
                   index={index + 1}

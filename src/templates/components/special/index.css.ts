@@ -1,4 +1,4 @@
-import { keyframes, style, createVar } from "@vanilla-extract/css";
+import { keyframes, style } from "@vanilla-extract/css";
 
 const BlurTransition = keyframes({
   "0%": { opacity: 0 },

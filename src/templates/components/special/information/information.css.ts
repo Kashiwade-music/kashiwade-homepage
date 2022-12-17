@@ -1,4 +1,4 @@
-import { keyframes, style, createVar } from "@vanilla-extract/css";
+import { style, createVar } from "@vanilla-extract/css";
 
 export const Accordion = style({
   padding: "0 0 10px 0",

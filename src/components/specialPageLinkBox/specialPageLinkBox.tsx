@@ -1,13 +1,12 @@
-import React from "react";
 import * as vanilla from "./specialPageLinkBox.css";
-import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { Link } from "gatsby";
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import React from "react";
 
 interface Props {
   slug: string;
   description_array: string[];
-  ogp: IGatsbyImageData;
   logo_image: IGatsbyImageData;
   descriptionBackgroundImage: IGatsbyImageData;
   textColor: string;
@@ -20,7 +19,6 @@ interface Props {
 export const SpecialPageLinkBox: React.FC<Props> = ({
   slug,
   description_array,
-  ogp,
   logo_image,
   descriptionBackgroundImage,
   textColor,
@@ -29,18 +27,15 @@ export const SpecialPageLinkBox: React.FC<Props> = ({
   imageFilter,
   title,
 }) => {
-  const ogpImage = getImage(ogp);
   const descriptionBackgroundImageImage = getImage(descriptionBackgroundImage);
   const logoImage = getImage(logo_image);
-  const imageHeight = 630;
-  const imageWidth = 1200;
 
   const [ImageFilter, setImageFilter] = React.useState<string>("");
   const [OverlayOpacity, setOverlayOpacity] = React.useState<number>(1);
   const [OverlayColor, setOverlayColor] =
     React.useState<string>("rgba(0,0,0,0)");
   return (
-    <Link to={slug} title={""} style={{ textDecoration: "none" }}>
+    <Link to={slug} title={title} style={{ textDecoration: "none" }}>
       <div
         className={vanilla.SpecialPageLinkBoxParent}
         onMouseEnter={() => {

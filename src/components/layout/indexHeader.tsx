@@ -1,6 +1,6 @@
-import * as React from "react";
-import { StaticImage } from "gatsby-plugin-image";
 import * as vanilla from "./indexHeader.css";
+import { StaticImage } from "gatsby-plugin-image";
+import * as React from "react";
 
 const IndexHeader = () => {
   return (
@@ -9,7 +9,7 @@ const IndexHeader = () => {
         <div className={vanilla.Campus}>
           <div className={vanilla.HeaderImage1}>
             <StaticImage
-              src="../../images/kashiwade_sironora_normal_closeMouth_alphaChannel_trimmed.png"
+              src="../../../resources/common/kashiwade_sironora_normal_closeMouth_alphaChannel_trimmed.png"
               layout="fixed"
               placeholder="none"
               quality={100}
@@ -18,7 +18,7 @@ const IndexHeader = () => {
           </div>
           <div className={vanilla.HeaderImage2}>
             <StaticImage
-              src="../../images/kashiwade_sironora_smile_closeMouth_alphaChannel_trimmed.png"
+              src="../../../resources/common/kashiwade_sironora_smile_closeMouth_alphaChannel_trimmed.png"
               layout="fixed"
               className={vanilla.HeaderImage2IMG}
               placeholder="none"

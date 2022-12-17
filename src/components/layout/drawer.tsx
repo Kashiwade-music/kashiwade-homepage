@@ -1,5 +1,5 @@
-import * as React from "react";
 import * as vanilla from "./drawer.css";
+import * as React from "react";
 
 const getDirectionStyle = (dir: string, size: number) => {
   switch (dir) {
@@ -58,7 +58,9 @@ const Drawer: React.FC<Props> = ({
   open,
   direction,
   children,
-  onClose = () => {},
+  onClose = () => {
+    // do nothing.
+  },
   overlayColor = "#000",
   overlayOpacity = 0.4,
   zIndex = 100,

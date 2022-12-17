@@ -1,4 +1,4 @@
-import { keyframes, style, createVar } from "@vanilla-extract/css";
+import { style, createVar } from "@vanilla-extract/css";
 
 export const HeadlineBorderColor = createVar();
 export const HeadlineTextColor = createVar();
@@ -15,7 +15,6 @@ export const Headline = style({
   alignItems: "center",
   "::before": {
     content: "''",
-    top: "50%",
     display: "inline-block",
     width: "50%",
     height: "1px",
@@ -23,7 +22,6 @@ export const Headline = style({
   },
   "::after": {
     content: "''",
-    top: "50%",
     display: "inline-block",
     width: "50%",
     height: "1px",

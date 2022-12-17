@@ -1,10 +1,10 @@
-import * as React from "react";
-import * as vanilla from "../styles/profile.css";
 import Layout from "../components/layout";
-import MediaQuery from "react-responsive";
-import { StaticImage } from "gatsby-plugin-image";
-import { Slide } from "react-slideshow-image";
 import { Meta } from "../components/layout/meta";
+import * as vanilla from "../styles/profile.css";
+import { StaticImage } from "gatsby-plugin-image";
+import * as React from "react";
+import MediaQuery from "react-responsive";
+import { Slide } from "react-slideshow-image";
 
 const ProfilePage = () => {
   const prof = {
@@ -75,7 +75,7 @@ const ProfilePage = () => {
             <Slide easing="ease">
               <div className="each-slide">
                 <StaticImage
-                  src="../images/kashiwade_sironora_normal_trim8-9.png"
+                  src="../../resources/common/kashiwade_sironora_normal_trim8-9.png"
                   height={400}
                   quality={100}
                   layout="fullWidth"
@@ -84,7 +84,7 @@ const ProfilePage = () => {
               </div>
               <div className="each-slide">
                 <StaticImage
-                  src="../images/kashiwade_logo.png"
+                  src="../../resources/common/kashiwade_logo.png"
                   quality={100}
                   height={400}
                   layout="fullWidth"
@@ -142,7 +142,7 @@ const ProfilePage = () => {
             <Slide easing="ease">
               <div className="each-slide">
                 <StaticImage
-                  src="../images/kashiwade_sironora_normal_trim8-9.png"
+                  src="../../resources/common/kashiwade_sironora_normal_trim8-9.png"
                   height={400}
                   quality={100}
                   layout="fullWidth"
@@ -151,7 +151,7 @@ const ProfilePage = () => {
               </div>
               <div className="each-slide">
                 <StaticImage
-                  src="../images/kashiwade_logo.png"
+                  src="../../resources/common/kashiwade_logo.png"
                   quality={100}
                   height={400}
                   layout="fullWidth"

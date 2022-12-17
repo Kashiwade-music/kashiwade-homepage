@@ -1,8 +1,8 @@
-import * as React from "react";
+import headerTitleBottomLineSVG2 from "../../../resources/common/header-title-bottom-line2.svg";
+import headerTitleBottomLineSVG3 from "../../../resources/common/header-title-bottom-line3.svg";
+import headerTitleBottomLineSVG1 from "../../../resources/common/header-title-bottom-line.svg";
 import * as vanilla from "./header.css";
-import headerTitleBottomLineSVG1 from "../../images/header-title-bottom-line.svg";
-import headerTitleBottomLineSVG2 from "../../images/header-title-bottom-line2.svg";
-import headerTitleBottomLineSVG3 from "../../images/header-title-bottom-line3.svg";
+import * as React from "react";
 
 type Props = {
   pageTitle: string;

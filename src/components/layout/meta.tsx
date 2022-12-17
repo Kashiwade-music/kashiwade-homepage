@@ -1,6 +1,6 @@
-import React from "react";
+import DefOgpImage from "../../../resources/common/ogpImage.png";
 import { useStaticQuery, graphql } from "gatsby";
-import DefOgpImage from "../../images/ogpImage.png";
+import React from "react";
 
 // ページの URL, title, description, type, og:image を渡せるように作成
 type Props = {

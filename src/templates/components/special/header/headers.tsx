@@ -1,10 +1,9 @@
-import * as React from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { PageProps } from "gatsby";
+import * as vanilla_aquilegia from "./aquilegia.css";
 import * as vanilla from "./headers.css";
 import * as vanilla_tenkoureirou from "./tenkoureirou.css";
-import * as vanilla_aquilegia from "./aquilegia.css";
+import { assignInlineVars } from "@vanilla-extract/dynamic";
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import * as React from "react";
 import { useMediaQuery } from "react-responsive";
 
 const ScrollAnimation: React.FC<Queries.SpecialPageQuery> = (data) => {
@@ -28,21 +27,28 @@ const ScrollAnimation: React.FC<Queries.SpecialPageQuery> = (data) => {
 
 export const 天光玲瓏: React.FC<Queries.SpecialPageQuery> = (data) => {
   const headerImage = getImage(
-    data.markdownRemark?.frontmatter?.header_image as any
+    data.markdownRemark?.frontmatter
+      ?.header_image as unknown as IGatsbyImageData
   );
   const headerImageSP = getImage(
-    data.markdownRemark?.frontmatter?.header_image_sp as any
+    data.markdownRemark?.frontmatter
+      ?.header_image_sp as unknown as IGatsbyImageData
   );
   const logoImage = getImage(
-    data.markdownRemark?.frontmatter?.logo_image as any
+    data.markdownRemark?.frontmatter?.logo_image as unknown as IGatsbyImageData
   );
   const additionalHeaderImage = getImage(
-    data.markdownRemark?.frontmatter?.additional_header_image as any
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image as unknown as IGatsbyImageData
   );
 
-  const isBannerWidthOver100vh = useMediaQuery({ query: "(min-width: 100vh)" });
-  const isBannerWidthOver410px = useMediaQuery({ query: "(min-width: 420px)" });
-
+  const isWidthWiderThan100vh = useMediaQuery({
+    query: "(min-width: 100vh)",
+  });
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <div className={vanilla.Parent}>
       {headerImage && (
@@ -55,65 +61,67 @@ export const 天光玲瓏: React.FC<Queries.SpecialPageQuery> = (data) => {
           }}
         />
       )}
-      {isBannerWidthOver100vh && additionalHeaderImage && (
-        <GatsbyImage
-          image={additionalHeaderImage}
-          alt="additional header image"
-          style={{
-            position: "absolute",
-            height: "100vh",
-          }}
-        />
-      )}
-      {!isBannerWidthOver100vh && headerImageSP && (
-        <GatsbyImage
-          image={headerImageSP}
-          alt="additional header image"
-          style={{
-            position: "absolute",
-            height: "100vh",
-          }}
-        />
-      )}
-      {isBannerWidthOver100vh && isBannerWidthOver410px && logoImage && (
-        <div className={vanilla_tenkoureirou.LogoImageWrapper}>
-          <GatsbyImage
-            image={logoImage}
-            alt="logo image"
-            style={{
-              position: "absolute",
-              height: "45vh",
-              width: "45vh",
-              marginLeft: "calc(5vw + 10px)",
-            }}
-          />
-        </div>
-      )}
-      {!isBannerWidthOver100vh && isBannerWidthOver410px && logoImage && (
-        <div className={vanilla_tenkoureirou.LogoImageWrapperSP}>
-          <GatsbyImage
-            image={logoImage}
-            alt="logo image"
-            style={{
-              position: "absolute",
-              height: "40vh",
-              width: "40vh",
-            }}
-          />
-        </div>
-      )}
-      {!isBannerWidthOver100vh && !isBannerWidthOver410px && logoImage && (
-        <div className={vanilla_tenkoureirou.LogoImageWrapperSP}>
-          <GatsbyImage
-            image={logoImage}
-            alt="logo image"
-            style={{
-              position: "absolute",
-              height: "100vw",
-              width: "100%",
-            }}
-          />
-        </div>
+      {mounted && (
+        <>
+          {isWidthWiderThan100vh && (
+            <>
+              {additionalHeaderImage && (
+                <GatsbyImage
+                  image={additionalHeaderImage}
+                  alt="additional header image"
+                  style={{
+                    position: "absolute",
+                    height: "100vh",
+                  }}
+                />
+              )}
+              {logoImage && (
+                <div className={vanilla_tenkoureirou.LogoImageWrapper}>
+                  <GatsbyImage
+                    image={logoImage}
+                    alt="logo image"
+                    style={{
+                      position: "absolute",
+                      height: "45vh",
+                      width: "45vh",
+                      marginLeft: "calc(5vw + 10px)",
+                    }}
+                  />
+                </div>
+              )}
+            </>
+          )}
+
+          {!isWidthWiderThan100vh && (
+            <>
+              {headerImageSP && (
+                <GatsbyImage
+                  image={headerImageSP}
+                  alt="additional header image"
+                  style={{
+                    position: "absolute",
+                    height: "100vh",
+                    width: "100%",
+                  }}
+                />
+              )}
+
+              {logoImage && (
+                <div className={vanilla_tenkoureirou.LogoImageWrapperSP}>
+                  <GatsbyImage
+                    image={logoImage}
+                    alt="logo image"
+                    style={{
+                      position: "absolute",
+                      maxWidth: "40vh",
+                      width: "100%",
+                    }}
+                  />
+                </div>
+              )}
+            </>
+          )}
+        </>
       )}
       <ScrollAnimation markdownRemark={data.markdownRemark} />
     </div>
@@ -122,19 +130,19 @@ export const 天光玲瓏: React.FC<Queries.SpecialPageQuery> = (data) => {
 
 export const Aquilegia: React.FC<Queries.SpecialPageQuery> = (data) => {
   const headerImage = getImage(
-    data.markdownRemark?.frontmatter?.header_image as any
-  );
-  const headerImageSP = getImage(
-    data.markdownRemark?.frontmatter?.header_image_sp as any
+    data.markdownRemark?.frontmatter
+      ?.header_image as unknown as IGatsbyImageData
   );
   const logoImage = getImage(
-    data.markdownRemark?.frontmatter?.logo_image as any
+    data.markdownRemark?.frontmatter?.logo_image as unknown as IGatsbyImageData
   );
   const additionalHeaderImage = getImage(
-    data.markdownRemark?.frontmatter?.additional_header_image as any
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image as unknown as IGatsbyImageData
   );
   const additionalHeaderImage2 = getImage(
-    data.markdownRemark?.frontmatter?.additional_header_image_2 as any
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_2 as unknown as IGatsbyImageData
   );
   return (
     <div className={vanilla.Parent}>
