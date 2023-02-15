@@ -1,12 +1,12 @@
-import * as React from "react";
-import * as vanilla from "../styles/contact.css";
 import Layout from "../components/layout";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import { RiSendPlaneFill } from "react-icons/ri";
-import { graphql, PageProps } from "gatsby";
 import { Meta } from "../components/layout/meta";
+import * as vanilla from "../styles/contact.css";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { graphql, PageProps } from "gatsby";
+import * as React from "react";
+import { RiSendPlaneFill } from "react-icons/ri";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -113,7 +113,11 @@ const ContactPage = ({
     setValue(newValue);
   };
   return (
-    <Layout currentPage={"contact"}>
+    <Layout
+      pageTitle={"Contact"}
+      pageDescription={"お仕事の依頼・感想等をお待ちしております！"}
+      currentPage={"contact"}
+    >
       <ThemeProvider theme={theme}>
         <Tabs value={value} onChange={handleChange} centered>
           <Tab label="Japanese" />
@@ -141,7 +145,7 @@ const ContactPage = ({
   );
 };
 export default ContactPage;
-export const Header = () => (
+export const Head = () => (
   <Meta
     pageUrl={"/contact"}
     pageTitle={"Contact"}
