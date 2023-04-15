@@ -2,26 +2,27 @@
 slug: "/special/chronicles-of-luna" # リンク
 date: "2023-04-30" # 発売・公開日。ソートにも用いる
 title: "Chronicles of Luna" # アルバム名
-ogp: ./20230430_chronicles-of-luna-ogp.jpg
+ogp: ./20230430-chronicles-of-luna-ogp.jpg
 
 # ---------------
 subtitle: 1st EP
 overlay:
-  background: '#ffffff'
+  background: '#E6EEF7'
   logoColor: '#000000'
-  lineColor: '#D8031B'
+  lineColor: '#FFF5C5'
   transition:
-    rect1: '#B9CCDF'
-    rect2: '#FEEFEF'
+    rect1: '#DBCEE4'
+    rect2: '#888DC5'
 # ---------------
-header_image: ./20221030-tenkoureirou-header.jpg
+header_func_name: ChroniclesOfLuna
+header_image: ./20230430-chronicles-of-luna-header.jpg
 header_image_sp: ./20221030-tenkoureirou-header-sp.png
-logo_image: ./20221030-tenkoureirou-logo.png # Optional header_imageにロゴが含まれていないなら指定。
-additional_header_image: ./20221030-tenkoureirou-header.png
+logo_image: ./20230430-chronicles-of-luna-logo.png # Optional header_imageにロゴが含まれていないなら指定。
+additional_header_image: ./20230430-chronicles-of-luna-header.png
 additional_header_image_2:
 header:
-  scrollMainColor: "#e24255"
-  scrollBackgroundColor: "#fdeff1"
+  scrollMainColor: "#FFF5C5"
+  scrollBackgroundColor: "#888DC5"
 # ---------------
 parallax:
   textColor: "#ffffff"

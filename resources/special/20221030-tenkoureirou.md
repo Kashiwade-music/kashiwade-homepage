@@ -14,6 +14,7 @@ overlay:
     rect1: '#B9CCDF'
     rect2: '#FEEFEF'
 # ---------------
+header_func_name: 天光玲瓏
 header_image: ./20221030-tenkoureirou-header.jpg
 header_image_sp: ./20221030-tenkoureirou-header-sp.png
 logo_image: ./20221030-tenkoureirou-logo.png # Optional header_imageにロゴが含まれていないなら指定。

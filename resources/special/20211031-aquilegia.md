@@ -14,6 +14,7 @@ overlay:
     rect1: '#c7c4dd'
     rect2: '#86ADC8'
 # ---------------
+header_func_name: Aquilegia
 header_image: ./20211031-aquilegia-header.jpg
 header_image_sp:
 logo_image: ./20211031-aquilegia-logo.png # Optional header_imageにロゴが含まれていないなら指定。
