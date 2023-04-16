@@ -165,6 +165,27 @@ export const pageQuery = graphql`
             gatsbyImageData(placeholder: NONE, quality: 100)
           }
         }
+        additional_header_image_3 {
+          childImageSharp {
+            gatsbyImageData(placeholder: NONE, quality: 100)
+          }
+        }
+        additional_header_image_4 {
+          childImageSharp {
+            gatsbyImageData(placeholder: NONE, quality: 100)
+          }
+        }
+        additional_header_image_5 {
+          childImageSharp {
+            gatsbyImageData(placeholder: NONE, quality: 100)
+          }
+        }
+        additional_header_image_6 {
+          childImageSharp {
+            gatsbyImageData(placeholder: NONE, quality: 100)
+          }
+        }
+
         descriptionBackgroundImage {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)

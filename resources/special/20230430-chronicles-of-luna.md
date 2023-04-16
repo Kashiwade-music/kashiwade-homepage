@@ -16,10 +16,15 @@ overlay:
 # ---------------
 header_func_name: ChroniclesOfLuna
 header_image: ./20230430-chronicles-of-luna-header.jpg
-header_image_sp: ./20221030-tenkoureirou-header-sp.png
+header_image_sp: ./20230430-chronicles-of-luna-header_sp.png
 logo_image: ./20230430-chronicles-of-luna-logo.png # Optional header_imageにロゴが含まれていないなら指定。
 additional_header_image: ./20230430-chronicles-of-luna-header.png
-additional_header_image_2:
+additional_header_image_2: ./20230430-chronicles-of-luna-header_2.png
+additional_header_image_3: ./20230430-chronicles-of-luna-header_3.png
+additional_header_image_4: ./20230430-chronicles-of-luna-header_4.png
+additional_header_image_5: ./20230430-chronicles-of-luna-header_5.png
+additional_header_image_6: ./20230430-chronicles-of-luna-header_6.png
+
 header:
   scrollMainColor: "#FFF5C5"
   scrollBackgroundColor: "#888DC5"
@@ -28,75 +33,63 @@ parallax:
   textColor: "#ffffff"
   overlayColor: "#000000"
   overlayOpacity: 0.5
-  imageFilter: sepia(60%)
+  imageFilter: grayscale(60%)
 # ---------------
-poem: 大太刀の波濤、禍事を断つ。
+poem: Luna's glow illuminates the night, casting a pale sheen on all below.
 description_array: 
-  - 和風をテーマにした、荘厳なオーケストラ/Epic調の楽曲を収録。
-  - カシワデ/Kashiwade 2nd Albam # サイトの説明文
-descriptionBackgroundImage: ./20221030-tenkoureirou-description-back.jpg
+  - 荘厳なオーケストラ/Epic調の楽曲を中心とした5曲を収録。
+  - カシワデ/Kashiwade 1st EP # サイトの説明文
+descriptionBackgroundImage: ./20230430-chronicles-of-luna-description-back.jpg
 # ---------------
-mainBackgroundImage: ./20221030-tenkoureirou-bg.jpg
+mainBackgroundImage: ./20230430-chronicles-of-luna-bg-pattern.jpg
 minWidth: 500px
 theme:
-  base: "#FEEFEF"
+  base: "#E6EEF7"
   baseSub1: "#fffbfb"
-  main: "#371f1f"
-  mainSub1: "#877878"
-  mainSub2: "#d7d2d2"
-  accent: '#D8031B'
+  main: "#3a3c3e"
+  mainSub1: "#73777c"
+  mainSub2: "#adb3b9"
+  accent: '#BF9D5B'
 # ---------------
 news:
-  - 2022/12/16
-  - 特設サイトをリニューアルしました
-  - 2022/12/05
-  - CD版のオンライン販売を開始しました
-  - 2022/10/31
-  - ダウンロード配信を開始しました
-  - 2022/10/30
-  - M3 2022秋にて新譜とパラデータの頒布を行いました
-  - 2022/10/25
-  - お品書きを更新しました
+  - 2023/04/17
+  - XFDの情報を掲載しました
+  - 2023/04/16
+  - 特設サイトをオープンしました
+
 # ---------------
 soundcloud: 1362867550
 youtube: 1kpX3spEq8o
 # ---------------
-jacketImage: ./20221030-tenkoureirou-jacket.jpg
+jacketImage: ./20230430-chronicles-of-luna-jacket.jpg
 infomation:
-  title: 天光玲瓏
+  title: Chronicles of Luna
   circle: かしわで音楽工房
-  specification: 7曲入り ジュエルケース
-  releaseDate: 2022/10/30 秋M3
-  booth: 第一展示場 A-08b かしわで音楽工房
-  price: 1,500円 (会場頒布価格)
+  specification: 5曲入り ジュエルケース
+  releaseDate: 2023/04/30 春M3
+  booth: 第一展示場 E-04a かしわで音楽工房
+  price: 1,000円 (会場頒布価格)
 shop:
   download:
-    - BOOTH
-    - https://booth.pm/ja/items/4282980
-    - Bandcamp
-    - https://kashiwade.bandcamp.com/album/-
+    - coming soon
   cd:
-    - BOOTH
-    - https://booth.pm/ja/items/4282980
+    - coming soon
   streaming:
     - coming soon
 # ---------------
-trackBackgroundImage: ./20221030-tenkoureirou-header.jpg
+trackBackgroundImage: 20230430-chronicles-of-luna-track_bg.jpg
 track:
-  - title: 天光玲瓏
-    subinfo: Resplendent Sunlight
-  - title: 天地の鼓動
-    subinfo: Rhythm of Vast Earth
-  - title: 旧懐の旋律
-    subinfo: Echoes of Nostalgia
-  - title: 落桜と月
-    subinfo: Falling Sakura and Moonlight
-  - title: 幽世と現世の狭間にて 改
-    subinfo: Between the Realm of Eternity and Transience -Rev-
-  - title: 神刀開眼
-    subinfo: Awakening of Sacred Sword
-  - title: 花舞う都の空
-    subinfo: Sky of Harmonious Miyako
+  - title: Chronicles of Luna
+    subinfo: 
+  - title: Quest for Knowledge
+    subinfo: 
+  - title: seize
+    subinfo: 
+  - title: Effulgent Flowers
+    subinfo: 
+  - title: Gloria
+    subinfo: 
+
 # ---------------
 credit:
   produce:
@@ -105,12 +98,17 @@ credit:
     twitter: https://twitter.com/kashiwade_music
   other:
     - role: Illustration by
-      name: 英エイスト
+      name: デクババ
       website:
         - Pixiv 
-        - https://www.pixiv.net/users/4695872
+        - https://www.pixiv.net/users/28296442
         - Twitter 
-        - https://twitter.com/hanabusaeisuto
+        - https://twitter.com/ironman12243
+    - role: XFD Special Thanks
+      name: Sol
+      website:
+        - Twitter 
+        - https://twitter.com/SolSchnee
 
 # ---------------
 

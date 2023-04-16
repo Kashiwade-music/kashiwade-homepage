@@ -1418,6 +1418,10 @@ type MarkdownRemarkFilterListInput = {
 type MarkdownRemarkFrontmatter = {
   readonly additional_header_image: Maybe<File>;
   readonly additional_header_image_2: Maybe<File>;
+  readonly additional_header_image_3: Maybe<File>;
+  readonly additional_header_image_4: Maybe<File>;
+  readonly additional_header_image_5: Maybe<File>;
+  readonly additional_header_image_6: Maybe<File>;
   readonly booth: Maybe<Scalars['String']>;
   readonly credit: Maybe<MarkdownRemarkFrontmatterCredit>;
   readonly date: Maybe<Scalars['Date']>;
@@ -1538,6 +1542,10 @@ type MarkdownRemarkFrontmatterCreditSortInput = {
 type MarkdownRemarkFrontmatterFieldSelector = {
   readonly additional_header_image: InputMaybe<FileFieldSelector>;
   readonly additional_header_image_2: InputMaybe<FileFieldSelector>;
+  readonly additional_header_image_3: InputMaybe<FileFieldSelector>;
+  readonly additional_header_image_4: InputMaybe<FileFieldSelector>;
+  readonly additional_header_image_5: InputMaybe<FileFieldSelector>;
+  readonly additional_header_image_6: InputMaybe<FileFieldSelector>;
   readonly booth: InputMaybe<FieldSelectorEnum>;
   readonly credit: InputMaybe<MarkdownRemarkFrontmatterCreditFieldSelector>;
   readonly date: InputMaybe<FieldSelectorEnum>;
@@ -1578,6 +1586,10 @@ type MarkdownRemarkFrontmatterFieldSelector = {
 type MarkdownRemarkFrontmatterFilterInput = {
   readonly additional_header_image: InputMaybe<FileFilterInput>;
   readonly additional_header_image_2: InputMaybe<FileFilterInput>;
+  readonly additional_header_image_3: InputMaybe<FileFilterInput>;
+  readonly additional_header_image_4: InputMaybe<FileFilterInput>;
+  readonly additional_header_image_5: InputMaybe<FileFilterInput>;
+  readonly additional_header_image_6: InputMaybe<FileFilterInput>;
   readonly booth: InputMaybe<StringQueryOperatorInput>;
   readonly credit: InputMaybe<MarkdownRemarkFrontmatterCreditFilterInput>;
   readonly date: InputMaybe<DateQueryOperatorInput>;
@@ -1774,6 +1786,10 @@ type MarkdownRemarkFrontmatterShopSortInput = {
 type MarkdownRemarkFrontmatterSortInput = {
   readonly additional_header_image: InputMaybe<FileSortInput>;
   readonly additional_header_image_2: InputMaybe<FileSortInput>;
+  readonly additional_header_image_3: InputMaybe<FileSortInput>;
+  readonly additional_header_image_4: InputMaybe<FileSortInput>;
+  readonly additional_header_image_5: InputMaybe<FileSortInput>;
+  readonly additional_header_image_6: InputMaybe<FileSortInput>;
   readonly booth: InputMaybe<SortOrderEnum>;
   readonly credit: InputMaybe<MarkdownRemarkFrontmatterCreditSortInput>;
   readonly date: InputMaybe<SortOrderEnum>;
@@ -3511,7 +3527,7 @@ type SpecialPageQueryVariables = Exact<{
 }>;
 
 
-type SpecialPageQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly slug: string | null, readonly subtitle: string | null, readonly header_func_name: string | null, readonly poem: string | null, readonly description_array: ReadonlyArray<string | null> | null, readonly news: ReadonlyArray<string | null> | null, readonly soundcloud: number | null, readonly youtube: string | null, readonly ogp: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly parallax: { readonly textColor: string | null, readonly overlayColor: string | null, readonly overlayOpacity: number | null, readonly imageFilter: string | null } | null, readonly overlay: { readonly background: string | null, readonly logoColor: string | null, readonly lineColor: string | null, readonly transition: { readonly rect1: string | null, readonly rect2: string | null } | null } | null, readonly header: { readonly scrollMainColor: string | null, readonly scrollBackgroundColor: string | null } | null, readonly header_image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly header_image_sp: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly logo_image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly additional_header_image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly additional_header_image_2: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly descriptionBackgroundImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly mainBackgroundImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly theme: { readonly accent: string | null, readonly base: string | null, readonly baseSub1: string | null, readonly main: string | null, readonly mainSub1: string | null, readonly mainSub2: string | null } | null, readonly jacketImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly infomation: { readonly title: string | null, readonly specification: string | null, readonly releaseDate: string | null, readonly price: string | null, readonly circle: string | null, readonly booth: string | null } | null, readonly shop: { readonly download: ReadonlyArray<string | null> | null, readonly cd: ReadonlyArray<string | null> | null, readonly streaming: ReadonlyArray<string | null> | null } | null, readonly trackBackgroundImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly track: ReadonlyArray<{ readonly title: string | null, readonly subinfo: string | null } | null> | null, readonly credit: { readonly other: ReadonlyArray<{ readonly name: string | null, readonly role: string | null, readonly website: ReadonlyArray<string | null> | null } | null> | null, readonly produce: { readonly name: string | null, readonly twitter: string | null, readonly website: string | null } | null } | null } | null } | null };
+type SpecialPageQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly slug: string | null, readonly subtitle: string | null, readonly header_func_name: string | null, readonly poem: string | null, readonly description_array: ReadonlyArray<string | null> | null, readonly news: ReadonlyArray<string | null> | null, readonly soundcloud: number | null, readonly youtube: string | null, readonly ogp: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly parallax: { readonly textColor: string | null, readonly overlayColor: string | null, readonly overlayOpacity: number | null, readonly imageFilter: string | null } | null, readonly overlay: { readonly background: string | null, readonly logoColor: string | null, readonly lineColor: string | null, readonly transition: { readonly rect1: string | null, readonly rect2: string | null } | null } | null, readonly header: { readonly scrollMainColor: string | null, readonly scrollBackgroundColor: string | null } | null, readonly header_image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly header_image_sp: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly logo_image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly additional_header_image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly additional_header_image_2: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly additional_header_image_3: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly additional_header_image_4: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly additional_header_image_5: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly additional_header_image_6: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly descriptionBackgroundImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly mainBackgroundImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly theme: { readonly accent: string | null, readonly base: string | null, readonly baseSub1: string | null, readonly main: string | null, readonly mainSub1: string | null, readonly mainSub2: string | null } | null, readonly jacketImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly infomation: { readonly title: string | null, readonly specification: string | null, readonly releaseDate: string | null, readonly price: string | null, readonly circle: string | null, readonly booth: string | null } | null, readonly shop: { readonly download: ReadonlyArray<string | null> | null, readonly cd: ReadonlyArray<string | null> | null, readonly streaming: ReadonlyArray<string | null> | null } | null, readonly trackBackgroundImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly track: ReadonlyArray<{ readonly title: string | null, readonly subinfo: string | null } | null> | null, readonly credit: { readonly other: ReadonlyArray<{ readonly name: string | null, readonly role: string | null, readonly website: ReadonlyArray<string | null> | null } | null> | null, readonly produce: { readonly name: string | null, readonly twitter: string | null, readonly website: string | null } | null } | null } | null } | null };
 
 type WorksPageQueryVariables = Exact<{ [key: string]: never; }>;
 
