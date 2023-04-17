@@ -58,8 +58,8 @@ news:
   - 特設サイトをオープンしました
 
 # ---------------
-soundcloud: 1362867550
-youtube: 1kpX3spEq8o
+soundcloud: 1494451492
+youtube: dS9qcjsn9o8
 # ---------------
 jacketImage: ./20230430-chronicles-of-luna-jacket.jpg
 infomation:
