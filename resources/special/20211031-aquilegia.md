@@ -14,11 +14,17 @@ overlay:
     rect1: '#c7c4dd'
     rect2: '#86ADC8'
 # ---------------
+header_func_name: Aquilegia
 header_image: ./20211031-aquilegia-header.jpg
 header_image_sp:
 logo_image: ./20211031-aquilegia-logo.png # Optional header_imageにロゴが含まれていないなら指定。
 additional_header_image: ./20211031-aquilegia-wakuL.png
 additional_header_image_2: ./20211031-aquilegia-wakuR.png
+additional_header_image_3:
+additional_header_image_4:
+additional_header_image_5:
+additional_header_image_6:
+
 header:
   scrollMainColor: "#87aec6"
   scrollBackgroundColor: "#f4f5f6"

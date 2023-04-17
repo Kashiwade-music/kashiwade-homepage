@@ -75,7 +75,7 @@ export const Head = () => (
 export const query = graphql`
   query Special {
     allMarkdownRemark(
-      sort: { frontmatter: { slug: DESC } }
+      sort: { frontmatter: { date: DESC } }
       filter: { fileAbsolutePath: { glob: "**/resources/special/**" } }
     ) {
       nodes {

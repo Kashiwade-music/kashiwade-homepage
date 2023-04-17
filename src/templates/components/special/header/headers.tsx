@@ -1,8 +1,15 @@
 import * as vanilla_aquilegia from "./aquilegia.css";
+import * as vanilla_chroniclesofluna from "./chroniclesofluna.css";
 import * as vanilla from "./headers.css";
 import * as vanilla_tenkoureirou from "./tenkoureirou.css";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import {
+  GatsbyImage,
+  getImage,
+  IGatsbyImageData,
+  StaticImage,
+} from "gatsby-plugin-image";
+import { useEffect, useState } from "react";
 import * as React from "react";
 import { useMediaQuery } from "react-responsive";
 
@@ -21,6 +28,309 @@ const ScrollAnimation: React.FC<Queries.SpecialPageQuery> = (data) => {
       >
         Scroll
       </a>
+    </div>
+  );
+};
+
+export const ChroniclesOfLuna: React.FC<Queries.SpecialPageQuery> = (data) => {
+  const headerImage = getImage(
+    data.markdownRemark?.frontmatter
+      ?.header_image as unknown as IGatsbyImageData
+  );
+  const headerImageSP = getImage(
+    data.markdownRemark?.frontmatter
+      ?.header_image_sp as unknown as IGatsbyImageData
+  );
+  const logoImage = getImage(
+    data.markdownRemark?.frontmatter?.logo_image as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage2 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_2 as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage3 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_3 as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage4 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_4 as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage5 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_5 as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage6 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_6 as unknown as IGatsbyImageData
+  );
+
+  const [mounted, setMounted] = React.useState(false);
+
+  const [aspectRatio, setAspectRatio] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const aspectRatio = width / height;
+      setAspectRatio(aspectRatio);
+      setWindowWidth(window.innerWidth);
+      // console.log("called");
+      // console.log(`windowWidth: ${window.innerWidth}`);
+      // console.log(`width: ${width}`);
+      // console.log(`aspectRatio: ${aspectRatio}`);
+    }
+    setMounted(true);
+    handleResize();
+
+    // ウィンドウのサイズが変更された場合に呼び出すリスナーを登録
+    window.addEventListener("resize", handleResize);
+
+    // コンポーネントがアンマウントされた場合にリスナーを解除
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <div className={vanilla.Parent}>
+      {headerImage && (
+        <GatsbyImage
+          image={headerImage}
+          alt="header image"
+          style={{
+            position: "absolute",
+            height: "100vh",
+          }}
+        />
+      )}
+      {mounted && (
+        <>
+          {1.6 < aspectRatio && (
+            <>
+              {additionalHeaderImage && (
+                <GatsbyImage
+                  image={additionalHeaderImage}
+                  alt="additional header image"
+                  style={{
+                    position: "absolute",
+                    height: "100vh",
+                    width: "100%",
+                  }}
+                />
+              )}
+              {logoImage && (
+                <div className={vanilla_chroniclesofluna.LogoImageWrapper}>
+                  <GatsbyImage
+                    image={logoImage}
+                    alt="logo image"
+                    style={{
+                      position: "absolute",
+                      // height: "45vh",
+                      minHeight: "232px",
+                      minWidth: "630px",
+                      width: "45%",
+                      marginLeft: "calc(4vw + 10px)",
+                    }}
+                  />
+                </div>
+              )}
+            </>
+          )}
+
+          {1.4 < aspectRatio && aspectRatio <= 1.6 && (
+            <>
+              {additionalHeaderImage2 && (
+                <GatsbyImage
+                  image={additionalHeaderImage2}
+                  alt="additional header image"
+                  style={{
+                    position: "absolute",
+                    height: "100vh",
+                    width: "100%",
+                  }}
+                />
+              )}
+              {logoImage && (
+                <div className={vanilla_chroniclesofluna.LogoImageWrapper}>
+                  <GatsbyImage
+                    image={logoImage}
+                    alt="logo image"
+                    style={{
+                      position: "absolute",
+                      // height: "45vh",
+                      minHeight: "232px",
+                      minWidth: "630px",
+                      width: "45%",
+                      marginLeft: "calc(4vw + 10px)",
+                    }}
+                  />
+                </div>
+              )}
+            </>
+          )}
+
+          {1.4 < aspectRatio && aspectRatio <= 1.6 && (
+            <>
+              {additionalHeaderImage2 && (
+                <GatsbyImage
+                  image={additionalHeaderImage2}
+                  alt="additional header image"
+                  style={{
+                    position: "absolute",
+                    height: "100vh",
+                    width: "100%",
+                  }}
+                />
+              )}
+              {logoImage && (
+                <div className={vanilla_chroniclesofluna.LogoImageWrapper}>
+                  <GatsbyImage
+                    image={logoImage}
+                    alt="logo image"
+                    style={{
+                      position: "absolute",
+                      // height: "45vh",
+                      minHeight: "232px",
+                      minWidth: "630px",
+                      width: "45%",
+                      marginLeft: "calc(4vw + 10px)",
+                    }}
+                  />
+                </div>
+              )}
+            </>
+          )}
+
+          {1.2 < aspectRatio && aspectRatio <= 1.4 && (
+            <>
+              {additionalHeaderImage3 && (
+                <GatsbyImage
+                  image={additionalHeaderImage3}
+                  alt="additional header image"
+                  style={{
+                    position: "absolute",
+                    height: "100vh",
+                    width: "100%",
+                  }}
+                />
+              )}
+              {logoImage && (
+                <div className={vanilla_chroniclesofluna.LogoImageWrapper}>
+                  <GatsbyImage
+                    image={logoImage}
+                    alt="logo image"
+                    style={{
+                      position: "absolute",
+                      // height: "45vh",
+                      minHeight: "232px",
+                      minWidth: "630px",
+                      width: "45%",
+                      marginLeft: "calc(4vw + 10px)",
+                    }}
+                  />
+                </div>
+              )}
+            </>
+          )}
+
+          {1.0 < aspectRatio && aspectRatio <= 1.2 && (
+            <>
+              {additionalHeaderImage4 && (
+                <GatsbyImage
+                  image={additionalHeaderImage4}
+                  alt="additional header image"
+                  style={{
+                    position: "absolute",
+                    height: "100vh",
+                    width: "100%",
+                  }}
+                />
+              )}
+              {logoImage && (
+                <div className={vanilla_chroniclesofluna.LogoImageWrapper}>
+                  <GatsbyImage
+                    image={logoImage}
+                    alt="logo image"
+                    style={{
+                      position: "absolute",
+                      // height: "45vh",
+                      minHeight: "232px",
+                      minWidth: "630px",
+                      width: "45%",
+                      marginLeft: "calc(4vw + 10px)",
+                    }}
+                  />
+                </div>
+              )}
+            </>
+          )}
+
+          {0.65 < aspectRatio && aspectRatio <= 1.0 && (
+            <>
+              {headerImageSP && (
+                <GatsbyImage
+                  image={headerImageSP}
+                  alt="additional header image"
+                  style={{
+                    position: "absolute",
+                    height: "100vh",
+                    width: "100%",
+                  }}
+                />
+              )}
+
+              {logoImage && (
+                <div className={vanilla_chroniclesofluna.LogoImageWrapperSP}>
+                  <GatsbyImage
+                    image={logoImage}
+                    alt="logo image"
+                    style={{
+                      position: "absolute",
+                      width: "100%",
+                    }}
+                  />
+                </div>
+              )}
+            </>
+          )}
+
+          {aspectRatio <= 0.65 && (
+            <>
+              {additionalHeaderImage5 && (
+                <GatsbyImage
+                  image={additionalHeaderImage5}
+                  alt="additional header image"
+                  style={{
+                    position: "absolute",
+                    height: "100vh",
+                    width: "100%",
+                  }}
+                />
+              )}
+
+              {additionalHeaderImage6 && (
+                <div className={vanilla_chroniclesofluna.LogoImageWrapperSP}>
+                  <GatsbyImage
+                    image={additionalHeaderImage6}
+                    alt="logo image"
+                    style={{
+                      position: "absolute",
+                      width: "100%",
+                      height: `${windowWidth * 0.57}px`,
+                    }}
+                  />
+                </div>
+              )}
+            </>
+          )}
+        </>
+      )}
+      <ScrollAnimation markdownRemark={data.markdownRemark} />
     </div>
   );
 };

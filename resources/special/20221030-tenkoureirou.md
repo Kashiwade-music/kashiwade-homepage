@@ -14,11 +14,16 @@ overlay:
     rect1: '#B9CCDF'
     rect2: '#FEEFEF'
 # ---------------
+header_func_name: 天光玲瓏
 header_image: ./20221030-tenkoureirou-header.jpg
 header_image_sp: ./20221030-tenkoureirou-header-sp.png
 logo_image: ./20221030-tenkoureirou-logo.png # Optional header_imageにロゴが含まれていないなら指定。
 additional_header_image: ./20221030-tenkoureirou-header.png
 additional_header_image_2:
+additional_header_image_3:
+additional_header_image_4:
+additional_header_image_5:
+additional_header_image_6:
 header:
   scrollMainColor: "#e24255"
   scrollBackgroundColor: "#fdeff1"
@@ -78,7 +83,16 @@ shop:
     - BOOTH
     - https://booth.pm/ja/items/4282980
   streaming:
-    - coming soon
+    - Spotify
+    - https://open.spotify.com/album/54DQxGYpKf9cKN8gWsNKHV
+    - Apple Music
+    - https://music.apple.com/jp/album/%E5%A4%A9%E5%85%89%E7%8E%B2%E7%93%8F/1660166605
+    - YouTube Music
+    - https://music.youtube.com/playlist?list=OLAK5uy_ma2zEl_Zj2UodiIEnJNRHmZpl4nuktujw&feature=share
+    - Amazon Music
+    - https://music.amazon.com/albums/B0BQ8TDNFX
+    - NetEase Music
+    - https://music.163.com/#/album?id=156702196
 # ---------------
 trackBackgroundImage: ./20221030-tenkoureirou-header.jpg
 track:

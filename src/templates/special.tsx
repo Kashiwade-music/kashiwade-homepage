@@ -33,7 +33,10 @@ const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
   };
 
   const Header = data.markdownRemark?.frontmatter?.title
-    ? Headers[data.markdownRemark?.frontmatter?.title as keyof typeof Headers]
+    ? Headers[
+        data.markdownRemark?.frontmatter
+          ?.header_func_name as keyof typeof Headers
+      ]
     : undefined;
   React.useEffect(() => {
     console.log("Special Page Loaded");
@@ -136,6 +139,7 @@ export const pageQuery = graphql`
           scrollBackgroundColor
         }
         subtitle
+        header_func_name
         header_image {
           childImageSharp {
             gatsbyImageData(placeholder: NONE, quality: 100)
@@ -161,6 +165,27 @@ export const pageQuery = graphql`
             gatsbyImageData(placeholder: NONE, quality: 100)
           }
         }
+        additional_header_image_3 {
+          childImageSharp {
+            gatsbyImageData(placeholder: NONE, quality: 100)
+          }
+        }
+        additional_header_image_4 {
+          childImageSharp {
+            gatsbyImageData(placeholder: NONE, quality: 100)
+          }
+        }
+        additional_header_image_5 {
+          childImageSharp {
+            gatsbyImageData(placeholder: NONE, quality: 100)
+          }
+        }
+        additional_header_image_6 {
+          childImageSharp {
+            gatsbyImageData(placeholder: NONE, quality: 100)
+          }
+        }
+
         descriptionBackgroundImage {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
