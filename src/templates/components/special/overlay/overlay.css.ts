@@ -80,7 +80,7 @@ export const Container = style({
   alignContent: "stretch",
 });
 
-const SubTitleRatio = 22; // percentage
+const SubTitleRatio = 25; // percentage
 export const KashiwadeLogo = style({
   height: `${100 - SubTitleRatio}%`,
   display: "flex",
@@ -161,10 +161,17 @@ export const SubTitleInner = style({
   fontWeight: 100,
   color: overlay_logoColor,
   verticalAlign: "bottom",
-
   textAlign: "justify",
   textAlignLast: "justify",
   letterSpacing: "-0.1em",
+  "@media": {
+    "screen and (max-width: 600px)": {
+      fontSize: "12px",
+    },
+    "screen and (max-width: 400px)": {
+      fontSize: "11px",
+    },
+  },
 });
 
 export const FullOverlay2 = style({
