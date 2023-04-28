@@ -59,10 +59,12 @@ export const Background = style({
   transform: "translateY(-25%)",
   "@media": {
     "screen and (max-width: 500px)": {
-      minHeight: "calc(125px * 2)",
+      minHeight: "125px",
+      transform: "translateY(0%)",
     },
     "screen and (max-width: 300px)": {
-      minHeight: "calc(100px * 2)",
+      minHeight: "125px",
+      transform: "translateY(0%)",
     },
   },
 });
