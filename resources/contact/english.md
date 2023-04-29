@@ -28,7 +28,6 @@ If you have a project that I'm able to help you with, please feel free to contac
   - Image, reference music, etc.
   - Length of the song (how many minutes), looping or not
   - Delivery format
-  - What aspects of my music style are you looking for?
 - Terms of rights
 - Delivery date and schedule
 - Budget : As it varies depending on the details of the request, please provide this as a reference first.
