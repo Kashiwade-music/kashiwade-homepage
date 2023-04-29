@@ -52,6 +52,8 @@ theme:
   accent: '#BF9D5B'
 # ---------------
 news:
+  - 2023/04/29
+  - お品書きを更新しました
   - 2023/04/17
   - XFDの情報を掲載しました
   - 2023/04/16
@@ -113,3 +115,45 @@ credit:
 # ---------------
 
 ---
+
+# Catalog
+
+![Catalog](20230430_chronicles-of-luna-oshinagaki.jpg)
+
+
+<div class="container">
+<a href="https://kashiwade.fanbox.cc/posts/5806990" class="spec-web-button" target="_blank">Click here for details...</a>
+</div>
+
+
+
+<style>
+.container{
+    text-align:center;
+}
+
+.spec-web-button {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-size: 90%;
+  overflow: hidden;
+  color: #fffbfb;
+  background-color: var(--main__u5d7iy1r7GHyG3EmB);
+  text-decoration: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  padding: 0.5em;
+  font-size: 110%;
+  box-sizing: border-box;
+  border-width: 2px;
+  width: 100%;
+  max-width: 500px;
+  font-weight: 200;
+}
+.spec-web-button:hover {
+  background-color: #73777c;
+  text-decoration: none;
+  border-color: transparent;
+}
+</style>

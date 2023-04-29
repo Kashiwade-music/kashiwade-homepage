@@ -2,6 +2,7 @@ import { Meta } from "../components/layout/meta";
 import { Credit } from "./components/special/credit/credit";
 import { Footer } from "./components/special/footer/footer";
 import * as Headers from "./components/special/header/headers";
+import { HTMLBody } from "./components/special/htmlbody/htmlbody";
 import * as vanilla from "./components/special/index.css";
 import { Information } from "./components/special/information/information";
 import { Layout } from "./components/special/layout";
@@ -81,6 +82,7 @@ const IndexPage: React.FC<PageProps<Queries.SpecialPageQuery>> = ({ data }) => {
         </Layout>
         <Track data={data} />
         <Layout data={data}>
+          <HTMLBody data={data} />
           <Credit data={data} />
           <Footer data={data} />
         </Layout>

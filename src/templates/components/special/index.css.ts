@@ -15,10 +15,13 @@ export const Poem = style({
   margin: "0 0 2vh 0",
   textAlign: "center",
   "@media": {
+    "screen and (max-width: 1100px)": {
+      fontSize: "26px",
+    },
     "screen and (max-width: 560px)": {
       fontSize: "24px",
     },
-    "screen and (max-width: 300px)": {
+    "screen and (max-width: 400px)": {
       fontSize: "20px",
     },
   },
@@ -32,6 +35,9 @@ export const Description = style({
     "screen and (max-width: 560px)": {
       fontSize: "14px",
       margin: "0 5px",
+    },
+    "screen and (max-width: 400px)": {
+      fontSize: "12px",
     },
   },
 });
