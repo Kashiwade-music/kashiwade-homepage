@@ -52,6 +52,8 @@ theme:
   accent: '#BF9D5B'
 # ---------------
 news:
+  - 2023/07/03
+  - Informationの通販・配信先を更新しました
   - 2023/04/29
   - お品書きを更新しました
   - 2023/04/17
@@ -73,11 +75,22 @@ infomation:
   price: 1,000円 (会場頒布価格)
 shop:
   download:
-    - coming soon
+    - BOOTH
+    - https://kashiwade.booth.pm/items/4729252
+    - Bandcamp
+    - https://kashiwade.bandcamp.com/album/chronicles-of-luna
   cd:
-    - coming soon
+    - BOOTH
+    - https://kashiwade.booth.pm/items/4729252
   streaming:
-    - coming soon
+    - Spotify
+    - https://open.spotify.com/intl-ja/album/1YVrosz4tpXOb5W1BLACAs
+    - Apple Music
+    - https://music.apple.com/jp/album/chronicles-of-luna-ep/1694144713
+    - YouTube Music
+    - https://music.youtube.com/playlist?list=OLAK5uy_mcN-w28a1A1Ninryvw3ri3A_BmXbMPnGA&feature=share
+    - Amazon Music
+    - https://music.amazon.com/albums/B0C9LMCYQ8
 # ---------------
 trackBackgroundImage: 20230430-chronicles-of-luna-track_bg.jpg
 track:
