@@ -117,7 +117,7 @@ const SNSSpec: Props[] = [
     name: "misskey.design",
     description: "Twitter避難用に作りました。",
     link: "https://misskey.design/@Kashiwade_music",
-    backgroundColor: "#FF924E",
+    backgroundColor: "#FF8655",
     icon: MisskeyDesignIcon,
     isReactIcons: false,
     size: 70,
