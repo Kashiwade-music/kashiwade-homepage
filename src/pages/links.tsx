@@ -1,8 +1,13 @@
-import * as React from "react";
-import { Link } from "gatsby";
 import Layout from "../components/layout";
-import { useMediaQuery } from "react-responsive";
+import { Meta } from "../components/layout/meta";
 import * as vanilla from "../styles/links.css";
+import MisskeyDesignIcon from "../tools/MisskeyDesignIcon";
+import MisskeyIoIcon from "../tools/MisskeyIoIcon";
+import PixivBoothIcon from "../tools/PixivBoothIcon";
+import PixivIcon from "../tools/PixivIcon";
+import { Link } from "gatsby";
+import * as React from "react";
+import { IconType } from "react-icons";
 import {
   FaSoundcloud,
   FaYoutube,
@@ -12,11 +17,9 @@ import {
   FaTwitter,
   FaGithub,
   FaEnvelope,
+  FaInstagram,
 } from "react-icons/fa";
-import { IconType } from "react-icons";
-import PixivBoothIcon from "../tools/PixivBoothIcon";
-import PixivIcon from "../tools/PixivIcon";
-import { Meta } from "../components/layout/meta";
+import { useMediaQuery } from "react-responsive";
 
 type Props = {
   name: string;
@@ -91,6 +94,33 @@ const SNSSpec: Props[] = [
     icon: FaTwitter,
     isReactIcons: true,
     size: 45,
+  },
+  {
+    name: "Instagram",
+    description: "実は使い方がよくわかってません。",
+    link: "https://www.instagram.com/kashiwade_music/",
+    backgroundColor: "#dd2a7b",
+    icon: FaInstagram,
+    isReactIcons: true,
+    size: 45,
+  },
+  {
+    name: "Misskey.io",
+    description: "Twitter避難用に作りました。",
+    link: "https://misskey.io/@Kashiwade_music",
+    backgroundColor: "#1B1E1F",
+    icon: MisskeyIoIcon,
+    isReactIcons: false,
+    size: 55,
+  },
+  {
+    name: "misskey.design",
+    description: "Twitter避難用に作りました。",
+    link: "https://misskey.design/@Kashiwade_music",
+    backgroundColor: "#FF924E",
+    icon: MisskeyDesignIcon,
+    isReactIcons: false,
+    size: 70,
   },
   {
     name: "pixivFANBOX",
