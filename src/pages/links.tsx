@@ -1,6 +1,7 @@
 import Layout from "../components/layout";
 import { Meta } from "../components/layout/meta";
 import * as vanilla from "../styles/links.css";
+import BilibiliIcon from "../tools/BilibiliIcon";
 import MisskeyDesignIcon from "../tools/MisskeyDesignIcon";
 import MisskeyIoIcon from "../tools/MisskeyIoIcon";
 import PixivBoothIcon from "../tools/PixivBoothIcon";
@@ -18,6 +19,7 @@ import {
   FaGithub,
   FaEnvelope,
   FaInstagram,
+  FaWeibo,
 } from "react-icons/fa";
 import { useMediaQuery } from "react-responsive";
 
@@ -49,6 +51,15 @@ const SNSSpec: Props[] = [
     icon: FaYoutube,
     isReactIcons: true,
     size: 45,
+  },
+  {
+    name: "bilibili",
+    description: "自分の作った曲が置いてあります。",
+    link: "https://space.bilibili.com/3493093229725960",
+    backgroundColor: "#07a3d7",
+    icon: BilibiliIcon,
+    isReactIcons: false,
+    size: 55,
   },
   {
     name: "pixivBOOTH",
@@ -121,6 +132,15 @@ const SNSSpec: Props[] = [
     icon: MisskeyDesignIcon,
     isReactIcons: false,
     size: 70,
+  },
+  {
+    name: "Weibo",
+    description: "あんまり動いてないです。",
+    link: "https://weibo.com/u/7806311216",
+    backgroundColor: "#e7162d",
+    icon: FaWeibo,
+    isReactIcons: true,
+    size: 45,
   },
   {
     name: "pixivFANBOX",
