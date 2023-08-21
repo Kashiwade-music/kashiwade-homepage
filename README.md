@@ -1,39 +1,31 @@
 # Kashiwade-homepage
+## Set Up Development Environment
+- requirements
+  - node.js@20.3.1
+  - gatsby-cli
+    - `npm install -g gatsby-cli`
+- optional
+  - [nvm-windows(when using windows)](https://github.com/coreybutler/nvm-windows)
+  - npm-check-updates
+    - `npm install -g npm-check-updates`
 
-
-## dev build
-docker(VSCode拡張のRemote-Container)使って
-
-```
+after install development environment,
+```sh
+cd kashiwade-homepage
+npm install
 gatsby develop
 ```
-でおｋ。
 
-**注意** : devcontainerだとなんかhot reloadとか働かない
+## update package
+**it use npm-check-updates, so install it**
+- check package version
+  - `ncu` or `npm-check-updates`
+- update
+  - `ncu -u --target minor`
+  - `ncu -u --target latest`
+- install
+  - `npm install`
 
-## アプデ方法
-### アプデ可能なパッケージの確認
-```
-npm outdated
-```
-- Current：現在インストールされているバージョン
-- Wanted：存在するバージョンのうち、 package.json に記載された semver 条件を満たす最新のバージョン
-- Latest：そのパッケージの最新バージョン
-
-### npm-check-updatesを使ってアップデートする
-`npm update`をやってもpackage.jsonはアップデートしてくれないのでこれを使うと便利
-コンテナにインストール済み
-
-```
-ncu または npm-check-updates
-```
-- インストールするもの(package.json)を更新する物を表示してくれる。
-  - Red = major upgrade (and all major version zero)
-  - Cyan = minor upgrade
-  - Green = patch upgrade
-
-メジャーアップデートは行わず、minorとpatchアップデートだけ行って欲しい時は
-`ncu -u --target minor`にする。
 
 
 ## ページ構造
