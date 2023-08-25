@@ -43,6 +43,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-vanilla-extract",
+    "gatsby-plugin-netlify",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
