@@ -75,15 +75,31 @@ export const Footer: React.FC<Props> = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className={vanilla.LogoWrapper}>
-        <Link to={"/"} title={""}>
-          <StaticImage
-            src={"../../../../../resources/common/kashiwade_logo_2022.png"}
-            alt={""}
-            width={200}
-          />
-        </Link>
-      </div>
+      {data.markdownRemark?.frontmatter?.logo_color == "black" && (
+        <div className={vanilla.LogoWrapper}>
+          <Link to={"/"} title={""}>
+            <StaticImage
+              src={"../../../../../resources/common/kashiwade_logo_2022.png"}
+              alt={""}
+              width={200}
+            />
+          </Link>
+        </div>
+      )}
+      {data.markdownRemark?.frontmatter?.logo_color == "white" && (
+        <div className={vanilla.LogoWrapper}>
+          <Link to={"/"} title={""}>
+            <StaticImage
+              src={
+                "../../../../../resources/common/kashiwade_logo_2022_white.png"
+              }
+              alt={""}
+              width={200}
+            />
+          </Link>
+        </div>
+      )}
     </>
   );
+  // ロゴ表記の部分は簡略化できない。srcを変数にしたり。なぜなら静的解析できないから。どうしても簡単にしたいならDynamicImageを使う。
 };

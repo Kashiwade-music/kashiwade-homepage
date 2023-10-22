@@ -55,11 +55,10 @@ export const NavContent = style({
 });
 
 export const NavContentActive = style({
-  minWidth: 76.8,
-  maxWidth: 90,
+  minWidth: 91,
   textAlign: "center",
   fontFamily: '"Kanit"',
-  padding: "0px 5px",
+  padding: "0px 2px",
   fontWeight: 200,
   color: "#329b51",
   textDecoration: "none",

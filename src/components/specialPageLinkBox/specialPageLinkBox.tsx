@@ -13,6 +13,7 @@ interface Props {
   overlayColor: string;
   overlayOpacity: number;
   imageFilter: string;
+  logoMixBlendMode: string;
   title: string;
 }
 
@@ -25,6 +26,7 @@ export const SpecialPageLinkBox: React.FC<Props> = ({
   overlayColor,
   overlayOpacity,
   imageFilter,
+  logoMixBlendMode,
   title,
 }) => {
   const descriptionBackgroundImageImage = getImage(descriptionBackgroundImage);
@@ -78,7 +80,12 @@ export const SpecialPageLinkBox: React.FC<Props> = ({
             [vanilla.ImageFilter]: ImageFilter,
           })}
         >
-          <div className={vanilla.LogoImagePositioner}>
+          <div
+            className={vanilla.LogoImagePositioner}
+            style={assignInlineVars({
+              [vanilla.LogoMixBlendMode]: logoMixBlendMode,
+            })}
+          >
             <GatsbyImage
               image={logoImage as IGatsbyImageData}
               alt=""

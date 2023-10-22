@@ -62,6 +62,7 @@ export const TextDescription = style({
 export const ImageFilter = createVar();
 export const OverlayColor = createVar();
 export const OverlayOpacity = createVar();
+export const LogoMixBlendMode = createVar();
 
 export const BackgroundOverLay = style({
   width: "100%",
@@ -95,6 +96,8 @@ export const LogoImagePositioner = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  zIndex: "1",
+  mixBlendMode: LogoMixBlendMode,
   "@media": {
     "screen and (max-width: 500px)": {
       width: "55%",

@@ -18,6 +18,7 @@ header_func_name: ChroniclesOfLuna
 header_image: ./20230430-chronicles-of-luna-header.jpg
 header_image_sp: ./20230430-chronicles-of-luna-header_sp.png
 logo_image: ./20230430-chronicles-of-luna-logo.png # Optional header_imageにロゴが含まれていないなら指定。
+special_page_link_box_mix_blend_mode: normal
 additional_header_image: ./20230430-chronicles-of-luna-header.png
 additional_header_image_2: ./20230430-chronicles-of-luna-header_2.png
 additional_header_image_3: ./20230430-chronicles-of-luna-header_3.png
@@ -50,6 +51,10 @@ theme:
   mainSub1: "#73777c"
   mainSub2: "#adb3b9"
   accent: '#BF9D5B'
+  track_heading: "#BF9D5B" # 元々はaccentと同じ色
+  track_name: "#fffbfb" # 元々はbaseSub1と同じ色
+  track_subinfo: "#adb3b9" # 元々はmainSub2と同じ色
+  track_num: "#BF9D5B" # 元々はaccentと同じ色
 # ---------------
 news:
   - 2023/07/03
@@ -124,6 +129,10 @@ credit:
       website:
         - Twitter 
         - https://twitter.com/SolSchnee
+
+# ---------------
+
+logo_color: black # or black
 
 # ---------------
 

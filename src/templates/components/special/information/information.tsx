@@ -226,7 +226,13 @@ export const Information: React.FC<InformationProps> = ({ data }) => {
                     >
                       Title
                     </div>
-                    <div className={vanilla.InfoFieldValue}>
+                    <div
+                      className={vanilla.InfoFieldValue}
+                      style={assignInlineVars({
+                        [vanilla.InfoFieldValueColor]: data.markdownRemark
+                          ?.frontmatter?.theme?.main as string,
+                      })}
+                    >
                       {data.markdownRemark?.frontmatter?.infomation?.title}
                     </div>
                   </div>
@@ -246,7 +252,13 @@ export const Information: React.FC<InformationProps> = ({ data }) => {
                     >
                       Circle
                     </div>
-                    <div className={vanilla.InfoFieldValue}>
+                    <div
+                      className={vanilla.InfoFieldValue}
+                      style={assignInlineVars({
+                        [vanilla.InfoFieldValueColor]: data.markdownRemark
+                          ?.frontmatter?.theme?.main as string,
+                      })}
+                    >
                       {data.markdownRemark?.frontmatter?.infomation?.circle}
                     </div>
                   </div>
@@ -266,7 +278,13 @@ export const Information: React.FC<InformationProps> = ({ data }) => {
                     >
                       Specification
                     </div>
-                    <div className={vanilla.InfoFieldValue}>
+                    <div
+                      className={vanilla.InfoFieldValue}
+                      style={assignInlineVars({
+                        [vanilla.InfoFieldValueColor]: data.markdownRemark
+                          ?.frontmatter?.theme?.main as string,
+                      })}
+                    >
                       {
                         data.markdownRemark?.frontmatter?.infomation
                           ?.specification
@@ -289,7 +307,13 @@ export const Information: React.FC<InformationProps> = ({ data }) => {
                     >
                       Release Date
                     </div>
-                    <div className={vanilla.InfoFieldValue}>
+                    <div
+                      className={vanilla.InfoFieldValue}
+                      style={assignInlineVars({
+                        [vanilla.InfoFieldValueColor]: data.markdownRemark
+                          ?.frontmatter?.theme?.main as string,
+                      })}
+                    >
                       {
                         data.markdownRemark?.frontmatter?.infomation
                           ?.releaseDate
@@ -312,7 +336,13 @@ export const Information: React.FC<InformationProps> = ({ data }) => {
                     >
                       Booth
                     </div>
-                    <div className={vanilla.InfoFieldValue}>
+                    <div
+                      className={vanilla.InfoFieldValue}
+                      style={assignInlineVars({
+                        [vanilla.InfoFieldValueColor]: data.markdownRemark
+                          ?.frontmatter?.theme?.main as string,
+                      })}
+                    >
                       {data.markdownRemark?.frontmatter?.infomation?.booth}
                     </div>
                   </div>
@@ -332,7 +362,13 @@ export const Information: React.FC<InformationProps> = ({ data }) => {
                     >
                       Price
                     </div>
-                    <div className={vanilla.InfoFieldValue}>
+                    <div
+                      className={vanilla.InfoFieldValue}
+                      style={assignInlineVars({
+                        [vanilla.InfoFieldValueColor]: data.markdownRemark
+                          ?.frontmatter?.theme?.main as string,
+                      })}
+                    >
                       {data.markdownRemark?.frontmatter?.infomation?.price}
                     </div>
                   </div>
@@ -364,7 +400,13 @@ export const Information: React.FC<InformationProps> = ({ data }) => {
                 >
                   Title
                 </div>
-                <div className={vanillaSP.InfoFieldValue}>
+                <div
+                  className={vanillaSP.InfoFieldValue}
+                  style={assignInlineVars({
+                    [vanillaSP.InfoFieldValueColor]: data.markdownRemark
+                      ?.frontmatter?.theme?.main as string,
+                  })}
+                >
                   {data.markdownRemark?.frontmatter?.infomation?.title}
                 </div>
               </div>
@@ -386,7 +428,13 @@ export const Information: React.FC<InformationProps> = ({ data }) => {
                 >
                   Circle
                 </div>
-                <div className={vanillaSP.InfoFieldValue}>
+                <div
+                  className={vanillaSP.InfoFieldValue}
+                  style={assignInlineVars({
+                    [vanillaSP.InfoFieldValueColor]: data.markdownRemark
+                      ?.frontmatter?.theme?.main as string,
+                  })}
+                >
                   {data.markdownRemark?.frontmatter?.infomation?.circle}
                 </div>
               </div>
@@ -408,7 +456,13 @@ export const Information: React.FC<InformationProps> = ({ data }) => {
                 >
                   Specification
                 </div>
-                <div className={vanillaSP.InfoFieldValue}>
+                <div
+                  className={vanillaSP.InfoFieldValue}
+                  style={assignInlineVars({
+                    [vanillaSP.InfoFieldValueColor]: data.markdownRemark
+                      ?.frontmatter?.theme?.main as string,
+                  })}
+                >
                   {data.markdownRemark?.frontmatter?.infomation?.specification}
                 </div>
               </div>
@@ -430,7 +484,13 @@ export const Information: React.FC<InformationProps> = ({ data }) => {
                 >
                   Release Date
                 </div>
-                <div className={vanillaSP.InfoFieldValue}>
+                <div
+                  className={vanillaSP.InfoFieldValue}
+                  style={assignInlineVars({
+                    [vanillaSP.InfoFieldValueColor]: data.markdownRemark
+                      ?.frontmatter?.theme?.main as string,
+                  })}
+                >
                   {data.markdownRemark?.frontmatter?.infomation?.releaseDate}
                 </div>
               </div>
@@ -452,7 +512,13 @@ export const Information: React.FC<InformationProps> = ({ data }) => {
                 >
                   Booth
                 </div>
-                <div className={vanillaSP.InfoFieldValue}>
+                <div
+                  className={vanillaSP.InfoFieldValue}
+                  style={assignInlineVars({
+                    [vanillaSP.InfoFieldValueColor]: data.markdownRemark
+                      ?.frontmatter?.theme?.main as string,
+                  })}
+                >
                   {data.markdownRemark?.frontmatter?.infomation?.booth}
                 </div>
               </div>
@@ -474,7 +540,13 @@ export const Information: React.FC<InformationProps> = ({ data }) => {
                 >
                   Price
                 </div>
-                <div className={vanillaSP.InfoFieldValue}>
+                <div
+                  className={vanillaSP.InfoFieldValue}
+                  style={assignInlineVars({
+                    [vanillaSP.InfoFieldValueColor]: data.markdownRemark
+                      ?.frontmatter?.theme?.main as string,
+                  })}
+                >
                   {data.markdownRemark?.frontmatter?.infomation?.price}
                 </div>
               </div>

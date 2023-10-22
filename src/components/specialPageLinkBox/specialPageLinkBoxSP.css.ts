@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { style, createVar } from "@vanilla-extract/css";
 
 export const SpecialPageLinkBoxParent = style({
   width: "100%",
@@ -21,6 +21,7 @@ export const BackgroundWrapper = style({
   zIndex: "2",
 });
 
+export const LogoMixBlendMode = createVar();
 export const LogoImagePositioner = style({
   position: "absolute",
   top: 0,
@@ -30,6 +31,8 @@ export const LogoImagePositioner = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  zIndex: "1",
+  mixBlendMode: LogoMixBlendMode,
   "@media": {
     "screen and (max-width: 500px)": {
       width: "55%",

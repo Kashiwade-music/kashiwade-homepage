@@ -18,6 +18,7 @@ header_func_name: Aquilegia
 header_image: ./20211031-aquilegia-header.jpg
 header_image_sp:
 logo_image: ./20211031-aquilegia-logo.png # Optional header_imageにロゴが含まれていないなら指定。
+special_page_link_box_mix_blend_mode: normal
 additional_header_image: ./20211031-aquilegia-wakuL.png
 additional_header_image_2: ./20211031-aquilegia-wakuR.png
 additional_header_image_3:
@@ -48,6 +49,11 @@ theme:
   mainSub1: "#787d87"
   mainSub2: "#d5d6d8"
   accent: '#7ba5d4'
+  track_heading: "#7ba5d4" # 元々はaccentと同じ色
+  track_name: "#e1eff9" # 元々はbaseSub1と同じ色
+  track_subinfo: "#d5d6d8" # 元々はmainSub2と同じ色
+  track_num: "#7ba5d4" # 元々はaccentと同じ色
+
 # ---------------
 news:
   - 2022/12/16
@@ -121,6 +127,10 @@ credit:
         - https://www.pixiv.net/users/8561384
         - Twitter 
         - https://twitter.com/onkyi_ktpc58
+
+# ---------------
+
+logo_color: black # or black
 
 # ---------------
 

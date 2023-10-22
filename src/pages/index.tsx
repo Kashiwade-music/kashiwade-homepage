@@ -89,6 +89,10 @@ const IndexPage = ({ data }: PageProps<Queries.IndexQuery>) => {
               title={
                 data.IndexPageSpecial.nodes[0].frontmatter?.title as string
               }
+              logoMixBlendMode={
+                data.IndexPageSpecial.nodes[0].frontmatter
+                  ?.special_page_link_box_mix_blend_mode as string
+              }
             />
           </MediaQuery>
           <MediaQuery maxWidth={500}>
@@ -101,6 +105,10 @@ const IndexPage = ({ data }: PageProps<Queries.IndexQuery>) => {
               descriptionBackgroundImage={
                 data.IndexPageSpecial.nodes[0].frontmatter
                   ?.descriptionBackgroundImage as unknown as IGatsbyImageData
+              }
+              logoMixBlendMode={
+                data.IndexPageSpecial.nodes[0].frontmatter
+                  ?.special_page_link_box_mix_blend_mode as string
               }
             />
           </MediaQuery>
@@ -167,6 +175,7 @@ export const query = graphql`
             imageFilter
           }
           title
+          special_page_link_box_mix_blend_mode
         }
       }
     }

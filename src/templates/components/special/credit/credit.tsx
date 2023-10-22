@@ -106,7 +106,7 @@ export const Credit: React.FC<Props> = ({ data }) => {
                     ?.theme?.mainSub1 as string,
                 })}
               >
-                Twitter
+                X/Twitter
               </a>
             </div>
           </div>

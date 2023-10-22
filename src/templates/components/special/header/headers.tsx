@@ -1,6 +1,7 @@
 import * as vanilla_aquilegia from "./aquilegia.css";
 import * as vanilla_chroniclesofluna from "./chroniclesofluna.css";
 import * as vanilla from "./headers.css";
+import * as vanilla_rainyresolutions from "./rainyresolutions.css";
 import * as vanilla_tenkoureirou from "./tenkoureirou.css";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import {
@@ -28,6 +29,346 @@ const ScrollAnimation: React.FC<Queries.SpecialPageQuery> = (data) => {
       >
         Scroll
       </a>
+    </div>
+  );
+};
+
+export const RainyResolutions: React.FC<Queries.SpecialPageQuery> = (data) => {
+  const headerImage = getImage(
+    data.markdownRemark?.frontmatter
+      ?.header_image as unknown as IGatsbyImageData
+  );
+  const headerImageSP = getImage(
+    data.markdownRemark?.frontmatter
+      ?.header_image_sp as unknown as IGatsbyImageData
+  );
+  const logoImage = getImage(
+    data.markdownRemark?.frontmatter?.logo_image as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage2 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_2 as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage3 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_3 as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage4 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_4 as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage5 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_5 as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage6 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_6 as unknown as IGatsbyImageData
+  );
+
+  const [mounted, setMounted] = React.useState(false);
+
+  const [aspectRatio, setAspectRatio] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
+
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const aspectRatio = width / height;
+      setAspectRatio(aspectRatio);
+      setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
+      // console.log("called");
+      // console.log(`windowWidth: ${window.innerWidth}`);
+      // console.log(`width: ${width}`);
+      // console.log(`aspectRatio: ${aspectRatio}`);
+    }
+    setMounted(true);
+    handleResize();
+
+    // ウィンドウのサイズが変更された場合に呼び出すリスナーを登録
+    window.addEventListener("resize", handleResize);
+
+    // コンポーネントがアンマウントされた場合にリスナーを解除
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <div className={vanilla.Parent}>
+      {mounted && (
+        <>
+          {1.0 < aspectRatio && headerImage && (
+            <GatsbyImage
+              image={headerImage}
+              alt="header image"
+              style={{
+                position: "absolute",
+                height: "100vh",
+              }}
+            />
+          )}
+          {aspectRatio <= 1.0 && headerImageSP && (
+            <>
+              <GatsbyImage
+                image={headerImageSP}
+                alt="header image"
+                style={{
+                  position: "absolute",
+                  height: "100vh",
+                }}
+              />
+              <ScrollAnimation markdownRemark={data.markdownRemark} />
+            </>
+          )}
+          {1.6 < aspectRatio && (
+            <div className={vanilla_rainyresolutions.LogoPositioner}>
+              {additionalHeaderImage && (
+                <GatsbyImage
+                  image={additionalHeaderImage}
+                  alt="additional header image"
+                  style={{
+                    width: "40%",
+                    alignSelf: "flex-start",
+                    mixBlendMode: "overlay",
+                  }}
+                />
+              )}
+              {additionalHeaderImage2 && (
+                <GatsbyImage
+                  image={additionalHeaderImage2}
+                  alt="additional header image"
+                  style={{
+                    width: `${40 * (6960 / 3453)}%`,
+                    alignSelf: "flex-end",
+                    mixBlendMode: "overlay",
+                  }}
+                />
+              )}
+            </div>
+          )}
+          {1.6 < aspectRatio && (
+            <div className={vanilla_rainyresolutions.LogoPositioner}>
+              {additionalHeaderImage && (
+                <GatsbyImage
+                  image={additionalHeaderImage}
+                  alt="additional header image"
+                  style={{
+                    width: "40%",
+                    alignSelf: "flex-start",
+                    mixBlendMode: "overlay",
+                  }}
+                />
+              )}
+              {additionalHeaderImage2 && (
+                <GatsbyImage
+                  image={additionalHeaderImage2}
+                  alt="additional header image"
+                  style={{
+                    width: `${40 * (6960 / 3453)}%`,
+                    alignSelf: "flex-end",
+                    mixBlendMode: "overlay",
+                  }}
+                />
+              )}
+            </div>
+          )}
+
+          {1.2 < aspectRatio && aspectRatio <= 1.6 && (
+            <div className={vanilla_rainyresolutions.LogoPositioner}>
+              {additionalHeaderImage && (
+                <>
+                  <GatsbyImage
+                    image={additionalHeaderImage}
+                    alt="additional header image"
+                    style={{
+                      width: "43%",
+                      alignSelf: "flex-start",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </>
+              )}
+              {additionalHeaderImage2 && (
+                <>
+                  <GatsbyImage
+                    image={additionalHeaderImage2}
+                    alt="additional header image"
+                    style={{
+                      width: `${43 * (6960 / 3453)}%`,
+                      alignSelf: "flex-end",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </>
+              )}
+            </div>
+          )}
+
+          {1.2 < aspectRatio && aspectRatio <= 1.6 && (
+            <div className={vanilla_rainyresolutions.LogoPositioner}>
+              {additionalHeaderImage && (
+                <>
+                  <GatsbyImage
+                    image={additionalHeaderImage}
+                    alt="additional header image"
+                    style={{
+                      width: "43%",
+                      alignSelf: "flex-start",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </>
+              )}
+              {additionalHeaderImage2 && (
+                <>
+                  <GatsbyImage
+                    image={additionalHeaderImage2}
+                    alt="additional header image"
+                    style={{
+                      width: `${43 * (6960 / 3453)}%`,
+                      alignSelf: "flex-end",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </>
+              )}
+            </div>
+          )}
+
+          {1.0 < aspectRatio && aspectRatio <= 1.2 && (
+            <div className={vanilla_rainyresolutions.LogoPositioner}>
+              {additionalHeaderImage && (
+                <>
+                  <GatsbyImage
+                    image={additionalHeaderImage}
+                    alt="additional header image"
+                    style={{
+                      width: "48%",
+                      alignSelf: "flex-start",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </>
+              )}
+              {additionalHeaderImage2 && (
+                <>
+                  <GatsbyImage
+                    image={additionalHeaderImage2}
+                    alt="additional header image"
+                    style={{
+                      width: `${48 * (6960 / 3453)}%`,
+                      alignSelf: "flex-end",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </>
+              )}
+            </div>
+          )}
+
+          {1.0 < aspectRatio && aspectRatio <= 1.2 && (
+            <div className={vanilla_rainyresolutions.LogoPositioner}>
+              {additionalHeaderImage && (
+                <>
+                  <GatsbyImage
+                    image={additionalHeaderImage}
+                    alt="additional header image"
+                    style={{
+                      width: "48%",
+                      alignSelf: "flex-start",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </>
+              )}
+              {additionalHeaderImage2 && (
+                <>
+                  <GatsbyImage
+                    image={additionalHeaderImage2}
+                    alt="additional header image"
+                    style={{
+                      width: `${48 * (6960 / 3453)}%`,
+                      alignSelf: "flex-end",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </>
+              )}
+            </div>
+          )}
+
+          {aspectRatio <= 1.0 && (
+            <div className={vanilla_rainyresolutions.LogoPositionerSP}>
+              {additionalHeaderImage4 && (
+                <>
+                  <GatsbyImage
+                    image={additionalHeaderImage4}
+                    alt="additional header image"
+                    style={{
+                      width: `${windowHeight * (1065 / 6960)}px`,
+                      alignSelf: "flex-end",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </>
+              )}
+              {additionalHeaderImage3 && (
+                <>
+                  <GatsbyImage
+                    image={additionalHeaderImage3}
+                    alt="additional header image"
+                    style={{
+                      width: `${
+                        windowHeight * (1065 / 6960) * (1326 / 1065)
+                      }px`,
+                      alignSelf: "flex-start",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </>
+              )}
+            </div>
+          )}
+          {aspectRatio <= 1.0 && (
+            <div className={vanilla_rainyresolutions.LogoPositionerSP}>
+              {additionalHeaderImage4 && (
+                <>
+                  <GatsbyImage
+                    image={additionalHeaderImage4}
+                    alt="additional header image"
+                    style={{
+                      width: `${windowHeight * (1065 / 6960)}px`,
+                      alignSelf: "flex-end",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </>
+              )}
+              {additionalHeaderImage3 && (
+                <>
+                  <GatsbyImage
+                    image={additionalHeaderImage3}
+                    alt="additional header image"
+                    style={{
+                      width: `${
+                        windowHeight * (1065 / 6960) * (1326 / 1065)
+                      }px`,
+                      alignSelf: "flex-start",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </>
+              )}
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 };

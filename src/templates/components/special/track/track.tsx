@@ -33,7 +33,7 @@ const TrackItem: React.FC<TrackItemProps> = ({
           className={vanilla.TrackNumber}
           style={assignInlineVars({
             [vanilla.TrackNumberColor]: data.markdownRemark?.frontmatter?.theme
-              ?.accent as string,
+              ?.track_num as string,
           })}
         >
           {index.toString().padStart(2, "0")}
@@ -42,7 +42,7 @@ const TrackItem: React.FC<TrackItemProps> = ({
           className={vanilla.TrackTitle}
           style={assignInlineVars({
             [vanilla.TrackTitleColor]: data.markdownRemark?.frontmatter?.theme
-              ?.baseSub1 as string,
+              ?.track_name as string,
           })}
         >
           {title}
@@ -52,7 +52,7 @@ const TrackItem: React.FC<TrackItemProps> = ({
             className={vanilla.TrackSubInfo}
             style={assignInlineVars({
               [vanilla.TrackSubInfoColor]: data.markdownRemark?.frontmatter
-                ?.theme?.mainSub2 as string,
+                ?.theme?.track_subinfo as string,
             })}
           >
             {subinfo}
@@ -144,7 +144,8 @@ export const Track: React.FC<TrackProps> = ({ data }) => {
               <H1
                 data={data}
                 localColor={
-                  data.markdownRemark?.frontmatter?.theme?.baseSub1 as string
+                  data.markdownRemark?.frontmatter?.theme
+                    ?.track_heading as string
                 }
               >
                 Track

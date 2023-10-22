@@ -208,6 +208,10 @@ export const pageQuery = graphql`
           main
           mainSub1
           mainSub2
+          track_heading
+          track_name
+          track_subinfo
+          track_num
         }
         soundcloud
         youtube
@@ -250,6 +254,7 @@ export const pageQuery = graphql`
             website
           }
         }
+        logo_color
       }
     }
   }

@@ -21,7 +21,6 @@ export const HTMLBody: React.FC<Props> = ({ data }) => {
     /<h1>(.+?)<\/h1>/g,
     "<h1><p>$1</p></h1>"
   );
-  console.log(html);
 
   return (
     <motion.div

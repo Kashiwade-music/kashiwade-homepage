@@ -18,6 +18,7 @@ header_func_name: 天光玲瓏
 header_image: ./20221030-tenkoureirou-header.jpg
 header_image_sp: ./20221030-tenkoureirou-header-sp.png
 logo_image: ./20221030-tenkoureirou-logo.png # Optional header_imageにロゴが含まれていないなら指定。
+special_page_link_box_mix_blend_mode: normal
 additional_header_image: ./20221030-tenkoureirou-header.png
 additional_header_image_2:
 additional_header_image_3:
@@ -49,6 +50,11 @@ theme:
   mainSub1: "#877878"
   mainSub2: "#d7d2d2"
   accent: '#D8031B'
+  track_heading: "#D8031B" # 元々はaccentと同じ色
+  track_name: "#fffbfb" # 元々はbaseSub1と同じ色
+  track_subinfo: "#d7d2d2" # 元々はmainSub2と同じ色
+  track_num: "#D8031B" # 元々はaccentと同じ色
+
 # ---------------
 news:
   - 2022/12/16
@@ -124,6 +130,10 @@ credit:
         - https://www.pixiv.net/users/4695872
         - Twitter 
         - https://twitter.com/hanabusaeisuto
+
+# ---------------
+
+logo_color: black # or black
 
 # ---------------
 

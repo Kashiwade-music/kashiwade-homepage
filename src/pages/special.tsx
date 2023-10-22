@@ -36,6 +36,9 @@ const ProfilePage = ({ data }: PageProps<Queries.SpecialQuery>) => {
               }
               imageFilter={node.frontmatter?.parallax?.imageFilter as string}
               title={node.frontmatter?.title as string}
+              logoMixBlendMode={
+                node.frontmatter?.special_page_link_box_mix_blend_mode as string
+              }
             />
             {index !== data.allMarkdownRemark.nodes.length - 1 && <br />}
           </>
@@ -52,6 +55,9 @@ const ProfilePage = ({ data }: PageProps<Queries.SpecialQuery>) => {
               descriptionBackgroundImage={
                 node.frontmatter
                   ?.descriptionBackgroundImage as unknown as IGatsbyImageData
+              }
+              logoMixBlendMode={
+                node.frontmatter?.special_page_link_box_mix_blend_mode as string
               }
             />
             {index !== data.allMarkdownRemark.nodes.length - 1 && <br />}
@@ -92,6 +98,7 @@ export const query = graphql`
               gatsbyImageData(layout: FIXED, height: 150, placeholder: NONE)
             }
           }
+          special_page_link_box_mix_blend_mode
           descriptionBackgroundImage {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH, quality: 100)
