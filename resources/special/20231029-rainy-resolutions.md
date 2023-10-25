@@ -61,8 +61,8 @@ news:
   - 特設ページをオープンしました。
 
 # ---------------
-soundcloud: 1494451492
-youtube: dS9qcjsn9o8
+soundcloud: 1646497134
+youtube: 9eAw6zHuuQI
 # ---------------
 jacketImage: ./20231029-rainy-resolutions-jacket.jpg
 infomation:
