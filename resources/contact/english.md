@@ -46,7 +46,7 @@ I'm accepting requests for music production (composition/arrangement), mixing, a
         <li>If you wish to have meetings or retakes, please submit a formal request via email rather than using Skeb.</li>
         <li>For more details about Skeb, see <a href="https://medium.com/skeb-jp/guide-154f3a80c3b6" target="_blank" rel="noopener noreferrer">Quick Guide</a> and <a href="https://skeb.jp/client" target="_blank" rel="noopener noreferrer">Client Guidelines</a></li>
     </ul>
-    <li>As of August 2023, I'm accepting projects that will start from December 2023 onwards.</li>
+    <li>As of December 2023, I'm accepting projects that will start from February 2022 onwards.</li>
   </ul>
 </div>
 
