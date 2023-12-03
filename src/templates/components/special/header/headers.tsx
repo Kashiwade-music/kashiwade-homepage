@@ -1,5 +1,6 @@
 import * as vanilla_aquilegia from "./aquilegia.css";
 import * as vanilla_chroniclesofluna from "./chroniclesofluna.css";
+import * as vanilla_conquest from "./conquest.css";
 import * as vanilla from "./headers.css";
 import * as vanilla_rainyresolutions from "./rainyresolutions.css";
 import * as vanilla_tenkoureirou from "./tenkoureirou.css";
@@ -29,6 +30,153 @@ const ScrollAnimation: React.FC<Queries.SpecialPageQuery> = (data) => {
       >
         Scroll
       </a>
+    </div>
+  );
+};
+
+export const Conquest: React.FC<Queries.SpecialPageQuery> = (data) => {
+  const headerImage = getImage(
+    data.markdownRemark?.frontmatter
+      ?.header_image as unknown as IGatsbyImageData
+  );
+  const headerImageSP = getImage(
+    data.markdownRemark?.frontmatter
+      ?.header_image_sp as unknown as IGatsbyImageData
+  );
+  const logoImage = getImage(
+    data.markdownRemark?.frontmatter?.logo_image as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage2 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_2 as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage3 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_3 as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage4 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_4 as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage5 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_5 as unknown as IGatsbyImageData
+  );
+  const additionalHeaderImage6 = getImage(
+    data.markdownRemark?.frontmatter
+      ?.additional_header_image_6 as unknown as IGatsbyImageData
+  );
+
+  const [mounted, setMounted] = React.useState(false);
+
+  const [aspectRatio, setAspectRatio] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
+
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const aspectRatio = width / height;
+      setAspectRatio(aspectRatio);
+      setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
+      // console.log("called");
+      // console.log(`windowWidth: ${window.innerWidth}`);
+      // console.log(`width: ${width}`);
+      // console.log(`aspectRatio: ${aspectRatio}`);
+    }
+    setMounted(true);
+    handleResize();
+
+    // ウィンドウのサイズが変更された場合に呼び出すリスナーを登録
+    window.addEventListener("resize", handleResize);
+
+    // コンポーネントがアンマウントされた場合にリスナーを解除
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <div className={vanilla.Parent}>
+      {mounted && (
+        <>
+          {1.4 < aspectRatio && headerImage && (
+            <>
+              <GatsbyImage
+                image={headerImage}
+                alt="header image"
+                style={{
+                  position: "absolute",
+                  height: "100vh",
+                }}
+              />
+              <ScrollAnimation markdownRemark={data.markdownRemark} />
+            </>
+          )}
+          {1.0 < aspectRatio &&
+            aspectRatio <= 1.4 &&
+            additionalHeaderImage2 && (
+              <>
+                <GatsbyImage
+                  image={additionalHeaderImage2}
+                  alt="header image"
+                  style={{
+                    position: "absolute",
+                    height: "100vh",
+                  }}
+                />
+                <ScrollAnimation markdownRemark={data.markdownRemark} />
+              </>
+            )}
+          {aspectRatio <= 1.0 && headerImageSP && (
+            <>
+              <GatsbyImage
+                image={headerImageSP}
+                alt="header image"
+                style={{
+                  position: "absolute",
+                  height: "100vh",
+                }}
+              />
+              <ScrollAnimation markdownRemark={data.markdownRemark} />
+            </>
+          )}
+          {0.8 < aspectRatio && (
+            <div className={vanilla_conquest.LogoPositioner}>
+              {additionalHeaderImage && (
+                <GatsbyImage
+                  image={additionalHeaderImage}
+                  alt="additional header image"
+                  style={{
+                    width: `${windowHeight * (464 / 1500)}px`,
+                    alignSelf: "flex-start",
+                  }}
+                />
+              )}
+            </div>
+          )}
+          {aspectRatio <= 0.8 && (
+            <div className={vanilla_conquest.LogoPositioner}>
+              {additionalHeaderImage && (
+                <GatsbyImage
+                  image={additionalHeaderImage}
+                  alt="additional header image"
+                  style={{
+                    width: `${
+                      windowHeight * (464 / 1500) * (aspectRatio + 0.15)
+                    }px`,
+                    alignSelf: "flex-end",
+                  }}
+                />
+              )}
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 };

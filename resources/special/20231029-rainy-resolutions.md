@@ -147,7 +147,7 @@ logo_color: white # or black
 <br>
 -->
 <div class="container">
-<a href="https://conquest.kashiwade.work" class="spec-web-button" target="_blank">About CONQUEST</a>
+<a href="https://kashiwade.work/special/conquest" class="spec-web-button" target="_blank">About CONQUEST</a>
 </div>
 
 
