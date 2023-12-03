@@ -145,7 +145,10 @@ export const Head = () => <Meta />;
 export const query = graphql`
   query Index {
     IndexPageSpecial: allMarkdownRemark(
-      sort: { frontmatter: { date: DESC } }
+      sort: {
+        order: [DESC, DESC]
+        fields: [frontmatter___date, frontmatter___title]
+      }
       limit: 1
       filter: { fileAbsolutePath: { glob: "**/resources/special/**" } }
     ) {
