@@ -19,10 +19,12 @@ export const Poem = style({
       fontSize: "26px",
     },
     "screen and (max-width: 560px)": {
-      fontSize: "24px",
+      fontSize: "23px",
+      margin: "0 0 1vh 0",
     },
     "screen and (max-width: 400px)": {
-      fontSize: "20px",
+      fontSize: "19px",
+      margin: "0 0 1vh 0",
     },
   },
 });
