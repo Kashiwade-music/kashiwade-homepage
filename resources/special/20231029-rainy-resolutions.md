@@ -74,9 +74,12 @@ infomation:
   price: 1,500円 (会場頒布価格)
 shop:
   download:
-    - coming soon
+    - BOOTH
+    - https://kashiwade.booth.pm/items/5214141
+    - Bandcamp
+    - https://kashiwade.bandcamp.com/album/rainy-resolutions
   cd:
-    - coming soon
+    - sold out
   streaming:
     - coming soon
 # ---------------
