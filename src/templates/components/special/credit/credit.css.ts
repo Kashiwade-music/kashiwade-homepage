@@ -54,6 +54,11 @@ export const CreditGridRole = style({
   alignItems: "center",
   fontFamily: "Zen Old Mincho",
   color: RoleColor,
+  "@media": {
+    "screen and (max-width: 500px)": {
+      fontSize: "14px",
+    },
+  },
 });
 
 export const NameColor = createVar();
@@ -67,6 +72,11 @@ export const CreditGridName = style({
   fontSize: "30px",
   fontWeight: "600",
   color: NameColor,
+  "@media": {
+    "screen and (max-width: 500px)": {
+      fontSize: "25px",
+    },
+  },
 });
 
 export const CreditGridNameOthers = style({
@@ -79,6 +89,11 @@ export const CreditGridNameOthers = style({
   fontSize: "25px",
   fontWeight: "600",
   color: NameColor,
+  "@media": {
+    "screen and (max-width: 500px)": {
+      fontSize: "20px",
+    },
+  },
 });
 
 export const AccountColor = createVar();
@@ -89,6 +104,11 @@ export const CreditGridAccount = style({
   justifyContent: "center",
   alignItems: "center",
   fontFamily: "Zen Old Mincho",
+  "@media": {
+    "screen and (max-width: 500px)": {
+      fontSize: "14px",
+    },
+  },
 });
 
 export const A = style({
