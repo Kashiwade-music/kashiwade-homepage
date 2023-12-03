@@ -65,7 +65,7 @@ export const InfoFieldFirst = style({
   display: "grid",
   gridTemplateColumns: "1fr 1fr",
   gridTemplateRows: "1fr",
-  gridColumnGap: "10px",
+  gridColumnGap: "15px",
   gridRowGap: "0px",
   padding: "5px 0 5px 0 ",
   "@media": {
@@ -104,7 +104,7 @@ export const InfoFieldKey = style({
   alignItems: "flex-start",
   "@media": {
     "screen and (max-width: 500px)": {
-      fontSize: "15px",
+      fontSize: "14px",
     },
   },
 });
@@ -116,7 +116,7 @@ export const InfoFieldValue = style({
   color: InfoFieldValueColor,
   "@media": {
     "screen and (max-width: 500px)": {
-      fontSize: "15px",
+      fontSize: "14px",
     },
   },
 });
