@@ -1,13 +1,13 @@
-import * as React from "react";
-import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
-import Navbar from "./layout/navbar";
-import NavbarSmartPhone from "./layout/navbarSmartPhone";
+import ContentArea from "./layout/contentArea";
+import Footer from "./layout/footer";
 import Header from "./layout/header";
 import IndexHeader from "./layout/indexHeader";
 import IndexHeaderSmartPhone from "./layout/indexHeaderSmartPhone";
-import ContentArea from "./layout/contentArea";
-import Footer from "./layout/footer";
+import Navbar from "./layout/navbar";
+import NavbarSmartPhone from "./layout/navbarSmartPhone";
+import * as React from "react";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 type Props = {
   currentPage: string;
@@ -25,7 +25,7 @@ const Layout: React.FC<Props> = ({
   children,
 }) => {
   const [mounted, setMounted] = useState(false);
-  const isDesktop = useMediaQuery({ query: "(min-width: 601px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 710px)" });
 
   useEffect(() => {
     setMounted(true);
