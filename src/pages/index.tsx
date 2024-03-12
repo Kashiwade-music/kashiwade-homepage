@@ -1,225 +1,144 @@
-import headerTitleBottomLineSVG_LatestWorks from "../../resources/common/header-title-bottom-line2.svg";
-import headerTitleBottomLineSVG_PickUp from "../../resources/common/header-title-bottom-line.svg";
-import ContentLinkBoxes from "../components/contentsLinkBoxes";
-import Layout from "../components/layout";
-import { Meta } from "../components/layout/meta";
-import { SpecialPageLinkBox } from "../components/specialPageLinkBox/specialPageLinkBox";
-import { SpecialPageLinkBoxSP } from "../components/specialPageLinkBox/specialPageLinkBoxSP";
 import * as vanilla from "../styles/index.css";
-import { graphql, Link, PageProps } from "gatsby";
-import { IGatsbyImageData } from "gatsby-plugin-image";
+import Background from "./components/background";
+import { useGSAP } from "@gsap/react";
+import { log } from "console";
+import { PageProps, HeadFC } from "gatsby";
+import { gsap } from "gsap";
+import { Observer } from "gsap/Observer";
 import * as React from "react";
-import MediaQuery from "react-responsive";
+import { useRef } from "react";
 
-interface IndexContentAreaOuterProps {
-  children: React.ReactNode;
-}
-const IndexContentAreaOuter: React.FC<IndexContentAreaOuterProps> = ({
-  children,
-}) => {
-  return <div className={vanilla.Outer}>{children}</div>;
-};
+gsap.registerPlugin(useGSAP, Observer);
 
-interface IndexContentAreaProps {
-  children: React.ReactNode;
-  needPadding?: boolean;
-}
-const IndexContentArea: React.FC<IndexContentAreaProps> = ({
-  children,
-  needPadding = true,
-}) => {
-  if (needPadding) {
-    return <div className={vanilla.ContentAreaCSS}>{children}</div>;
-  } else {
-    return <div className={vanilla.ContentAreaCSSNonPadding}>{children}</div>;
+const SectionTemplate = React.forwardRef<
+  HTMLDivElement,
+  { children: React.ReactNode; sectionName: string }
+>(({ children, sectionName }, ref) => {
+  let className = "";
+  if (sectionName === "top") {
+    className = vanilla.SectionStyleTop;
+  } else if (sectionName === "profile") {
+    className = vanilla.SectionStyleProfile;
+  } else if (sectionName === "works") {
+    className = vanilla.SectionStyleWorks;
+  } else if (sectionName === "special") {
+    className = vanilla.SectionStyleSpecial;
+  } else if (sectionName === "links") {
+    className = vanilla.SectionStyleLinks;
+  } else if (sectionName === "contact") {
+    className = vanilla.SectionStyleContact;
   }
-};
 
-const IndexPage = ({ data }: PageProps<Queries.IndexQuery>) => {
   return (
-    <Layout isIndex={true} currentPage="index">
-      <IndexContentAreaOuter>
-        <IndexContentArea needPadding={false}>
-          <div className={vanilla.FirstHeaderPadding}>
-            <div className={vanilla.Header}>
-              <div className={vanilla.HeaderTitle}>Pick Up</div>
-              <div className={vanilla.HeaderTitleBottomLine}>
-                <img
-                  src={headerTitleBottomLineSVG_PickUp}
-                  width={350}
-                  height={61.39}
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </IndexContentArea>
-        <IndexContentArea>
-          <MediaQuery minWidth={501}>
-            <SpecialPageLinkBox
-              slug={data.IndexPageSpecial.nodes[0].frontmatter?.slug as string}
-              description_array={
-                data.IndexPageSpecial.nodes[0].frontmatter
-                  ?.description_array as string[]
-              }
-              logo_image={
-                data.IndexPageSpecial.nodes[0].frontmatter
-                  ?.logo_image as unknown as IGatsbyImageData
-              }
-              descriptionBackgroundImage={
-                data.IndexPageSpecial.nodes[0].frontmatter
-                  ?.descriptionBackgroundImage as unknown as IGatsbyImageData
-              }
-              textColor={
-                data.IndexPageSpecial.nodes[0].frontmatter?.parallax
-                  ?.textColor as string
-              }
-              overlayColor={
-                data.IndexPageSpecial.nodes[0].frontmatter?.parallax
-                  ?.overlayColor as string
-              }
-              overlayOpacity={
-                data.IndexPageSpecial.nodes[0].frontmatter?.parallax
-                  ?.overlayOpacity as number
-              }
-              imageFilter={
-                data.IndexPageSpecial.nodes[0].frontmatter?.parallax
-                  ?.imageFilter as string
-              }
-              title={
-                data.IndexPageSpecial.nodes[0].frontmatter?.title as string
-              }
-              logoMixBlendMode={
-                data.IndexPageSpecial.nodes[0].frontmatter
-                  ?.special_page_link_box_mix_blend_mode as string
-              }
-            />
-          </MediaQuery>
-          <MediaQuery maxWidth={500}>
-            <SpecialPageLinkBoxSP
-              slug={data.IndexPageSpecial.nodes[0].frontmatter?.slug as string}
-              logo_image={
-                data.IndexPageSpecial.nodes[0].frontmatter
-                  ?.logo_image as unknown as IGatsbyImageData
-              }
-              descriptionBackgroundImage={
-                data.IndexPageSpecial.nodes[0].frontmatter
-                  ?.descriptionBackgroundImage as unknown as IGatsbyImageData
-              }
-              logoMixBlendMode={
-                data.IndexPageSpecial.nodes[0].frontmatter
-                  ?.special_page_link_box_mix_blend_mode as string
-              }
-            />
-          </MediaQuery>
-        </IndexContentArea>
-        <IndexContentArea needPadding={false}>
-          <div className={vanilla.Header}>
-            <div className={vanilla.HeaderTitle}>Latest Works</div>
-            <div className={vanilla.HeaderTitleBottomLine}>
-              <img
-                src={headerTitleBottomLineSVG_LatestWorks}
-                width={350}
-                height={61.39}
-                alt=""
-              />
-            </div>
-          </div>
-        </IndexContentArea>
-        <IndexContentArea>
-          {<ContentLinkBoxes {...data} />}
-          <div className={vanilla.MoreLinkBox}>
-            <Link to="/works" className={vanilla.MoreLink}>
-              show more works
-            </Link>
-          </div>
-        </IndexContentArea>
-      </IndexContentAreaOuter>
-    </Layout>
+    <section className={className} ref={ref}>
+      <div className="outer">
+        <div className="inner">
+          <div className="bg">{children}</div>
+        </div>
+      </div>
+    </section>
+  );
+});
+
+const IndexPage: React.FC<PageProps> = () => {
+  const sectionNames = [
+    "top",
+    "profile",
+    "works",
+    "special",
+    "links",
+    "contact",
+  ];
+  const sectionRefs = useRef<HTMLDivElement[]>([]);
+
+  useGSAP(() => {
+    let animating = false;
+    let currentIndex = 0;
+
+    sectionRefs.current.forEach((sectionRef, index) => {
+      if (index !== 0) {
+        gsap.set(sectionRef, { autoAlpha: 0, yPercent: 100 });
+      }
+    });
+
+    const gotoSection = (index: number, direction: number) => {
+      if (
+        (index < 0 && direction === -1) ||
+        (index >= sectionRefs.current.length && direction === 1)
+      ) {
+        return;
+      }
+      console.log(
+        `Running. currentIndex=${currentIndex}, from: ${index} to: ${direction})`
+      );
+      console.log(`Wrapped index: ${index}`);
+
+      animating = true;
+
+      const tl = gsap.timeline({
+        defaults: { duration: 1.25, ease: "power2.inOut" },
+        onComplete: () => {
+          animating = false;
+        },
+      });
+
+      if (direction === 1) {
+        tl.to(sectionRefs.current[currentIndex], {
+          autoAlpha: 0,
+          yPercent: -100,
+          zIndex: 0,
+        });
+        tl.to(
+          sectionRefs.current[index],
+          { autoAlpha: 1, yPercent: 0, zIndex: 1 },
+          "<"
+        );
+      } else {
+        tl.to(sectionRefs.current[currentIndex], {
+          autoAlpha: 0,
+          yPercent: 100,
+          zIndex: 0,
+        });
+        tl.to(
+          sectionRefs.current[index],
+          { autoAlpha: 1, yPercent: 0, zIndex: 1 },
+          "<"
+        );
+      }
+
+      currentIndex = index;
+    };
+
+    Observer.create({
+      type: "wheel,touch,pointer",
+      wheelSpeed: -1,
+      onDown: () => !animating && gotoSection(currentIndex - 1, -1),
+      onUp: () => !animating && gotoSection(currentIndex + 1, 1),
+      tolerance: 10,
+      preventDefault: true,
+    });
+  }, [sectionRefs]);
+
+  return (
+    <main>
+      <Background />
+      {sectionNames.map((sectionName, index) => {
+        return (
+          <SectionTemplate
+            key={sectionName}
+            sectionName={sectionName}
+            ref={(el) => {
+              sectionRefs.current[index] = el as HTMLDivElement;
+            }}
+          >
+            {sectionName}
+          </SectionTemplate>
+        );
+      })}
+    </main>
   );
 };
+
 export default IndexPage;
 
-export const Head = () => <Meta />;
-
-export const query = graphql`
-  query Index {
-    IndexPageSpecial: allMarkdownRemark(
-      sort: {
-        order: [DESC, DESC]
-        fields: [frontmatter___date, frontmatter___title]
-      }
-      limit: 1
-      filter: { fileAbsolutePath: { glob: "**/resources/special/**" } }
-    ) {
-      nodes {
-        frontmatter {
-          slug
-          description_array
-          ogp {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-          logo_image {
-            childImageSharp {
-              gatsbyImageData(layout: FIXED, height: 150, placeholder: NONE)
-            }
-          }
-          descriptionBackgroundImage {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-          }
-          parallax {
-            textColor
-            overlayColor
-            overlayOpacity
-            imageFilter
-          }
-          title
-          special_page_link_box_mix_blend_mode
-        }
-      }
-    }
-    allMarkdownRemark(
-      sort: { frontmatter: { slug: DESC } }
-      limit: 4
-      filter: { fileAbsolutePath: { glob: "**/resources/works/**" } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            date
-            description
-            slug
-            title
-            tag
-            hero {
-              childImageSharp {
-                gatsbyImageData
-                internal {
-                  content
-                  description
-                  ignoreType
-                  mediaType
-                }
-                parent {
-                  id
-                }
-                id
-                children {
-                  id
-                }
-              }
-            }
-            price
-            type
-            description_long
-            booth
-          }
-        }
-      }
-    }
-  }
-`;
+export const Head: HeadFC = () => <title>Home Page</title>;
