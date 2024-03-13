@@ -8,7 +8,7 @@ import * as React from "react";
 const Background: React.FC = () => {
   return (
     <div className={vanilla.BackgroundWrapper}>
-      {/* <CelestialGlobe /> */}
+      <CelestialGlobe />
       <StaticImage
         src="../../../resources/common/bg.png"
         alt="hero"

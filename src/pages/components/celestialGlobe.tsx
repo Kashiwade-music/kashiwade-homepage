@@ -1,4 +1,8 @@
-import { Globe1 } from "./Globe1";
+import { Core } from "./r3fCore";
+import { Frame } from "./r3fFrame";
+import { Globe } from "./r3fGlobe";
+import { GlobeOuter } from "./r3fGlobeOuter";
+import { Obi } from "./r3fObi";
 import {
   OrbitControls,
   useTexture,
@@ -12,8 +16,8 @@ import { DoubleSide } from "three";
 const CelestialGlobe: React.FC = () => {
   return (
     <Canvas
-      camera={{ fov: 50, position: [0, 3, 10] }}
-      style={{ zIndex: 100, position: "fixed" }}
+      camera={{ fov: 50, position: [0, -10, -20] }}
+      style={{ mixBlendMode: "normal", position: "fixed" }}
     >
       <Contents />
     </Canvas>
@@ -21,25 +25,10 @@ const CelestialGlobe: React.FC = () => {
 };
 
 const Contents: FC = () => {
-  const boxRef = useRef<any>(null);
-  const boxRef2 = useRef<any>(null);
-  const boxRef3 = useRef<any>(null);
   const envMap = useEnvironment({
-    files: "/assets/the_sky_is_on_fire_4k.hdr",
+    files: "/assets/bg.hdr",
   });
 
-  useFrame(({ clock }) => {
-    const a = clock.getElapsedTime();
-    boxRef.current.rotation.x = a * 1;
-    boxRef.current.rotation.y = a * 0;
-    boxRef.current.rotation.z = a * 1;
-    boxRef2.current.rotation.x = a * -1;
-    boxRef2.current.rotation.y = a * 0;
-    boxRef2.current.rotation.z = a * 0.5;
-    boxRef3.current.rotation.x = a * 0;
-    boxRef3.current.rotation.y = a * 1;
-    boxRef3.current.rotation.z = a * -1;
-  });
   return (
     <>
       {/* control */}
@@ -49,16 +38,13 @@ const Contents: FC = () => {
       <directionalLight position={[5, 5, 5]} />
 
       <Environment map={envMap} />
-      {/* <Environment preset="forest" /> */}
+      {/* <Environment preset="warehouse" background /> */}
 
-      <Globe1 ref={boxRef} position={[0, 0, 0]} scale={[0.5, 0.5, 0.5]} />
-      <Globe1 ref={boxRef2} position={[0, 0, 0]} scale={[0.4, 0.4, 0.4]} />
-      <Globe1 ref={boxRef3} position={[0, 0, 0]} scale={[0.25, 0.25, 0.25]} />
-      {/* box 1 */}
-      <mesh position={[0, 0, 0]}>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial />
-      </mesh>
+      <Core position={[0, 0, 0]} scale={[0.5, 0.5, 0.5]} />
+      <Frame position={[0, 0, 0]} scale={[0.5, 0.5, 0.5]} />
+      <Obi position={[0, 0, 0]} scale={[0.5, 0.5, 0.5]} />
+      <Globe position={[0, 0, 0]} scale={[0.75, 0.75, 0.75]} />
+      <GlobeOuter position={[0, 0, 0]} scale={[0.6, 0.6, 0.6]} />
     </>
   );
 };
