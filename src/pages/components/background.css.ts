@@ -12,12 +12,21 @@ export const BackgroundWrapper = style({
   alignItems: "center",
 });
 
+export const BackgroundImageWrapper = style({
+  height: "100%",
+  width: "100%",
+  top: "0",
+  position: "fixed",
+  //mixBlendMode: "overlay",
+});
+
 export const BackgroundImage = style({
   height: "100%",
   width: "100%",
   top: "0",
   position: "fixed",
   zIndex: -100,
+  mixBlendMode: "overlay",
 });
 
 export const BackgroundImage2 = style({
@@ -28,10 +37,12 @@ export const BackgroundImage2 = style({
   zIndex: -80,
 });
 
-export const P5Wrapper = style({
-  selectors: {
-    "&.react-p5-wrapper": {
-      mixBlendMode: "overlay",
-    },
-  },
+export const BackgroundBaseColor = style({
+  background: "radial-gradient( #63637e,#19192a)",
+  // background: "radial-gradient( #e66465, #9198e5)",
+  height: "100%",
+  width: "100%",
+  top: "0",
+  position: "fixed",
+  zIndex: -110,
 });
