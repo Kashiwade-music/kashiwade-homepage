@@ -1,55 +1,26 @@
+import Background from "../components/common/background/background";
+import Foreground from "../components/common/foreground/foreground";
+import Contact from "../components/section/contact/contact";
+import Links from "../components/section/links/links";
+import Profile from "../components/section/profile/profile";
+import Special from "../components/section/special/special";
+import Top from "../components/section/top/top";
+import Works from "../components/section/works/works";
 import * as vanilla from "../styles/index.css";
-import Background from "./components/background";
 import { useGSAP } from "@gsap/react";
-import { log } from "console";
 import { PageProps, HeadFC } from "gatsby";
 import { gsap } from "gsap";
 import { Observer } from "gsap/Observer";
 import * as React from "react";
 import { useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 gsap.registerPlugin(useGSAP, Observer);
 
-const SectionTemplate = React.forwardRef<
-  HTMLDivElement,
-  { children: React.ReactNode; sectionName: string }
->(({ children, sectionName }, ref) => {
-  let className = "";
-  if (sectionName === "top") {
-    className = vanilla.SectionStyleTop;
-  } else if (sectionName === "profile") {
-    className = vanilla.SectionStyleProfile;
-  } else if (sectionName === "works") {
-    className = vanilla.SectionStyleWorks;
-  } else if (sectionName === "special") {
-    className = vanilla.SectionStyleSpecial;
-  } else if (sectionName === "links") {
-    className = vanilla.SectionStyleLinks;
-  } else if (sectionName === "contact") {
-    className = vanilla.SectionStyleContact;
-  }
-
-  return (
-    <section className={className} ref={ref}>
-      <div className="outer">
-        <div className="inner">
-          <div className="bg">{children}</div>
-        </div>
-      </div>
-    </section>
-  );
-});
-
 const IndexPage: React.FC<PageProps> = () => {
-  const sectionNames = [
-    "top",
-    "profile",
-    "works",
-    "special",
-    "links",
-    "contact",
-  ];
   const sectionRefs = useRef<HTMLDivElement[]>([]);
+  // const section = useSelector((state: { section: number }) => state.section);
+  // const dispatch = useDispatch();
 
   useGSAP(() => {
     let animating = false;
@@ -122,19 +93,13 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <main>
       <Background />
-      {sectionNames.map((sectionName, index) => {
-        return (
-          <SectionTemplate
-            key={sectionName}
-            sectionName={sectionName}
-            ref={(el) => {
-              sectionRefs.current[index] = el as HTMLDivElement;
-            }}
-          >
-            {sectionName}
-          </SectionTemplate>
-        );
-      })}
+      <Foreground />
+      <Top ref={(el) => (sectionRefs.current[0] = el as HTMLDivElement)} />
+      <Profile ref={(el) => (sectionRefs.current[1] = el as HTMLDivElement)} />
+      <Works ref={(el) => (sectionRefs.current[2] = el as HTMLDivElement)} />
+      <Special ref={(el) => (sectionRefs.current[3] = el as HTMLDivElement)} />
+      <Links ref={(el) => (sectionRefs.current[4] = el as HTMLDivElement)} />
+      <Contact ref={(el) => (sectionRefs.current[5] = el as HTMLDivElement)} />
     </main>
   );
 };

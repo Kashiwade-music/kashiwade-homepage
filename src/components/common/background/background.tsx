@@ -12,7 +12,7 @@ const Background: React.FC = () => {
       <div className={vanilla.BackgroundBaseColor} />
 
       <StaticImage
-        src="../../../resources/common/bg.png"
+        src="./bg.png"
         alt="hero"
         className={vanilla.BackgroundImage}
         quality={95}
@@ -36,7 +36,7 @@ const Background: React.FC = () => {
 
       <CelestialGlobe />
       <StaticImage
-        src="../../../resources/common/perlin_noise.png"
+        src="./perlin_noise.png"
         alt="hero"
         className={vanilla.PerlinNoise}
         quality={95}

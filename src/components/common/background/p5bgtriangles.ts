@@ -17,7 +17,7 @@ export const p5bgTriangles = (p5: P5CanvasInstance): void => {
       eulerZ: number
     ) {
       this.pos = p5.createVector(x, y, z);
-      this.vel = p5.createVector(p5.random(0.1, 1), p5.random(0, -0.5), 0);
+      this.vel = p5.createVector(p5.random(0.25, 1), p5.random(-0.05, -0.5), 0);
       this.euler = p5.createVector(eulerX, eulerY, eulerZ);
       this.eulerVel = p5.createVector(
         p5.random(0.01, 0.05),
