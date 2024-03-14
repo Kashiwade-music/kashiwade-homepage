@@ -10,7 +10,9 @@ type GLTFResult = GLTF & {
   nodes: {
     obi: THREE.Mesh;
   };
-  materials: {};
+  materials: {
+    ["Material.004"]: THREE.MeshBasicMaterial;
+  };
 };
 
 type ActionName = "obi_rotate";
@@ -27,6 +29,7 @@ export function Obi(props: JSX.IntrinsicElements["group"]) {
       actions["obi_rotate"].play();
     }
   });
+
   return (
     // @ts-ignore
     <group ref={group} {...props} dispose={null}>
@@ -36,7 +39,7 @@ export function Obi(props: JSX.IntrinsicElements["group"]) {
           castShadow
           receiveShadow
           geometry={nodes.obi.geometry}
-          material={nodes.obi.material}
+          material={materials["Material.004"]}
           rotation={[0, 0, -Math.PI / 6]}
         />
       </group>

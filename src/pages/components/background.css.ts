@@ -20,6 +20,16 @@ export const BackgroundImage = style({
   mixBlendMode: "overlay",
 });
 
+export const PerlinNoise = style({
+  height: "100%",
+  width: "100%",
+  top: "0",
+  position: "fixed",
+  zIndex: -10,
+  opacity: 0.1,
+  mixBlendMode: "overlay",
+});
+
 export const BackgroundBaseColor = style({
   background: "radial-gradient( #63637e,#19192a)",
   // background: "radial-gradient( #e66465, #9198e5)",
