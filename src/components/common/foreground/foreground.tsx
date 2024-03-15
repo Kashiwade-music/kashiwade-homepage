@@ -5,31 +5,25 @@ import FrameRightBottom from "./frameRightBottom";
 import FrameRightTop from "./frameRightTop";
 import * as React from "react";
 
-const Foreground: React.FC = () => {
+const Foreground = React.memo(() => {
+  console.log(`\u001b[32m[Foreground.tsx] Rendered\u001b[0m`);
+
   return (
-    <div className={vanilla.ForegroundWrapper}>
+    <>
       <div className={vanilla.FrameLeftTopPositioner}>
-        <div className={vanilla.FrameLeftTopPositionerInner}>
-          <FrameLeftTop />
-        </div>
+        <FrameLeftTop />
       </div>
       <div className={vanilla.FrameRightBottomPositioner}>
-        <div className={vanilla.FrameRightBottomPositionerInner}>
-          <FrameRightBottom />
-        </div>
+        <FrameRightBottom />
       </div>
       <div className={vanilla.FrameLeftBottomPositioner}>
-        <div className={vanilla.FrameLeftBottomPositionerInner}>
-          <FrameLeftBottom />
-        </div>
+        <FrameLeftBottom />
       </div>
       <div className={vanilla.FrameRightTopPositioner}>
-        <div className={vanilla.FrameRightTopPositionerInner}>
-          <FrameRightTop />
-        </div>
+        <FrameRightTop />
       </div>
-    </div>
+    </>
   );
-};
+});
 
 export default Foreground;

@@ -67,7 +67,7 @@ export const p5bgTriangles = (p5: P5CanvasInstance): void => {
 
   const genTriangles = () => {
     triangles = [];
-    let num = p5.max(p5.floor(p5.windowWidth * p5.windowHeight * 0.000007), 5);
+    let num = p5.max(p5.floor(p5.windowWidth * p5.windowHeight * 0.000008), 5);
 
     for (let i = 0; i < num; i++) {
       let x = p5.random(-p5.width / 2, p5.width / 2);

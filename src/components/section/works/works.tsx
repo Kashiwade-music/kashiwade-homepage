@@ -1,13 +1,9 @@
+import Layout from "../layout";
 import * as vanilla from "./works.css";
 import React from "react";
-import { useRef } from "react";
 
 const Works = React.forwardRef<HTMLElement>((_, ref) => {
-  return (
-    <section className={vanilla.SectionWrapper} ref={ref}>
-      <div className={vanilla.SectionMain}>WORKS</div>
-    </section>
-  );
+  return <Layout ref={ref}>works</Layout>;
 });
 
 export default Works;

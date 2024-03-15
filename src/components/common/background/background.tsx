@@ -6,7 +6,9 @@ import { ReactP5Wrapper } from "@p5-wrapper/react";
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 
-const Background: React.FC = () => {
+const Background = React.memo(() => {
+  console.log(`\u001b[32m[background.tsx] Rendered\u001b[0m`);
+
   return (
     <div className={vanilla.BackgroundWrapper}>
       <div className={vanilla.BackgroundBaseColor} />
@@ -57,6 +59,6 @@ const Background: React.FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Background;
