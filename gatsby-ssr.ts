@@ -1,3 +1,4 @@
+import { WrapWithProvider } from "./src/components/common/redux/wrap-with-provider";
 import type { GatsbySSR } from "gatsby";
 
 export const onRenderBody: GatsbySSR["onRenderBody"] = ({
@@ -7,3 +8,5 @@ export const onRenderBody: GatsbySSR["onRenderBody"] = ({
     lang: "ja",
   });
 };
+
+export const wrapRootElement = WrapWithProvider;

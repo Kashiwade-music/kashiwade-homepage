@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // section index state
 // reducer can be used to change the state like this: 0 -> 1 or 0 -> 2
@@ -6,11 +6,18 @@ import { createSlice } from "@reduxjs/toolkit";
 export const sectionSlice = createSlice({
   name: "section",
   initialState: {
-    value: 0,
+    currentSection: 0,
+    previousSection: 0,
+    isSectionChanging: false,
   },
   reducers: {
-    changeSection: (state, action) => {
-      state.value = action.payload;
+    changeSectionTo: (state, action: PayloadAction<number>) => {
+      state.previousSection = state.currentSection + 0;
+      state.currentSection = action.payload + 0;
+      state.isSectionChanging = true;
+    },
+    setSectionChanging: (state, action: PayloadAction<boolean>) => {
+      state.isSectionChanging = action.payload;
     },
   },
 });
