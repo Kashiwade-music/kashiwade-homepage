@@ -23,10 +23,13 @@ import {
 } from "@react-three/postprocessing";
 import { GlitchMode } from "postprocessing";
 import { BlendFunction } from "postprocessing";
-import React, { FC, VFC, useRef } from "react";
+import React, { FC, VFC, useEffect, useRef } from "react";
 import { Vector2 } from "three";
 
 const CelestialGlobe: React.FC = () => {
+  useEffect(() => {
+    console.log(`\u001b[32m[CelestialGlobe.tsx] Rendered\u001b[0m`);
+  }, []);
   return (
     // @ts-ignore
     <Canvas

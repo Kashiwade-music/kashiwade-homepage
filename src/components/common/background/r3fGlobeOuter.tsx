@@ -26,6 +26,7 @@ export function GlobeOuter(props: JSX.IntrinsicElements["group"]) {
     if (actions["globe_outer_rotate"]) {
       actions["globe_outer_rotate"].play();
     }
+    console.log(`\u001b[31m<GlobeOuter> Rendered\u001b[0m`);
   });
   return (
     // @ts-ignore

@@ -6,7 +6,9 @@ import FrameRightTop from "./frameRightTop";
 import * as React from "react";
 
 const Foreground = React.memo(() => {
-  console.log(`\u001b[32m[Foreground.tsx] Rendered\u001b[0m`);
+  React.useEffect(() => {
+    console.log(`\u001b[31m<Foreground> Rendered\u001b[0m`);
+  }, []);
 
   return (
     <>

@@ -7,7 +7,9 @@ import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 
 const Background = React.memo(() => {
-  console.log(`\u001b[32m[background.tsx] Rendered\u001b[0m`);
+  React.useEffect(() => {
+    console.log(`\u001b[31m<Background> Rendered\u001b[0m`);
+  }, []);
 
   return (
     <div className={vanilla.BackgroundWrapper}>

@@ -65,10 +65,6 @@ const SectionLinkBox = React.forwardRef<HTMLDivElement, SectionLinkBoxProps>(
     const SectionMarkerActive = sectionMarkerActiveArray[index];
 
     useGSAP(() => {
-      console.log(
-        `[SectionLinkBox useGSAP.1] @${sectionName} -> isActive: ${isActive}`
-      );
-
       gsap.set(activeSVGRef.current, { autoAlpha: isActive ? 1 : 0 });
 
       gsap.set(sectionMarkerRef.current, {
@@ -78,10 +74,6 @@ const SectionLinkBox = React.forwardRef<HTMLDivElement, SectionLinkBoxProps>(
     }, []);
 
     useGSAP(() => {
-      console.log(
-        `[SectionLinkBox useGSAP.2] @${sectionName} -> isActive: ${isActive}`
-      );
-
       gsap
         .timeline({
           defaults: { duration: 0.75, ease: "power2.inOut" },
@@ -112,6 +104,9 @@ const SectionLinkBox = React.forwardRef<HTMLDivElement, SectionLinkBoxProps>(
 
 const SectionLink: React.FC = () => {
   const sectionRefs = useRef<HTMLDivElement[]>([]);
+  React.useEffect(() => {
+    console.log(`\u001b[31m<SectionLink> Rendered\u001b[0m`);
+  }, []);
 
   return (
     <div className={vanilla.SectionLinkWrapper}>

@@ -26,6 +26,7 @@ export function Globe(props: JSX.IntrinsicElements["group"]) {
     if (actions["globe_rotate"]) {
       actions["globe_rotate"].play();
     }
+    console.log(`\u001b[31m<Globe> Rendered\u001b[0m`);
   });
 
   return (

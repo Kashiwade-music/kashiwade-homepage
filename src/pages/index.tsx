@@ -33,7 +33,6 @@ const changeURLHash = () => {
 const IndexPage: React.FC<PageProps> = () => {
   const sectionRefs = useRef<HTMLDivElement[]>([]);
   const dispatch = store.useAppDispatch();
-  console.log(`\u001b[31m[index.tsx] Rendered\u001b[0m`);
 
   const launchChangeSectionAnimation = () => {
     const { isSectionChanging, previousSection, currentSection } =
@@ -74,8 +73,7 @@ const IndexPage: React.FC<PageProps> = () => {
   };
 
   React.useEffect(() => {
-    console.log(`[useEffect] launched, sectionRefs: ${sectionRefs.current}`);
-
+    console.log(`\u001b[31m<IndexPage> Rendered\u001b[0m`);
     store.store.subscribe(() => {
       launchChangeSectionAnimation();
       changeURLHash();
@@ -83,12 +81,7 @@ const IndexPage: React.FC<PageProps> = () => {
   }, []);
 
   useGSAP(() => {
-    console.log(
-      `[index.tsx -> useGSAP] launched, sectionRefs: ${sectionRefs.current}`
-    );
     sectionRefs.current.forEach((sectionRef, index) => {
-      console.log(`[index.tsx -> useGSAP sectionRefs] index: ${index}`);
-
       if (index !== 0) {
         gsap.set(sectionRef, { autoAlpha: 0, yPercent: 100 });
       }
@@ -101,7 +94,6 @@ const IndexPage: React.FC<PageProps> = () => {
         const { isSectionChanging, currentSection } =
           store.store.getState().section;
         if (isSectionChanging || currentSection - 1 < 0) return;
-        console.log("launching onDown");
 
         dispatch(sectionSlice.actions.changeSectionTo(currentSection - 1));
       },
@@ -113,7 +105,6 @@ const IndexPage: React.FC<PageProps> = () => {
           currentSection + 1 >= sectionRefs.current.length
         )
           return;
-        console.log("launching onUp");
 
         dispatch(sectionSlice.actions.changeSectionTo(currentSection + 1));
       },

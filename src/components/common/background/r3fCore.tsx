@@ -26,6 +26,7 @@ export function Core(props: JSX.IntrinsicElements["group"]) {
     if (actions["rotate"]) {
       actions["rotate"].play();
     }
+    console.log(`\u001b[31m<Core> Rendered\u001b[0m`);
   });
 
   return (

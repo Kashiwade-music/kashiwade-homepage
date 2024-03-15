@@ -28,6 +28,7 @@ export function Obi(props: JSX.IntrinsicElements["group"]) {
     if (actions["obi_rotate"]) {
       actions["obi_rotate"].play();
     }
+    console.log(`\u001b[31m<Obi> Rendered\u001b[0m`);
   });
 
   return (

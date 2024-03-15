@@ -26,7 +26,8 @@ export function Clock(props: JSX.IntrinsicElements["group"]) {
     if (actions["clock"]) {
       actions["clock"].play();
     }
-  });
+    console.log(`\u001b[31m<Clock> Rendered\u001b[0m`);
+  }, []);
 
   return (
     // @ts-ignore

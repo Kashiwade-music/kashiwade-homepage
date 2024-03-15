@@ -4,6 +4,10 @@ import React from "react";
 import { useRef } from "react";
 
 const Home = React.forwardRef<HTMLElement>((_, ref) => {
+  React.useEffect(() => {
+    console.log(`\u001b[31m<Home> Rendered\u001b[0m`);
+  }, []);
+
   return <Layout ref={ref}>HOME</Layout>;
 });
 

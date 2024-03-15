@@ -15,7 +15,6 @@ const Layout = React.forwardRef<HTMLElement, LayoutProps>(
         setWindowWidth(window.innerWidth);
       };
       handleResize();
-      console.log(`[Layout] mounted`);
 
       window.addEventListener("resize", handleResize);
 

@@ -26,6 +26,7 @@ export function Frame(props: JSX.IntrinsicElements["group"]) {
     if (actions["frame_rotate"]) {
       actions["frame_rotate"].play();
     }
+    console.log(`\u001b[31m<Frame> Rendered\u001b[0m`);
   });
   return (
     // @ts-ignore
