@@ -46,7 +46,7 @@ I'm accepting requests for music production (composition/arrangement), mixing, a
         <li>If you wish to have meetings or retakes, please submit a formal request via email rather than using Skeb.</li>
         <li>For more details about Skeb, see <a href="https://medium.com/skeb-jp/guide-154f3a80c3b6" target="_blank" rel="noopener noreferrer">Quick Guide</a> and <a href="https://skeb.jp/client" target="_blank" rel="noopener noreferrer">Client Guidelines</a></li>
     </ul>
-    <li>As of February 2024, I'm currently accepting inquiries from individuals for projects scheduled after October 2024.</li>
+    <li>As of May 2024, I'm currently accepting inquiries from individuals for projects scheduled after October 2024.</li>
     <li>For inquiries from businesses or individuals with whom we have established connections, I will accommodate accordingly. Please feel free to contact me anytime.</li>
   </ul>
 </div>
